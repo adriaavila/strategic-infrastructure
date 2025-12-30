@@ -68,8 +68,8 @@ const ChatVisual = () => (
       
       {/* AI Response */}
       <div className="flex gap-3 justify-end animate-fade-up" style={{ animationDelay: '400ms' }}>
-        <div className="bg-foreground text-background rounded-2xl rounded-tr-md px-4 py-2.5 max-w-[75%] shadow-sm">
-          <p className="text-sm leading-relaxed">¡Hola! Soy el asistente de Allok. ¿En qué área necesitas automatizar?</p>
+        <div className="bg-neutral-900 rounded-2xl rounded-tr-md px-4 py-2.5 max-w-[75%] shadow-sm">
+          <p className="text-sm leading-relaxed text-white">¡Hola! Soy el asistente de Allok. ¿En qué área necesitas automatizar?</p>
         </div>
       </div>
 
