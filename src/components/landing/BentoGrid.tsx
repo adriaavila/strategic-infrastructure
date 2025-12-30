@@ -178,7 +178,7 @@ const ReactivationVisual = () => (
 
 export const BentoGrid = () => {
   return (
-    <section className="relative py-24 md:py-32">
+    <section id="producto" className="relative py-24 md:py-32 scroll-mt-20">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="max-w-2xl mx-auto text-center mb-16">
