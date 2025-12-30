@@ -4,10 +4,10 @@ import { Menu, X } from "lucide-react";
 import allokLogo from "@/assets/allok-logo.png";
 
 const navLinks = [
-  { label: "Producto", href: "#producto" },
+  { label: "Servicios", href: "#producto" },
   { label: "Precios", href: "#precios" },
   { label: "Integraciones", href: "#integraciones" },
-  { label: "Blog", href: "#blog" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export const Navbar = () => {
