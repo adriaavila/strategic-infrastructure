@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import allokLogo from "@/assets/allok-logo.png";
 
 const integrations = [
   { 
@@ -119,7 +120,7 @@ export const Integrations = () => {
             {/* Main hub */}
             <div className="relative w-24 h-24 rounded-2xl bg-gradient-to-br from-neutral-800 to-neutral-900 border border-white/10 flex items-center justify-center shadow-2xl">
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <span className="text-3xl font-bold text-white">A</span>
+              <img src={allokLogo} alt="Allok Hub" className="w-12 h-12 invert" />
               {/* Glow effect */}
               <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-emerald-500/30 to-blue-500/30 blur-xl opacity-50" />
             </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import allokLogo from "@/assets/allok-logo.png";
 
 const navLinks = [
   { label: "Producto", href: "#producto" },
@@ -33,9 +34,7 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">A</span>
-            </div>
+            <img src={allokLogo} alt="Allok" className="w-8 h-8" />
             <span className="text-lg font-semibold tracking-tight">Allok</span>
           </a>
 
