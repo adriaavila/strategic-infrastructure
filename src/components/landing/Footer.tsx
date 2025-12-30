@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import allokLogo from "@/assets/allok-logo.png";
 
 const footerLinks = {
   Producto: ["Características", "Precios", "Integraciones", "Changelog"],
@@ -17,9 +18,7 @@ export const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center">
-                <span className="text-[#111111] font-bold text-sm">A</span>
-              </div>
+              <img src={allokLogo} alt="Allok" className="w-8 h-8 invert" />
               <span className="text-lg font-semibold">Allok</span>
             </div>
             <p className="text-white/50 text-sm leading-relaxed mb-6">
