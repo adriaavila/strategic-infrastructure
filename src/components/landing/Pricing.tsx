@@ -6,8 +6,8 @@ const plans = [
   {
     name: "Starter",
     description: "Para equipos pequeños que comienzan",
-    priceMonthly: 299,
-    priceAnnual: 249,
+    priceMonthly: 29.9,
+    priceAnnual: 24.9,
     features: [
       "1 automatización activa",
       "500 ejecuciones/mes",
@@ -20,8 +20,8 @@ const plans = [
   {
     name: "Growth",
     description: "Para empresas en crecimiento",
-    priceMonthly: 799,
-    priceAnnual: 649,
+    priceMonthly: 79.9,
+    priceAnnual: 64.9,
     features: [
       "5 automatizaciones activas",
       "5,000 ejecuciones/mes",
