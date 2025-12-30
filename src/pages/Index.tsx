@@ -3,6 +3,7 @@ import { Hero } from "@/components/landing/Hero";
 import { BentoGrid } from "@/components/landing/BentoGrid";
 import { Integrations } from "@/components/landing/Integrations";
 import { Pricing } from "@/components/landing/Pricing";
+import { FAQ } from "@/components/landing/FAQ";
 import { Footer } from "@/components/landing/Footer";
 
 const Index = () => {
@@ -20,6 +21,7 @@ const Index = () => {
         <BentoGrid />
         <Integrations />
         <Pricing />
+        <FAQ />
       </main>
       
       {/* Footer */}
