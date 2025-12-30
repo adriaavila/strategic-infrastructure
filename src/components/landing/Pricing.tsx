@@ -74,13 +74,13 @@ export const Pricing = () => {
           </span>
           <button
             onClick={() => setIsAnnual(!isAnnual)}
-            className={`relative w-14 h-7 rounded-full transition-colors duration-200 ${
+            className={`relative w-12 h-6 rounded-full transition-colors duration-200 ${
               isAnnual ? 'bg-primary' : 'bg-foreground/10'
             }`}
           >
             <span
-              className={`absolute top-1 w-5 h-5 rounded-full bg-white shadow-sm transition-transform duration-200 ${
-                isAnnual ? 'translate-x-8' : 'translate-x-1'
+              className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white shadow-sm transition-transform duration-200 ${
+                isAnnual ? 'translate-x-6' : 'translate-x-0'
               }`}
             />
           </button>
