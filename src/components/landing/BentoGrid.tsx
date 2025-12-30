@@ -54,28 +54,30 @@ const BentoCard = ({ title, description, icon, className, visual, delay = 0 }: B
 
 // Chat Animation Visual
 const ChatVisual = () => (
-  <div className="bg-foreground/[0.02] border-t border-foreground/[0.05] p-4 h-48 overflow-hidden">
+  <div className="bg-foreground/[0.03] border-t border-foreground/[0.08] p-5 h-52 overflow-hidden">
     <div className="space-y-3">
       {/* Incoming message */}
-      <div className="flex gap-2 animate-fade-up" style={{ animationDelay: '100ms' }}>
-        <div className="w-6 h-6 rounded-full bg-foreground/10 flex-shrink-0" />
-        <div className="bg-foreground/5 rounded-xl rounded-tl-sm px-3 py-2 max-w-[70%]">
-          <p className="text-xs text-muted-foreground">Hola, me interesa su servicio de automatización</p>
+      <div className="flex gap-3 animate-fade-up" style={{ animationDelay: '100ms' }}>
+        <div className="w-8 h-8 rounded-full bg-foreground/10 flex-shrink-0 flex items-center justify-center">
+          <span className="text-xs font-medium text-foreground/60">U</span>
+        </div>
+        <div className="bg-foreground/[0.08] rounded-2xl rounded-tl-md px-4 py-2.5 max-w-[75%] shadow-sm">
+          <p className="text-sm text-foreground/80 leading-relaxed">Hola, me interesa su servicio de automatización</p>
         </div>
       </div>
       
       {/* AI Response */}
-      <div className="flex gap-2 justify-end animate-fade-up" style={{ animationDelay: '400ms' }}>
-        <div className="bg-primary text-primary-foreground rounded-xl rounded-tr-sm px-3 py-2 max-w-[70%]">
-          <p className="text-xs">¡Hola! Soy el asistente de Allok. ¿En qué área necesitas automatizar?</p>
+      <div className="flex gap-3 justify-end animate-fade-up" style={{ animationDelay: '400ms' }}>
+        <div className="bg-foreground text-background rounded-2xl rounded-tr-md px-4 py-2.5 max-w-[75%] shadow-sm">
+          <p className="text-sm leading-relaxed">¡Hola! Soy el asistente de Allok. ¿En qué área necesitas automatizar?</p>
         </div>
       </div>
 
       {/* Calendar suggestion */}
-      <div className="flex gap-2 justify-end animate-fade-up" style={{ animationDelay: '700ms' }}>
-        <div className="bg-primary/80 text-primary-foreground rounded-xl px-3 py-2 flex items-center gap-2">
-          <Zap className="w-3 h-3" />
-          <p className="text-xs">Agendar llamada →</p>
+      <div className="flex gap-3 justify-end animate-fade-up" style={{ animationDelay: '700ms' }}>
+        <div className="bg-emerald-600 text-white rounded-2xl px-4 py-2.5 flex items-center gap-2 shadow-sm hover:bg-emerald-700 transition-colors cursor-pointer">
+          <Zap className="w-4 h-4" />
+          <p className="text-sm font-medium">Agendar llamada →</p>
         </div>
       </div>
     </div>
