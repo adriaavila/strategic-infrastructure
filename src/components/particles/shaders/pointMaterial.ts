@@ -50,26 +50,25 @@ varying float vDistance;
 varying float vAlpha;
 
 void main() {
-  // Circular point
+  // Circular point with soft glow
   vec2 center = gl_PointCoord - 0.5;
   float dist = length(center);
   
   if (dist > 0.5) discard;
   
-  // Soft edge
-  float alpha = 1.0 - smoothstep(0.3, 0.5, dist);
+  // Create a glowing orb effect
+  float core = 1.0 - smoothstep(0.0, 0.15, dist);
+  float glow = 1.0 - smoothstep(0.0, 0.5, dist);
+  float alpha = core * 0.8 + glow * 0.4;
   alpha *= uOpacity * vAlpha;
   
-  // Depth of field blur effect
-  float blur = 1.0 / (1.0 + vDistance * 0.5);
-  alpha *= blur;
-  
-  // Emerald/teal color matching the site theme
-  vec3 color = vec3(0.2, 0.8, 0.6);
+  // Bright emerald/cyan gradient color
+  vec3 coreColor = vec3(0.2, 1.0, 0.7);
+  vec3 glowColor = vec3(0.1, 0.8, 0.5);
+  vec3 color = mix(glowColor, coreColor, core);
   
   gl_FragColor = vec4(color, alpha);
-}
-`;
+}`;
 
 export class DofPointsMaterial extends THREE.ShaderMaterial {
   constructor() {

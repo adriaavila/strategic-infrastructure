@@ -6,7 +6,7 @@ export function ParticleBackground() {
   return (
     <div className="absolute inset-0 z-0">
       <Canvas
-        camera={{ position: [0, 0, 5], fov: 75 }}
+        camera={{ position: [0, 0, 3], fov: 50 }}
         gl={{ 
           antialias: true, 
           alpha: true,
@@ -17,15 +17,15 @@ export function ParticleBackground() {
         <Suspense fallback={null}>
           <Particles
             speed={0.3}
-            aperture={0.5}
-            focus={5}
-            size={256}
-            noiseScale={0.8}
-            noiseIntensity={0.4}
-            timeScale={0.3}
-            pointSize={3.0}
-            opacity={0.6}
-            planeScale={2.0}
+            aperture={0.1}
+            focus={3}
+            size={32}
+            noiseScale={2.0}
+            noiseIntensity={1.0}
+            timeScale={0.2}
+            pointSize={25.0}
+            opacity={1.0}
+            planeScale={5.0}
           />
         </Suspense>
       </Canvas>
