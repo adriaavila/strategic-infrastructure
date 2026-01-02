@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle } from "lucide-react";
+import { ParticleBackground } from "@/components/particles/ParticleBackground";
 
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Dotted Grid Background */}
-      <div className="absolute inset-0 dotted-grid opacity-50" />
+      {/* Particle Animation Background */}
+      <ParticleBackground />
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 pt-32 pb-24">
