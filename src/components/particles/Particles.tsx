@@ -44,14 +44,14 @@ export function Particles({
   const revealDuration = 3.5;
 
   const simulationMaterial = useMemo(() => {
-    return new SimulationMaterial(planeScale);
-  }, [planeScale]);
+    return new SimulationMaterial(size, planeScale, THREE.HalfFloatType);
+  }, [size, planeScale]);
 
   const target = useFBO(size, size, {
     minFilter: THREE.NearestFilter,
     magFilter: THREE.NearestFilter,
     format: THREE.RGBAFormat,
-    type: THREE.FloatType,
+    type: THREE.HalfFloatType,
   });
 
   const dofPointsMaterial = useMemo(() => {

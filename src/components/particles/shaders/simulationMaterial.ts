@@ -117,27 +117,46 @@ void main() {
 `;
 
 export class SimulationMaterial extends THREE.ShaderMaterial {
-  constructor(planeScale: number = 1.0) {
-    const size = 512;
-    const data = new Float32Array(size * size * 4);
-    
+  constructor(
+    size: number = 512,
+    planeScale: number = 1.0,
+    textureType: THREE.TextureDataType = THREE.HalfFloatType
+  ) {
+    const isHalf = textureType === THREE.HalfFloatType;
+    const data = isHalf
+      ? new Uint16Array(size * size * 4)
+      : new Float32Array(size * size * 4);
+
     for (let i = 0; i < size * size; i++) {
       const i4 = i * 4;
-      // Distribute particles in a larger area
-      data[i4 + 0] = (Math.random() - 0.5) * planeScale * 4;
-      data[i4 + 1] = (Math.random() - 0.5) * planeScale * 4;
-      data[i4 + 2] = (Math.random() - 0.5) * planeScale * 2;
-      data[i4 + 3] = 1.0;
+      const x = (Math.random() - 0.5) * planeScale * 4;
+      const y = (Math.random() - 0.5) * planeScale * 4;
+      const z = (Math.random() - 0.5) * planeScale * 2;
+
+      if (isHalf) {
+        (data as Uint16Array)[i4 + 0] = THREE.DataUtils.toHalfFloat(x);
+        (data as Uint16Array)[i4 + 1] = THREE.DataUtils.toHalfFloat(y);
+        (data as Uint16Array)[i4 + 2] = THREE.DataUtils.toHalfFloat(z);
+        (data as Uint16Array)[i4 + 3] = THREE.DataUtils.toHalfFloat(1.0);
+      } else {
+        (data as Float32Array)[i4 + 0] = x;
+        (data as Float32Array)[i4 + 1] = y;
+        (data as Float32Array)[i4 + 2] = z;
+        (data as Float32Array)[i4 + 3] = 1.0;
+      }
     }
 
     const positionsTexture = new THREE.DataTexture(
-      data,
+      data as any,
       size,
       size,
       THREE.RGBAFormat,
-      THREE.FloatType
+      textureType
     );
     positionsTexture.needsUpdate = true;
+    positionsTexture.minFilter = THREE.NearestFilter;
+    positionsTexture.magFilter = THREE.NearestFilter;
+    positionsTexture.generateMipmaps = false;
 
     super({
       vertexShader: simulationVertexShader,
