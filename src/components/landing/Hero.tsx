@@ -17,7 +17,7 @@ export const Hero = () => {
             style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}
           >
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-sm text-muted-foreground">Servicios creativos y digitales</span>
+            <span className="text-sm text-muted-foreground">Automatización inteligente para empresas</span>
           </div>
 
           {/* Headline */}
@@ -25,7 +25,7 @@ export const Hero = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-6 opacity-0 animate-fade-up text-balance"
             style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}
           >
-            Tu equipo creativo, sin el costo de un equipo.
+            La infraestructura de ingresos para las empresas de hoy.
           </h1>
 
           {/* Subheader */}
@@ -33,7 +33,7 @@ export const Hero = () => {
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 opacity-0 animate-fade-up"
             style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}
           >
-            Diseño, desarrollo web y marketing digital para empresas que quieren crecer sin complicaciones.
+            Automatización, IA y escala para tu negocio. Experimenta la calma de una operación que no depende de ti.
           </p>
 
           {/* CTAs */}
@@ -42,12 +42,12 @@ export const Hero = () => {
             style={{ animationDelay: '400ms', animationFillMode: 'forwards' }}
           >
             <Button variant="hero" size="lg" className="group">
-              Ver servicios
+              Empezar ahora
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Button>
             <Button variant="hero-outline" size="lg">
               <MessageCircle className="w-4 h-4" />
-              Solicitar cotización
+              Hablar con un experto
             </Button>
           </div>
 
@@ -57,16 +57,16 @@ export const Hero = () => {
             style={{ animationDelay: '500ms', animationFillMode: 'forwards' }}
           >
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-semibold tracking-tight">48h</div>
-              <div className="text-sm text-muted-foreground mt-1">Tiempo de entrega</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-semibold tracking-tight">100%</div>
-              <div className="text-sm text-muted-foreground mt-1">Satisfacción</div>
+              <div className="text-2xl md:text-3xl font-semibold tracking-tight">500+</div>
+              <div className="text-sm text-muted-foreground mt-1">Automatizaciones</div>
             </div>
             <div className="text-center">
               <div className="text-2xl md:text-3xl font-semibold tracking-tight">24/7</div>
-              <div className="text-sm text-muted-foreground mt-1">Soporte</div>
+              <div className="text-sm text-muted-foreground mt-1">Disponibilidad</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-semibold tracking-tight">10x</div>
+              <div className="text-sm text-muted-foreground mt-1">ROI Promedio</div>
             </div>
           </div>
         </div>
