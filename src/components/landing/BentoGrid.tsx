@@ -1,5 +1,6 @@
-import { MessageSquare, FileSpreadsheet, Users, Zap } from "lucide-react";
+import { Palette, Megaphone, PenTool, Layout } from "lucide-react";
 import { useEffect, useRef } from "react";
+import { motion, useMotionValue, useSpring, useInView } from "framer-motion";
 
 interface BentoCardProps {
   title: string;
@@ -8,10 +9,19 @@ interface BentoCardProps {
   className?: string;
   visual: React.ReactNode;
   delay?: number;
+  index?: number;
 }
 
-const BentoCard = ({ title, description, icon, className, visual, delay = 0 }: BentoCardProps) => {
+const BentoCard = ({ title, description, icon, className, visual, delay = 0, index = 0 }: BentoCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(cardRef, { once: true, margin: "-100px" });
+  
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  
+  const springConfig = { damping: 25, stiffness: 200 };
+  const x = useSpring(mouseX, springConfig);
+  const y = useSpring(mouseY, springConfig);
 
   useEffect(() => {
     const card = cardRef.current;
@@ -19,218 +29,376 @@ const BentoCard = ({ title, description, icon, className, visual, delay = 0 }: B
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = card.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-      card.style.setProperty('--mouse-x', `${x}%`);
-      card.style.setProperty('--mouse-y', `${y}%`);
+      const cardCenterX = rect.left + rect.width / 2;
+      const cardCenterY = rect.top + rect.height / 2;
+      
+      const distanceX = e.clientX - cardCenterX;
+      const distanceY = e.clientY - cardCenterY;
+      
+      mouseX.set((distanceX / rect.width) * 20);
+      mouseY.set((distanceY / rect.height) * 20);
+    };
+
+    const handleMouseLeave = () => {
+      mouseX.set(0);
+      mouseY.set(0);
     };
 
     card.addEventListener('mousemove', handleMouseMove);
-    return () => card.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+    card.addEventListener('mouseleave', handleMouseLeave);
+    return () => {
+      card.removeEventListener('mousemove', handleMouseMove);
+      card.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, [mouseX, mouseY]);
 
   return (
-    <div 
+    <motion.div
       ref={cardRef}
-      className={`group relative bg-card border border-foreground/[0.08] rounded-2xl p-6 overflow-hidden transition-all duration-300 hover:border-foreground/[0.15] card-glow opacity-0 animate-fade-up ${className}`}
-      style={{ animationDelay: `${delay}ms`, animationFillMode: 'forwards' }}
+      className={`group relative bg-card border border-foreground/[0.08] rounded-2xl p-6 overflow-hidden ${className}`}
+      initial={{ opacity: 0, y: 60, scale: 0.9 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 60, scale: 0.9 }}
+      transition={{ 
+        duration: 0.6, 
+        delay: index * 0.1,
+        ease: [0.16, 1, 0.3, 1]
+      }}
+      whileHover={{ 
+        scale: 1.02,
+        borderColor: "hsl(var(--foreground) / 0.15)",
+        transition: { duration: 0.3 }
+      }}
+      style={{ x, y }}
     >
+      {/* Animated background gradient */}
+      <motion.div
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        style={{
+          background: "radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(var(--foreground) / 0.04), transparent 40%)"
+        }}
+      />
+
       {/* Icon */}
-      <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-foreground/5 mb-4">
+      <motion.div 
+        className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-foreground/5 mb-4"
+        initial={{ scale: 0, rotate: -180 }}
+        animate={isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }}
+        transition={{ delay: index * 0.1 + 0.2, duration: 0.5, type: "spring", stiffness: 200 }}
+      >
         {icon}
-      </div>
+      </motion.div>
 
       {/* Content */}
-      <h3 className="text-lg font-medium mb-2">{title}</h3>
-      <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+      <motion.h3 
+        className="text-lg font-medium mb-2"
+        initial={{ opacity: 0, x: -20 }}
+        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+        transition={{ delay: index * 0.1 + 0.3, duration: 0.4 }}
+      >
+        {title}
+      </motion.h3>
+      <motion.p 
+        className="text-sm text-muted-foreground leading-relaxed"
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ delay: index * 0.1 + 0.4, duration: 0.4 }}
+      >
+        {description}
+      </motion.p>
 
       {/* Visual */}
-      <div className="mt-6 -mx-6 -mb-6">
+      <motion.div 
+        className="mt-6 -mx-6 -mb-6"
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ delay: index * 0.1 + 0.5, duration: 0.5 }}
+      >
         {visual}
+      </motion.div>
+    </motion.div>
+  );
+};
+
+// Web Design Visual with Framer Motion
+const WebDesignVisual = () => (
+  <div className="bg-foreground/[0.03] border-t border-foreground/[0.08] p-5 h-52 overflow-hidden">
+    <div className="space-y-3">
+      <motion.div 
+        className="rounded-lg border border-foreground/10 overflow-hidden"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.8, duration: 0.5 }}
+      >
+        <div className="flex items-center gap-1.5 px-3 py-2 bg-foreground/5 border-b border-foreground/10">
+          <div className="w-2 h-2 rounded-full bg-red-400/60" />
+          <div className="w-2 h-2 rounded-full bg-yellow-400/60" />
+          <div className="w-2 h-2 rounded-full bg-green-400/60" />
+          <div className="flex-1 mx-2 h-4 rounded bg-foreground/5" />
+        </div>
+        <div className="p-3 space-y-2">
+          <motion.div 
+            className="h-8 rounded bg-gradient-to-r from-emerald-500/20 to-blue-500/20"
+            initial={{ width: 0 }}
+            animate={{ width: "100%" }}
+            transition={{ delay: 1, duration: 0.6, ease: "easeOut" }}
+          />
+          <div className="grid grid-cols-3 gap-2">
+            {[0, 1, 2].map((i) => (
+              <motion.div
+                key={i}
+                className="h-12 rounded bg-foreground/5"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2 + i * 0.1, duration: 0.4 }}
+              />
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+);
+
+// Branding Visual with animations
+const BrandingVisual = () => (
+  <div className="bg-foreground/[0.02] border-t border-foreground/[0.05] p-4 h-48 overflow-hidden">
+    <div className="flex items-center justify-center h-full gap-4">
+      <motion.div 
+        className="space-y-2"
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.8, duration: 0.5 }}
+      >
+        {[
+          { color: "bg-neutral-900", delay: 0.9 },
+          { color: "bg-emerald-500", delay: 1 },
+          { color: "bg-slate-200", delay: 1.1 }
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            className={`w-8 h-8 rounded-lg ${item.color}`}
+            initial={{ scale: 0, rotate: -90 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ delay: item.delay, duration: 0.4, type: "spring" }}
+          />
+        ))}
+      </motion.div>
+      
+      <motion.div 
+        className="w-20 h-20 rounded-2xl border-2 border-dashed border-foreground/20 flex items-center justify-center"
+        initial={{ scale: 0, rotate: 180 }}
+        animate={{ scale: 1, rotate: 0 }}
+        transition={{ delay: 1.2, duration: 0.5, type: "spring" }}
+      >
+        <motion.span 
+          className="text-2xl font-bold text-foreground/30"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.4 }}
+        >
+          A
+        </motion.span>
+      </motion.div>
+      
+      <motion.div 
+        className="space-y-1"
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1.3, duration: 0.5 }}
+      >
+        <motion.div 
+          className="text-xs font-bold"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5 }}
+        >
+          Aa
+        </motion.div>
+        <motion.div 
+          className="text-[10px] text-muted-foreground"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.6 }}
+        >
+          Inter
+        </motion.div>
+        <motion.div 
+          className="text-[8px] text-muted-foreground"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.7 }}
+        >
+          ABCDEFGH
+        </motion.div>
+      </motion.div>
+    </div>
+  </div>
+);
+
+// Marketing Visual with stagger animations
+const MarketingVisual = () => {
+  const stats = [
+    { label: 'Alcance', value: '+240%', color: 'text-emerald-500' },
+    { label: 'Conversiones', value: '+85%', color: 'text-blue-500' },
+    { label: 'Engagement', value: '+120%', color: 'text-purple-500' },
+  ];
+
+  return (
+    <div className="bg-foreground/[0.02] border-t border-foreground/[0.05] p-4 h-48 overflow-hidden">
+      <div className="space-y-3">
+        {stats.map((stat, i) => (
+          <motion.div
+            key={stat.label}
+            className="flex items-center justify-between p-2 rounded-lg bg-foreground/5"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.8 + i * 0.15, duration: 0.4, type: "spring" }}
+          >
+            <span className="text-xs text-muted-foreground">{stat.label}</span>
+            <motion.span 
+              className={`text-sm font-semibold ${stat.color}`}
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 1 + i * 0.15, duration: 0.3, type: "spring" }}
+            >
+              {stat.value}
+            </motion.span>
+          </motion.div>
+        ))}
       </div>
     </div>
   );
 };
 
-// Chat Animation Visual
-const ChatVisual = () => (
-  <div className="bg-foreground/[0.03] border-t border-foreground/[0.08] p-5 h-52 overflow-hidden">
-    <div className="space-y-3">
-      {/* Incoming message */}
-      <div className="flex gap-3 animate-fade-up" style={{ animationDelay: '100ms' }}>
-        <div className="w-8 h-8 rounded-full bg-foreground/10 flex-shrink-0 flex items-center justify-center">
-          <span className="text-xs font-medium text-foreground/60">U</span>
-        </div>
-        <div className="bg-foreground/[0.08] rounded-2xl rounded-tl-md px-4 py-2.5 max-w-[75%] shadow-sm">
-          <p className="text-sm text-foreground/80 leading-relaxed">Hola, me interesa su servicio de automatización</p>
-        </div>
-      </div>
-      
-      {/* AI Response */}
-      <div className="flex gap-3 justify-end animate-fade-up" style={{ animationDelay: '400ms' }}>
-        <div className="bg-neutral-900 rounded-2xl rounded-tr-md px-4 py-2.5 max-w-[75%] shadow-sm">
-          <p className="text-sm leading-relaxed text-white">¡Hola! Soy el asistente de Allok. ¿En qué área necesitas automatizar?</p>
-        </div>
-      </div>
-
-      {/* Calendar suggestion */}
-      <div className="flex gap-3 justify-end animate-fade-up" style={{ animationDelay: '700ms' }}>
-        <div className="bg-emerald-600 text-white rounded-2xl px-4 py-2.5 flex items-center gap-2 shadow-sm hover:bg-emerald-700 transition-colors cursor-pointer">
-          <Zap className="w-4 h-4" />
-          <p className="text-sm font-medium">Agendar llamada →</p>
-        </div>
-      </div>
-    </div>
-  </div>
-);
-
-// Data Entry Visual
-const DataVisual = () => (
+// Content Visual with animations
+const ContentVisual = () => (
   <div className="bg-foreground/[0.02] border-t border-foreground/[0.05] p-4 h-48 overflow-hidden">
     <div className="space-y-2">
-      {/* Receipt icon */}
-      <div className="flex items-center gap-3 p-2 rounded-lg bg-foreground/5 animate-fade-up" style={{ animationDelay: '100ms' }}>
-        <div className="w-8 h-10 rounded bg-foreground/10 flex items-center justify-center">
-          <FileSpreadsheet className="w-4 h-4 text-muted-foreground" />
-        </div>
-        <div className="flex-1">
-          <div className="text-xs font-medium">factura_2024.pdf</div>
-          <div className="text-[10px] text-muted-foreground">Procesando...</div>
-        </div>
-      </div>
-
-      {/* Arrow */}
-      <div className="flex justify-center py-1 animate-fade-up" style={{ animationDelay: '400ms' }}>
-        <div className="w-0.5 h-4 bg-foreground/10" />
-      </div>
-
-      {/* Data rows */}
-      <div className="rounded-lg border border-foreground/[0.08] overflow-hidden animate-fade-up" style={{ animationDelay: '600ms' }}>
-        <div className="grid grid-cols-3 text-[10px] bg-foreground/5 px-2 py-1 font-medium">
-          <span>Concepto</span>
-          <span>Monto</span>
-          <span>Fecha</span>
-        </div>
-        <div className="grid grid-cols-3 text-[10px] px-2 py-1.5 border-t border-foreground/[0.05]">
-          <span className="text-muted-foreground">Software</span>
-          <span>$2,400</span>
-          <span className="text-muted-foreground">15/01</span>
-        </div>
-      </div>
-    </div>
-  </div>
-);
-
-// Sales Pipeline Visual
-const PipelineVisual = () => (
-  <div className="bg-foreground/[0.02] border-t border-foreground/[0.05] p-4 h-48 overflow-hidden">
-    <div className="flex items-center gap-2 h-full">
-      {['Frío', 'Tibio', 'Caliente', 'Cerrado'].map((stage, i) => (
-        <div key={stage} className="flex-1 flex flex-col items-center gap-2 animate-fade-up" style={{ animationDelay: `${i * 150}ms` }}>
-          <div 
-            className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-500 ${
-              i === 3 
-                ? 'bg-emerald-500/20 text-emerald-600 ring-2 ring-emerald-500/30' 
-                : i >= 2 
-                  ? 'bg-amber-500/20 text-amber-600' 
-                  : 'bg-foreground/5 text-muted-foreground'
-            }`}
-          >
-            <Users className="w-3 h-3" />
-          </div>
-          <span className="text-[9px] text-muted-foreground text-center">{stage}</span>
-          {i < 3 && (
-            <div className="absolute top-1/2 -right-2 w-4 h-0.5 bg-foreground/10" />
-          )}
-        </div>
-      ))}
-    </div>
-  </div>
-);
-
-// Reactivation Visual  
-const ReactivationVisual = () => (
-  <div className="bg-foreground/[0.02] border-t border-foreground/[0.05] p-4 h-48 overflow-hidden">
-    <div className="space-y-2">
-      {[
-        { name: 'María G.', status: 'Contactado', active: true },
-        { name: 'Carlos R.', status: 'Respondió', active: true },
-        { name: 'Ana P.', status: 'Llamada agendada', active: true },
-      ].map((contact, i) => (
-        <div 
-          key={contact.name}
-          className="flex items-center gap-3 p-2 rounded-lg bg-foreground/5 animate-fade-up"
-          style={{ animationDelay: `${i * 200}ms` }}
+      {[0, 1].map((i) => (
+        <motion.div
+          key={i}
+          className="rounded-lg border border-foreground/10 p-3"
+          initial={{ opacity: 0, y: 20, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ delay: 0.8 + i * 0.2, duration: 0.5, type: "spring" }}
         >
-          <div className="w-7 h-7 rounded-full bg-foreground/10 flex items-center justify-center text-[10px] font-medium">
-            {contact.name.charAt(0)}
+          <div className="flex items-center gap-2 mb-2">
+            <motion.div 
+              className={`w-6 h-6 rounded-full ${i === 0 ? 'bg-gradient-to-br from-pink-500 to-orange-500' : 'bg-blue-500'}`}
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 1 + i * 0.2, type: "spring" }}
+            />
+            <motion.div 
+              className={`h-2 ${i === 0 ? 'w-16' : 'w-20'} rounded bg-foreground/10`}
+              initial={{ width: 0 }}
+              animate={{ width: i === 0 ? 64 : 80 }}
+              transition={{ delay: 1.1 + i * 0.2, duration: 0.4 }}
+            />
           </div>
-          <div className="flex-1">
-            <div className="text-xs font-medium">{contact.name}</div>
-            <div className="text-[10px] text-muted-foreground">{contact.status}</div>
-          </div>
-          <div className={`w-2 h-2 rounded-full ${contact.active ? 'bg-emerald-500' : 'bg-foreground/20'}`} />
-        </div>
+          {i === 0 && (
+            <motion.div 
+              className="h-16 rounded bg-gradient-to-br from-purple-500/20 to-pink-500/20"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 64, opacity: 1 }}
+              transition={{ delay: 1.2, duration: 0.5 }}
+            />
+          )}
+          {i === 1 && (
+            <motion.div 
+              className="h-2 w-full rounded bg-foreground/5"
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ delay: 1.3, duration: 0.5 }}
+            />
+          )}
+        </motion.div>
       ))}
     </div>
   </div>
 );
 
-export const BentoGrid = () => {
+const services = [
+  {
+    title: "Diseño Web",
+    description: "Sitios web modernos, rápidos y optimizados para convertir visitantes en clientes. Desde landing pages hasta tiendas online.",
+    icon: <Layout className="w-5 h-5 text-foreground/70" />,
+    visual: <WebDesignVisual />,
+    className: "lg:col-span-2",
+    delay: 200
+  },
+  {
+    title: "Branding & Identidad",
+    description: "Logotipos, paletas de colores y guías de marca que comunican la esencia de tu negocio.",
+    icon: <Palette className="w-5 h-5 text-foreground/70" />,
+    visual: <BrandingVisual />,
+    className: "",
+    delay: 300
+  },
+  {
+    title: "Marketing Digital",
+    description: "Estrategias de redes sociales, campañas de ads y SEO para aumentar tu visibilidad online.",
+    icon: <Megaphone className="w-5 h-5 text-foreground/70" />,
+    visual: <MarketingVisual />,
+    className: "",
+    delay: 400
+  },
+  {
+    title: "Creación de Contenido",
+    description: "Posts, stories, reels y todo el contenido que necesitas para mantener tus redes activas y atractivas.",
+    icon: <PenTool className="w-5 h-5 text-foreground/70" />,
+    visual: <ContentVisual />,
+    className: "lg:col-span-2",
+    delay: 500
+  }
+];
+
+export const MarketingServices = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: true, margin: "-50px" });
+
   return (
-    <section id="producto" className="relative py-24 md:py-32 scroll-mt-20">
+    <section id="producto" className="relative py-24 md:py-32 scroll-mt-20" ref={containerRef}>
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="max-w-2xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 opacity-0 animate-fade-up" style={{ animationFillMode: 'forwards' }}>
-            Ofertas irracionales
-          </h2>
-          <p className="text-muted-foreground opacity-0 animate-fade-up" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
-            Soluciones que transforman la manera en que operas tu negocio
-          </p>
+          <motion.h2 
+            className="text-3xl md:text-4xl font-semibold tracking-tight mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          >
+            Servicios de Marketing
+          </motion.h2>
+          <motion.p 
+            className="text-muted-foreground"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          >
+            Todo lo que necesitas para destacar en el mundo digital
+          </motion.p>
         </div>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {/* Card 1 - Spans 2 columns */}
-          <BentoCard
-            className="lg:col-span-2"
-            title="Caza-Prospectos 24/7"
-            description="Tu vendedor que nunca duerme. Respuesta inmediata, calificación de prospectos y agendamiento automático."
-            icon={<MessageSquare className="w-5 h-5 text-foreground/70" />}
-            visual={<ChatVisual />}
-            delay={200}
-          />
-
-          {/* Card 2 */}
-          <BentoCard
-            title="Operador Invisible"
-            description="Data-entry automático. Convierte facturas y recibos en reportes financieros en tiempo real."
-            icon={<FileSpreadsheet className="w-5 h-5 text-foreground/70" />}
-            visual={<DataVisual />}
-            delay={300}
-          />
-
-          {/* Card 3 */}
-          <BentoCard
-            title="Pipeline Inteligente"
-            description="Visualiza y gestiona tu embudo de ventas con inteligencia artificial predictiva."
-            icon={<Users className="w-5 h-5 text-foreground/70" />}
-            visual={<PipelineVisual />}
-            delay={400}
-          />
-
-          {/* Card 4 - Spans 2 columns */}
-          <BentoCard
-            className="lg:col-span-2"
-            title="Bóveda de Ventas"
-            description="Dinero olvidado. Reactivamos tu base de datos vieja con campañas personalizadas de IA."
-            icon={<Zap className="w-5 h-5 text-foreground/70" />}
-            visual={<ReactivationVisual />}
-            delay={500}
-          />
+          {services.map((service, index) => (
+            <BentoCard
+              key={service.title}
+              title={service.title}
+              description={service.description}
+              icon={service.icon}
+              visual={service.visual}
+              className={service.className}
+              delay={service.delay}
+              index={index}
+            />
+          ))}
         </div>
       </div>
     </section>
   );
 };
+
+// Export legacy name for backwards compatibility if needed
+export const BentoGrid = MarketingServices;

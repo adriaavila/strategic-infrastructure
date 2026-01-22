@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
-import { BentoGrid } from "@/components/landing/BentoGrid";
+import { MarketingServices } from "@/components/landing/BentoGrid";
+import { Automations } from "@/components/landing/Automations";
 import { Integrations } from "@/components/landing/Integrations";
 import { Pricing } from "@/components/landing/Pricing";
 import { FAQ } from "@/components/landing/FAQ";
@@ -18,7 +19,8 @@ const Index = () => {
       {/* Main Content */}
       <main>
         <Hero />
-        <BentoGrid />
+        <MarketingServices />
+        <Automations />
         <Integrations />
         <Pricing />
         <FAQ />

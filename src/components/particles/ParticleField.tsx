@@ -1,0 +1,77 @@
+import * as THREE from "three";
+import { useMemo, useRef } from "react";
+import { useFrame } from "@react-three/fiber";
+
+// Simple shader for rounded particles
+const roundedParticleVertexShader = `
+  void main() {
+    vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+    gl_Position = projectionMatrix * mvPosition;
+    gl_PointSize = 280.0 / -mvPosition.z;
+  }
+`;
+
+const roundedParticleFragmentShader = `
+  uniform vec3 uColor;
+  uniform float uOpacity;
+  
+  void main() {
+    vec2 center = gl_PointCoord - 0.5;
+    float dist = length(center);
+    
+    // Create circular particle with soft edges
+    if (dist > 0.5) discard;
+    
+    float alpha = 1.0 - smoothstep(0.0, 0.5, dist);
+    alpha *= uOpacity;
+    
+    gl_FragColor = vec4(uColor, alpha);
+  }
+`;
+
+export function ParticleField({
+  count = 3500,
+  radius = 8,
+}: {
+  count?: number;
+  radius?: number;
+} = {}) {
+  const ref = useRef<THREE.Points>(null);
+
+  const geometry = useMemo(() => {
+    const positions = new Float32Array(count * 3);
+    for (let i = 0; i < count; i++) {
+      const i3 = i * 3;
+      positions[i3 + 0] = (Math.random() - 0.5) * radius * 2;
+      positions[i3 + 1] = (Math.random() - 0.5) * radius * 2;
+      positions[i3 + 2] = (Math.random() - 0.5) * radius * 1.2;
+    }
+
+    const g = new THREE.BufferGeometry();
+    g.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    return g;
+  }, [count, radius]);
+
+  const material = useMemo(() => {
+    return new THREE.ShaderMaterial({
+      vertexShader: roundedParticleVertexShader,
+      fragmentShader: roundedParticleFragmentShader,
+      uniforms: {
+        uColor: { value: new THREE.Color(0.12, 0.98, 0.7) }, // Bright emerald/cyan
+        uOpacity: { value: 0.8 }, // Slightly reduced opacity for smoother look
+      },
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending, // Glow effect
+    });
+  }, []);
+
+  useFrame((state) => {
+    if (!ref.current) return;
+    // Smooth rotation animation
+    ref.current.rotation.y = state.clock.elapsedTime * 0.03;
+    ref.current.rotation.x = state.clock.elapsedTime * 0.015;
+  });
+
+  return <points ref={ref} geometry={geometry} material={material} />;
+}

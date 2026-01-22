@@ -17,7 +17,7 @@ export const Hero = () => {
             style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}
           >
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-sm text-muted-foreground">Automatización inteligente para empresas</span>
+            <span className="text-sm text-muted-foreground">Soluciones a medida para tu negocio</span>
           </div>
 
           {/* Headline */}
@@ -25,7 +25,7 @@ export const Hero = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-6 opacity-0 animate-fade-up text-balance"
             style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}
           >
-            La infraestructura de ingresos para las empresas de hoy.
+            Soluciones a medida que impulsan tu negocio.
           </h1>
 
           {/* Subheader */}
@@ -33,7 +33,7 @@ export const Hero = () => {
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 opacity-0 animate-fade-up"
             style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}
           >
-            Automatización, IA y escala para tu negocio. Experimenta la calma de una operación que no depende de ti.
+            Marketing digital, automatización e IA trabajando juntos. Desde diseño web hasta procesos que funcionan 24/7 sin ti.
           </p>
 
           {/* CTAs */}
