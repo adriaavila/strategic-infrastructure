@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
+import { designTokens } from "../../design-system/tokens";
 
 // Simple shader for rounded particles
 const roundedParticleVertexShader = `
@@ -53,16 +54,32 @@ export function ParticleField({
   }, [count, radius]);
 
   const material = useMemo(() => {
+    // Convert design system HSL color to RGB for Three.js
+    // Using muted foreground color: hsl(0, 0%, 40%) for subtle particles
+    const hslColor = designTokens.colors.base.grey[500]; // hsl(0, 0%, 40%)
+    const hslMatch = hslColor.match(/hsl\((\d+),\s*(\d+)%,\s*(\d+)%\)/);
+    
+    let particleColor: THREE.Color;
+    if (hslMatch) {
+      const h = parseInt(hslMatch[1]) / 360;
+      const s = parseInt(hslMatch[2]) / 100;
+      const l = parseInt(hslMatch[3]) / 100;
+      particleColor = new THREE.Color().setHSL(h, s, l);
+    } else {
+      // Fallback to muted grey if parsing fails
+      particleColor = new THREE.Color(0.4, 0.4, 0.4);
+    }
+
     return new THREE.ShaderMaterial({
       vertexShader: roundedParticleVertexShader,
       fragmentShader: roundedParticleFragmentShader,
       uniforms: {
-        uColor: { value: new THREE.Color(0.12, 0.98, 0.7) }, // Bright emerald/cyan
-        uOpacity: { value: 0.8 }, // Slightly reduced opacity for smoother look
+        uColor: { value: particleColor },
+        uOpacity: { value: 0.15 }, // Subtle opacity to match design system aesthetic
       },
       transparent: true,
       depthWrite: false,
-      blending: THREE.AdditiveBlending, // Glow effect
+      blending: THREE.NormalBlending, // Changed from AdditiveBlending for more subtle effect
     });
   }, []);
 

@@ -7,53 +7,49 @@ import {
 
 const faqs = [
   {
-    category: "Precios",
+    category: "Proceso",
     questions: [
       {
-        question: "¿Puedo cambiar de plan en cualquier momento?",
-        answer: "Sí, puedes actualizar o degradar tu plan en cualquier momento. Los cambios se aplicarán inmediatamente y ajustaremos la facturación de forma proporcional."
+        question: "¿Cómo determinan el alcance?",
+        answer: "Durante la revisión técnica (30-60 min) entendemos tus necesidades, sistemas existentes y restricciones. Luego entregamos una propuesta con arquitectura, alcance y cronograma en 3-5 días. Todo documentado antes de construir."
       },
       {
-        question: "¿Hay algún costo oculto?",
-        answer: "No, nuestros precios son completamente transparentes. Lo que ves es lo que pagas, sin sorpresas ni cargos adicionales."
+        question: "¿Qué pasa si cambian los requisitos?",
+        answer: "Revisamos el alcance y ajustamos cronograma y presupuesto de forma transparente. Ajustes menores dentro del alcance original no generan costos adicionales."
       },
       {
-        question: "¿Ofrecen descuentos para startups o ONGs?",
-        answer: "Sí, ofrecemos descuentos especiales del 50% para startups en etapa temprana y organizaciones sin fines de lucro. Contáctanos para más información."
+        question: "¿Qué necesito tener listo?",
+        answer: "Qué problema quieres resolver, qué sistemas usas actualmente y cualquier restricción. No necesitas tener todo definido; parte del descubrimiento es ayudarte a clarificarlo."
       }
     ]
   },
   {
-    category: "Funcionalidades",
+    category: "Expectativas",
     questions: [
       {
-        question: "¿Qué integraciones están disponibles?",
-        answer: "Nos integramos con más de 100 herramientas populares incluyendo Slack, Gmail, Google Sheets, Notion, HubSpot, Salesforce, y muchas más. También ofrecemos una API para integraciones personalizadas."
+        question: "¿Trabajan con equipos sin conocimientos técnicos?",
+        answer: "Sí. Lo importante es que entiendas tu negocio y puedas comunicar qué necesitas lograr. Nosotros manejamos la parte técnica y te explicamos las decisiones importantes en términos claros."
       },
       {
-        question: "¿Necesito conocimientos técnicos para usar la plataforma?",
-        answer: "No, nuestra plataforma está diseñada para ser intuitiva y fácil de usar. Cualquier persona puede crear automatizaciones usando nuestro editor visual sin escribir código."
+        question: "¿Pueden trabajar con sistemas existentes?",
+        answer: "Sí. Evaluamos qué se puede mantener, qué necesita migración y cómo conectar todo. La integración con sistemas legacy es parte de nuestro enfoque."
       },
       {
-        question: "¿Puedo probar la plataforma antes de comprar?",
-        answer: "Absolutamente. Ofrecemos una prueba gratuita de 14 días con acceso completo a todas las funcionalidades. No se requiere tarjeta de crédito."
+        question: "¿Qué pasa si estamos bloqueados por plataformas no-code?",
+        answer: "Construimos la solución personalizada que necesitas, ya sea reemplazando la plataforma o integrando con ella. Ese tipo de límites es exactamente lo que resolvemos."
       }
     ]
   },
   {
-    category: "Soporte",
+    category: "Implementación",
     questions: [
       {
-        question: "¿Qué tipo de soporte ofrecen?",
-        answer: "Ofrecemos soporte por email para todos los planes, chat en vivo para el plan Growth, y soporte prioritario con un gerente de cuenta dedicado para el plan Enterprise."
+        question: "¿Ofrecen mantenimiento post-lanzamiento?",
+        answer: "Sí, con alcance definido. No ofrecemos mantenimiento indefinido. Trabajamos con retainer estratégico cuando tiene sentido, o proyectos específicos de mejoras con alcance claro."
       },
       {
-        question: "¿Cuál es el tiempo de respuesta del soporte?",
-        answer: "Para el plan Starter respondemos en menos de 24 horas. El plan Growth tiene respuestas en menos de 4 horas, y Enterprise cuenta con soporte 24/7 con respuesta inmediata."
-      },
-      {
-        question: "¿Ofrecen capacitación o onboarding?",
-        answer: "Sí, todos los planes incluyen acceso a nuestra academia con tutoriales y webinars. Los planes Growth y Enterprise incluyen sesiones de onboarding personalizadas."
+        question: "¿Pueden construir sobre plataformas existentes?",
+        answer: "Sí. Podemos construir sobre WordPress, Shopify u otras plataformas si tiene sentido, o crear sistemas completamente personalizados. La decisión se toma durante el descubrimiento."
       }
     ]
   }
@@ -77,7 +73,7 @@ export const FAQ = () => {
             Preguntas Frecuentes
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Encuentra respuestas a las preguntas más comunes sobre nuestra plataforma
+            Respuestas directas sobre cómo trabajamos
           </p>
         </div>
 
@@ -108,7 +104,7 @@ export const FAQ = () => {
                     <AccordionTrigger className="text-left text-foreground hover:no-underline py-4 text-sm font-medium">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground text-sm pb-4">
+                    <AccordionContent className="text-muted-foreground text-sm pb-4 leading-relaxed">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>

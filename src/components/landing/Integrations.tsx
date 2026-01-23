@@ -94,14 +94,14 @@ export const Integrations = () => {
         {/* Section Header */}
         <div className="max-w-2xl mx-auto text-center mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 mb-6 opacity-0 animate-fade-up" style={{ animationFillMode: 'forwards' }}>
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-sm text-white/60">Ecosystem</span>
+            <span className="w-2 h-2 rounded-full bg-emerald-400" />
+            <span className="text-sm text-white/60">Fundación Técnica</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-5 text-white opacity-0 animate-fade-up" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
-            Conectividad total.
+            Integraciones
           </h2>
           <p className="text-lg text-white/50 opacity-0 animate-fade-up" style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
-            Nos integramos con las herramientas que ya usas para crear flujos de trabajo sin fricción.
+            Trabajamos con las herramientas que ya usas. No necesitas cambiar tu stack para implementar nuevas capacidades.
           </p>
         </div>
 

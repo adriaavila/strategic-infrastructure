@@ -1,10 +1,14 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
-import { MarketingServices } from "@/components/landing/BentoGrid";
-import { Automations } from "@/components/landing/Automations";
-import { Integrations } from "@/components/landing/Integrations";
+import { Intro } from "@/components/landing/Intro";
+import { ServicePillars } from "@/components/landing/BentoGrid";
+import { EngagementModel } from "@/components/landing/EngagementModel";
 import { Pricing } from "@/components/landing/Pricing";
-import { FAQ } from "@/components/landing/FAQ";
+import { CustomMade } from "@/components/landing/CustomMade";
+import { Positioning } from "@/components/landing/Positioning";
+import { Portfolio } from "@/components/landing/Portfolio";
+import { IdealClient } from "@/components/landing/IdealClient";
+import { CTAFinal } from "@/components/landing/CTAFinal";
 import { Footer } from "@/components/landing/Footer";
 
 const Index = () => {
@@ -19,11 +23,15 @@ const Index = () => {
       {/* Main Content */}
       <main>
         <Hero />
-        <MarketingServices />
-        <Automations />
-        <Integrations />
+        <Intro />
+        <ServicePillars />
+        <EngagementModel />
         <Pricing />
-        <FAQ />
+        <CustomMade />
+        <Positioning />
+        <Portfolio />
+        <IdealClient />
+        <CTAFinal />
       </main>
       
       {/* Footer */}

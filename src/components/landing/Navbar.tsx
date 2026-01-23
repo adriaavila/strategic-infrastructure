@@ -4,9 +4,10 @@ import { Menu, X } from "lucide-react";
 import allokLogo from "@/assets/allok-logo.png";
 
 const navLinks = [
-  { label: "Servicios", href: "#producto" },
+  { label: "Servicios", href: "#pilares" },
+  { label: "Automatizaciones", href: "/automatizaciones" },
+  { label: "Marketing", href: "/marketing" },
   { label: "Precios", href: "#precios" },
-  { label: "Integraciones", href: "#integraciones" },
   { label: "Blog", href: "/blog" },
 ];
 
@@ -51,16 +52,6 @@ export const Navbar = () => {
             ))}
           </div>
 
-          {/* Desktop CTAs */}
-          <div className="hidden md:flex items-center gap-3">
-            <Button variant="ghost" size="sm">
-              Iniciar sesión
-            </Button>
-            <Button size="sm">
-              Empezar gratis
-            </Button>
-          </div>
-
           {/* Mobile Menu Toggle */}
           <button
             className="md:hidden p-2 -mr-2"
@@ -88,14 +79,6 @@ export const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <div className="flex flex-col gap-2 pt-4 border-t border-foreground/[0.05]">
-                <Button variant="ghost" size="sm" className="justify-start">
-                  Iniciar sesión
-                </Button>
-                <Button size="sm">
-                  Empezar gratis
-                </Button>
-              </div>
             </div>
           </div>
         )}

@@ -1,6 +1,7 @@
 import { MessageSquare, FileSpreadsheet, Users, Zap } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { motion, useMotionValue, useSpring, useInView } from "framer-motion";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 interface BentoCardProps {
   title: string;
@@ -119,177 +120,315 @@ const BentoCard = ({ title, description, icon, className, visual, delay = 0, ind
   );
 };
 
-// Chat Animation Visual with Framer Motion
-const ChatVisual = () => (
-  <div className="bg-foreground/[0.03] border-t border-foreground/[0.08] p-5 h-52 overflow-hidden">
-    <div className="space-y-3">
-      <motion.div 
-        className="flex gap-3"
-        initial={{ opacity: 0, x: -30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.8, duration: 0.5, type: "spring" }}
-      >
-        <div className="w-8 h-8 rounded-full bg-foreground/10 flex-shrink-0 flex items-center justify-center">
-          <span className="text-xs font-medium text-foreground/60">U</span>
-        </div>
-        <motion.div 
-          className="bg-foreground/[0.08] rounded-2xl rounded-tl-md px-4 py-2.5 max-w-[75%] shadow-sm"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.9, duration: 0.4, type: "spring" }}
-        >
-          <p className="text-sm text-foreground/80 leading-relaxed">Hola, me interesa su servicio de automatización</p>
-        </motion.div>
-      </motion.div>
-      
-      <motion.div 
-        className="flex gap-3 justify-end"
-        initial={{ opacity: 0, x: 30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 1.2, duration: 0.5, type: "spring" }}
-      >
-        <motion.div 
-          className="bg-neutral-900 rounded-2xl rounded-tr-md px-4 py-2.5 max-w-[75%] shadow-sm"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 1.3, duration: 0.4, type: "spring" }}
-        >
-          <p className="text-sm leading-relaxed text-white">¡Hola! Soy el asistente de Allok. ¿En qué área necesitas automatizar?</p>
-        </motion.div>
-      </motion.div>
-
-      <motion.div 
-        className="flex gap-3 justify-end"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1.6, duration: 0.4, type: "spring" }}
-      >
-        <motion.div 
-          className="bg-emerald-600 text-white rounded-2xl px-4 py-2.5 flex items-center gap-2 shadow-sm cursor-pointer"
-          whileHover={{ scale: 1.05, backgroundColor: "rgb(5, 150, 105)" }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <Zap className="w-4 h-4" />
-          <p className="text-sm font-medium">Agendar llamada →</p>
-        </motion.div>
-      </motion.div>
-    </div>
-  </div>
-);
-
-// Data Entry Visual with animations
-const DataVisual = () => (
-  <div className="bg-foreground/[0.02] border-t border-foreground/[0.05] p-4 h-48 overflow-hidden">
-    <div className="space-y-2">
-      <motion.div 
-        className="flex items-center gap-3 p-2 rounded-lg bg-foreground/5"
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.8, duration: 0.4 }}
-      >
-        <motion.div 
-          className="w-8 h-10 rounded bg-foreground/10 flex items-center justify-center"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 0.9, type: "spring" }}
-        >
-          <FileSpreadsheet className="w-4 h-4 text-muted-foreground" />
-        </motion.div>
-        <div className="flex-1">
-          <motion.div 
-            className="text-xs font-medium"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-          >
-            factura_2024.pdf
-          </motion.div>
-          <motion.div 
-            className="text-[10px] text-muted-foreground"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.1 }}
-          >
-            Procesando...
-          </motion.div>
-        </div>
-      </motion.div>
-
-      <motion.div 
-        className="flex justify-center py-1"
-        initial={{ scaleY: 0 }}
-        animate={{ scaleY: 1 }}
-        transition={{ delay: 1.3, duration: 0.4 }}
-      >
-        <div className="w-0.5 h-4 bg-foreground/10" />
-      </motion.div>
-
-      <motion.div 
-        className="rounded-lg border border-foreground/[0.08] overflow-hidden"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.4, duration: 0.5 }}
-      >
-        <div className="grid grid-cols-3 text-[10px] bg-foreground/5 px-2 py-1 font-medium">
-          <span>Concepto</span>
-          <span>Monto</span>
-          <span>Fecha</span>
-        </div>
-        <motion.div 
-          className="grid grid-cols-3 text-[10px] px-2 py-1.5 border-t border-foreground/[0.05]"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.6 }}
-        >
-          <span className="text-muted-foreground">Software</span>
-          <span>$2,400</span>
-          <span className="text-muted-foreground">15/01</span>
-        </motion.div>
-      </motion.div>
-    </div>
-  </div>
-);
-
-// Sales Pipeline Visual with stagger
-const PipelineVisual = () => {
-  const stages = ['Frío', 'Tibio', 'Caliente', 'Cerrado'];
+// Chat Animation Visual with fluid looping animation
+const ChatVisual = () => {
+  const shouldReduceMotion = useReducedMotion();
   
   return (
-    <div className="bg-foreground/[0.02] border-t border-foreground/[0.05] p-4 h-48 overflow-hidden">
-      <div className="flex items-center gap-2 h-full">
-        {stages.map((stage, i) => (
+    <div className="bg-foreground/[0.03] border-t border-foreground/[0.08] p-5 h-52 overflow-hidden">
+      <div className="space-y-3">
+        <motion.div 
+          className="flex gap-3"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ 
+            opacity: [0, 1, 1, 0],
+            x: [-30, 0, 0, -30]
+          }}
+          transition={{ 
+            duration: 6,
+            repeat: shouldReduceMotion ? 0 : Infinity,
+            repeatType: "loop",
+            ease: [0.16, 1, 0.3, 1]
+          }}
+        >
+          <div className="w-8 h-8 rounded-full bg-foreground/10 flex-shrink-0 flex items-center justify-center">
+            <span className="text-xs font-medium text-foreground/60">U</span>
+          </div>
           <motion.div 
-            key={stage} 
-            className="flex-1 flex flex-col items-center gap-2"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 + i * 0.15, duration: 0.4, type: "spring" }}
+            className="bg-foreground/[0.08] rounded-2xl rounded-tl-md px-4 py-2.5 max-w-[75%] shadow-sm"
+            animate={{ 
+              scale: [0.8, 1, 1, 0.8],
+              opacity: [0, 1, 1, 0]
+            }}
+            transition={{ 
+              delay: 0.1,
+              duration: 6,
+              repeat: shouldReduceMotion ? 0 : Infinity,
+              repeatType: "loop",
+              ease: [0.16, 1, 0.3, 1]
+            }}
           >
-            <motion.div 
-              className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                i === 3 
-                  ? 'bg-emerald-500/20 text-emerald-600 ring-2 ring-emerald-500/30' 
-                  : i >= 2 
-                    ? 'bg-amber-500/20 text-amber-600' 
-                    : 'bg-foreground/5 text-muted-foreground'
-              }`}
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              whileHover={{ scale: 1.2 }}
-              transition={{ delay: 0.9 + i * 0.15, type: "spring" }}
-            >
-              <Users className="w-3 h-3" />
-            </motion.div>
-            <span className="text-[9px] text-muted-foreground text-center">{stage}</span>
+            <p className="text-sm text-foreground/80 leading-relaxed">Hola, me interesa su servicio de automatización</p>
           </motion.div>
-        ))}
+        </motion.div>
+        
+        <motion.div 
+          className="flex gap-3 justify-end"
+          animate={{ 
+            opacity: [0, 0, 1, 1, 0],
+            x: [30, 30, 0, 0, 30]
+          }}
+          transition={{ 
+            delay: 1.5,
+            duration: 6,
+            repeat: shouldReduceMotion ? 0 : Infinity,
+            repeatType: "loop",
+            ease: [0.16, 1, 0.3, 1]
+          }}
+        >
+          <motion.div 
+            className="bg-neutral-900 rounded-2xl rounded-tr-md px-4 py-2.5 max-w-[75%] shadow-sm"
+            animate={{ 
+              scale: [0.8, 0.8, 1, 1, 0.8],
+              opacity: [0, 0, 1, 1, 0]
+            }}
+            transition={{ 
+              delay: 1.5,
+              duration: 6,
+              repeat: shouldReduceMotion ? 0 : Infinity,
+              repeatType: "loop",
+              ease: [0.16, 1, 0.3, 1]
+            }}
+          >
+            <p className="text-sm leading-relaxed text-white">¡Hola! Soy el asistente de Allok. ¿En qué área necesitas automatizar?</p>
+          </motion.div>
+        </motion.div>
+
+        <motion.div 
+          className="flex gap-3 justify-end"
+          animate={{ 
+            opacity: [0, 0, 0, 1, 1, 0],
+            scale: [0.8, 0.8, 0.8, 1, 1.05, 0.8]
+          }}
+          transition={{ 
+            delay: 3,
+            duration: 6,
+            repeat: shouldReduceMotion ? 0 : Infinity,
+            repeatType: "loop",
+            ease: [0.16, 1, 0.3, 1]
+          }}
+        >
+          <motion.div 
+            className="bg-emerald-600 text-white rounded-2xl px-4 py-2.5 flex items-center gap-2 shadow-sm cursor-pointer"
+            animate={{
+              backgroundColor: [
+                "rgb(5, 150, 105)",
+                "rgb(5, 150, 105)",
+                "rgb(5, 150, 105)",
+                "rgb(5, 150, 105)",
+                "rgb(4, 120, 87)",
+                "rgb(5, 150, 105)"
+              ],
+              scale: [1, 1, 1, 1, 1.05, 1]
+            }}
+            transition={{ 
+              delay: 3,
+              duration: 6,
+              repeat: shouldReduceMotion ? 0 : Infinity,
+              repeatType: "loop",
+              ease: [0.16, 1, 0.3, 1]
+            }}
+          >
+            <Zap className="w-4 h-4" />
+            <p className="text-sm font-medium">Agendar llamada →</p>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );
 };
 
-// Reactivation Visual with animations
+// Data Entry Visual with fluid looping animation
+const DataVisual = () => {
+  const shouldReduceMotion = useReducedMotion();
+  
+  return (
+    <div className="bg-foreground/[0.02] border-t border-foreground/[0.05] p-4 h-48 overflow-hidden">
+      <div className="space-y-2">
+        <motion.div 
+          className="flex items-center gap-3 p-2 rounded-lg bg-foreground/5"
+          animate={{ 
+            opacity: [0, 1, 1, 1, 0],
+            x: [-20, 0, 0, 0, -20]
+          }}
+          transition={{ 
+            duration: 8,
+            repeat: shouldReduceMotion ? 0 : Infinity,
+            repeatType: "loop",
+            ease: [0.16, 1, 0.3, 1]
+          }}
+        >
+          <motion.div 
+            className="w-8 h-10 rounded bg-foreground/10 flex items-center justify-center"
+            animate={{ 
+              scale: [0, 1, 1, 1, 0]
+            }}
+            transition={{ 
+              delay: 0.1,
+              duration: 8,
+              repeat: shouldReduceMotion ? 0 : Infinity,
+              repeatType: "loop",
+              ease: [0.16, 1, 0.3, 1]
+            }}
+          >
+            <FileSpreadsheet className="w-4 h-4 text-muted-foreground" />
+          </motion.div>
+          <div className="flex-1">
+            <motion.div 
+              className="text-xs font-medium"
+              animate={{ 
+                opacity: [0, 1, 1, 1, 0]
+              }}
+              transition={{ 
+                delay: 0.2,
+                duration: 8,
+                repeat: shouldReduceMotion ? 0 : Infinity,
+                repeatType: "loop",
+                ease: [0.16, 1, 0.3, 1]
+              }}
+            >
+              factura_2024.pdf
+            </motion.div>
+            <motion.div 
+              className="text-[10px] text-muted-foreground"
+              animate={{ 
+                opacity: [0, 1, 1, 0, 0]
+              }}
+              transition={{ 
+                delay: 0.3,
+                duration: 8,
+                repeat: shouldReduceMotion ? 0 : Infinity,
+                repeatType: "loop",
+                ease: [0.16, 1, 0.3, 1]
+              }}
+            >
+              Procesando...
+            </motion.div>
+          </div>
+        </motion.div>
+
+        <motion.div 
+          className="flex justify-center py-1"
+          animate={{ 
+            scaleY: [0, 1, 1, 1, 0]
+          }}
+          transition={{ 
+            delay: 1.5,
+            duration: 8,
+            repeat: shouldReduceMotion ? 0 : Infinity,
+            repeatType: "loop",
+            ease: [0.16, 1, 0.3, 1]
+          }}
+        >
+          <div className="w-0.5 h-4 bg-foreground/10" />
+        </motion.div>
+
+        <motion.div 
+          className="rounded-lg border border-foreground/[0.08] overflow-hidden"
+          animate={{ 
+            opacity: [0, 0, 1, 1, 0],
+            y: [20, 20, 0, 0, 20]
+          }}
+          transition={{ 
+            delay: 2,
+            duration: 8,
+            repeat: shouldReduceMotion ? 0 : Infinity,
+            repeatType: "loop",
+            ease: [0.16, 1, 0.3, 1]
+          }}
+        >
+          <div className="grid grid-cols-3 text-[10px] bg-foreground/5 px-2 py-1 font-medium">
+            <span>Concepto</span>
+            <span>Monto</span>
+            <span>Fecha</span>
+          </div>
+          <motion.div 
+            className="grid grid-cols-3 text-[10px] px-2 py-1.5 border-t border-foreground/[0.05]"
+            animate={{ 
+              opacity: [0, 0, 0, 1, 0]
+            }}
+            transition={{ 
+              delay: 2.2,
+              duration: 8,
+              repeat: shouldReduceMotion ? 0 : Infinity,
+              repeatType: "loop",
+              ease: [0.16, 1, 0.3, 1]
+            }}
+          >
+            <span className="text-muted-foreground">Software</span>
+            <span>$2,400</span>
+            <span className="text-muted-foreground">15/01</span>
+          </motion.div>
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+// Sales Pipeline Visual with fluid looping animation
+const PipelineVisual = () => {
+  const shouldReduceMotion = useReducedMotion();
+  const stages = ['Frío', 'Tibio', 'Caliente', 'Cerrado'];
+  
+  return (
+    <div className="bg-foreground/[0.02] border-t border-foreground/[0.05] p-4 h-48 overflow-hidden">
+      <div className="flex items-center gap-2 h-full">
+        {stages.map((stage, i) => {
+          // Calculate animation timing for lead progression
+          const baseDelay = i * 1.5; // Each stage activates 1.5s after previous
+          const activeDuration = 2; // How long each stage stays active
+          const totalCycle = 9; // Total cycle duration
+          
+          return (
+            <motion.div 
+              key={stage} 
+              className="flex-1 flex flex-col items-center gap-2"
+              animate={{ 
+                opacity: [0, 0, 1, 1, 1, 0],
+                y: [30, 30, 0, 0, 0, 30]
+              }}
+              transition={{ 
+                delay: baseDelay,
+                duration: totalCycle,
+                repeat: shouldReduceMotion ? 0 : Infinity,
+                repeatType: "loop",
+                ease: [0.16, 1, 0.3, 1]
+              }}
+            >
+              <motion.div 
+                className={`w-8 h-8 rounded-full flex items-center justify-center ${
+                  i === 3 
+                    ? 'bg-emerald-500/20 text-emerald-600 ring-2 ring-emerald-500/30' 
+                    : i >= 2 
+                      ? 'bg-amber-500/20 text-amber-600' 
+                      : 'bg-foreground/5 text-muted-foreground'
+                }`}
+                animate={{ 
+                  scale: [0, 0, 1, 1.2, 1, 0],
+                  opacity: [0, 0, 1, 1, 1, 0]
+                }}
+                transition={{ 
+                  delay: baseDelay + 0.1,
+                  duration: totalCycle,
+                  repeat: shouldReduceMotion ? 0 : Infinity,
+                  repeatType: "loop",
+                  ease: [0.16, 1, 0.3, 1]
+                }}
+              >
+                <Users className="w-3 h-3" />
+              </motion.div>
+              <span className="text-[9px] text-muted-foreground text-center">{stage}</span>
+            </motion.div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+// Reactivation Visual with fluid looping animation
 const ReactivationVisual = () => {
+  const shouldReduceMotion = useReducedMotion();
   const contacts = [
     { name: 'María G.', status: 'Contactado', active: true },
     { name: 'Carlos R.', status: 'Respondió', active: true },
@@ -299,35 +438,76 @@ const ReactivationVisual = () => {
   return (
     <div className="bg-foreground/[0.02] border-t border-foreground/[0.05] p-4 h-48 overflow-hidden">
       <div className="space-y-2">
-        {contacts.map((contact, i) => (
-          <motion.div
-            key={contact.name}
-            className="flex items-center gap-3 p-2 rounded-lg bg-foreground/5"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.8 + i * 0.2, duration: 0.4, type: "spring" }}
-            whileHover={{ x: 5, transition: { duration: 0.2 } }}
-          >
-            <motion.div 
-              className="w-7 h-7 rounded-full bg-foreground/10 flex items-center justify-center text-[10px] font-medium"
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.9 + i * 0.2, type: "spring" }}
+        {contacts.map((contact, i) => {
+          const baseDelay = i * 0.4;
+          const cycleDuration = 7;
+          
+          return (
+            <motion.div
+              key={contact.name}
+              className="flex items-center gap-3 p-2 rounded-lg bg-foreground/5"
+              animate={{ 
+                opacity: [0, 1, 1, 1, 0],
+                x: [-30, 0, 0, 0, -30]
+              }}
+              transition={{ 
+                delay: baseDelay,
+                duration: cycleDuration,
+                repeat: shouldReduceMotion ? 0 : Infinity,
+                repeatType: "loop",
+                ease: [0.16, 1, 0.3, 1]
+              }}
             >
-              {contact.name.charAt(0)}
+              <motion.div 
+                className="w-7 h-7 rounded-full bg-foreground/10 flex items-center justify-center text-[10px] font-medium"
+                animate={{ 
+                  scale: [0, 1, 1, 1, 0]
+                }}
+                transition={{ 
+                  delay: baseDelay + 0.1,
+                  duration: cycleDuration,
+                  repeat: shouldReduceMotion ? 0 : Infinity,
+                  repeatType: "loop",
+                  ease: [0.16, 1, 0.3, 1]
+                }}
+              >
+                {contact.name.charAt(0)}
+              </motion.div>
+              <div className="flex-1">
+                <div className="text-xs font-medium">{contact.name}</div>
+                <motion.div 
+                  className="text-[10px] text-muted-foreground"
+                  animate={{ 
+                    opacity: [0, 1, 1, 1, 0]
+                  }}
+                  transition={{ 
+                    delay: baseDelay + 0.2,
+                    duration: cycleDuration,
+                    repeat: shouldReduceMotion ? 0 : Infinity,
+                    repeatType: "loop",
+                    ease: [0.16, 1, 0.3, 1]
+                  }}
+                >
+                  {contact.status}
+                </motion.div>
+              </div>
+              <motion.div 
+                className={`w-2 h-2 rounded-full ${contact.active ? 'bg-emerald-500' : 'bg-foreground/20'}`}
+                animate={{ 
+                  scale: [0, 1, 1.5, 1, 0],
+                  opacity: [0, 1, 1, 1, 0]
+                }}
+                transition={{ 
+                  delay: baseDelay + 0.3,
+                  duration: cycleDuration,
+                  repeat: shouldReduceMotion ? 0 : Infinity,
+                  repeatType: "loop",
+                  ease: [0.16, 1, 0.3, 1]
+                }}
+              />
             </motion.div>
-            <div className="flex-1">
-              <div className="text-xs font-medium">{contact.name}</div>
-              <div className="text-[10px] text-muted-foreground">{contact.status}</div>
-            </div>
-            <motion.div 
-              className={`w-2 h-2 rounded-full ${contact.active ? 'bg-emerald-500' : 'bg-foreground/20'}`}
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 1 + i * 0.2 }}
-            />
-          </motion.div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
