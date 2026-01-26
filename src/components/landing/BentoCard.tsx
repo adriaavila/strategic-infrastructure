@@ -69,7 +69,7 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
   return (
     <motion.div
       ref={cardRef}
-      className={`group relative bg-card border border-foreground/[0.08] rounded-2xl p-6 overflow-hidden ${className}`}
+      className={`group relative bg-card border border-foreground/[0.08] rounded-2xl p-6 overflow-hidden shadow-architectural ${className}`}
       style={{ 
         y,
         rotateX: shouldReduceMotion ? 0 : rotateX,
@@ -85,16 +85,20 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
         ease: [0.16, 1, 0.3, 1]
       }}
       whileHover={{ 
-        scale: 1.05,
+        scale: 1.02,
         borderColor: "hsl(var(--foreground) / 0.15)",
+        boxShadow: "var(--shadow-lg)",
         transition: { duration: 0.3, type: "spring", stiffness: 300, damping: 30 }
       }}
     >
+      {/* Subtle gradient background */}
+      <div className="absolute inset-0 gradient-mesh-subtle opacity-30" />
+      
       {/* Animated background gradient that follows mouse */}
       <motion.div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{
-          background: "radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(var(--foreground) / 0.06), transparent 40%)"
+          background: "radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(var(--accent-emerald) / 0.08), transparent 40%)"
         }}
       />
 

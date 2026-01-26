@@ -8,13 +8,13 @@ const steps = [
     number: "01",
     title: "Definición del Sistema",
     subtitle: "Etapa paga",
-    description: "Antes de escribir código, diseñamos el sistema.",
+    description: "Antes de escribir código, diseñamos el sistema completo. Esto elimina sorpresas y reduce riesgo.",
     bullets: [
-      "entendemos el problema real",
-      "definimos la solución correcta",
-      "cerramos alcance, arquitectura y tiempos"
+      "entendemos el problema real, no solo lo que pensás que necesitás",
+      "definimos la solución correcta con arquitectura clara",
+      "cerramos alcance, tiempos y presupuesto sin ambigüedad"
     ],
-    note: "Esta etapa elimina ambigüedad, reduce riesgo y evita sobreconstrucción.",
+    note: "Resultado: sabés exactamente qué vas a recibir, cuándo y a qué precio. Sin sorpresas.",
     icon: FileText,
     color: "emerald"
   },
@@ -22,13 +22,13 @@ const steps = [
     number: "02",
     title: "Desarrollo",
     subtitle: "",
-    description: "Construimos exactamente lo definido.",
+    description: "Construimos exactamente lo definido. Proyectos que terminan en tiempo y forma.",
     bullets: [
-      "alcance cerrado",
-      "entregables claros",
-      "tiempos acordados"
+      "alcance cerrado desde el inicio",
+      "entregables claros y medibles",
+      "tiempos acordados que se cumplen"
     ],
-    note: "Sin proyectos eternos. Sin cambios constantes de dirección.",
+    note: "Sin proyectos eternos. Sin cambios constantes de dirección. Desarrollo predecible y eficiente.",
     icon: Hammer,
     color: "blue"
   }
@@ -39,12 +39,12 @@ export const EngagementModel = () => {
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="proceso" className="relative py-24 md:py-32 scroll-mt-20">
+    <section id="proceso" className="relative py-24 md:py-32 scroll-mt-20 bg-muted/20">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="max-w-2xl mx-auto text-center mb-16" ref={containerRef}>
+        <div className="max-w-3xl mx-auto text-center mb-16" ref={containerRef}>
           <motion.h2 
-            className="text-3xl md:text-4xl font-semibold tracking-tight mb-4"
+            className="text-4xl md:text-5xl font-bold tracking-tight mb-4 font-heading"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -52,7 +52,7 @@ export const EngagementModel = () => {
             Cómo Trabajamos
           </motion.h2>
           <motion.p 
-            className="text-muted-foreground text-lg"
+            className="text-lg text-muted-foreground"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -62,8 +62,21 @@ export const EngagementModel = () => {
         </div>
 
         {/* Steps */}
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 relative">
+            {/* Connecting Line */}
+            <motion.div
+              className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-0.5 bg-gradient-to-r from-emerald-500/20 via-blue-500/20 to-transparent"
+              initial={{ scaleX: 0 }}
+              animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
+              transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            />
+            <motion.div
+              className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-emerald-500/30"
+              initial={{ scale: 0 }}
+              animate={isInView ? { scale: 1 } : { scale: 0 }}
+              transition={{ delay: 0.7, duration: 0.4, type: "spring" }}
+            />
             {steps.map((step, index) => {
               const Icon = step.icon;
               return (
@@ -78,7 +91,7 @@ export const EngagementModel = () => {
                     ease: [0.16, 1, 0.3, 1]
                   }}
                 >
-                  <div className="bg-card border border-foreground/[0.08] rounded-2xl p-8 h-full hover:border-foreground/[0.15] transition-colors">
+                  <div className="bg-card border border-foreground/[0.08] rounded-2xl p-8 h-full hover:border-foreground/[0.15] transition-all shadow-architectural hover:shadow-lg">
                     {/* Number and Icon */}
                     <div className="flex items-start justify-between mb-6">
                       <motion.div
@@ -103,7 +116,7 @@ export const EngagementModel = () => {
 
                     {/* Content */}
                     <motion.h3 
-                      className="text-xl font-semibold mb-2"
+                      className="text-2xl font-bold mb-2 font-heading"
                       initial={{ opacity: 0, x: -20 }}
                       animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                       transition={{ delay: index * 0.2 + 0.5, duration: 0.4 }}
@@ -144,7 +157,7 @@ export const EngagementModel = () => {
                       </motion.ul>
                     )}
                     <motion.p 
-                      className="text-xs text-muted-foreground/80 italic"
+                      className="text-sm font-semibold text-foreground/90 pt-4 border-t border-foreground/10"
                       initial={{ opacity: 0 }}
                       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                       transition={{ delay: index * 0.2 + 0.8, duration: 0.4 }}
@@ -164,8 +177,8 @@ export const EngagementModel = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            <Button variant="hero" size="lg" className="group">
-              Iniciar Descubrimiento
+            <Button variant="hero" size="lg" className="group shadow-lg hover:shadow-xl">
+              Iniciar Descubrimiento Gratuito
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </motion.div>

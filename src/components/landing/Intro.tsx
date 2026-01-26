@@ -2,9 +2,9 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const whenWeWork = [
-  "hay flujos propios",
-  "hay lógica particular",
-  "hay procesos que ordenar o escalar"
+  "tu negocio tiene flujos únicos que las plantillas no pueden manejar",
+  "necesitás lógica de negocio específica, no solo páginas bonitas",
+  "querés automatizar procesos reales, no solo mostrar información"
 ];
 
 export const Intro = () => {
@@ -12,51 +12,75 @@ export const Intro = () => {
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="intro" className="relative py-24 md:py-32 scroll-mt-20 bg-muted/30">
+    <section id="intro" className="relative py-24 md:py-32 scroll-mt-20 bg-muted/20 gradient-mesh-subtle">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto" ref={containerRef}>
-          {/* Title */}
-          <motion.h2 
-            className="text-3xl md:text-4xl font-semibold tracking-tight mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          >
-            No hacemos "páginas web". Construimos sistemas.
-          </motion.h2>
+        <div className="max-w-5xl mx-auto" ref={containerRef}>
+          {/* Asymmetric Layout */}
+          <div className="layout-asymmetric items-start">
+            {/* Left Column - Main Content */}
+            <div className="space-y-6">
+              {/* Title */}
+              <motion.h2 
+                className="text-4xl md:text-5xl font-bold tracking-tight mb-6 font-heading"
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              >
+                No hacemos "páginas web".
+                <br />
+                <span className="text-emerald-600">Construimos sistemas que escalan.</span>
+              </motion.h2>
 
-          {/* Copy */}
+              {/* Main Copy */}
+              <motion.div 
+                className="space-y-6 text-muted-foreground leading-relaxed text-lg"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <p>
+                  Allok es un estudio especializado en <strong className="text-foreground font-semibold">diseño y desarrollo de sistemas digitales personalizados</strong> para negocios que necesitan soluciones que funcionen como su negocio, no como una plantilla genérica.
+                </p>
+
+                <p className="text-foreground/80 font-medium">
+                  Trabajamos cuando:
+                </p>
+              </motion.div>
+            </div>
+
+            {/* Right Column - List with offset */}
+            <motion.div 
+              className="layout-offset-right"
+              initial={{ opacity: 0, x: 40 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
+              transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <ul className="space-y-4">
+                {whenWeWork.map((item, index) => (
+                  <motion.li
+                    key={index}
+                    className="flex items-start gap-4 p-4 rounded-lg bg-card/50 border border-foreground/5 hover:border-foreground/10 transition-colors"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                    transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
+                  >
+                    <span className="text-emerald-600 mt-1 font-bold text-xl">•</span>
+                    <span className="text-foreground/80 leading-relaxed">{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+
+          {/* Outcome Statement */}
           <motion.div 
-            className="space-y-6 text-muted-foreground leading-relaxed"
+            className="mt-12 pt-8 border-t border-foreground/10"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ delay: 0.6, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p>
-              Allok Servicios Creativos es un estudio especializado en <strong className="text-foreground">diseño y desarrollo de sistemas digitales personalizados</strong> para negocios que ya operan y necesitan soluciones específicas.
-            </p>
-
-            <p>
-              Trabajamos cuando:
-            </p>
-
-            <ul className="space-y-2 ml-6">
-              {whenWeWork.map((item, index) => (
-                <motion.li
-                  key={index}
-                  className="flex items-start gap-3"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                  transition={{ delay: 0.2 + index * 0.1, duration: 0.4 }}
-                >
-                  <span className="text-emerald-600 mt-1.5">•</span>
-                  <span>{item}</span>
-                </motion.li>
-              ))}
-            </ul>
-
-            <p className="pt-2">
-              Si tu proyecto no encaja en una plantilla, acá es donde empezamos.
+            <p className="text-xl font-semibold text-foreground text-center">
+              Resultado: <span className="text-emerald-600">sistemas que crecen con tu negocio</span>, no limitaciones que te frenan.
             </p>
           </motion.div>
         </div>

@@ -17,9 +17,9 @@ export default {
       // TYPOGRAPHY
       // ============================================
       fontFamily: {
-        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        heading: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        body: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        sans: ['DM Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        heading: ['Space Grotesk', 'DM Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        body: ['DM Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'monospace'],
       },
       fontSize: {
@@ -106,6 +106,14 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          emerald: "hsl(var(--accent-emerald))",
+          "emerald-light": "hsl(var(--accent-emerald-light))",
+          blue: "hsl(var(--accent-blue))",
+          "blue-light": "hsl(var(--accent-blue-light))",
+          purple: "hsl(var(--accent-purple))",
+          "purple-light": "hsl(var(--accent-purple-light))",
+          amber: "hsl(var(--accent-amber))",
+          "amber-light": "hsl(var(--accent-amber-light))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -172,6 +180,7 @@ export default {
         'glow-lg': 'var(--shadow-glow-lg)',
         card: 'var(--shadow-card)',
         inner: 'var(--shadow-inner)',
+        architectural: 'var(--shadow-architectural)',
       },
       
       // ============================================

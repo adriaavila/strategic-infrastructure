@@ -393,29 +393,29 @@ const services = [
     subtitle: "Cuando la web tiene que cumplir una función real.",
     description: (
       <>
-        <p className="mb-3">
-          Construimos sitios web con Next.js, shadcn/ui y un enfoque centrado en UX.
+        <p className="mb-4 text-foreground/80">
+          Construimos sitios web que cargan rápido, aparecen en Google y convierten visitantes en clientes.
         </p>
-        <ul className="space-y-2 mb-3 ml-4">
-          <li className="flex items-start gap-2">
-            <span className="text-emerald-600 mt-1">•</span>
-            <span>Next.js para performance y SEO</span>
+        <ul className="space-y-3 mb-4">
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70">Páginas que cargan en menos de 2 segundos y aparecen en los primeros resultados de búsqueda</span>
           </li>
-          <li className="flex items-start gap-2">
-            <span className="text-emerald-600 mt-1">•</span>
-            <span>shadcn/ui para componentes accesibles</span>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70">Interfaces accesibles que funcionan para todos tus usuarios</span>
           </li>
-          <li className="flex items-start gap-2">
-            <span className="text-emerald-600 mt-1">•</span>
-            <span>UX research y testing de usabilidad</span>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70">Diseño basado en cómo tus usuarios realmente usan el sitio, no en suposiciones</span>
           </li>
-          <li className="flex items-start gap-2">
-            <span className="text-emerald-600 mt-1">•</span>
-            <span>Optimización de conversión</span>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70">Más conversiones porque cada elemento está pensado para mover a la acción</span>
           </li>
         </ul>
-        <p className="font-medium text-foreground">
-          Ideal para proyectos que necesitan velocidad, calidad y resultados medibles.
+        <p className="font-semibold text-foreground pt-2 border-t border-foreground/10">
+          Ideal para: negocios que necesitan resultados medibles, no solo páginas bonitas.
         </p>
       </>
     ),
@@ -429,33 +429,33 @@ const services = [
     subtitle: "Sistemas para operar mejor.",
     description: (
       <>
-        <p className="mb-3">
-          Diseñamos y desarrollamos webapps que reemplazan procesos manuales, hojas de cálculo o soluciones mal adaptadas.
+        <p className="mb-4 text-foreground/80">
+          Reemplazamos procesos manuales, hojas de cálculo y soluciones parcheadas con sistemas que realmente funcionan.
         </p>
-        <ul className="space-y-2 mb-3 ml-4">
-          <li className="flex items-start gap-2">
-            <span className="text-emerald-600 mt-1">•</span>
-            <span>MVPs funcionales</span>
+        <ul className="space-y-3 mb-4">
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70">MVPs funcionales en semanas, no meses</span>
           </li>
-          <li className="flex items-start gap-2">
-            <span className="text-emerald-600 mt-1">•</span>
-            <span>Paneles administrativos</span>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70">Paneles que te dan control real sobre tus operaciones</span>
           </li>
-          <li className="flex items-start gap-2">
-            <span className="text-emerald-600 mt-1">•</span>
-            <span>Dashboards operativos</span>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70">Dashboards que muestran lo que importa, cuando lo necesitás</span>
           </li>
-          <li className="flex items-start gap-2">
-            <span className="text-emerald-600 mt-1">•</span>
-            <span>Automatización de flujos</span>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70">Automatización que elimina trabajo repetitivo</span>
           </li>
-          <li className="flex items-start gap-2">
-            <span className="text-emerald-600 mt-1">•</span>
-            <span>Integraciones con APIs y servicios externos</span>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70">Integraciones que conectan todas tus herramientas sin fricción</span>
           </li>
         </ul>
-        <p className="font-medium text-foreground">
-          Ideal para equipos que necesitan orden, control y eficiencia.
+        <p className="font-semibold text-foreground pt-2 border-t border-foreground/10">
+          Ideal para: equipos que están perdiendo tiempo en tareas que deberían estar automatizadas.
         </p>
       </>
     ),
@@ -469,29 +469,29 @@ const services = [
     subtitle: "Cuando vender online requiere algo más que un checkout estándar.",
     description: (
       <>
-        <p className="mb-3">
-          Construimos sistemas de e-commerce adaptados a reglas reales de negocio.
+        <p className="mb-4 text-foreground/80">
+          Construimos tiendas online que funcionan con las reglas reales de tu negocio, no contra ellas.
         </p>
-        <ul className="space-y-2 mb-3 ml-4">
-          <li className="flex items-start gap-2">
-            <span className="text-emerald-600 mt-1">•</span>
-            <span>Lógica de productos personalizada</span>
+        <ul className="space-y-3 mb-4">
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70">Productos con lógica personalizada: precios dinámicos, descuentos complejos, inventario inteligente</span>
           </li>
-          <li className="flex items-start gap-2">
-            <span className="text-emerald-600 mt-1">•</span>
-            <span>Flujos de compra no convencionales</span>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70">Flujos de compra que se adaptan a cómo realmente vendés</span>
           </li>
-          <li className="flex items-start gap-2">
-            <span className="text-emerald-600 mt-1">•</span>
-            <span>Integraciones con pagos, logística y sistemas existentes</span>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70">Integraciones con tu sistema de pagos, logística y gestión existente</span>
           </li>
-          <li className="flex items-start gap-2">
-            <span className="text-emerald-600 mt-1">•</span>
-            <span>Optimización de performance y escalabilidad</span>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70">Performance que aguanta picos de tráfico sin caerse</span>
           </li>
         </ul>
-        <p className="font-medium text-foreground">
-          Ideal para catálogos complejos, marketplaces y negocios con restricciones propias.
+        <p className="font-semibold text-foreground pt-2 border-t border-foreground/10">
+          Ideal para: catálogos complejos, marketplaces, suscripciones y negocios con reglas propias que las plataformas genéricas no pueden manejar.
         </p>
       </>
     ),
@@ -507,12 +507,12 @@ export const ServicePillars = () => {
   const isInView = useInView(containerRef, { once: true, margin: "-50px" });
 
   return (
-    <section id="pilares" className="relative py-24 md:py-32 scroll-mt-20" ref={containerRef}>
+    <section id="pilares" className="relative py-24 md:py-32 scroll-mt-20 gradient-mesh-subtle" ref={containerRef}>
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="max-w-2xl mx-auto text-center mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-16">
           <motion.h2 
-            className="text-3xl md:text-4xl font-semibold tracking-tight mb-4"
+            className="text-4xl md:text-5xl font-bold tracking-tight mb-4 font-heading"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -520,7 +520,7 @@ export const ServicePillars = () => {
             Pilares de Servicio
           </motion.h2>
           <motion.p 
-            className="text-muted-foreground"
+            className="text-lg text-muted-foreground"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
