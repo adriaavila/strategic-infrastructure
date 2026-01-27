@@ -6,22 +6,22 @@ const dontDoItems = [
   {
     icon: Package,
     title: "Plantillas",
-    description: "No usamos temas o plantillas genéricas. Cada sistema es único."
+    description: "No usamos plantillas genéricas. Cada sistema es único."
   },
   {
     icon: Layers,
-    title: "Paquetes de talla única",
-    description: "No vendemos soluciones que no se adaptan a tu negocio específico."
+    title: "Paquetes que no encajan",
+    description: "No vendemos soluciones que no se adaptan a tu negocio."
   },
   {
     icon: Wrench,
-    title: "\"Mantenimiento\" indefinido",
-    description: "No ofrecemos mantenimiento sin alcance claro. Todo tiene un propósito definido."
+    title: "Mantenimiento sin límites",
+    description: "No ofrecemos soporte abierto sin alcance claro."
   },
   {
     icon: DollarSign,
-    title: "Rediseños baratos",
-    description: "No hacemos cambios cosméticos sin entender tu operación real."
+    title: "Cambios solo cosméticos",
+    description: "No hacemos retoques sin entender tu operación real."
   }
 ];
 
@@ -48,7 +48,7 @@ export const WhatWeDontDo = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Para mantener la calidad y el enfoque, trabajamos solo con proyectos que requieren soluciones personalizadas.
+            Trabajamos solo con proyectos que piden soluciones a medida.
           </motion.p>
         </div>
 

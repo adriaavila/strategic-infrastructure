@@ -406,25 +406,11 @@ const automations = [
     subtitle: "Tu vendedor que nunca duerme",
     description: (
       <>
-        <p className="mb-4 text-foreground/80">
-          Atendé consultas, calificá leads y agendá reuniones automáticamente. Mientras vos dormís, tu sistema sigue trabajando.
+        <p className="mb-3 text-foreground/80">
+          Que nadie espere. Atendé consultas y agendá reuniones automáticamente mientras vos dormís.
         </p>
-        <ul className="space-y-2 mb-4">
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">Respuesta en menos de 30 segundos, 24 horas al día</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">Califica prospectos y solo te pasa los que realmente interesan</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">Agenda llamadas directamente en tu calendario sin ida y vuelta</span>
-          </li>
-        </ul>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Ideal para: negocios que pierden oportunidades por no responder rápido.
+          Ideal para negocios que pierden oportunidades por no responder rápido.
         </p>
       </>
     ),
@@ -436,28 +422,14 @@ const automations = [
   },
   {
     title: "Operador Invisible",
-    subtitle: "Eliminá el trabajo manual de una vez",
+    subtitle: "Dejá de cargar datos a mano",
     description: (
       <>
-        <p className="mb-4 text-foreground/80">
-          Convertí facturas, recibos y documentos en datos estructurados sin tocar una hoja de cálculo.
+        <p className="mb-3 text-foreground/80">
+          Facturas, recibos y documentos que se procesan solos. Vos te dedicás a lo que importa.
         </p>
-        <ul className="space-y-2 mb-4">
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">Procesa facturas PDF y las convierte en reportes financieros</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">Sincroniza con tu sistema contable automáticamente</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">Ahorra 10+ horas semanales en tareas repetitivas</span>
-          </li>
-        </ul>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Ideal para: equipos que pierden tiempo en data-entry que debería estar automatizado.
+          Ideal para equipos que pierden horas en tareas repetitivas que deberían estar resueltas.
         </p>
       </>
     ),
@@ -469,28 +441,14 @@ const automations = [
   },
   {
     title: "Pipeline Inteligente",
-    subtitle: "Sabé qué leads van a cerrar",
+    subtitle: "Sabé dónde poner el foco",
     description: (
       <>
-        <p className="mb-4 text-foreground/80">
-          Visualizá tu embudo de ventas y recibí alertas sobre qué oportunidades necesitan atención urgente.
+        <p className="mb-3 text-foreground/80">
+          Una vista clara de tu embudo y alertas cuando una oportunidad pide atención. Menos caos, más cierres.
         </p>
-        <ul className="space-y-2 mb-4">
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">Predice qué leads tienen más probabilidad de cerrar</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">Te avisa cuando un prospecto se enfría para que actúes rápido</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">Dashboard en tiempo real de todo tu embudo</span>
-          </li>
-        </ul>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Ideal para: equipos de ventas que necesitan priorizar mejor su tiempo.
+          Ideal para equipos de ventas que necesitan priorizar mejor su tiempo.
         </p>
       </>
     ),
@@ -502,28 +460,14 @@ const automations = [
   },
   {
     title: "Bóveda de Ventas",
-    subtitle: "Recuperá clientes que ya tenías",
+    subtitle: "Recuperá clientes que ya te conocían",
     description: (
       <>
-        <p className="mb-4 text-foreground/80">
-          Tu base de datos vieja tiene clientes que ya te conocían. Reactivalos con campañas personalizadas que realmente funcionan.
+        <p className="mb-3 text-foreground/80">
+          Tu base vieja tiene oro escondido. Reactivala con mensajes que suenan a vos, sin quemarte las pestañas.
         </p>
-        <ul className="space-y-2 mb-4">
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">Identifica clientes inactivos con potencial de reactivación</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">Crea mensajes personalizados basados en su historial contigo</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">Automatiza el seguimiento hasta que respondan o cierres</span>
-          </li>
-        </ul>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Ideal para: negocios con bases de datos grandes que no saben cómo reactivarlas.
+          Ideal para negocios con muchos contactos que no saben por dónde volver a conectarlos.
         </p>
       </>
     ),
@@ -589,7 +533,7 @@ export const Automations = () => {
               animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Sistemas que trabajan mientras vos dormís. Respuestas automáticas, procesamiento de datos y gestión de leads sin intervención manual.
+              Que tu negocio siga trabajando mientras vos descansás. Sin vivir pendiente del celular.
             </motion.p>
           </div>
         </div>
@@ -689,7 +633,7 @@ export const Automations = () => {
               animate={ctaInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              Sin compromiso. Sin presión. Solo una conversación para entender qué automatizar.
+              Sin compromiso. Sin presión. Solo una conversación para entender tu proyecto.
             </motion.p>
           </div>
         </div>

@@ -93,15 +93,11 @@ export const Integrations = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="max-w-2xl mx-auto text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 mb-6 opacity-0 animate-fade-up" style={{ animationFillMode: 'forwards' }}>
-            <span className="w-2 h-2 rounded-full bg-brand-secondary" />
-            <span className="text-sm text-white/60">Fundación Técnica</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-5 text-white opacity-0 animate-fade-up" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-5 text-white opacity-0 animate-fade-up" style={{ animationFillMode: 'forwards' }}>
             Integraciones
           </h2>
-          <p className="text-lg text-white/50 opacity-0 animate-fade-up" style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
-            Trabajamos con las herramientas que ya usas. No necesitas cambiar tu stack para implementar nuevas capacidades.
+          <p className="text-lg text-white/50 opacity-0 animate-fade-up" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
+            Conectamos con lo que ya usás. No tenés que cambiar tus herramientas.
           </p>
         </div>
 
@@ -226,23 +222,6 @@ export const Integrations = () => {
           })}
         </div>
 
-        {/* Bottom stats */}
-        <div className="flex flex-wrap items-center justify-center gap-8 mt-20 pt-12 border-t border-white/5">
-          {[
-            { value: '50+', label: 'Integraciones' },
-            { value: '99.9%', label: 'Uptime' },
-            { value: '<100ms', label: 'Latencia' },
-          ].map((stat, i) => (
-            <div 
-              key={stat.label}
-              className="text-center opacity-0 animate-fade-up"
-              style={{ animationDelay: `${800 + i * 100}ms`, animationFillMode: 'forwards' }}
-            >
-              <div className="text-2xl md:text-3xl font-semibold text-white">{stat.value}</div>
-              <div className="text-sm text-white/40 mt-1">{stat.label}</div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

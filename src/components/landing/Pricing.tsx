@@ -2,11 +2,9 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const pricingFactors = [
-  "complejidad del sistema",
-  "cantidad de flujos y roles",
-  "integraciones necesarias",
-  "estructura de datos y administración",
-  "requerimientos de performance y escalabilidad"
+  "qué tan único es tu caso",
+  "qué hay que conectar con lo que ya tenés",
+  "tu plazo y presupuesto"
 ];
 
 export const Pricing = () => {
@@ -46,11 +44,8 @@ export const Pricing = () => {
             {/* Why not hourly */}
             <div className="mb-8 pb-8 border-b border-foreground/10">
               <h3 className="text-xl font-bold mb-4 font-heading">Por qué no cobramos por horas</h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                No cobramos por horas, pantallas ni cantidad de páginas. Cobramos por el valor que entregamos.
-              </p>
-              <p className="text-foreground/80 font-medium">
-                Esto significa que pagás por lo que necesitás, no por cuánto tiempo nos lleva hacerlo.
+              <p className="text-muted-foreground leading-relaxed">
+                Cobramos por el valor que entregamos. Pagás por lo que necesitás, no por cuánto tiempo nos lleva.
               </p>
             </div>
 
@@ -75,11 +70,8 @@ export const Pricing = () => {
 
             {/* Outcome */}
             <div className="pt-8 border-t border-foreground/10">
-              <p className="text-lg font-semibold text-foreground mb-2">
-                Cada proyecto tiene un precio distinto porque resuelve un problema distinto.
-              </p>
-              <p className="text-muted-foreground">
-                Transparencia total desde el inicio. Sabés exactamente qué vas a pagar y qué vas a recibir.
+              <p className="text-lg font-semibold text-foreground">
+                Cada proyecto es distinto. Transparencia desde el inicio: sabés qué pagás y qué recibís.
               </p>
             </div>
           </motion.div>

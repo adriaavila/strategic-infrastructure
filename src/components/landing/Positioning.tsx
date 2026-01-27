@@ -27,13 +27,10 @@ export const Positioning = () => {
             transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <p>
-              No somos una agencia de volumen.
+              No somos una agencia de volumen ni un equipo grande con estructuras pesadas.
             </p>
             <p>
-              Tampoco un equipo grande con capas innecesarias.
-            </p>
-            <p>
-              Trabajás directamente con quienes piensan, diseñan y construyen tu sistema, con foco en resolver el problema correcto — no en inflar el proyecto.
+              Trabajás directo con quienes piensan, diseñan y construyen. Resolvemos el problema correcto, sin vueltas.
             </p>
           </motion.div>
         </div>

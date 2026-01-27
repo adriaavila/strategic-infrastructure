@@ -2,8 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const whenWeWork = [
-  "tu negocio tiene flujos únicos que las plantillas no pueden manejar",
-  "necesitás lógica de negocio específica, no solo páginas bonitas",
+  "tu negocio tiene flujos únicos que las plantillas no resuelven",
   "querés automatizar procesos reales, no solo mostrar información"
 ];
 
@@ -39,9 +38,8 @@ export const Intro = () => {
                 transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
                 <p>
-                  Allok es un estudio especializado en <strong className="text-foreground font-semibold">diseño y desarrollo de sistemas digitales personalizados</strong> para negocios que necesitan soluciones que funcionen como su negocio, no como una plantilla genérica.
+                  Soluciones a tu medida, no plantillas. Sistemas que funcionan como tu negocio.
                 </p>
-
                 <p className="text-foreground/80 font-medium">
                   Trabajamos cuando:
                 </p>

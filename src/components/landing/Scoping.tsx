@@ -6,43 +6,39 @@ import { motion, useInView } from "framer-motion";
 const processSteps = [
   {
     step: "1",
-    title: "Revisión Técnica",
-    duration: "30-60 min",
-    description: "Entendemos tus necesidades, restricciones y objetivos. Evaluamos sistemas existentes y limitaciones.",
+    title: "Revisión",
+    duration: "30–60 min",
+    description: "Entendemos tu necesidad, lo que usás hoy y tus restricciones.",
     icon: Search
   },
   {
     step: "2",
     title: "Propuesta",
-    duration: "3-5 días",
-    description: "Arquitectura de solución, alcance definido, cronograma y recomendaciones. Todo documentado.",
+    duration: "3–5 días",
+    description: "Alcance, plazos y recomendaciones. Todo claro antes de construir.",
     icon: FileText
   },
   {
     step: "3",
     title: "Ajustes",
     duration: "Según necesidad",
-    description: "Refinamos el alcance basado en tu feedback. Aseguramos que todos estemos alineados antes de construir.",
+    description: "Refinamos con tu feedback. Nos alineamos antes de avanzar.",
     icon: CheckCircle2
   }
 ];
 
 const factors = [
   {
-    title: "Complejidad de integración",
-    description: "Con sistemas existentes que debes mantener"
+    title: "Qué hay que conectar",
+    description: "Sistemas que ya usás y hay que mantener o migrar"
   },
   {
-    title: "Sistemas legacy",
-    description: "Que deben mantenerse o migrarse"
+    title: "Plazo y presupuesto",
+    description: "Tus tiempos y recursos"
   },
   {
-    title: "Restricciones de tiempo/recursos",
-    description: "Plazos y presupuestos específicos"
-  },
-  {
-    title: "Nivel de personalización",
-    description: "Qué tan único debe ser el sistema"
+    title: "Qué tan único es tu caso",
+    description: "Cuánta personalización necesitás"
   }
 ];
 
@@ -69,7 +65,7 @@ export const Scoping = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Cada proyecto es diferente. Por eso trabajamos con compromisos con alcance definido, no paquetes fijos.
+            Alcance definido, no paquetes fijos. Cada proyecto es distinto.
           </motion.p>
         </div>
 
@@ -191,11 +187,13 @@ export const Scoping = () => {
           <div className="bg-card border border-foreground/[0.08] rounded-2xl p-8">
             <h3 className="text-xl font-semibold mb-3">¿Listo para empezar?</h3>
             <p className="text-muted-foreground mb-6">
-              Agenda una llamada de descubrimiento. Te explicaremos el proceso, entenderemos tus necesidades y te daremos una estimación clara del alcance y tiempo.
+              Una llamada para entender tu proyecto y darte claridad. Sin compromiso. Sin presión.
             </p>
-            <Button variant="hero" size="lg" className="group">
-              Iniciar Llamada de Descubrimiento
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <Button variant="hero" size="lg" asChild className="group">
+              <a href="/#contacto">
+                Agendar Llamada de Descubrimiento
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </a>
             </Button>
           </div>
         </motion.div>

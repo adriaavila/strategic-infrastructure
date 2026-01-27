@@ -147,32 +147,14 @@ const EcommerceVisual = () => {
 const services = [
   {
     title: "Sitios Web Personalizados",
-    subtitle: "Cuando la web tiene que cumplir una función real.",
+    subtitle: "Cuando la web tiene que cumplir una función real",
     description: (
       <>
-        <p className="mb-4 text-foreground/80">
-          Construimos sitios web que cargan rápido, aparecen en Google y convierten visitantes en clientes.
+        <p className="mb-3 text-foreground/80">
+          Una web que trabaja por vos: atrae, convence y convierte. Sin páginas que solo decoran.
         </p>
-        <ul className="space-y-3 mb-4">
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70">Páginas que cargan en menos de 2 segundos y aparecen en los primeros resultados de búsqueda</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70">Interfaces accesibles que funcionan para todos tus usuarios</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70">Diseño basado en cómo tus usuarios realmente usan el sitio, no en suposiciones</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70">Más conversiones porque cada elemento está pensado para mover a la acción</span>
-          </li>
-        </ul>
-        <p className="font-semibold text-foreground pt-2 border-t border-foreground/10">
-          Ideal para: negocios que necesitan resultados medibles, no solo páginas bonitas.
+        <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
+          Ideal para negocios que necesitan resultados reales, no solo una página bonita.
         </p>
       </>
     ),
@@ -184,36 +166,14 @@ const services = [
   },
   {
     title: "Webapps & Herramientas Internas",
-    subtitle: "Sistemas para operar mejor.",
+    subtitle: "Dejá de parchear. Operá con claridad",
     description: (
       <>
-        <p className="mb-4 text-foreground/80">
-          Reemplazamos procesos manuales, hojas de cálculo y soluciones parcheadas con sistemas que realmente funcionan.
+        <p className="mb-3 text-foreground/80">
+          Dejá atrás planillas y parches. Un solo sistema que te da control y te devuelve horas.
         </p>
-        <ul className="space-y-3 mb-4">
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70">MVPs funcionales en semanas, no meses</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70">Paneles que te dan control real sobre tus operaciones</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70">Dashboards que muestran lo que importa, cuando lo necesitás</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70">Automatización que elimina trabajo repetitivo</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70">Integraciones que conectan todas tus herramientas sin fricción</span>
-          </li>
-        </ul>
-        <p className="font-semibold text-foreground pt-2 border-t border-foreground/10">
-          Ideal para: equipos que están perdiendo tiempo en tareas que deberían estar automatizadas.
+        <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
+          Ideal para equipos que pierden tiempo en tareas que deberían estar resueltas.
         </p>
       </>
     ),
@@ -225,32 +185,14 @@ const services = [
   },
   {
     title: "E-commerce a Medida",
-    subtitle: "Cuando vender online requiere algo más que un checkout estándar.",
+    subtitle: "Tu tienda, con las reglas de tu negocio",
     description: (
       <>
-        <p className="mb-4 text-foreground/80">
-          Construimos tiendas online que funcionan con las reglas reales de tu negocio, no contra ellas.
+        <p className="mb-3 text-foreground/80">
+          Vendé online como vos necesitás, sin pelear con plantillas genéricas ni limitarte a lo estándar.
         </p>
-        <ul className="space-y-3 mb-4">
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70">Productos con lógica personalizada: precios dinámicos, descuentos complejos, inventario inteligente</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70">Flujos de compra que se adaptan a cómo realmente vendés</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70">Integraciones con tu sistema de pagos, logística y gestión existente</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70">Performance que aguanta picos de tráfico sin caerse</span>
-          </li>
-        </ul>
-        <p className="font-semibold text-foreground pt-2 border-t border-foreground/10">
-          Ideal para: catálogos complejos, marketplaces, suscripciones y negocios con reglas propias que las plataformas genéricas no pueden manejar.
+        <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
+          Ideal para catálogos complejos, suscripciones o formas de vender que ningún template resuelve.
         </p>
       </>
     ),
@@ -285,7 +227,7 @@ export const ServicePillars = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            No vendemos paquetes. Diseñamos y construimos sistemas adaptados a tu negocio.
+            Sistemas a tu medida, no paquetes genéricos.
           </motion.p>
         </div>
 

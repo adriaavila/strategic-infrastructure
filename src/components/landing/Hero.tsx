@@ -23,7 +23,7 @@ export const Hero = () => {
             style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}
           >
             <span className="w-2 h-2 rounded-full bg-brand-secondary animate-pulse-soft" />
-            <span className="text-sm text-white font-medium">Diseño de Soluciones + Ejecución</span>
+            <span className="text-sm text-white font-medium">Sistemas a tu medida</span>
           </div>
 
           {/* Headline - white + Cyber Mint highlight */}
@@ -33,7 +33,7 @@ export const Hero = () => {
           >
             Sistemas diseñados desde cero para tu negocio.
             <br />
-            <span className="text-brand-secondary">Sin forzar procesos. Sin límites.</span>
+            <span className="text-brand-secondary text-6xl md:text-7xl lg:text-8xl block mt-1">Sin límites.</span>
           </h1>
 
           {/* Subhead - Slate */}
@@ -49,9 +49,11 @@ export const Hero = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-up"
             style={{ animationDelay: '400ms', animationFillMode: 'forwards' }}
           >
-            <Button variant="hero" size="lg" className="group shadow-lg hover:shadow-xl transition-all">
-              Iniciar Descubrimiento
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <Button variant="hero" size="lg" asChild className="group shadow-lg hover:shadow-xl transition-all">
+              <a href="/#contacto">
+                Agendar Llamada de Descubrimiento
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </a>
             </Button>
           </div>
         </div>

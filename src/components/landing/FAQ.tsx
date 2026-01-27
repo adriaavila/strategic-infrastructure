@@ -11,15 +11,15 @@ const faqs = [
     questions: [
       {
         question: "¿Cómo determinan el alcance?",
-        answer: "Durante la revisión técnica (30-60 min) entendemos tus necesidades, sistemas existentes y restricciones. Luego entregamos una propuesta con arquitectura, alcance y cronograma en 3-5 días. Todo documentado antes de construir."
+        answer: "En una reunión corta entendemos tu necesidad, qué usás hoy y tus restricciones. Te mandamos una propuesta clara con alcance y plazos. Todo definido antes de construir."
       },
       {
         question: "¿Qué pasa si cambian los requisitos?",
-        answer: "Revisamos el alcance y ajustamos cronograma y presupuesto de forma transparente. Ajustes menores dentro del alcance original no generan costos adicionales."
+        answer: "Ajustamos alcance, plazos y presupuesto con transparencia. Cambios chicos dentro de lo acordado no suman costo extra."
       },
       {
         question: "¿Qué necesito tener listo?",
-        answer: "Qué problema quieres resolver, qué sistemas usas actualmente y cualquier restricción. No necesitas tener todo definido; parte del descubrimiento es ayudarte a clarificarlo."
+        answer: "El problema que querés resolver y qué herramientas usás hoy. No hace falta tener todo cerrado; parte del trabajo es ayudarte a definirlo."
       }
     ]
   },
@@ -28,15 +28,15 @@ const faqs = [
     questions: [
       {
         question: "¿Trabajan con equipos sin conocimientos técnicos?",
-        answer: "Sí. Lo importante es que entiendas tu negocio y puedas comunicar qué necesitas lograr. Nosotros manejamos la parte técnica y te explicamos las decisiones importantes en términos claros."
+        answer: "Sí. Lo importante es que conozcas tu negocio y puedas decir qué necesitás lograr. Nosotros llevamos la parte técnica y te explicamos todo en claro."
       },
       {
         question: "¿Pueden trabajar con sistemas existentes?",
-        answer: "Sí. Evaluamos qué se puede mantener, qué necesita migración y cómo conectar todo. La integración con sistemas legacy es parte de nuestro enfoque."
+        answer: "Sí. Vemos qué se mantiene, qué hay que cambiar y cómo conectar todo. Trabajar con lo que ya tenés es parte de nuestro enfoque."
       },
       {
         question: "¿Qué pasa si estamos bloqueados por plataformas no-code?",
-        answer: "Construimos la solución personalizada que necesitas, ya sea reemplazando la plataforma o integrando con ella. Ese tipo de límites es exactamente lo que resolvemos."
+        answer: "Construimos lo que necesitás: reemplazar la plataforma o integrarla. Ese tipo de límites es lo que resolvemos."
       }
     ]
   },
@@ -45,11 +45,11 @@ const faqs = [
     questions: [
       {
         question: "¿Ofrecen mantenimiento post-lanzamiento?",
-        answer: "Sí, con alcance definido. No ofrecemos mantenimiento indefinido. Trabajamos con retainer estratégico cuando tiene sentido, o proyectos específicos de mejoras con alcance claro."
+        answer: "Sí, con alcance claro. No hacemos mantenimiento abierto sin definir qué incluye. Proyectos de mejora o soporte puntual, siempre con acuerdo previo."
       },
       {
         question: "¿Pueden construir sobre plataformas existentes?",
-        answer: "Sí. Podemos construir sobre WordPress, Shopify u otras plataformas si tiene sentido, o crear sistemas completamente personalizados. La decisión se toma durante el descubrimiento."
+        answer: "Sí. Podemos sumar sobre lo que ya usás o armar algo nuevo. Lo definimos en la etapa de descubrimiento."
       }
     ]
   }
@@ -123,7 +123,7 @@ export const FAQ = () => {
             href="#contacto"
             className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-medium rounded-full hover:bg-primary/90 transition-colors"
           >
-            Contáctanos
+            Hablamos
             <svg
               className="w-4 h-4"
               fill="none"

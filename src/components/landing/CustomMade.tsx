@@ -3,15 +3,15 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const dontDo = [
-  "Templates que te limitan desde el día uno",
-  "Parches sobre herramientas genéricas que no encajan con tu negocio",
-  "Features que suenan bien pero nadie usa"
+  "Plantillas que te limitan desde el día uno",
+  "Parches sobre herramientas que no encajan con tu negocio",
+  "Cosas que suenan bien pero nadie usa"
 ];
 
 const doDo = [
-  "Diseño de sistema completo antes de escribir código - sabés qué vas a recibir",
-  "Lógica clara y mantenible que tu equipo puede entender y modificar",
-  "Soluciones pensadas para durar años, no para parchear mañana"
+  "Definimos todo antes de construir — sabés qué vas a recibir",
+  "Soluciones claras que tu equipo entiende",
+  "Sistemas pensados para durar, no para parchear"
 ];
 
 export const CustomMade = () => {
@@ -34,7 +34,7 @@ export const CustomMade = () => {
 
           {/* Main Copy */}
           <motion.div 
-            className="space-y-6 text-muted-foreground leading-relaxed mb-12"
+            className="space-y-4 text-muted-foreground leading-relaxed mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -43,26 +43,8 @@ export const CustomMade = () => {
               A medida no es personalizar una plantilla.
             </p>
             <p>
-              Significa diseñar el sistema desde cero alrededor de:
+              Es diseñar desde cero alrededor de cómo funciona tu negocio y qué procesos vale la pena automatizar.
             </p>
-            <ul className="space-y-2 ml-6">
-              <li className="flex items-start gap-3">
-                <span className="text-brand-secondary mt-1.5">•</span>
-                <span>cómo funciona tu negocio</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-brand-secondary mt-1.5">•</span>
-                <span>qué decisiones necesita soportar</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-brand-secondary mt-1.5">•</span>
-                <span>qué procesos vale la pena automatizar</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-brand-secondary mt-1.5">•</span>
-                <span>qué debe escalar y qué no</span>
-              </li>
-            </ul>
           </motion.div>
 
           {/* Two Columns with Visual Connector */}

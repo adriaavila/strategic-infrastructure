@@ -8,13 +8,12 @@ const steps = [
     number: "01",
     title: "Definición del Sistema",
     subtitle: "Etapa paga",
-    description: "Antes de escribir código, diseñamos el sistema completo. Esto elimina sorpresas y reduce riesgo.",
+    description: "Diseñamos todo antes de construir. Así evitamos sorpresas.",
     bullets: [
-      "entendemos el problema real, no solo lo que pensás que necesitás",
-      "definimos la solución correcta con arquitectura clara",
+      "entendemos el problema real, no solo lo que creés que necesitás",
       "cerramos alcance, tiempos y presupuesto sin ambigüedad"
     ],
-    note: "Resultado: sabés exactamente qué vas a recibir, cuándo y a qué precio. Sin sorpresas.",
+    note: "Sabés exactamente qué vas a recibir, cuándo y a qué precio.",
     icon: FileText,
     color: "mint"
   },
@@ -22,13 +21,12 @@ const steps = [
     number: "02",
     title: "Desarrollo",
     subtitle: "",
-    description: "Construimos exactamente lo definido. Proyectos que terminan en tiempo y forma.",
+    description: "Construimos lo definido. Proyectos que terminan en tiempo y forma.",
     bullets: [
       "alcance cerrado desde el inicio",
-      "entregables claros y medibles",
-      "tiempos acordados que se cumplen"
+      "entregas claras y a tiempo"
     ],
-    note: "Sin proyectos eternos. Sin cambios constantes de dirección. Desarrollo predecible y eficiente.",
+    note: "Sin proyectos eternos. Sin vueltas. Entregamos lo acordado.",
     icon: Hammer,
     color: "blue"
   }
@@ -177,9 +175,11 @@ export const EngagementModel = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            <Button variant="hero" size="lg" className="group shadow-lg hover:shadow-xl">
-              Iniciar Descubrimiento Gratuito
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <Button variant="hero" size="lg" asChild className="group shadow-lg hover:shadow-xl">
+              <a href="/#contacto">
+                Agendar Llamada de Descubrimiento
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </a>
             </Button>
           </motion.div>
         </div>

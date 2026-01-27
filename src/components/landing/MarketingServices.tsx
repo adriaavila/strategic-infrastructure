@@ -167,28 +167,14 @@ const ContentVisual = () => (
 const marketingServices = [
   {
     title: "Creación de Contenido",
-    subtitle: "Contenido que conecta y convierte",
+    subtitle: "Tu voz en redes, sin que vos tengas que estar ahí",
     description: (
       <>
-        <p className="mb-4 text-foreground/80">
-          Posts, stories, reels y todo el contenido que necesitás para mantener tus redes activas sin perder tiempo creándolo vos.
+        <p className="mb-3 text-foreground/80">
+          Redes activas y alineadas con tu marca, sin que tengas que crear todo vos.
         </p>
-        <ul className="space-y-2 mb-4">
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">Contenido que refleja tu voz y valores de marca</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">Calendario editorial que te mantiene visible sin esfuerzo</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">Formato para cada plataforma: Instagram, LinkedIn, TikTok</span>
-          </li>
-        </ul>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Ideal para: negocios que saben que necesitan estar en redes pero no tienen tiempo para crear contenido constante.
+          Ideal para quien sabe que debe estar en redes pero no tiene tiempo (ni ganas) de convertirse en community manager.
         </p>
       </>
     ),
@@ -203,25 +189,11 @@ const marketingServices = [
     subtitle: "Una marca que la gente recuerda",
     description: (
       <>
-        <p className="mb-4 text-foreground/80">
-          Logotipos, paletas de colores y guías de marca que comunican quién sos y por qué importás.
+        <p className="mb-3 text-foreground/80">
+          Que tu proyecto se vea tan sólido como tu propuesta. Una identidad coherente que comunique quién sos y por qué importás.
         </p>
-        <ul className="space-y-2 mb-4">
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">Identidad visual que se diferencia de la competencia</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">Guías de marca que tu equipo puede usar consistentemente</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">Diseño que funciona en todos los canales (web, redes, impreso)</span>
-          </li>
-        </ul>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Ideal para: negocios que necesitan verse profesionales y memorables desde el primer contacto.
+          Ideal para negocios que quieren verse profesionales y memorables desde el primer contacto.
         </p>
       </>
     ),
@@ -233,28 +205,14 @@ const marketingServices = [
   },
   {
     title: "Marketing Digital",
-    subtitle: "Estrategias que generan resultados",
+    subtitle: "Clientes reales, no solo likes",
     description: (
       <>
-        <p className="mb-4 text-foreground/80">
-          Campañas de ads, SEO y estrategias de redes sociales que traen clientes reales, no solo likes.
+        <p className="mb-3 text-foreground/80">
+          Un plan claro para que tu negocio crezca online y atraiga a la gente que realmente necesita lo que ofrecés.
         </p>
-        <ul className="space-y-2 mb-4">
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">Campañas de ads que convierten visitantes en clientes</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">SEO que te hace aparecer cuando la gente busca lo que ofrecés</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-brand-secondary mt-1 font-bold">•</span>
-            <span className="text-foreground/70 text-sm">Estrategias basadas en datos, no en suposiciones</span>
-          </li>
-        </ul>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Ideal para: negocios que quieren crecer online pero no saben por dónde empezar.
+          Ideal para quienes quieren crecer en digital pero no saben por dónde empezar.
         </p>
       </>
     ),
@@ -320,7 +278,7 @@ export const MarketingServices = () => {
               animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Branding que la gente recuerda. Estrategias digitales que generan resultados. Contenido que conecta con tu audiencia.
+              Marca que impacta. Crecimiento con rumbo. Contenido que suena a vos.
             </motion.p>
           </div>
         </div>
@@ -420,7 +378,7 @@ export const MarketingServices = () => {
               animate={ctaInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              Sin compromiso. Sin presión. Solo una conversación para entender tus objetivos de marketing.
+              Sin compromiso. Sin presión. Solo una conversación para entender tu proyecto.
             </motion.p>
           </div>
         </div>

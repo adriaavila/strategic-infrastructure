@@ -3,11 +3,8 @@ import { ArrowUpRight } from "lucide-react";
 const footerLinks = {
   Links: [
     { label: "Servicios", href: "/#pilares" },
-    { label: "Automatizaciones", href: "/automatizaciones" },
-    { label: "Marketing", href: "/marketing" },
     { label: "Precios", href: "/#precios" },
     { label: "Portfolio", href: "/#proyectos" },
-    { label: "Contacto", href: "/#contacto" },
   ],
 };
 
@@ -27,7 +24,7 @@ export const Footer = () => {
               <span className="text-lg font-semibold text-white">online</span>
             </div>
             <p className="text-brand-slate text-sm leading-relaxed mb-4">
-              Diseñamos y construimos sistemas web a medida. Websites, webapps y e-commerce creados desde la lógica de tu negocio.
+              Sistemas web a medida para tu negocio.
             </p>
             <div className="flex items-center gap-4">
               <a href="#" className="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors">
@@ -68,7 +65,7 @@ export const Footer = () => {
         <div className="pt-6 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3">
             <p className="text-xs text-brand-slate/80">
-              servicioscreativos.online | An Allok LLC Business. Designed for scale.
+              servicioscreativos.online | An Allok LLC Business. Hecho para crecer.
             </p>
             <p className="text-xs text-brand-slate/80">
               © {new Date().getFullYear()} Todos los derechos reservados.

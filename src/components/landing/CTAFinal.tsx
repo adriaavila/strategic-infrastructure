@@ -35,7 +35,7 @@ export const CTAFinal = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Si necesitás una solución digital que funcione como tu negocio, podemos ayudarte a definirla y construirla.
+            Definimos y construimos la solución que tu negocio necesita.
           </motion.p>
 
           {/* CTA */}
