@@ -96,7 +96,7 @@ const ChatVisual = () => {
           }}
         >
           <motion.div 
-            className="bg-emerald-600 text-white rounded-2xl px-4 py-2.5 flex items-center gap-2 shadow-sm cursor-pointer"
+            className="bg-brand-primary text-white rounded-2xl px-4 py-2.5 flex items-center gap-2 shadow-sm cursor-pointer"
             animate={{
               backgroundColor: [
                 "rgb(5, 150, 105)",
@@ -285,7 +285,7 @@ const PipelineVisual = () => {
               <motion.div 
                 className={`w-8 h-8 rounded-full flex items-center justify-center ${
                   i === 3 
-                    ? 'bg-emerald-500/20 text-emerald-600 ring-2 ring-emerald-500/30' 
+                    ? 'bg-brand-secondary/20 text-brand-secondary ring-2 ring-brand-secondary/30' 
                     : i >= 2 
                       ? 'bg-amber-500/20 text-amber-600' 
                       : 'bg-foreground/5 text-muted-foreground'
@@ -379,7 +379,7 @@ const ReactivationVisual = () => {
                 </motion.div>
               </div>
               <motion.div 
-                className={`w-2 h-2 rounded-full ${contact.active ? 'bg-emerald-500' : 'bg-foreground/20'}`}
+                className={`w-2 h-2 rounded-full ${contact.active ? 'bg-brand-secondary' : 'bg-foreground/20'}`}
                 animate={{ 
                   scale: [0, 1, 1.5, 1, 0],
                   opacity: [0, 1, 1, 1, 0]
@@ -411,15 +411,15 @@ const automations = [
         </p>
         <ul className="space-y-2 mb-4">
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">Respuesta en menos de 30 segundos, 24 horas al día</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">Califica prospectos y solo te pasa los que realmente interesan</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">Agenda llamadas directamente en tu calendario sin ida y vuelta</span>
           </li>
         </ul>
@@ -444,15 +444,15 @@ const automations = [
         </p>
         <ul className="space-y-2 mb-4">
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">Procesa facturas PDF y las convierte en reportes financieros</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">Sincroniza con tu sistema contable automáticamente</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">Ahorra 10+ horas semanales en tareas repetitivas</span>
           </li>
         </ul>
@@ -477,15 +477,15 @@ const automations = [
         </p>
         <ul className="space-y-2 mb-4">
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">Predice qué leads tienen más probabilidad de cerrar</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">Te avisa cuando un prospecto se enfría para que actúes rápido</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">Dashboard en tiempo real de todo tu embudo</span>
           </li>
         </ul>
@@ -510,15 +510,15 @@ const automations = [
         </p>
         <ul className="space-y-2 mb-4">
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">Identifica clientes inactivos con potencial de reactivación</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">Crea mensajes personalizados basados en su historial contigo</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">Automatiza el seguimiento hasta que respondan o cierres</span>
           </li>
         </ul>
@@ -566,7 +566,7 @@ export const Automations = () => {
               animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-soft" />
+              <span className="w-2 h-2 rounded-full bg-brand-secondary animate-pulse-soft" />
               <span className="text-sm text-muted-foreground font-medium">Automatización que trabaja 24/7</span>
             </motion.div>
 
@@ -579,7 +579,7 @@ export const Automations = () => {
             >
               Eliminá el trabajo manual.
               <br />
-              <span className="text-emerald-600">Automatizá lo que realmente importa.</span>
+              <span className="text-brand-secondary">Automatizá lo que realmente importa.</span>
             </motion.h1>
 
             {/* Subheader */}
@@ -652,7 +652,7 @@ export const Automations = () => {
             >
               Listo para automatizar
               <br />
-              <span className="text-emerald-600">tu negocio?</span>
+              <span className="text-brand-secondary">tu negocio?</span>
             </motion.h2>
 
             {/* Copy */}

@@ -81,7 +81,7 @@ export const Integrations = () => {
     <section id="integraciones" className="relative py-32 md:py-40 overflow-hidden bg-neutral-950 scroll-mt-20">
       {/* Animated gradient background */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-r from-emerald-500/20 via-transparent to-blue-500/20 blur-3xl animate-pulse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-r from-brand-secondary/20 via-transparent to-brand-primary/20 blur-3xl animate-pulse" />
       </div>
 
       {/* Grid pattern */}
@@ -94,7 +94,7 @@ export const Integrations = () => {
         {/* Section Header */}
         <div className="max-w-2xl mx-auto text-center mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 mb-6 opacity-0 animate-fade-up" style={{ animationFillMode: 'forwards' }}>
-            <span className="w-2 h-2 rounded-full bg-emerald-400" />
+            <span className="w-2 h-2 rounded-full bg-brand-secondary" />
             <span className="text-sm text-white/60">Fundación Técnica</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-5 text-white opacity-0 animate-fade-up" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
@@ -119,10 +119,10 @@ export const Integrations = () => {
             
             {/* Main hub */}
             <div className="relative w-24 h-24 rounded-2xl bg-gradient-to-br from-neutral-800 to-neutral-900 border border-white/10 flex items-center justify-center shadow-2xl">
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-secondary/20 to-brand-primary/20 opacity-0 group-hover:opacity-100 transition-opacity" />
               <img src={allokLogo} alt="Allok Hub" className="w-12 h-12 invert" />
               {/* Glow effect */}
-              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-emerald-500/30 to-blue-500/30 blur-xl opacity-50" />
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-brand-secondary/30 to-brand-primary/30 blur-xl opacity-50" />
             </div>
           </div>
 

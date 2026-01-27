@@ -94,7 +94,7 @@ export const Scoping = () => {
                   {index < processSteps.length - 1 && (
                     <div className="hidden md:block absolute top-12 left-full w-full h-0.5 bg-foreground/10 -z-10" style={{ width: 'calc(100% - 3rem)' }}>
                       <motion.div 
-                        className="h-full bg-emerald-500/30"
+                        className="h-full bg-brand-secondary/30"
                         initial={{ width: 0 }}
                         animate={isInView ? { width: "100%" } : { width: 0 }}
                         transition={{ delay: index * 0.15 + 0.5, duration: 0.8 }}
@@ -106,7 +106,7 @@ export const Scoping = () => {
                     {/* Step number and icon */}
                     <div className="flex items-center gap-3 mb-4">
                       <motion.div
-                        className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-600 font-semibold"
+                        className="w-10 h-10 rounded-xl bg-brand-secondary/10 flex items-center justify-center text-brand-secondary font-semibold"
                         initial={{ scale: 0 }}
                         animate={isInView ? { scale: 1 } : { scale: 0 }}
                         transition={{ delay: index * 0.15 + 0.3, type: "spring" }}
