@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import { motion, useMotionValue, useSpring, useInView, useScroll, useTransform } from "framer-motion";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
+export type BentoCardAccent = "emerald" | "blue" | "purple";
+
 export interface BentoCardProps {
   title: string;
   subtitle?: string;
@@ -11,9 +13,16 @@ export interface BentoCardProps {
   visual: React.ReactNode;
   delay?: number;
   index?: number;
+  accent?: BentoCardAccent;
 }
 
-export const BentoCard = ({ title, subtitle, description, icon, className, visual, delay = 0, index = 0 }: BentoCardProps) => {
+const accentBorderClass: Record<BentoCardAccent, string> = {
+  emerald: "border-t-accent-emerald/50",
+  blue: "border-t-accent-blue/50",
+  purple: "border-t-accent-purple/50",
+};
+
+export const BentoCard = ({ title, subtitle, description, icon, className, visual, delay = 0, index = 0, accent }: BentoCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(cardRef, { once: true, margin: "-100px" });
   const shouldReduceMotion = useReducedMotion();
@@ -69,7 +78,7 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
   return (
     <motion.div
       ref={cardRef}
-      className={`group relative bg-card border border-foreground/[0.08] rounded-2xl p-6 overflow-hidden shadow-architectural ${className}`}
+      className={`group relative bg-card border border-foreground/[0.08] rounded-2xl p-6 overflow-hidden shadow-architectural ${accent ? `border-t-2 ${accentBorderClass[accent]}` : ""} ${className}`}
       style={{ 
         y,
         rotateX: shouldReduceMotion ? 0 : rotateX,

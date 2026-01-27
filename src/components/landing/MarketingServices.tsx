@@ -1,7 +1,9 @@
-import { Palette, Megaphone, PenTool } from "lucide-react";
+import { Palette, Megaphone, PenTool, ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { BentoCard } from "./BentoCard";
+import { ParticleBackground } from "@/components/particles/ParticleBackground";
+import { Button } from "@/components/ui/button";
 
 // Branding Visual - color palette, typography, logo
 const BrandingVisual = () => (
@@ -164,87 +166,265 @@ const ContentVisual = () => (
 
 const marketingServices = [
   {
-    title: "Branding & Identidad",
-    description: "Logotipos, paletas de colores y guías de marca que comunican la esencia de tu negocio.",
-    icon: <Palette className="w-5 h-5 text-foreground/70" />,
-    visual: <BrandingVisual />,
-    className: "",
-    delay: 200
-  },
-  {
-    title: "Marketing Digital",
-    description: "Estrategias de redes sociales, campañas de ads y SEO para aumentar tu visibilidad online.",
-    icon: <Megaphone className="w-5 h-5 text-foreground/70" />,
-    visual: <MarketingVisual />,
-    className: "",
-    delay: 300
-  },
-  {
     title: "Creación de Contenido",
-    description: "Posts, stories, reels y todo el contenido que necesitas para mantener tus redes activas y atractivas.",
+    subtitle: "Contenido que conecta y convierte",
+    description: (
+      <>
+        <p className="mb-4 text-foreground/80">
+          Posts, stories, reels y todo el contenido que necesitás para mantener tus redes activas sin perder tiempo creándolo vos.
+        </p>
+        <ul className="space-y-2 mb-4">
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">Contenido que refleja tu voz y valores de marca</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">Calendario editorial que te mantiene visible sin esfuerzo</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">Formato para cada plataforma: Instagram, LinkedIn, TikTok</span>
+          </li>
+        </ul>
+        <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
+          Ideal para: negocios que saben que necesitan estar en redes pero no tienen tiempo para crear contenido constante.
+        </p>
+      </>
+    ),
     icon: <PenTool className="w-5 h-5 text-foreground/70" />,
     visual: <ContentVisual />,
     className: "lg:col-span-2",
-    delay: 400
+    delay: 200,
+    accent: "emerald" as const,
+  },
+  {
+    title: "Branding & Identidad",
+    subtitle: "Una marca que la gente recuerda",
+    description: (
+      <>
+        <p className="mb-4 text-foreground/80">
+          Logotipos, paletas de colores y guías de marca que comunican quién sos y por qué importás.
+        </p>
+        <ul className="space-y-2 mb-4">
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">Identidad visual que se diferencia de la competencia</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">Guías de marca que tu equipo puede usar consistentemente</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">Diseño que funciona en todos los canales (web, redes, impreso)</span>
+          </li>
+        </ul>
+        <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
+          Ideal para: negocios que necesitan verse profesionales y memorables desde el primer contacto.
+        </p>
+      </>
+    ),
+    icon: <Palette className="w-5 h-5 text-foreground/70" />,
+    visual: <BrandingVisual />,
+    className: "",
+    delay: 300,
+    accent: "purple" as const,
+  },
+  {
+    title: "Marketing Digital",
+    subtitle: "Estrategias que generan resultados",
+    description: (
+      <>
+        <p className="mb-4 text-foreground/80">
+          Campañas de ads, SEO y estrategias de redes sociales que traen clientes reales, no solo likes.
+        </p>
+        <ul className="space-y-2 mb-4">
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">Campañas de ads que convierten visitantes en clientes</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">SEO que te hace aparecer cuando la gente busca lo que ofrecés</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">Estrategias basadas en datos, no en suposiciones</span>
+          </li>
+        </ul>
+        <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
+          Ideal para: negocios que quieren crecer online pero no saben por dónde empezar.
+        </p>
+      </>
+    ),
+    icon: <Megaphone className="w-5 h-5 text-foreground/70" />,
+    visual: <MarketingVisual />,
+    className: "",
+    delay: 400,
+    accent: "blue" as const,
   }
 ];
 
 export const MarketingServices = () => {
+  const heroRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+  const heroInView = useInView(heroRef, { once: true, margin: "-100px" });
   const isInView = useInView(containerRef, { once: true, margin: "-50px" });
+  const ctaInView = useInView(ctaRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="marketing" className="relative py-24 md:py-32 scroll-mt-20 bg-muted/30" ref={containerRef}>
-      <div className="container mx-auto px-6">
-        {/* Section Header */}
-        <div className="max-w-2xl mx-auto text-center mb-16">
-          <motion.h2 
-            className="text-3xl md:text-4xl font-semibold tracking-tight mb-4"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          >
-            Servicios de Marketing
-          </motion.h2>
-          <motion.p 
-            className="text-muted-foreground"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          >
-            Soluciones para destacar en el mundo digital
-          </motion.p>
+    <>
+      {/* Hero Section */}
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        {/* Architectural Grid Overlay */}
+        <div className="absolute inset-0 architectural-grid opacity-30" />
+        
+        {/* Gradient Mesh Background */}
+        <div className="absolute inset-0 gradient-mesh" />
+        
+        {/* Particle Animation Background */}
+        <ParticleBackground />
+        
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-6 pt-32 pb-24" ref={heroRef}>
+          <div className="max-w-5xl mx-auto text-center">
+            {/* Badge */}
+            <motion.div 
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/10 bg-card/80 backdrop-blur-sm mb-8 opacity-0"
+              initial={{ opacity: 0, y: 20 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-soft" />
+              <span className="text-sm text-muted-foreground font-medium">Marketing que convierte</span>
+            </motion.div>
+
+            {/* Headline */}
+            <motion.h1 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-6 text-balance font-heading"
+              initial={{ opacity: 0, y: 30 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              Marketing que trae clientes,
+              <br />
+              <span className="text-emerald-600">no solo likes.</span>
+            </motion.h1>
+
+            {/* Subheader */}
+            <motion.p 
+              className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              Branding que la gente recuerda. Estrategias digitales que generan resultados. Contenido que conecta con tu audiencia.
+            </motion.p>
+          </div>
         </div>
 
-        {/* Bento Grid */}
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-          variants={{
-            hidden: { opacity: 0 },
-            show: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.1
+        {/* Bottom Fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-background/80 to-transparent" />
+      </section>
+
+      {/* Services Grid Section */}
+      <section id="marketing" className="relative py-24 md:py-32 scroll-mt-20 gradient-mesh-subtle" ref={containerRef}>
+        <div className="container mx-auto px-6">
+          {/* Bento Grid */}
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6"
+            variants={{
+              hidden: { opacity: 0 },
+              show: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.1
+                }
               }
-            }
-          }}
-          initial="hidden"
-          animate={isInView ? "show" : "hidden"}
-        >
-          {marketingServices.map((service, index) => (
-            <BentoCard
-              key={service.title}
-              title={service.title}
-              description={service.description}
-              icon={service.icon}
-              visual={service.visual}
-              className={service.className}
-              delay={service.delay}
-              index={index}
-            />
-          ))}
-        </motion.div>
-      </div>
-    </section>
+            }}
+            initial="hidden"
+            animate={isInView ? "show" : "hidden"}
+          >
+            {marketingServices.map((service, index) => (
+              <BentoCard
+                key={service.title}
+                title={service.title}
+                subtitle={service.subtitle}
+                description={service.description}
+                icon={service.icon}
+                visual={service.visual}
+                className={service.className}
+                delay={service.delay}
+                index={index}
+                accent={service.accent}
+              />
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative py-32 md:py-40 scroll-mt-20 overflow-hidden">
+        {/* Background with gradient mesh */}
+        <div className="absolute inset-0 gradient-mesh" />
+        <div className="absolute inset-0 architectural-grid opacity-20" />
+        
+        {/* Content */}
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl mx-auto text-center" ref={ctaRef}>
+            {/* Headline */}
+            <motion.h2 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 font-heading"
+              initial={{ opacity: 0, y: 30 }}
+              animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              Listo para destacar
+              <br />
+              <span className="text-emerald-600">en el mundo digital?</span>
+            </motion.h2>
+
+            {/* Copy */}
+            <motion.p 
+              className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              Sin agencias grandes. Sin contratos largos. Solo marketing que funciona para tu negocio.
+            </motion.p>
+
+            {/* CTA */}
+            <motion.div
+              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="group shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              >
+                Agendar Llamada de Descubrimiento
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </motion.div>
+
+            {/* Trust indicator */}
+            <motion.p 
+              className="text-sm text-muted-foreground mt-6"
+              initial={{ opacity: 0 }}
+              animate={ctaInView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+            >
+              Sin compromiso. Sin presión. Solo una conversación para entender tus objetivos de marketing.
+            </motion.p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };

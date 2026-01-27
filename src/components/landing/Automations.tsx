@@ -1,124 +1,11 @@
-import { MessageSquare, FileSpreadsheet, Users, Zap } from "lucide-react";
+import { MessageSquare, FileSpreadsheet, Users, Zap, ArrowRight } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { motion, useMotionValue, useSpring, useInView } from "framer-motion";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
+import { ParticleBackground } from "@/components/particles/ParticleBackground";
+import { Button } from "@/components/ui/button";
+import { BentoCard } from "./BentoCard";
 
-interface BentoCardProps {
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-  className?: string;
-  visual: React.ReactNode;
-  delay?: number;
-  index?: number;
-}
-
-const BentoCard = ({ title, description, icon, className, visual, delay = 0, index = 0 }: BentoCardProps) => {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(cardRef, { once: true, margin: "-100px" });
-  
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  
-  const springConfig = { damping: 25, stiffness: 200 };
-  const x = useSpring(mouseX, springConfig);
-  const y = useSpring(mouseY, springConfig);
-
-  useEffect(() => {
-    const card = cardRef.current;
-    if (!card) return;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = card.getBoundingClientRect();
-      const cardCenterX = rect.left + rect.width / 2;
-      const cardCenterY = rect.top + rect.height / 2;
-      
-      const distanceX = e.clientX - cardCenterX;
-      const distanceY = e.clientY - cardCenterY;
-      
-      mouseX.set((distanceX / rect.width) * 20);
-      mouseY.set((distanceY / rect.height) * 20);
-    };
-
-    const handleMouseLeave = () => {
-      mouseX.set(0);
-      mouseY.set(0);
-    };
-
-    card.addEventListener('mousemove', handleMouseMove);
-    card.addEventListener('mouseleave', handleMouseLeave);
-    return () => {
-      card.removeEventListener('mousemove', handleMouseMove);
-      card.removeEventListener('mouseleave', handleMouseLeave);
-    };
-  }, [mouseX, mouseY]);
-
-  return (
-    <motion.div
-      ref={cardRef}
-      className={`group relative bg-card border border-foreground/[0.08] rounded-2xl p-6 overflow-hidden ${className}`}
-      initial={{ opacity: 0, y: 60, scale: 0.9 }}
-      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 60, scale: 0.9 }}
-      transition={{ 
-        duration: 0.6, 
-        delay: index * 0.1,
-        ease: [0.16, 1, 0.3, 1]
-      }}
-      whileHover={{ 
-        scale: 1.02,
-        borderColor: "hsl(var(--foreground) / 0.15)",
-        transition: { duration: 0.3 }
-      }}
-      style={{ x, y }}
-    >
-      {/* Animated background gradient */}
-      <motion.div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        style={{
-          background: "radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(var(--foreground) / 0.04), transparent 40%)"
-        }}
-      />
-
-      {/* Icon */}
-      <motion.div 
-        className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-foreground/5 mb-4"
-        initial={{ scale: 0, rotate: -180 }}
-        animate={isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }}
-        transition={{ delay: index * 0.1 + 0.2, duration: 0.5, type: "spring", stiffness: 200 }}
-      >
-        {icon}
-      </motion.div>
-
-      {/* Content */}
-      <motion.h3 
-        className="text-lg font-medium mb-2"
-        initial={{ opacity: 0, x: -20 }}
-        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-        transition={{ delay: index * 0.1 + 0.3, duration: 0.4 }}
-      >
-        {title}
-      </motion.h3>
-      <motion.p 
-        className="text-sm text-muted-foreground leading-relaxed"
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ delay: index * 0.1 + 0.4, duration: 0.4 }}
-      >
-        {description}
-      </motion.p>
-
-      {/* Visual */}
-      <motion.div 
-        className="mt-6 -mx-6 -mb-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ delay: index * 0.1 + 0.5, duration: 0.5 }}
-      >
-        {visual}
-      </motion.div>
-    </motion.div>
-  );
-};
 
 // Chat Animation Visual with fluid looping animation
 const ChatVisual = () => {
@@ -516,81 +403,297 @@ const ReactivationVisual = () => {
 const automations = [
   {
     title: "Caza-Prospectos 24/7",
-    description: "Tu vendedor que nunca duerme. Respuesta inmediata, calificación de prospectos y agendamiento automático.",
+    subtitle: "Tu vendedor que nunca duerme",
+    description: (
+      <>
+        <p className="mb-4 text-foreground/80">
+          Atendé consultas, calificá leads y agendá reuniones automáticamente. Mientras vos dormís, tu sistema sigue trabajando.
+        </p>
+        <ul className="space-y-2 mb-4">
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">Respuesta en menos de 30 segundos, 24 horas al día</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">Califica prospectos y solo te pasa los que realmente interesan</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">Agenda llamadas directamente en tu calendario sin ida y vuelta</span>
+          </li>
+        </ul>
+        <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
+          Ideal para: negocios que pierden oportunidades por no responder rápido.
+        </p>
+      </>
+    ),
     icon: <MessageSquare className="w-5 h-5 text-foreground/70" />,
     visual: <ChatVisual />,
     className: "lg:col-span-2",
-    delay: 200
+    delay: 200,
+    accent: "emerald" as const,
   },
   {
     title: "Operador Invisible",
-    description: "Data-entry automático. Convierte facturas y recibos en reportes financieros en tiempo real.",
+    subtitle: "Eliminá el trabajo manual de una vez",
+    description: (
+      <>
+        <p className="mb-4 text-foreground/80">
+          Convertí facturas, recibos y documentos en datos estructurados sin tocar una hoja de cálculo.
+        </p>
+        <ul className="space-y-2 mb-4">
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">Procesa facturas PDF y las convierte en reportes financieros</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">Sincroniza con tu sistema contable automáticamente</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">Ahorra 10+ horas semanales en tareas repetitivas</span>
+          </li>
+        </ul>
+        <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
+          Ideal para: equipos que pierden tiempo en data-entry que debería estar automatizado.
+        </p>
+      </>
+    ),
     icon: <FileSpreadsheet className="w-5 h-5 text-foreground/70" />,
     visual: <DataVisual />,
     className: "",
-    delay: 300
+    delay: 300,
+    accent: "blue" as const,
   },
   {
     title: "Pipeline Inteligente",
-    description: "Visualiza y gestiona tu embudo de ventas con inteligencia artificial predictiva.",
+    subtitle: "Sabé qué leads van a cerrar",
+    description: (
+      <>
+        <p className="mb-4 text-foreground/80">
+          Visualizá tu embudo de ventas y recibí alertas sobre qué oportunidades necesitan atención urgente.
+        </p>
+        <ul className="space-y-2 mb-4">
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">Predice qué leads tienen más probabilidad de cerrar</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">Te avisa cuando un prospecto se enfría para que actúes rápido</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">Dashboard en tiempo real de todo tu embudo</span>
+          </li>
+        </ul>
+        <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
+          Ideal para: equipos de ventas que necesitan priorizar mejor su tiempo.
+        </p>
+      </>
+    ),
     icon: <Users className="w-5 h-5 text-foreground/70" />,
     visual: <PipelineVisual />,
     className: "",
-    delay: 400
+    delay: 400,
+    accent: "purple" as const,
   },
   {
     title: "Bóveda de Ventas",
-    description: "Dinero olvidado. Reactivamos tu base de datos vieja con campañas personalizadas de IA.",
+    subtitle: "Recuperá clientes que ya tenías",
+    description: (
+      <>
+        <p className="mb-4 text-foreground/80">
+          Tu base de datos vieja tiene clientes que ya te conocían. Reactivalos con campañas personalizadas que realmente funcionan.
+        </p>
+        <ul className="space-y-2 mb-4">
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">Identifica clientes inactivos con potencial de reactivación</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">Crea mensajes personalizados basados en su historial contigo</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-foreground/70 text-sm">Automatiza el seguimiento hasta que respondan o cierres</span>
+          </li>
+        </ul>
+        <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
+          Ideal para: negocios con bases de datos grandes que no saben cómo reactivarlas.
+        </p>
+      </>
+    ),
     icon: <Zap className="w-5 h-5 text-foreground/70" />,
     visual: <ReactivationVisual />,
     className: "lg:col-span-2",
-    delay: 500
+    delay: 500,
+    accent: "emerald" as const,
   }
 ];
 
 export const Automations = () => {
+  const heroRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+  const heroInView = useInView(heroRef, { once: true, margin: "-100px" });
   const isInView = useInView(containerRef, { once: true, margin: "-50px" });
+  const ctaInView = useInView(ctaRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="automatizaciones" className="relative py-24 md:py-32 scroll-mt-20" ref={containerRef}>
-      <div className="container mx-auto px-6">
-        {/* Section Header */}
-        <div className="max-w-2xl mx-auto text-center mb-16">
-          <motion.h2 
-            className="text-3xl md:text-4xl font-semibold tracking-tight mb-4"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          >
-            Automatizaciones
-          </motion.h2>
-          <motion.p 
-            className="text-muted-foreground"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          >
-            Soluciones que transforman la manera en que operas tu negocio
-          </motion.p>
+    <>
+      {/* Hero Section */}
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        {/* Architectural Grid Overlay */}
+        <div className="absolute inset-0 architectural-grid opacity-30" />
+        
+        {/* Gradient Mesh Background */}
+        <div className="absolute inset-0 gradient-mesh" />
+        
+        {/* Particle Animation Background */}
+        <ParticleBackground />
+        
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-6 pt-32 pb-24" ref={heroRef}>
+          <div className="max-w-5xl mx-auto text-center">
+            {/* Badge */}
+            <motion.div 
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/10 bg-card/80 backdrop-blur-sm mb-8 opacity-0"
+              initial={{ opacity: 0, y: 20 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-soft" />
+              <span className="text-sm text-muted-foreground font-medium">Automatización que trabaja 24/7</span>
+            </motion.div>
+
+            {/* Headline */}
+            <motion.h1 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-6 text-balance font-heading"
+              initial={{ opacity: 0, y: 30 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              Eliminá el trabajo manual.
+              <br />
+              <span className="text-emerald-600">Automatizá lo que realmente importa.</span>
+            </motion.h1>
+
+            {/* Subheader */}
+            <motion.p 
+              className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              Sistemas que trabajan mientras vos dormís. Respuestas automáticas, procesamiento de datos y gestión de leads sin intervención manual.
+            </motion.p>
+          </div>
         </div>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {automations.map((automation, index) => (
-            <BentoCard
-              key={automation.title}
-              title={automation.title}
-              description={automation.description}
-              icon={automation.icon}
-              visual={automation.visual}
-              className={automation.className}
-              delay={automation.delay}
-              index={index}
-            />
-          ))}
+        {/* Bottom Fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-background/80 to-transparent" />
+      </section>
+
+      {/* Automations Grid Section */}
+      <section id="automatizaciones" className="relative py-24 md:py-32 scroll-mt-20 gradient-mesh-subtle" ref={containerRef}>
+        <div className="container mx-auto px-6">
+          {/* Bento Grid */}
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6"
+            variants={{
+              hidden: { opacity: 0 },
+              show: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+            initial="hidden"
+            animate={isInView ? "show" : "hidden"}
+          >
+            {automations.map((automation, index) => (
+              <BentoCard
+                key={automation.title}
+                title={automation.title}
+                subtitle={automation.subtitle}
+                description={automation.description}
+                icon={automation.icon}
+                visual={automation.visual}
+                className={automation.className}
+                delay={automation.delay}
+                index={index}
+                accent={automation.accent}
+              />
+            ))}
+          </motion.div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative py-32 md:py-40 scroll-mt-20 overflow-hidden">
+        {/* Background with gradient mesh */}
+        <div className="absolute inset-0 gradient-mesh" />
+        <div className="absolute inset-0 architectural-grid opacity-20" />
+        
+        {/* Content */}
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl mx-auto text-center" ref={ctaRef}>
+            {/* Headline */}
+            <motion.h2 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 font-heading"
+              initial={{ opacity: 0, y: 30 }}
+              animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              Listo para automatizar
+              <br />
+              <span className="text-emerald-600">tu negocio?</span>
+            </motion.h2>
+
+            {/* Copy */}
+            <motion.p 
+              className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              Sin configuración compleja. Sin meses de desarrollo. Solo sistemas que funcionan desde el día uno.
+            </motion.p>
+
+            {/* CTA */}
+            <motion.div
+              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="group shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              >
+                Agendar Llamada de Descubrimiento
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </motion.div>
+
+            {/* Trust indicator */}
+            <motion.p 
+              className="text-sm text-muted-foreground mt-6"
+              initial={{ opacity: 0 }}
+              animate={ctaInView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+            >
+              Sin compromiso. Sin presión. Solo una conversación para entender qué automatizar.
+            </motion.p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
