@@ -66,7 +66,7 @@ export const Pricing = () => {
                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                     transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
                   >
-                    <span className="text-emerald-600 mt-1 font-bold text-lg">•</span>
+                    <span className="text-brand-secondary mt-1 font-bold text-lg">•</span>
                     <span className="text-foreground/80 leading-relaxed">{factor}</span>
                   </motion.li>
                 ))}

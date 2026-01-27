@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import allokLogo from "@/assets/allok-logo.png";
 
 const navLinks = [
-  { label: "Servicios", href: "#pilares" },
+  { label: "Servicios", href: "/#pilares" },
   { label: "Automatizaciones", href: "/automatizaciones" },
   { label: "Marketing", href: "/marketing" },
-  { label: "Precios", href: "#precios" },
+  { label: "Precios", href: "/#precios" },
   { label: "Blog", href: "/blog" },
 ];
 
@@ -27,16 +26,17 @@ export const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-foreground/[0.05]"
+          ? "bg-brand-dark/80 backdrop-blur-xl border-b border-white/10"
           : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
-            <img src={allokLogo} alt="Allok" className="w-8 h-8" />
-            <span className="text-lg font-semibold tracking-tight">Allok</span>
+          {/* Logo - servicioscreativos.online with violet dot */}
+          <a href="/" className="flex items-center gap-0 text-lg font-semibold tracking-tight text-white">
+            <span>servicioscreativos</span>
+            <span className="text-brand-primary">.</span>
+            <span>online</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -45,17 +45,23 @@ export const Navbar = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm text-brand-slate hover:text-white transition-colors"
               >
                 {link.label}
               </a>
             ))}
+            <a href="/#contacto">
+              <Button variant="hero" size="sm" className="rounded-lg">
+                Contacto
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden p-2 -mr-2"
+            className="md:hidden p-2 -mr-2 text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
           >
             {isMobileMenuOpen ? (
               <X className="w-5 h-5" />
@@ -67,18 +73,23 @@ export const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-background border-b border-foreground/[0.05] py-4 animate-fade-in">
+          <div className="md:hidden absolute top-16 left-0 right-0 bg-brand-dark border-b border-white/10 py-4 animate-fade-in">
             <div className="container mx-auto px-6 flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
+                  className="text-sm text-brand-slate hover:text-white transition-colors py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
                 </a>
               ))}
+              <a href="/#contacto" onClick={() => setIsMobileMenuOpen(false)}>
+                <Button variant="hero" size="sm" className="w-full rounded-lg">
+                  Contacto
+                </Button>
+              </a>
             </div>
           </div>
         )}

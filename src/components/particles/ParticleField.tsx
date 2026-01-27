@@ -54,32 +54,20 @@ export function ParticleField({
   }, [count, radius]);
 
   const material = useMemo(() => {
-    // Convert design system HSL color to RGB for Three.js
-    // Using muted foreground color: hsl(0, 0%, 40%) for subtle particles
-    const hslColor = designTokens.colors.base.grey[500]; // hsl(0, 0%, 40%)
-    const hslMatch = hslColor.match(/hsl\((\d+),\s*(\d+)%,\s*(\d+)%\)/);
-    
-    let particleColor: THREE.Color;
-    if (hslMatch) {
-      const h = parseInt(hslMatch[1]) / 360;
-      const s = parseInt(hslMatch[2]) / 100;
-      const l = parseInt(hslMatch[3]) / 100;
-      particleColor = new THREE.Color().setHSL(h, s, l);
-    } else {
-      // Fallback to muted grey if parsing fails
-      particleColor = new THREE.Color(0.4, 0.4, 0.4);
-    }
+    // Brand Slate (#94A3B8) for faint violet/slate tech look
+    const hex = designTokens.colors.brand?.slate ?? "#94A3B8";
+    const particleColor = new THREE.Color(hex);
 
     return new THREE.ShaderMaterial({
       vertexShader: roundedParticleVertexShader,
       fragmentShader: roundedParticleFragmentShader,
       uniforms: {
         uColor: { value: particleColor },
-        uOpacity: { value: 0.15 }, // Subtle opacity to match design system aesthetic
+        uOpacity: { value: 0.18 },
       },
       transparent: true,
       depthWrite: false,
-      blending: THREE.NormalBlending, // Changed from AdditiveBlending for more subtle effect
+      blending: THREE.NormalBlending,
     });
   }, []);
 

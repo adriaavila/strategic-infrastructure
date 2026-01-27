@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -21,9 +21,9 @@ const buttonVariants = cva(
           "hover:bg-foreground/5 text-foreground rounded-lg",
         link: 
           "text-foreground underline-offset-4 hover:underline",
-        // Architectural variants
+        // Brand CTA - Electric Violet
         hero: 
-          "bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 text-base font-medium rounded-xl border border-primary",
+          "bg-brand-primary text-white hover:bg-brand-primary/90 px-8 py-4 text-base font-medium rounded-xl border border-brand-primary",
         "hero-outline":
           "bg-transparent text-foreground border border-foreground/10 hover:bg-foreground/5 px-8 py-4 text-base font-medium rounded-xl",
       },

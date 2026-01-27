@@ -120,7 +120,7 @@ export const FAQ = () => {
             ¿No encuentras lo que buscas?
           </p>
           <a
-            href="#contact"
+            href="#contacto"
             className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-medium rounded-full hover:bg-primary/90 transition-colors"
           >
             Contáctanos

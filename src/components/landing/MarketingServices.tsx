@@ -17,7 +17,7 @@ const BrandingVisual = () => (
       >
         {[
           { color: "bg-neutral-900", delay: 0.9 },
-          { color: "bg-emerald-500", delay: 1 },
+          { color: "bg-brand-secondary", delay: 1 },
           { color: "bg-slate-200", delay: 1.1 }
         ].map((item, i) => (
           <motion.div
@@ -84,7 +84,7 @@ const BrandingVisual = () => (
 // Marketing Visual - metrics without fake percentages
 const MarketingVisual = () => {
   const metrics = [
-    { label: 'Alcance', color: 'bg-emerald-500/20' },
+    { label: 'Alcance', color: 'bg-brand-secondary/20' },
     { label: 'Conversiones', color: 'bg-blue-500/20' },
     { label: 'Engagement', color: 'bg-purple-500/20' },
   ];
@@ -175,15 +175,15 @@ const marketingServices = [
         </p>
         <ul className="space-y-2 mb-4">
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">Contenido que refleja tu voz y valores de marca</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">Calendario editorial que te mantiene visible sin esfuerzo</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">Formato para cada plataforma: Instagram, LinkedIn, TikTok</span>
           </li>
         </ul>
@@ -196,7 +196,7 @@ const marketingServices = [
     visual: <ContentVisual />,
     className: "lg:col-span-2",
     delay: 200,
-    accent: "emerald" as const,
+    accent: "emerald" as const, /* maps to brand-secondary in BentoCard */
   },
   {
     title: "Branding & Identidad",
@@ -208,15 +208,15 @@ const marketingServices = [
         </p>
         <ul className="space-y-2 mb-4">
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">Identidad visual que se diferencia de la competencia</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">Guías de marca que tu equipo puede usar consistentemente</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">Diseño que funciona en todos los canales (web, redes, impreso)</span>
           </li>
         </ul>
@@ -241,15 +241,15 @@ const marketingServices = [
         </p>
         <ul className="space-y-2 mb-4">
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">Campañas de ads que convierten visitantes en clientes</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">SEO que te hace aparecer cuando la gente busca lo que ofrecés</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70 text-sm">Estrategias basadas en datos, no en suposiciones</span>
           </li>
         </ul>
@@ -297,7 +297,7 @@ export const MarketingServices = () => {
               animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-soft" />
+              <span className="w-2 h-2 rounded-full bg-brand-secondary animate-pulse-soft" />
               <span className="text-sm text-muted-foreground font-medium">Marketing que convierte</span>
             </motion.div>
 
@@ -310,7 +310,7 @@ export const MarketingServices = () => {
             >
               Marketing que trae clientes,
               <br />
-              <span className="text-emerald-600">no solo likes.</span>
+              <span className="text-brand-secondary">no solo likes.</span>
             </motion.h1>
 
             {/* Subheader */}
@@ -383,7 +383,7 @@ export const MarketingServices = () => {
             >
               Listo para destacar
               <br />
-              <span className="text-emerald-600">en el mundo digital?</span>
+              <span className="text-brand-secondary">en el mundo digital?</span>
             </motion.h2>
 
             {/* Copy */}

@@ -1,5 +1,4 @@
 import { ArrowUpRight } from "lucide-react";
-import allokLogo from "@/assets/allok-logo.png";
 
 const footerLinks = {
   Links: [
@@ -8,12 +7,13 @@ const footerLinks = {
     { label: "Marketing", href: "/marketing" },
     { label: "Precios", href: "/#precios" },
     { label: "Portfolio", href: "/#proyectos" },
+    { label: "Contacto", href: "/#contacto" },
   ],
 };
 
 export const Footer = () => {
   return (
-    <footer className="relative bg-[#111111] text-white min-h-[50vh] pt-10 pb-6">
+    <footer className="relative bg-brand-dark text-white min-h-[50vh] pt-10 pb-6">
       {/* Top Border Gradient */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       
@@ -21,11 +21,12 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <img src={allokLogo} alt="Allok" className="w-8 h-8 invert" />
-              <span className="text-lg font-semibold">Allok</span>
+            <div className="flex items-center gap-0 mb-4">
+              <span className="text-lg font-semibold text-white">servicioscreativos</span>
+              <span className="text-brand-primary">.</span>
+              <span className="text-lg font-semibold text-white">online</span>
             </div>
-            <p className="text-white/50 text-sm leading-relaxed mb-4">
+            <p className="text-brand-slate text-sm leading-relaxed mb-4">
               Diseñamos y construimos sistemas web a medida. Websites, webapps y e-commerce creados desde la lógica de tu negocio.
             </p>
             <div className="flex items-center gap-4">
@@ -51,7 +52,7 @@ export const Footer = () => {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="group text-sm text-white/50 hover:text-white transition-colors inline-flex items-center gap-1"
+                      className="group text-sm text-brand-slate hover:text-white transition-colors inline-flex items-center gap-1"
                     >
                       {link.label}
                       <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-0.5 translate-x-0.5 group-hover:opacity-100 transition-all" />
@@ -66,10 +67,10 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-6 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3">
-            <p className="text-xs text-white/40">
+            <p className="text-xs text-brand-slate/80">
               servicioscreativos.online | An Allok LLC Business. Designed for scale.
             </p>
-            <p className="text-xs text-white/40">
+            <p className="text-xs text-brand-slate/80">
               © {new Date().getFullYear()} Todos los derechos reservados.
             </p>
           </div>
