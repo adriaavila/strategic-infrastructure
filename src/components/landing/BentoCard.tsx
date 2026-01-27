@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { motion, useMotionValue, useSpring, useInView, useScroll, useTransform } from "framer-motion";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
-export type BentoCardAccent = "emerald" | "blue" | "purple";
+export type BentoCardAccent = "emerald" | "blue" | "purple" | "mint";
 
 export interface BentoCardProps {
   title: string;
@@ -17,9 +17,10 @@ export interface BentoCardProps {
 }
 
 const accentBorderClass: Record<BentoCardAccent, string> = {
-  emerald: "border-t-accent-emerald/50",
-  blue: "border-t-accent-blue/50",
-  purple: "border-t-accent-purple/50",
+  emerald: "border-t-brand-secondary/50",
+  mint: "border-t-brand-secondary/50",
+  blue: "border-t-brand-primary/50",
+  purple: "border-t-brand-primary/50",
 };
 
 export const BentoCard = ({ title, subtitle, description, icon, className, visual, delay = 0, index = 0, accent }: BentoCardProps) => {
@@ -107,7 +108,7 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
       <motion.div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{
-          background: "radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(var(--accent-emerald) / 0.08), transparent 40%)"
+          background: "radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(var(--brand-secondary) / 0.08), transparent 40%)"
         }}
       />
 

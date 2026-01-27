@@ -16,7 +16,7 @@ const steps = [
     ],
     note: "Resultado: sabés exactamente qué vas a recibir, cuándo y a qué precio. Sin sorpresas.",
     icon: FileText,
-    color: "emerald"
+    color: "mint"
   },
   {
     number: "02",
@@ -66,13 +66,13 @@ export const EngagementModel = () => {
           <div className="grid md:grid-cols-2 gap-8 relative">
             {/* Connecting Line */}
             <motion.div
-              className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-0.5 bg-gradient-to-r from-emerald-500/20 via-blue-500/20 to-transparent"
+              className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-0.5 bg-gradient-to-r from-brand-secondary/20 via-brand-primary/20 to-transparent"
               initial={{ scaleX: 0 }}
               animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
               transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             />
             <motion.div
-              className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-emerald-500/30"
+              className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-brand-secondary/30"
               initial={{ scale: 0 }}
               animate={isInView ? { scale: 1 } : { scale: 0 }}
               transition={{ delay: 0.7, duration: 0.4, type: "spring" }}
@@ -104,13 +104,13 @@ export const EngagementModel = () => {
                       </motion.div>
                       <motion.div
                         className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                          step.color === "emerald" ? "bg-emerald-500/10" : "bg-blue-500/10"
+                          step.color === "mint" ? "bg-brand-secondary/10" : "bg-brand-primary/10"
                         }`}
                         initial={{ scale: 0, rotate: -180 }}
                         animate={isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }}
                         transition={{ delay: index * 0.2 + 0.4, duration: 0.5, type: "spring" }}
                       >
-                        <Icon className={`w-6 h-6 ${step.color === "emerald" ? "text-emerald-600" : "text-blue-600"}`} />
+                        <Icon className={`w-6 h-6 ${step.color === "mint" ? "text-brand-secondary" : "text-brand-primary"}`} />
                       </motion.div>
                     </div>
 
@@ -150,7 +150,7 @@ export const EngagementModel = () => {
                       >
                         {step.bullets.map((bullet, bulletIndex) => (
                           <li key={bulletIndex} className="flex items-start gap-2 text-muted-foreground">
-                            <span className="text-emerald-600 mt-1">•</span>
+                            <span className="text-brand-secondary mt-1">•</span>
                             <span>{bullet}</span>
                           </li>
                         ))}

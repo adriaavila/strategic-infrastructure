@@ -87,6 +87,15 @@ export const designTokens = {
       input: 'hsl(0, 0%, 0% / 0.08)',
       ring: 'hsl(0, 0%, 0% / 0.1)',
     },
+
+    // Brand Palette (servicioscreativos.online - Architect-Creator)
+    brand: {
+      dark: '#0A0A0B',       // Deep Space - --bg-main
+      primary: '#8B5CF6',    // Electric Violet - --brand-primary
+      secondary: '#2DD4BF',  // Cyber Mint - --brand-secondary
+      slate: '#94A3B8',      // Slate Support - --text-muted
+      white: '#FFFFFF',      // Pure White - --text-main
+    },
   },
 
   // ============================================
