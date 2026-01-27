@@ -17,18 +17,18 @@ const CustomWebsiteVisual = () => {
         <div className="flex items-center gap-1.5 px-3 py-2 bg-foreground/[0.05] border-b border-foreground/[0.08]">
           <div className="w-2 h-2 rounded-full bg-red-400/50" />
           <div className="w-2 h-2 rounded-full bg-amber-400/50" />
-          <div className="w-2 h-2 rounded-full bg-emerald-500/50" />
+          <div className="w-2 h-2 rounded-full bg-brand-secondary/50" />
           <div className="flex-1 mx-2 h-3.5 rounded bg-foreground/[0.06]" />
         </div>
         {/* Wireframe content */}
         <div className="p-3 space-y-2">
-          <div className="h-7 rounded-md bg-accent-emerald/15" />
+          <div className="h-7 rounded-md bg-brand-secondary/15" />
           <div className="grid grid-cols-3 gap-2">
             {[0, 1, 2].map((i) => (
               <div key={i} className="h-11 rounded-md bg-foreground/[0.05] border border-foreground/[0.06]" />
             ))}
           </div>
-          <div className="h-3.5 rounded-md bg-accent-blue/10" />
+          <div className="h-3.5 rounded-md bg-brand-primary/10" />
         </div>
       </div>
     </div>
@@ -56,7 +56,7 @@ const WebAppsVisual = () => {
         <div className="space-y-3">
           <div className="flex items-center justify-between p-2 rounded-lg bg-foreground/[0.05] border border-foreground/[0.08]">
             <div className="h-2 w-16 rounded bg-foreground/[0.08]" />
-            <div className="w-5 h-5 rounded-full bg-accent-emerald/20" />
+            <div className="w-5 h-5 rounded-full bg-brand-secondary/20" />
           </div>
           <div className="grid grid-cols-2 gap-2">
             {tiles.map((t, i) => (
@@ -81,13 +81,13 @@ const WebAppsVisual = () => {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="h-2 w-16 rounded bg-foreground/[0.08]" />
-          <div className="w-5 h-5 rounded-full bg-accent-emerald/20" />
+          <div className="w-5 h-5 rounded-full bg-brand-secondary/20" />
         </motion.div>
         <div className="grid grid-cols-2 gap-2">
           {tiles.map((t, i) => (
             <motion.div
               key={i}
-              className={`${tileClassName} ${t.accent ? "ring-1 ring-accent-emerald/20" : ""}`}
+              className={`${tileClassName} ${t.accent ? "ring-1 ring-brand-secondary/20" : ""}`}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
               transition={{
@@ -118,7 +118,7 @@ const EcommerceVisual = () => {
               key={i}
               className="flex-1 rounded-lg border border-foreground/[0.08] p-2 bg-card/50"
             >
-              <div className="h-9 rounded-md bg-gradient-to-br from-accent-blue/15 to-accent-purple/15 mb-2" />
+              <div className="h-9 rounded-md bg-gradient-to-br from-brand-primary/15 to-brand-primary/30 mb-2" />
               <div className="h-1.5 w-full rounded bg-foreground/[0.06]" />
             </div>
           ))}
@@ -127,11 +127,11 @@ const EcommerceVisual = () => {
         <div className="rounded-lg border border-foreground/[0.08] p-2.5 bg-card/50">
           <div className="flex items-center justify-between mb-2">
             <div className="h-2 w-12 rounded bg-foreground/[0.08]" />
-            <div className="w-6 h-6 rounded-full bg-accent-emerald/20 flex items-center justify-center">
-              <ShoppingCart className="w-3 h-3 text-accent-emerald" />
+            <div className="w-6 h-6 rounded-full bg-brand-secondary/20 flex items-center justify-center">
+              <ShoppingCart className="w-3 h-3 text-brand-secondary" />
             </div>
           </div>
-          <div className="h-5 rounded-md bg-gradient-to-r from-accent-emerald/15 to-accent-blue/10" />
+          <div className="h-5 rounded-md bg-gradient-to-r from-brand-secondary/15 to-brand-primary/10" />
         </div>
         {/* Payment icons */}
         <div className="flex gap-1.5 justify-end">
@@ -155,19 +155,19 @@ const services = [
         </p>
         <ul className="space-y-3 mb-4">
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70">Páginas que cargan en menos de 2 segundos y aparecen en los primeros resultados de búsqueda</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70">Interfaces accesibles que funcionan para todos tus usuarios</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70">Diseño basado en cómo tus usuarios realmente usan el sitio, no en suposiciones</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70">Más conversiones porque cada elemento está pensado para mover a la acción</span>
           </li>
         </ul>
@@ -192,23 +192,23 @@ const services = [
         </p>
         <ul className="space-y-3 mb-4">
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70">MVPs funcionales en semanas, no meses</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70">Paneles que te dan control real sobre tus operaciones</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70">Dashboards que muestran lo que importa, cuando lo necesitás</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70">Automatización que elimina trabajo repetitivo</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70">Integraciones que conectan todas tus herramientas sin fricción</span>
           </li>
         </ul>
@@ -233,19 +233,19 @@ const services = [
         </p>
         <ul className="space-y-3 mb-4">
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70">Productos con lógica personalizada: precios dinámicos, descuentos complejos, inventario inteligente</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70">Flujos de compra que se adaptan a cómo realmente vendés</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70">Integraciones con tu sistema de pagos, logística y gestión existente</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="text-emerald-600 mt-1 font-bold">•</span>
+            <span className="text-brand-secondary mt-1 font-bold">•</span>
             <span className="text-foreground/70">Performance que aguanta picos de tráfico sin caerse</span>
           </li>
         </ul>

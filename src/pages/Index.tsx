@@ -13,7 +13,7 @@ import { Footer } from "@/components/landing/Footer";
 
 const Index = () => {
   return (
-    <div className="relative min-h-screen bg-background">
+    <div className="relative min-h-screen bg-brand-dark">
       {/* Noise Texture Overlay */}
       <div className="noise-overlay" />
       

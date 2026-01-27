@@ -8,7 +8,7 @@ export const CTAFinal = () => {
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="cta-final" className="relative py-32 md:py-40 scroll-mt-20 overflow-hidden">
+    <section id="contacto" className="relative py-32 md:py-40 scroll-mt-20 overflow-hidden">
       {/* Background with gradient mesh */}
       <div className="absolute inset-0 gradient-mesh" />
       <div className="absolute inset-0 architectural-grid opacity-20" />
@@ -25,7 +25,7 @@ export const CTAFinal = () => {
           >
             Tu negocio merece un sistema
             <br />
-            <span className="text-emerald-600">diseñado para vos</span>
+            <span className="text-brand-secondary">diseñado para vos</span>
           </motion.h2>
 
           {/* Copy */}

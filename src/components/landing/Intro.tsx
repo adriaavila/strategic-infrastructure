@@ -28,7 +28,7 @@ export const Intro = () => {
               >
                 No hacemos "páginas web".
                 <br />
-                <span className="text-emerald-600">Construimos sistemas que escalan.</span>
+                <span className="text-brand-secondary">Construimos sistemas que escalan.</span>
               </motion.h2>
 
               {/* Main Copy */}
@@ -64,7 +64,7 @@ export const Intro = () => {
                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                     transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
                   >
-                    <span className="text-emerald-600 mt-1 font-bold text-xl">•</span>
+                    <span className="text-brand-secondary mt-1 font-bold text-xl">•</span>
                     <span className="text-foreground/80 leading-relaxed">{item}</span>
                   </motion.li>
                 ))}
@@ -80,7 +80,7 @@ export const Intro = () => {
             transition={{ delay: 0.6, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <p className="text-xl font-semibold text-foreground text-center">
-              Resultado: <span className="text-emerald-600">sistemas que crecen con tu negocio</span>, no limitaciones que te frenan.
+              Resultado: <span className="text-brand-secondary">sistemas que crecen con tu negocio</span>, no limitaciones que te frenan.
             </p>
           </motion.div>
         </div>

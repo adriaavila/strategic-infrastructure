@@ -37,6 +37,20 @@ const spacing = designTokens.spacing.lg;
 
 ## 🎨 Colores
 
+### Brand Palette (servicioscreativos.online)
+
+Default theme is dark-first. CSS variables and Tailwind classes:
+
+| Token / Variable | Tailwind | Hex | Use |
+|-----------------|----------|-----|-----|
+| `--bg-main` | `bg-brand-dark` | `#0A0A0B` | Main background (Deep Space) |
+| `--brand-primary` | `bg-brand-primary`, `text-brand-primary` | `#8B5CF6` | CTAs, logo accent (Electric Violet) |
+| `--brand-secondary` | `bg-brand-secondary`, `text-brand-secondary` | `#2DD4BF` | Highlights, success (Cyber Mint) |
+| `--text-muted` | `text-brand-slate` | `#94A3B8` | Subtext, borders (Slate) |
+| `--text-main` | — | `#FFFFFF` | Headlines, primary text |
+
+Hero gradient: `bg-hero-gradient` (radial from top, #1E1B4B → #0A0A0B).
+
 ### Paleta Base
 
 El sistema utiliza una paleta de grises cálidos como base:

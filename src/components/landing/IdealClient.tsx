@@ -37,14 +37,14 @@ export const IdealClient = () => {
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
           {/* Ideal Client */}
           <motion.div
-            className="bg-card border border-emerald-500/20 rounded-2xl p-8"
+            className="bg-card border border-brand-secondary/20 rounded-2xl p-8"
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
             transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center">
-                <CheckCircle2 className="w-6 h-6 text-emerald-600" />
+              <div className="w-12 h-12 rounded-xl bg-brand-secondary/10 flex items-center justify-center">
+                <CheckCircle2 className="w-6 h-6 text-brand-secondary" />
               </div>
               <h3 className="text-xl font-semibold">Es para vos si:</h3>
             </div>
@@ -57,7 +57,7 @@ export const IdealClient = () => {
                   animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                   transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
                 >
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-brand-secondary mt-0.5 flex-shrink-0" />
                   <span className="text-muted-foreground">{point}</span>
                 </motion.li>
               ))}

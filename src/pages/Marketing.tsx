@@ -4,7 +4,7 @@ import { Footer } from "@/components/landing/Footer";
 
 const Marketing = () => {
   return (
-    <div className="relative min-h-screen bg-background">
+    <div className="relative min-h-screen bg-brand-dark">
       {/* Noise Texture Overlay */}
       <div className="noise-overlay" />
       

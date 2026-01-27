@@ -17,10 +17,10 @@ export default {
       // TYPOGRAPHY
       // ============================================
       fontFamily: {
-        sans: ['DM Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        heading: ['Space Grotesk', 'DM Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        body: ['DM Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'monospace'],
+        sans: ['Inter', 'Geist', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        heading: ['Inter', 'Geist', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        body: ['Inter', 'Geist', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'monospace'],
       },
       fontSize: {
         xs: ['0.75rem', { lineHeight: '1.5', letterSpacing: '-0.01em' }],
@@ -59,9 +59,21 @@ export default {
       },
       
       // ============================================
+      // BRAND COLORS (servicioscreativos.online)
+      // ============================================
+      backgroundImage: {
+        'hero-gradient': 'radial-gradient(circle at top center, #1E1B4B 0%, #0A0A0B 100%)',
+      },
+      // ============================================
       // COLORS
       // ============================================
       colors: {
+        brand: {
+          dark: '#0A0A0B',
+          primary: '#8B5CF6',
+          secondary: '#2DD4BF',
+          slate: '#94A3B8',
+        },
         border: {
           DEFAULT: "hsl(var(--border))",
           subtle: "hsl(var(--border-subtle))",
