@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { motion, useMotionValue, useSpring, useInView, useScroll, useTransform } from "framer-motion";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
-export type BentoCardAccent = "emerald" | "blue" | "purple" | "mint";
+export type BentoCardAccent = "emerald" | "blue" | "purple" | "mint" | "amber";
 
 export interface BentoCardProps {
   title: string;
@@ -21,21 +21,22 @@ const accentBorderClass: Record<BentoCardAccent, string> = {
   mint: "border-t-brand-secondary/50",
   blue: "border-t-brand-primary/50",
   purple: "border-t-brand-primary/50",
+  amber: "border-t-amber-500/50",
 };
 
 export const BentoCard = ({ title, subtitle, description, icon, className, visual, delay = 0, index = 0, accent }: BentoCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(cardRef, { once: true, margin: "-100px" });
   const shouldReduceMotion = useReducedMotion();
-  
+
   // Enhanced 3D tilt with spring physics
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  
+
   const springConfig = { damping: 30, stiffness: 300 };
   const rotateX = useSpring(mouseY, springConfig);
   const rotateY = useSpring(mouseX, springConfig);
-  
+
   // Parallax effect
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -51,14 +52,14 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
       const rect = card.getBoundingClientRect();
       const cardCenterX = rect.left + rect.width / 2;
       const cardCenterY = rect.top + rect.height / 2;
-      
+
       const distanceX = e.clientX - cardCenterX;
       const distanceY = e.clientY - cardCenterY;
-      
+
       // Calculate rotation (-10deg to +10deg)
       const rotateXValue = (distanceY / rect.height) * 10;
       const rotateYValue = (distanceX / rect.width) * 10;
-      
+
       mouseX.set(rotateYValue);
       mouseY.set(-rotateXValue);
     };
@@ -79,8 +80,8 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
   return (
     <motion.div
       ref={cardRef}
-      className={`group relative bg-card border border-foreground/[0.08] rounded-2xl p-6 overflow-hidden shadow-architectural ${accent ? `border-t-2 ${accentBorderClass[accent]}` : ""} ${className}`}
-      style={{ 
+      className={`group relative bg-card/60 backdrop-blur-md border border-foreground/[0.08] rounded-2xl p-6 overflow-hidden shadow-architectural transition-all duration-500 ${accent ? `border-t-2 ${accentBorderClass[accent]}` : ""} ${className}`}
+      style={{
         y,
         rotateX: shouldReduceMotion ? 0 : rotateX,
         rotateY: shouldReduceMotion ? 0 : rotateY,
@@ -89,21 +90,23 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
       }}
       initial={{ opacity: 0, y: 60, scale: 0.9 }}
       animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 60, scale: 0.9 }}
-      transition={{ 
-        duration: 0.6, 
+      transition={{
+        duration: 0.6,
         delay: index * 0.1,
         ease: [0.16, 1, 0.3, 1]
       }}
-      whileHover={{ 
-        scale: 1.02,
-        borderColor: "hsl(var(--foreground) / 0.15)",
-        boxShadow: "var(--shadow-lg)",
+      whileHover={{
+        scale: 1.01,
+        borderColor: "hsl(var(--brand-secondary) / 0.3)",
+        boxShadow: "0 0 40px rgba(45, 212, 191, 0.1), 0 20px 40px rgba(0, 0, 0, 0.2)",
         transition: { duration: 0.3, type: "spring", stiffness: 300, damping: 30 }
       }}
     >
+      {/* Glossy Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none" />
       {/* Subtle gradient background */}
       <div className="absolute inset-0 gradient-mesh-subtle opacity-30" />
-      
+
       {/* Animated background gradient that follows mouse */}
       <motion.div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -113,13 +116,13 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
       />
 
       {/* Icon with enhanced hover animation */}
-      <motion.div 
+      <motion.div
         className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-foreground/5 mb-4 group-hover:bg-foreground/10 transition-colors"
         initial={{ scale: 0, rotate: -180 }}
         animate={isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }}
         transition={{ delay: index * 0.1 + 0.2, duration: 0.5, type: "spring", stiffness: 200 }}
-        whileHover={{ 
-          scale: 1.1, 
+        whileHover={{
+          scale: 1.1,
           rotate: 5,
           transition: { duration: 0.2 }
         }}
@@ -128,7 +131,7 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
       </motion.div>
 
       {/* Content */}
-      <motion.h3 
+      <motion.h3
         className="text-lg font-medium mb-2"
         initial={{ opacity: 0, x: -20 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
@@ -137,7 +140,7 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
         {title}
       </motion.h3>
       {subtitle && (
-        <motion.p 
+        <motion.p
           className="text-sm font-medium text-foreground mb-3"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -146,7 +149,7 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
           {subtitle}
         </motion.p>
       )}
-      <motion.div 
+      <motion.div
         className="text-sm text-muted-foreground leading-relaxed"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -156,7 +159,7 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
       </motion.div>
 
       {/* Visual */}
-      <motion.div 
+      <motion.div
         className="mt-6 -mx-6 -mb-6"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

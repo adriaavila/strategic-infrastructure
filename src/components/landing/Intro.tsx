@@ -2,9 +2,9 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const whenWeWork = [
-  "tenés datos, pero no inteligencia aplicada a decisiones",
-  "tu equipo pierde horas en procesos manuales y costosos",
-  "las decisiones llegan tarde o se toman a ciegas"
+  "tu equipo gasta demasiado tiempo en tareas repetitivas y manuales",
+  "tenés datos dispersos que no sabés cómo usar para mejorar la operación",
+  "buscás una ventaja competitiva real mediante agentes inteligentes"
 ];
 
 export const Intro = () => {
@@ -20,35 +20,35 @@ export const Intro = () => {
             {/* Left Column - Main Content */}
             <div className="space-y-6">
               {/* Title */}
-              <motion.h2 
+              <motion.h2
                 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 font-heading"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
-                No vendemos IA como buzzword.
+                IA que no necesita manuales.
                 <br />
-                <span className="text-brand-secondary">Implementamos sistemas que se usan.</span>
+                <span className="text-brand-secondary">Sistemas que simplemente funcionan.</span>
               </motion.h2>
 
               {/* Main Copy */}
-              <motion.div 
+              <motion.div
                 className="space-y-6 text-muted-foreground leading-relaxed text-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
                 <p>
-                  Diseñamos inteligencia de negocio aplicada: datos limpios, automatización y modelos de IA trabajando juntos.
+                  Tu equipo no necesita más herramientas. Necesita sistemas que resuelvan tareas. Automatizamos el 80% de tu carga operativa con modelos entrenados en tus propios datos.
                 </p>
                 <p className="text-foreground/80 font-medium">
-                  Trabajamos cuando:
+                  Ideal si:
                 </p>
               </motion.div>
             </div>
 
             {/* Right Column - List with offset */}
-            <motion.div 
+            <motion.div
               className="layout-offset-right"
               initial={{ opacity: 0, x: 40 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
@@ -72,7 +72,7 @@ export const Intro = () => {
           </div>
 
           {/* Outcome Statement */}
-          <motion.div 
+          <motion.div
             className="mt-12 pt-8 border-t border-foreground/10"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

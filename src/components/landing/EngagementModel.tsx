@@ -1,34 +1,47 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, FileText, Hammer } from "lucide-react";
+import { ArrowRight, FileText, Hammer, Cpu } from "lucide-react";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const steps = [
   {
     number: "01",
-    title: "Diagnóstico y casos de uso",
-    subtitle: "Etapa paga",
-    description: "Entendemos datos, procesos y decisiones. Definimos dónde la IA aporta valor real.",
+    title: "Auditoría de Impacto",
+    subtitle: "Etapa de diagnóstico",
+    description: "Evaluamos tus procesos actuales para encontrar los puntos de mayor retorno mediante IA.",
     bullets: [
-      "diagnóstico de datos y operación",
-      "priorización de casos de uso con impacto"
+      "Detección de cuellos de botella",
+      "Auditoría de calidad de datos"
     ],
-    note: "Salís con claridad de alcance, costos y resultados esperados.",
+    note: "Resultado: Reporte de factibilidad y ROI esperado.",
     icon: FileText,
     color: "mint"
   },
   {
     number: "02",
-    title: "Implementación pragmática",
+    title: "Arquitectura y Estrategia",
     subtitle: "",
-    description: "Construimos lo acordado y lo dejamos funcionando en tu flujo real.",
+    description: "Diseñamos el sistema a medida, desde el stack técnico hasta los flujos operativos.",
     bullets: [
-      "automatización + IA con datos reales",
-      "entregas claras y adopción interna"
+      "Selección del modelo ideal",
+      "Diseño de flujos y prompts"
     ],
-    note: "Sin experimentos eternos. Sistemas que se usan.",
+    note: "Alcance técnico cerrado y sin sorpresas.",
     icon: Hammer,
     color: "blue"
+  },
+  {
+    number: "03",
+    title: "Despliegue y Adopción",
+    subtitle: "",
+    description: "Ponemos en marcha la solución y entrenamos a tu equipo para el uso diario.",
+    bullets: [
+      "Implementación y pruebas reales",
+      "Optimización continua de resultados"
+    ],
+    note: "Sistemas generando valor desde el primer día.",
+    icon: Cpu,
+    color: "mint"
   }
 ];
 
@@ -41,7 +54,7 @@ export const EngagementModel = () => {
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16" ref={containerRef}>
-          <motion.h2 
+          <motion.h2
             className="text-4xl md:text-5xl font-bold tracking-tight mb-4 font-heading"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -49,7 +62,7 @@ export const EngagementModel = () => {
           >
             Cómo Trabajamos
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-lg text-muted-foreground"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -60,8 +73,8 @@ export const EngagementModel = () => {
         </div>
 
         {/* Steps */}
-        <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 relative">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 relative">
             {/* Connecting Line */}
             <motion.div
               className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-0.5 bg-gradient-to-r from-brand-secondary/20 via-brand-primary/20 to-transparent"
@@ -83,7 +96,7 @@ export const EngagementModel = () => {
                   className="relative"
                   initial={{ opacity: 0, y: 40 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-                  transition={{ 
+                  transition={{
                     delay: index * 0.2 + 0.2,
                     duration: 0.6,
                     ease: [0.16, 1, 0.3, 1]
@@ -101,9 +114,8 @@ export const EngagementModel = () => {
                         {step.number}
                       </motion.div>
                       <motion.div
-                        className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                          step.color === "mint" ? "bg-brand-secondary/10" : "bg-brand-primary/10"
-                        }`}
+                        className={`w-12 h-12 rounded-xl flex items-center justify-center ${step.color === "mint" ? "bg-brand-secondary/10" : "bg-brand-primary/10"
+                          }`}
                         initial={{ scale: 0, rotate: -180 }}
                         animate={isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }}
                         transition={{ delay: index * 0.2 + 0.4, duration: 0.5, type: "spring" }}
@@ -113,7 +125,7 @@ export const EngagementModel = () => {
                     </div>
 
                     {/* Content */}
-                    <motion.h3 
+                    <motion.h3
                       className="text-2xl font-bold mb-2 font-heading"
                       initial={{ opacity: 0, x: -20 }}
                       animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
@@ -122,7 +134,7 @@ export const EngagementModel = () => {
                       {step.title}
                     </motion.h3>
                     {step.subtitle && (
-                      <motion.p 
+                      <motion.p
                         className="text-sm text-muted-foreground mb-4"
                         initial={{ opacity: 0 }}
                         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -131,7 +143,7 @@ export const EngagementModel = () => {
                         {step.subtitle}
                       </motion.p>
                     )}
-                    <motion.p 
+                    <motion.p
                       className="text-muted-foreground leading-relaxed mb-4"
                       initial={{ opacity: 0 }}
                       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -140,7 +152,7 @@ export const EngagementModel = () => {
                       {step.description}
                     </motion.p>
                     {step.bullets && (
-                      <motion.ul 
+                      <motion.ul
                         className="space-y-2 mb-4 ml-4"
                         initial={{ opacity: 0 }}
                         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -154,7 +166,7 @@ export const EngagementModel = () => {
                         ))}
                       </motion.ul>
                     )}
-                    <motion.p 
+                    <motion.p
                       className="text-sm font-semibold text-foreground/90 pt-4 border-t border-foreground/10"
                       initial={{ opacity: 0 }}
                       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -169,7 +181,7 @@ export const EngagementModel = () => {
           </div>
 
           {/* CTA */}
-          <motion.div 
+          <motion.div
             className="text-center mt-12"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
