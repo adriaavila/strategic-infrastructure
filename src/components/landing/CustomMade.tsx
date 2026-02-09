@@ -3,15 +3,15 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const dontDo = [
-  "Plantillas que te limitan desde el día uno",
-  "Parches sobre herramientas que no encajan con tu negocio",
-  "Cosas que suenan bien pero nadie usa"
+  "Modelos aislados que no se integran a tu operación",
+  "Automatizaciones sin datos confiables",
+  "Dashboards sueltos sin impacto en decisiones"
 ];
 
 const doDo = [
-  "Definimos todo antes de construir — sabés qué vas a recibir",
-  "Soluciones claras que tu equipo entiende",
-  "Sistemas pensados para durar, no para parchear"
+  "Diagnóstico claro antes de construir",
+  "Sistemas que el equipo entiende y usa",
+  "IA integrada a procesos reales del negocio"
 ];
 
 export const CustomMade = () => {
@@ -29,7 +29,7 @@ export const CustomMade = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Qué significa "a medida"
+            Qué significa "sistema inteligente"
           </motion.h2>
 
           {/* Main Copy */}
@@ -40,10 +40,10 @@ export const CustomMade = () => {
             transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <p className="text-lg font-medium text-foreground">
-              A medida no es personalizar una plantilla.
+              No es sumar una herramienta más.
             </p>
             <p>
-              Es diseñar desde cero alrededor de cómo funciona tu negocio y qué procesos vale la pena automatizar.
+              Es integrar datos, automatización y decisiones dentro de tu flujo real de trabajo.
             </p>
           </motion.div>
 
@@ -134,7 +134,7 @@ export const CustomMade = () => {
             transition={{ delay: 0.7, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <p className="text-xl font-bold text-foreground font-heading">
-              Resultado: <span className="text-brand-secondary">sistemas que crecen con vos</span>, no limitaciones que te frenan.
+              Resultado: <span className="text-brand-secondary">operaciones más inteligentes</span>, no parches que se rompen.
             </p>
           </motion.div>
         </div>

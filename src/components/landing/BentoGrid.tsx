@@ -146,15 +146,15 @@ const EcommerceVisual = () => {
 
 const services = [
   {
-    title: "Sitios Web Personalizados",
-    subtitle: "Cuando la web tiene que cumplir una función real",
+    title: "IA en procesos operativos",
+    subtitle: "Reduce costos con automatización útil",
     description: (
       <>
         <p className="mb-3 text-foreground/80">
-          Una web que trabaja por vos: atrae, convence y convierte. Sin páginas que solo decoran.
+          Identificamos tareas repetitivas, conectamos datos y aplicamos IA para ejecutar con control y trazabilidad.
         </p>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Ideal para negocios que necesitan resultados reales, no solo una página bonita.
+          Ideal para operaciones con fricción y costos altos por trabajo manual.
         </p>
       </>
     ),
@@ -165,15 +165,15 @@ const services = [
     accent: "emerald" as const,
   },
   {
-    title: "Webapps & Herramientas Internas",
-    subtitle: "Dejá de parchear. Operá con claridad",
+    title: "Automatización inteligente basada en datos",
+    subtitle: "Procesos que se activan con señales reales",
     description: (
       <>
         <p className="mb-3 text-foreground/80">
-          Dejá atrás planillas y parches. Un solo sistema que te da control y te devuelve horas.
+          Diseñamos flujos que usan tus datos para decidir qué hacer y cuándo. Webapps internas incluidas.
         </p>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Ideal para equipos que pierden tiempo en tareas que deberían estar resueltas.
+          Ideal para equipos que necesitan consistencia, control y menos errores humanos.
         </p>
       </>
     ),
@@ -184,15 +184,15 @@ const services = [
     accent: "blue" as const,
   },
   {
-    title: "E-commerce a Medida",
-    subtitle: "Tu tienda, con las reglas de tu negocio",
+    title: "Sistemas de decisión para ventas",
+    subtitle: "Dashboards + IA para priorizar oportunidades",
     description: (
       <>
         <p className="mb-3 text-foreground/80">
-          Vendé online como vos necesitás, sin pelear con plantillas genéricas ni limitarte a lo estándar.
+          Unificamos datos comerciales para ver el embudo real, detectar riesgos y empujar el siguiente paso.
         </p>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Ideal para catálogos complejos, suscripciones o formas de vender que ningún template resuelve.
+          Ideal para equipos de ventas que necesitan foco y mejores cierres.
         </p>
       </>
     ),
@@ -227,7 +227,7 @@ export const ServicePillars = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Sistemas a tu medida, no paquetes genéricos.
+            IA integrada al flujo real del negocio, no demos sueltas.
           </motion.p>
         </div>
 

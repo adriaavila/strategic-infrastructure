@@ -45,7 +45,7 @@ const ChatVisual = () => {
               ease: [0.16, 1, 0.3, 1]
             }}
           >
-            <p className="text-sm text-foreground/80 leading-relaxed">Hola, me interesa su servicio de automatización</p>
+            <p className="text-sm text-foreground/80 leading-relaxed">Hola, quiero mejorar procesos con datos</p>
           </motion.div>
         </motion.div>
         
@@ -77,7 +77,7 @@ const ChatVisual = () => {
               ease: [0.16, 1, 0.3, 1]
             }}
           >
-            <p className="text-sm leading-relaxed text-white">¡Hola! Soy el asistente de Allok. ¿En qué área necesitas automatizar?</p>
+            <p className="text-sm leading-relaxed text-white">¡Hola! Soy tu asistente. ¿Qué proceso quieres mejorar?</p>
           </motion.div>
         </motion.div>
 
@@ -402,15 +402,15 @@ const ReactivationVisual = () => {
 
 const automations = [
   {
-    title: "Caza-Prospectos 24/7",
-    subtitle: "Tu vendedor que nunca duerme",
+    title: "Atención y captura inteligente",
+    subtitle: "Respuestas rápidas, oportunidades reales",
     description: (
       <>
         <p className="mb-3 text-foreground/80">
-          Que nadie espere. Atendé consultas y agendá reuniones automáticamente mientras vos dormís.
+          Atiende consultas, califica leads y agenda reuniones con contexto. Sin perder oportunidades.
         </p>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Ideal para negocios que pierden oportunidades por no responder rápido.
+          Ideal para negocios que pierden ventas por tiempos de respuesta.
         </p>
       </>
     ),
@@ -421,15 +421,15 @@ const automations = [
     accent: "emerald" as const,
   },
   {
-    title: "Operador Invisible",
-    subtitle: "Dejá de cargar datos a mano",
+    title: "Procesamiento operativo",
+    subtitle: "Documentos y datos sin carga manual",
     description: (
       <>
         <p className="mb-3 text-foreground/80">
-          Facturas, recibos y documentos que se procesan solos. Vos te dedicás a lo que importa.
+          Facturas, recibos y registros que se procesan solos. Menos carga administrativa.
         </p>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Ideal para equipos que pierden horas en tareas repetitivas que deberían estar resueltas.
+          Ideal para equipos con muchas horas en tareas repetitivas.
         </p>
       </>
     ),
@@ -440,15 +440,15 @@ const automations = [
     accent: "blue" as const,
   },
   {
-    title: "Pipeline Inteligente",
-    subtitle: "Sabé dónde poner el foco",
+    title: "Control del embudo",
+    subtitle: "Prioridad basada en datos",
     description: (
       <>
         <p className="mb-3 text-foreground/80">
-          Una vista clara de tu embudo y alertas cuando una oportunidad pide atención. Menos caos, más cierres.
+          Una vista clara del pipeline y alertas cuando una oportunidad pide atención. Menos caos, más cierres.
         </p>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Ideal para equipos de ventas que necesitan priorizar mejor su tiempo.
+          Ideal para equipos de ventas que necesitan foco y seguimiento.
         </p>
       </>
     ),
@@ -459,15 +459,15 @@ const automations = [
     accent: "purple" as const,
   },
   {
-    title: "Bóveda de Ventas",
-    subtitle: "Recuperá clientes que ya te conocían",
+    title: "Reactivación inteligente",
+    subtitle: "Clientes dormidos, ingresos recuperados",
     description: (
       <>
         <p className="mb-3 text-foreground/80">
-          Tu base vieja tiene oro escondido. Reactivala con mensajes que suenan a vos, sin quemarte las pestañas.
+          Reactiva tu base con segmentación y mensajes oportunos, sin esfuerzo manual.
         </p>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Ideal para negocios con muchos contactos que no saben por dónde volver a conectarlos.
+          Ideal para negocios con contactos inactivos y oportunidades perdidas.
         </p>
       </>
     ),
@@ -511,7 +511,7 @@ export const Automations = () => {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
               <span className="w-2 h-2 rounded-full bg-brand-secondary animate-pulse-soft" />
-              <span className="text-sm text-muted-foreground font-medium">Automatización que trabaja 24/7</span>
+              <span className="text-sm text-muted-foreground font-medium">IA aplicada a operaciones y ventas</span>
             </motion.div>
 
             {/* Headline */}
@@ -521,9 +521,9 @@ export const Automations = () => {
               animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Eliminá el trabajo manual.
+              Reduce el trabajo manual.
               <br />
-              <span className="text-brand-secondary">Automatizá lo que realmente importa.</span>
+              <span className="text-brand-secondary">Automatiza con datos, no con suposiciones.</span>
             </motion.h1>
 
             {/* Subheader */}
@@ -533,7 +533,7 @@ export const Automations = () => {
               animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Que tu negocio siga trabajando mientras vos descansás. Sin vivir pendiente del celular.
+              Procesos más rápidos, menos errores y decisiones con información real.
             </motion.p>
           </div>
         </div>
@@ -594,9 +594,9 @@ export const Automations = () => {
               animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Listo para automatizar
+              Listo para mejorar
               <br />
-              <span className="text-brand-secondary">tu negocio?</span>
+              <span className="text-brand-secondary">tu operación?</span>
             </motion.h2>
 
             {/* Copy */}
@@ -606,7 +606,7 @@ export const Automations = () => {
               animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Sin configuración compleja. Sin meses de desarrollo. Solo sistemas que funcionan desde el día uno.
+              Sin proyectos eternos. Sin complejidad innecesaria. Sistemas que se usan desde el día uno.
             </motion.p>
 
             {/* CTA */}

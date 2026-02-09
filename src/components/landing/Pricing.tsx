@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 
 const pricingFactors = [
   "qué tan único es tu caso",
-  "qué hay que conectar con lo que ya tenés",
+  "qué hay que conectar con lo que ya tienes",
   "tu plazo y presupuesto"
 ];
 
@@ -45,7 +45,7 @@ export const Pricing = () => {
             <div className="mb-8 pb-8 border-b border-foreground/10">
               <h3 className="text-xl font-bold mb-4 font-heading">Por qué no cobramos por horas</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Cobramos por el valor que entregamos. Pagás por lo que necesitás, no por cuánto tiempo nos lleva.
+                Cobramos por el valor que entregamos. Pagas por lo que necesitas, no por cuánto tiempo nos lleva.
               </p>
             </div>
 
@@ -71,7 +71,7 @@ export const Pricing = () => {
             {/* Outcome */}
             <div className="pt-8 border-t border-foreground/10">
               <p className="text-lg font-semibold text-foreground">
-                Cada proyecto es distinto. Transparencia desde el inicio: sabés qué pagás y qué recibís.
+                Cada proyecto es distinto. Transparencia desde el inicio: sabes qué pagas y qué recibes.
               </p>
             </div>
           </motion.div>

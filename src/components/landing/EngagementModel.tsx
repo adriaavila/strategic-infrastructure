@@ -6,27 +6,27 @@ import { motion, useInView } from "framer-motion";
 const steps = [
   {
     number: "01",
-    title: "Definición del Sistema",
+    title: "Diagnóstico y casos de uso",
     subtitle: "Etapa paga",
-    description: "Diseñamos todo antes de construir. Así evitamos sorpresas.",
+    description: "Revisamos datos, procesos y objetivos. Definimos dónde la IA aporta impacto real.",
     bullets: [
-      "entendemos el problema real, no solo lo que creés que necesitás",
-      "cerramos alcance, tiempos y presupuesto sin ambigüedad"
+      "diagnóstico de datos y puntos críticos del negocio",
+      "casos de uso priorizados con impacto medible"
     ],
-    note: "Sabés exactamente qué vas a recibir, cuándo y a qué precio.",
+    note: "Queda un plan claro: qué se implementa, por qué y con qué resultados esperados.",
     icon: FileText,
     color: "mint"
   },
   {
     number: "02",
-    title: "Desarrollo",
+    title: "Implementación pragmática",
     subtitle: "",
-    description: "Construimos lo definido. Proyectos que terminan en tiempo y forma.",
+    description: "Construimos lo definido y lo integramos al flujo real del negocio.",
     bullets: [
-      "alcance cerrado desde el inicio",
-      "entregas claras y a tiempo"
+      "automatizaciones y modelos que se usan de verdad",
+      "entregas claras, con seguimiento de impacto"
     ],
-    note: "Sin proyectos eternos. Sin vueltas. Entregamos lo acordado.",
+    note: "Sin experimentos eternos. Implementación rápida y útil.",
     icon: Hammer,
     color: "blue"
   }
@@ -55,7 +55,7 @@ export const EngagementModel = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Cada proyecto es diferente. Por eso no usamos plantillas.
+            Claridad desde el inicio. Diagnóstico, casos de uso y ejecución concreta.
           </motion.p>
         </div>
 

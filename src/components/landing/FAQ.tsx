@@ -11,7 +11,7 @@ const faqs = [
     questions: [
       {
         question: "¿Cómo determinan el alcance?",
-        answer: "En una reunión corta entendemos tu necesidad, qué usás hoy y tus restricciones. Te mandamos una propuesta clara con alcance y plazos. Todo definido antes de construir."
+        answer: "En una reunión corta entendemos tu necesidad, qué usas hoy y tus restricciones. Te mandamos una propuesta clara con alcance y plazos. Todo definido antes de construir."
       },
       {
         question: "¿Qué pasa si cambian los requisitos?",
@@ -19,7 +19,7 @@ const faqs = [
       },
       {
         question: "¿Qué necesito tener listo?",
-        answer: "El problema que querés resolver y qué herramientas usás hoy. No hace falta tener todo cerrado; parte del trabajo es ayudarte a definirlo."
+        answer: "El problema que quieres resolver y qué herramientas usas hoy. No hace falta tener todo cerrado; parte del trabajo es ayudarte a definirlo."
       }
     ]
   },
@@ -28,15 +28,15 @@ const faqs = [
     questions: [
       {
         question: "¿Trabajan con equipos sin conocimientos técnicos?",
-        answer: "Sí. Lo importante es que conozcas tu negocio y puedas decir qué necesitás lograr. Nosotros llevamos la parte técnica y te explicamos todo en claro."
+        answer: "Sí. Lo importante es que conozcas tu negocio y puedas decir qué necesitas lograr. Nosotros llevamos la parte técnica y te explicamos todo en claro."
       },
       {
         question: "¿Pueden trabajar con sistemas existentes?",
-        answer: "Sí. Vemos qué se mantiene, qué hay que cambiar y cómo conectar todo. Trabajar con lo que ya tenés es parte de nuestro enfoque."
+        answer: "Sí. Vemos qué se mantiene, qué hay que cambiar y cómo conectar todo. Trabajar con lo que ya tienes es parte de nuestro enfoque."
       },
       {
         question: "¿Qué pasa si estamos bloqueados por plataformas no-code?",
-        answer: "Construimos lo que necesitás: reemplazar la plataforma o integrarla. Ese tipo de límites es lo que resolvemos."
+        answer: "Construimos lo que necesitas: reemplazar la plataforma o integrarla. Ese tipo de límites es lo que resolvemos."
       }
     ]
   },
@@ -49,7 +49,7 @@ const faqs = [
       },
       {
         question: "¿Pueden construir sobre plataformas existentes?",
-        answer: "Sí. Podemos sumar sobre lo que ya usás o armar algo nuevo. Lo definimos en la etapa de descubrimiento."
+        answer: "Sí. Podemos sumar sobre lo que ya usas o armar algo nuevo. Lo definimos en la etapa de descubrimiento."
       }
     ]
   }

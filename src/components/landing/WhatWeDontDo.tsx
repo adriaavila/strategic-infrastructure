@@ -5,23 +5,23 @@ import { motion, useInView } from "framer-motion";
 const dontDoItems = [
   {
     icon: Package,
-    title: "Plantillas",
-    description: "No usamos plantillas genéricas. Cada sistema es único."
+    title: "Buzzword sin negocio",
+    description: "No vendemos IA si no hay un caso de uso claro."
   },
   {
     icon: Layers,
-    title: "Paquetes que no encajan",
-    description: "No vendemos soluciones que no se adaptan a tu negocio."
+    title: "Modelos aislados",
+    description: "No hacemos soluciones que no se integran a tus procesos."
   },
   {
     icon: Wrench,
-    title: "Mantenimiento sin límites",
-    description: "No ofrecemos soporte abierto sin alcance claro."
+    title: "Automatizaciones a ciegas",
+    description: "No construimos flujos sin datos confiables detrás."
   },
   {
     icon: DollarSign,
-    title: "Cambios solo cosméticos",
-    description: "No hacemos retoques sin entender tu operación real."
+    title: "Cambios cosméticos",
+    description: "No maquillamos procesos sin mejorar resultados."
   }
 ];
 
@@ -48,7 +48,7 @@ export const WhatWeDontDo = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Trabajamos solo con proyectos que piden soluciones a medida.
+            Trabajamos solo con proyectos que buscan impacto real en negocio.
           </motion.p>
         </div>
 

@@ -97,7 +97,7 @@ export const Integrations = () => {
             Integraciones
           </h2>
           <p className="text-lg text-white/50 opacity-0 animate-fade-up" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
-            Conectamos con lo que ya usás. No tenés que cambiar tus herramientas.
+            Conectamos con lo que ya usas. No tienes que cambiar tus herramientas.
           </p>
         </div>
 

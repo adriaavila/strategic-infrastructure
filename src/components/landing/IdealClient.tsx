@@ -3,15 +3,15 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const idealClientPoints = [
-  "ya tenés un negocio o proyecto validado",
-  "necesitás una solución específica",
-  "valorás claridad y diseño bien pensado"
+  "ya vendes y quieres operar con más eficiencia",
+  "tienes datos y quieres convertirlos en decisiones",
+  "valoras automatización y sistemas que se usan"
 ];
 
 const notFitPoints = [
-  "buscás lo más barato",
-  "querés algo genérico",
-  "no tenés un problema claro que resolver"
+  "buscas solo el buzzword de IA",
+  "no tienes datos ni procesos claros",
+  "no hay una operación real que mejorar"
 ];
 
 export const IdealClient = () => {
@@ -46,7 +46,7 @@ export const IdealClient = () => {
               <div className="w-12 h-12 rounded-xl bg-brand-secondary/10 flex items-center justify-center">
                 <CheckCircle2 className="w-6 h-6 text-brand-secondary" />
               </div>
-              <h3 className="text-xl font-semibold">Es para vos si:</h3>
+              <h3 className="text-xl font-semibold">Es para ti si:</h3>
             </div>
             <ul className="space-y-4">
               {idealClientPoints.map((point, index) => (
@@ -75,7 +75,7 @@ export const IdealClient = () => {
               <div className="w-12 h-12 rounded-xl bg-foreground/5 flex items-center justify-center">
                 <XCircle className="w-6 h-6 text-muted-foreground" />
               </div>
-              <h3 className="text-xl font-semibold text-muted-foreground">No es para vos si:</h3>
+              <h3 className="text-xl font-semibold text-muted-foreground">No es para ti si:</h3>
             </div>
             <ul className="space-y-4">
               {notFitPoints.map((point, index) => (

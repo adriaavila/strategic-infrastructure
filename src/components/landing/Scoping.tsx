@@ -8,7 +8,7 @@ const processSteps = [
     step: "1",
     title: "Revisión",
     duration: "30–60 min",
-    description: "Entendemos tu necesidad, lo que usás hoy y tus restricciones.",
+    description: "Entendemos tu necesidad, lo que usas hoy y tus restricciones.",
     icon: Search
   },
   {
@@ -30,7 +30,7 @@ const processSteps = [
 const factors = [
   {
     title: "Qué hay que conectar",
-    description: "Sistemas que ya usás y hay que mantener o migrar"
+    description: "Sistemas que ya usas y hay que mantener o migrar"
   },
   {
     title: "Plazo y presupuesto",
@@ -38,7 +38,7 @@ const factors = [
   },
   {
     title: "Qué tan único es tu caso",
-    description: "Cuánta personalización necesitás"
+    description: "Cuánta personalización necesitas"
   }
 ];
 

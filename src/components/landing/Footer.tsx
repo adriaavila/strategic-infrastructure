@@ -24,7 +24,7 @@ export const Footer = () => {
               <span className="text-lg font-semibold text-white">online</span>
             </div>
             <p className="text-brand-slate text-sm leading-relaxed mb-4">
-              Sistemas web a medida para tu negocio.
+              Implementación de IA y sistemas inteligentes para negocios.
             </p>
             <div className="flex items-center gap-4">
               <a href="#" className="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors">

@@ -30,7 +30,7 @@ export const Positioning = () => {
               No somos una agencia de volumen ni un equipo grande con estructuras pesadas.
             </p>
             <p>
-              Trabajás directo con quienes piensan, diseñan y construyen. Resolvemos el problema correcto, sin vueltas.
+              Trabajás directo con quienes entienden datos, procesos y operación. Resolvemos el problema correcto, sin vueltas.
             </p>
           </motion.div>
         </div>

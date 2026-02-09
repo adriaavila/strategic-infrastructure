@@ -26,7 +26,7 @@ export const Portfolio = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Cada proyecto empieza con un problema concreto y termina en un sistema funcional.
+            Cada proyecto empieza con un problema de negocio y termina en un sistema operativo real.
           </motion.p>
 
           <motion.p 
@@ -35,7 +35,7 @@ export const Portfolio = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Mostramos contexto, decisiones y resultados.
+            Mostramos contexto, decisiones y resultados medibles.
             <br />
             No solo pantallas bonitas.
           </motion.p>

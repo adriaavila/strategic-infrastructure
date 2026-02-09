@@ -2,8 +2,9 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const whenWeWork = [
-  "tu negocio tiene flujos únicos que las plantillas no resuelven",
-  "querés automatizar procesos reales, no solo mostrar información"
+  "tienes datos, pero no inteligencia para decidir rápido",
+  "tu equipo pierde horas en procesos manuales costosos",
+  "las decisiones llegan tarde o con poca visibilidad"
 ];
 
 export const Intro = () => {
@@ -25,9 +26,9 @@ export const Intro = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
-                No hacemos "páginas web".
+                No vendemos humo de IA.
                 <br />
-                <span className="text-brand-secondary">Construimos sistemas que escalan.</span>
+                <span className="text-brand-secondary">Implementamos inteligencia de negocio usable.</span>
               </motion.h2>
 
               {/* Main Copy */}
@@ -38,7 +39,7 @@ export const Intro = () => {
                 transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
                 <p>
-                  Soluciones a tu medida, no plantillas. Sistemas que funcionan como tu negocio.
+                  Sistemas inteligentes integrados al flujo real del negocio. Menos ruido, más resultados.
                 </p>
                 <p className="text-foreground/80 font-medium">
                   Trabajamos cuando:
@@ -78,7 +79,7 @@ export const Intro = () => {
             transition={{ delay: 0.6, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <p className="text-xl font-semibold text-foreground text-center">
-              Resultado: <span className="text-brand-secondary">sistemas que crecen con tu negocio</span>, no limitaciones que te frenan.
+              Resultado: <span className="text-brand-secondary">operación más eficiente y decisiones con datos</span>, no intuición a ciegas.
             </p>
           </motion.div>
         </div>

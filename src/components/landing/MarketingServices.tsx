@@ -166,15 +166,15 @@ const ContentVisual = () => (
 
 const marketingServices = [
   {
-    title: "Creación de Contenido",
-    subtitle: "Tu voz en redes, sin que vos tengas que estar ahí",
+    title: "Inteligencia de clientes",
+    subtitle: "Segmentación y señales reales",
     description: (
       <>
         <p className="mb-3 text-foreground/80">
-          Redes activas y alineadas con tu marca, sin que tengas que crear todo vos.
+          Datos de comportamiento, cohortes y ciclos de vida para saber quién compra y por qué.
         </p>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Ideal para quien sabe que debe estar en redes pero no tiene tiempo (ni ganas) de convertirse en community manager.
+          Ideal para negocios que venden y necesitan claridad sobre sus clientes.
         </p>
       </>
     ),
@@ -185,15 +185,15 @@ const marketingServices = [
     accent: "emerald" as const, /* maps to brand-secondary in BentoCard */
   },
   {
-    title: "Branding & Identidad",
-    subtitle: "Una marca que la gente recuerda",
+    title: "Performance de adquisición",
+    subtitle: "Inversión con datos, no con intuición",
     description: (
       <>
         <p className="mb-3 text-foreground/80">
-          Que tu proyecto se vea tan sólido como tu propuesta. Una identidad coherente que comunique quién sos y por qué importás.
+          Medimos canales, costo de adquisición y calidad de lead para invertir donde hay retorno.
         </p>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Ideal para negocios que quieren verse profesionales y memorables desde el primer contacto.
+          Ideal para equipos comerciales que necesitan foco y eficiencia.
         </p>
       </>
     ),
@@ -204,15 +204,15 @@ const marketingServices = [
     accent: "purple" as const,
   },
   {
-    title: "Marketing Digital",
-    subtitle: "Clientes reales, no solo likes",
+    title: "Optimización de conversión",
+    subtitle: "Más ventas con el mismo tráfico",
     description: (
       <>
         <p className="mb-3 text-foreground/80">
-          Un plan claro para que tu negocio crezca online y atraiga a la gente que realmente necesita lo que ofrecés.
+          Experimentos guiados por datos, automatizaciones y ajustes que mueven la conversión.
         </p>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Ideal para quienes quieren crecer en digital pero no saben por dónde empezar.
+          Ideal para negocios con volumen que quieren mejorar cada etapa.
         </p>
       </>
     ),
@@ -256,7 +256,7 @@ export const MarketingServices = () => {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
               <span className="w-2 h-2 rounded-full bg-brand-secondary animate-pulse-soft" />
-              <span className="text-sm text-muted-foreground font-medium">Marketing que convierte</span>
+              <span className="text-sm text-muted-foreground font-medium">Inteligencia comercial basada en datos</span>
             </motion.div>
 
             {/* Headline */}
@@ -266,9 +266,9 @@ export const MarketingServices = () => {
               animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Marketing que trae clientes,
+              Crecimiento con datos,
               <br />
-              <span className="text-brand-secondary">no solo likes.</span>
+              <span className="text-brand-secondary">no con suposiciones.</span>
             </motion.h1>
 
             {/* Subheader */}
@@ -278,7 +278,7 @@ export const MarketingServices = () => {
               animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Marca que impacta. Crecimiento con rumbo. Contenido que suena a vos.
+              Decisiones comerciales con contexto. Menos ruido. Más foco.
             </motion.p>
           </div>
         </div>
@@ -339,9 +339,9 @@ export const MarketingServices = () => {
               animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Listo para destacar
+              Listo para tomar
               <br />
-              <span className="text-brand-secondary">en el mundo digital?</span>
+              <span className="text-brand-secondary">mejores decisiones?</span>
             </motion.h2>
 
             {/* Copy */}
@@ -351,7 +351,7 @@ export const MarketingServices = () => {
               animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Sin agencias grandes. Sin contratos largos. Solo marketing que funciona para tu negocio.
+              Sin agencias grandes. Sin contratos largos. Solo claridad y sistemas que funcionan.
             </motion.p>
 
             {/* CTA */}
