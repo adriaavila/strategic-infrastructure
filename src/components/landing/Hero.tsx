@@ -23,7 +23,7 @@ export const Hero = () => {
             style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}
           >
             <span className="w-2 h-2 rounded-full bg-brand-secondary animate-pulse-soft" />
-            <span className="text-sm text-white font-medium">Sistemas a tu medida</span>
+            <span className="text-sm text-white font-medium">Sistemas inteligentes para operar mejor</span>
           </div>
 
           {/* Headline - white + Cyber Mint highlight */}
@@ -31,9 +31,11 @@ export const Hero = () => {
             className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-6 opacity-0 animate-fade-up text-balance font-heading text-white"
             style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}
           >
-            Sistemas diseñados desde cero para tu negocio.
+            Implementamos IA para desarrollar
             <br />
-            <span className="text-brand-secondary text-6xl md:text-7xl lg:text-8xl block mt-1">Sin límites.</span>
+            la inteligencia de tu negocio.
+            <br />
+            <span className="text-brand-secondary text-5xl md:text-6xl lg:text-7xl block mt-3">Menos costos. Más ventas. Mejores decisiones.</span>
           </h1>
 
           {/* Subhead - Slate */}
@@ -41,7 +43,7 @@ export const Hero = () => {
             className="text-xl md:text-2xl text-brand-slate max-w-3xl mx-auto mb-12 opacity-0 animate-fade-up leading-relaxed"
             style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}
           >
-            Tu negocio es único. Tu sistema también debería serlo.
+            Datos, automatización y modelos de IA integrados al flujo real de tu operación.
           </p>
 
           {/* CTA - Electric Violet */}

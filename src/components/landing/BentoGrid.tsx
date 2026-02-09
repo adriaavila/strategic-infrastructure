@@ -1,4 +1,4 @@
-import { Layout, Settings, ShoppingCart } from "lucide-react";
+import { Cpu, LayoutDashboard, LineChart, ShoppingCart, Workflow } from "lucide-react";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { BentoCard } from "./BentoCard";
@@ -146,61 +146,80 @@ const EcommerceVisual = () => {
 
 const services = [
   {
-    title: "Sitios Web Personalizados",
-    subtitle: "Cuando la web tiene que cumplir una función real",
+    title: "IA en procesos operativos",
+    subtitle: "Reducción real de costos",
     description: (
       <>
         <p className="mb-3 text-foreground/80">
-          Una web que trabaja por vos: atrae, convence y convierte. Sin páginas que solo decoran.
+          Identificamos tareas repetitivas, limpiamos datos y diseñamos flujos con automatización + IA.
         </p>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Ideal para negocios que necesitan resultados reales, no solo una página bonita.
+          Ideal para operaciones con fricción diaria y trabajo manual costoso.
         </p>
       </>
     ),
-    icon: <Layout className="w-5 h-5 text-foreground/70" />,
+    icon: <Cpu className="w-5 h-5 text-foreground/70" />,
     visual: <CustomWebsiteVisual />,
     className: "lg:col-span-1",
     delay: 200,
     accent: "emerald" as const,
   },
   {
-    title: "Webapps & Herramientas Internas",
-    subtitle: "Dejá de parchear. Operá con claridad",
+    title: "Automatización inteligente",
+    subtitle: "Procesos que responden a datos",
     description: (
       <>
         <p className="mb-3 text-foreground/80">
-          Dejá atrás planillas y parches. Un solo sistema que te da control y te devuelve horas.
+          Automatizaciones que se activan con métricas reales, no con suposiciones. Menos errores, más velocidad.
         </p>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Ideal para equipos que pierden tiempo en tareas que deberían estar resueltas.
+          Ideal para equipos que necesitan escalar sin sumar gente.
         </p>
       </>
     ),
-    icon: <Settings className="w-5 h-5 text-foreground/70" />,
-    visual: <WebAppsVisual />,
+    icon: <Workflow className="w-5 h-5 text-foreground/70" />,
+    visual: <EcommerceVisual />,
     className: "lg:col-span-1",
     delay: 300,
     accent: "blue" as const,
   },
   {
-    title: "E-commerce a Medida",
-    subtitle: "Tu tienda, con las reglas de tu negocio",
+    title: "Sistemas de decisión",
+    subtitle: "Dashboards + IA para elegir mejor",
     description: (
       <>
         <p className="mb-3 text-foreground/80">
-          Vendé online como vos necesitás, sin pelear con plantillas genéricas ni limitarte a lo estándar.
+          Métricas claras, alertas accionables y recomendaciones basadas en tu histórico.
         </p>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Ideal para catálogos complejos, suscripciones o formas de vender que ningún template resuelve.
+          Ideal para líderes que necesitan decisiones rápidas y con contexto.
         </p>
       </>
     ),
-    icon: <ShoppingCart className="w-5 h-5 text-foreground/70" />,
-    visual: <EcommerceVisual />,
+    icon: <LineChart className="w-5 h-5 text-foreground/70" />,
+    visual: <WebAppsVisual />,
     className: "lg:col-span-1",
     delay: 400,
     accent: "purple" as const,
+  },
+  {
+    title: "Webapps internas con IA",
+    subtitle: "Herramientas que tu equipo usa",
+    description: (
+      <>
+        <p className="mb-3 text-foreground/80">
+          Sistemas internos hechos para tu operación, con IA integrada donde agrega valor.
+        </p>
+        <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
+          Ideal para áreas que dependen de hojas sueltas o sistemas desconectados.
+        </p>
+      </>
+    ),
+    icon: <LayoutDashboard className="w-5 h-5 text-foreground/70" />,
+    visual: <WebAppsVisual />,
+    className: "lg:col-span-1",
+    delay: 500,
+    accent: "emerald" as const,
   }
 ];
 
@@ -219,7 +238,7 @@ export const ServicePillars = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Pilares de Servicio
+            Pilares de servicio
           </motion.h2>
           <motion.p 
             className="text-lg text-muted-foreground"
@@ -227,7 +246,7 @@ export const ServicePillars = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Sistemas a tu medida, no paquetes genéricos.
+            Sistemas inteligentes integrados al flujo real del negocio.
           </motion.p>
         </div>
 
