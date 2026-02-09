@@ -6,22 +6,22 @@ const dontDoItems = [
   {
     icon: Package,
     title: "Plantillas",
-    description: "No usamos plantillas genéricas. Cada sistema es único."
+    description: "No usamos soluciones genéricas. Cada flujo es distinto."
   },
   {
     icon: Layers,
-    title: "Paquetes que no encajan",
-    description: "No vendemos soluciones que no se adaptan a tu negocio."
+    title: "Experimentos eternos",
+    description: "No hacemos pruebas sin impacto ni roadmaps infinitos."
   },
   {
     icon: Wrench,
-    title: "Mantenimiento sin límites",
-    description: "No ofrecemos soporte abierto sin alcance claro."
+    title: "IA sin datos",
+    description: "No proponemos IA si antes no hay datos confiables."
   },
   {
     icon: DollarSign,
-    title: "Cambios solo cosméticos",
-    description: "No hacemos retoques sin entender tu operación real."
+    title: "Cambios cosméticos",
+    description: "No retocamos pantallas sin entender la operación."
   }
 ];
 
@@ -48,7 +48,7 @@ export const WhatWeDontDo = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Trabajamos solo con proyectos que piden soluciones a medida.
+            Trabajamos con inteligencia aplicada, no con promesas vacías.
           </motion.p>
         </div>
 

@@ -6,27 +6,27 @@ import { motion, useInView } from "framer-motion";
 const steps = [
   {
     number: "01",
-    title: "Definición del Sistema",
+    title: "Diagnóstico y casos de uso",
     subtitle: "Etapa paga",
-    description: "Diseñamos todo antes de construir. Así evitamos sorpresas.",
+    description: "Entendemos datos, procesos y decisiones. Definimos dónde la IA aporta valor real.",
     bullets: [
-      "entendemos el problema real, no solo lo que creés que necesitás",
-      "cerramos alcance, tiempos y presupuesto sin ambigüedad"
+      "diagnóstico de datos y operación",
+      "priorización de casos de uso con impacto"
     ],
-    note: "Sabés exactamente qué vas a recibir, cuándo y a qué precio.",
+    note: "Salís con claridad de alcance, costos y resultados esperados.",
     icon: FileText,
     color: "mint"
   },
   {
     number: "02",
-    title: "Desarrollo",
+    title: "Implementación pragmática",
     subtitle: "",
-    description: "Construimos lo definido. Proyectos que terminan en tiempo y forma.",
+    description: "Construimos lo acordado y lo dejamos funcionando en tu flujo real.",
     bullets: [
-      "alcance cerrado desde el inicio",
-      "entregas claras y a tiempo"
+      "automatización + IA con datos reales",
+      "entregas claras y adopción interna"
     ],
-    note: "Sin proyectos eternos. Sin vueltas. Entregamos lo acordado.",
+    note: "Sin experimentos eternos. Sistemas que se usan.",
     icon: Hammer,
     color: "blue"
   }
@@ -55,7 +55,7 @@ export const EngagementModel = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Cada proyecto es diferente. Por eso no usamos plantillas.
+            Claridad de principio a fin. Sin promesas vagas ni pruebas eternas.
           </motion.p>
         </div>
 

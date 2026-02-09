@@ -23,9 +23,9 @@ export const CTAFinal = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Tu negocio merece un sistema
+            Convertí tus datos en
             <br />
-            <span className="text-brand-secondary">diseñado para vos</span>
+            <span className="text-brand-secondary">decisiones y resultados</span>
           </motion.h2>
 
           {/* Copy */}
@@ -35,7 +35,7 @@ export const CTAFinal = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Definimos y construimos la solución que tu negocio necesita.
+            Implementamos sistemas inteligentes para reducir costos, vender más y decidir mejor.
           </motion.p>
 
           {/* CTA */}

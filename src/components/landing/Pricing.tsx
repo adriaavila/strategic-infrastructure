@@ -2,9 +2,9 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const pricingFactors = [
-  "qué tan único es tu caso",
-  "qué hay que conectar con lo que ya tenés",
-  "tu plazo y presupuesto"
+  "nivel de integración con tus sistemas actuales",
+  "madurez y calidad de tus datos",
+  "alcance operativo y plazo"
 ];
 
 export const Pricing = () => {
@@ -31,7 +31,7 @@ export const Pricing = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Precio justo basado en valor, no en tiempo.
+            Precio definido por impacto en el negocio, no por horas.
           </motion.p>
 
           {/* Main Content Card */}
@@ -45,7 +45,7 @@ export const Pricing = () => {
             <div className="mb-8 pb-8 border-b border-foreground/10">
               <h3 className="text-xl font-bold mb-4 font-heading">Por qué no cobramos por horas</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Cobramos por el valor que entregamos. Pagás por lo que necesitás, no por cuánto tiempo nos lleva.
+                Cobramos por el impacto esperado. Pagás por resultados operativos, no por horas acumuladas.
               </p>
             </div>
 

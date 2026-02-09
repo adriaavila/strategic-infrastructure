@@ -6,39 +6,39 @@ import { motion, useInView } from "framer-motion";
 const processSteps = [
   {
     step: "1",
-    title: "Revisión",
+    title: "Diagnóstico",
     duration: "30–60 min",
-    description: "Entendemos tu necesidad, lo que usás hoy y tus restricciones.",
+    description: "Entendemos datos, procesos actuales y objetivos de negocio.",
     icon: Search
   },
   {
     step: "2",
-    title: "Propuesta",
+    title: "Definición",
     duration: "3–5 días",
-    description: "Alcance, plazos y recomendaciones. Todo claro antes de construir.",
+    description: "Casos de uso, alcance y métricas. Todo claro antes de construir.",
     icon: FileText
   },
   {
     step: "3",
-    title: "Ajustes",
+    title: "Alineación",
     duration: "Según necesidad",
-    description: "Refinamos con tu feedback. Nos alineamos antes de avanzar.",
+    description: "Refinamos con tu feedback y dejamos el plan listo.",
     icon: CheckCircle2
   }
 ];
 
 const factors = [
   {
-    title: "Qué hay que conectar",
-    description: "Sistemas que ya usás y hay que mantener o migrar"
+    title: "Integraciones necesarias",
+    description: "Sistemas que ya usás y hay que conectar"
   },
   {
     title: "Plazo y presupuesto",
     description: "Tus tiempos y recursos"
   },
   {
-    title: "Qué tan único es tu caso",
-    description: "Cuánta personalización necesitás"
+    title: "Madurez de datos",
+    description: "Disponibilidad y calidad de la información"
   }
 ];
 
@@ -65,7 +65,7 @@ export const Scoping = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Alcance definido, no paquetes fijos. Cada proyecto es distinto.
+            Alcance definido, sin paquetes fijos. Cada proyecto es distinto.
           </motion.p>
         </div>
 
@@ -187,7 +187,7 @@ export const Scoping = () => {
           <div className="bg-card border border-foreground/[0.08] rounded-2xl p-8">
             <h3 className="text-xl font-semibold mb-3">¿Listo para empezar?</h3>
             <p className="text-muted-foreground mb-6">
-              Una llamada para entender tu proyecto y darte claridad. Sin compromiso. Sin presión.
+              Una llamada para entender tu operación y darte claridad. Sin compromiso. Sin presión.
             </p>
             <Button variant="hero" size="lg" asChild className="group">
               <a href="/#contacto">
