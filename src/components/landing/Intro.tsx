@@ -1,10 +1,19 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-const whenWeWork = [
-  "tu equipo gasta demasiado tiempo en tareas repetitivas y manuales",
-  "tenés datos dispersos que no sabés cómo usar para mejorar la operación",
-  "buscás una ventaja competitiva real mediante agentes inteligentes"
+const painPoints = [
+  {
+    num: "01",
+    text: "Tu equipo gasta demasiado tiempo en tareas repetitivas que una IA resolvería en segundos",
+  },
+  {
+    num: "02",
+    text: "Tenés datos dispersos que no sabés cómo convertir en decisiones y ventajas reales",
+  },
+  {
+    num: "03",
+    text: "Buscás una ventaja competitiva real — no más herramientas, sino sistemas que ejecutan",
+  },
 ];
 
 export const Intro = () => {
@@ -12,7 +21,10 @@ export const Intro = () => {
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="intro" className="relative py-24 md:py-32 scroll-mt-20 bg-muted/20 gradient-mesh-subtle">
+    <section
+      id="intro"
+      className="relative py-24 md:py-32 scroll-mt-20 bg-muted/20 gradient-mesh-subtle"
+    >
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto" ref={containerRef}>
           {/* Asymmetric Layout */}
@@ -26,9 +38,11 @@ export const Intro = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
-                IA que no necesita manuales.
+                El 80% del Trabajo Operativo
                 <br />
-                <span className="text-brand-secondary">Sistemas que simplemente funcionan.</span>
+                <span className="text-brand-secondary">
+                  es Automatizable.
+                </span>
               </motion.h2>
 
               {/* Main Copy */}
@@ -36,50 +50,93 @@ export const Intro = () => {
                 className="space-y-6 text-muted-foreground leading-relaxed text-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                transition={{
+                  delay: 0.1,
+                  duration: 0.6,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
               >
                 <p>
-                  Tu equipo no necesita más herramientas. Necesita sistemas que resuelvan tareas. Automatizamos el 80% de tu carga operativa con modelos entrenados en tus propios datos.
+                  Tu equipo no necesita más herramientas. Necesita{" "}
+                  <span className="text-foreground/90 font-medium">
+                    sistemas que resuelvan tareas por ellos.
+                  </span>{" "}
+                  Automatizamos la carga operativa con modelos entrenados en tus
+                  propios datos — y lo demostramos en 7 días.
                 </p>
-                <p className="text-foreground/80 font-medium">
+                <p className="text-foreground/80 font-semibold">
                   Ideal si:
                 </p>
               </motion.div>
             </div>
 
-            {/* Right Column - List with offset */}
+            {/* Right Column - Numbered Pain Points */}
             <motion.div
               className="layout-offset-right"
               initial={{ opacity: 0, x: 40 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
-              transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                delay: 0.2,
+                duration: 0.6,
+                ease: [0.16, 1, 0.3, 1],
+              }}
             >
               <ul className="space-y-4">
-                {whenWeWork.map((item, index) => (
+                {painPoints.map((item, index) => (
                   <motion.li
                     key={index}
-                    className="flex items-start gap-4 p-4 rounded-lg bg-card/50 border border-foreground/5 hover:border-foreground/10 transition-colors"
+                    className="group flex items-start gap-4 p-4 rounded-lg bg-card/50 border border-foreground/5 hover:border-brand-secondary/20 transition-all duration-300 relative overflow-hidden"
                     initial={{ opacity: 0, x: -20 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                    transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
+                    animate={
+                      isInView
+                        ? { opacity: 1, x: 0 }
+                        : { opacity: 0, x: -20 }
+                    }
+                    transition={{
+                      delay: 0.3 + index * 0.1,
+                      duration: 0.4,
+                    }}
                   >
-                    <span className="text-brand-secondary mt-1 font-bold text-xl">•</span>
-                    <span className="text-foreground/80 leading-relaxed">{item}</span>
+                    {/* Left accent bar */}
+                    <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-brand-secondary/50 to-brand-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    {/* Number */}
+                    <span className="text-brand-secondary font-mono text-sm font-bold mt-0.5 shrink-0">
+                      {item.num}
+                    </span>
+                    <span className="text-foreground/80 leading-relaxed">
+                      {item.text}
+                    </span>
                   </motion.li>
                 ))}
               </ul>
             </motion.div>
           </div>
 
+          {/* Gradient Divider */}
+          <motion.div
+            className="mt-12 h-px bg-gradient-to-r from-transparent via-brand-secondary/30 to-transparent"
+            initial={{ scaleX: 0 }}
+            animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
+            transition={{ delay: 0.6, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          />
+
           {/* Outcome Statement */}
           <motion.div
-            className="mt-12 pt-8 border-t border-foreground/10"
+            className="mt-8"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.6, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{
+              delay: 0.7,
+              duration: 0.6,
+              ease: [0.16, 1, 0.3, 1],
+            }}
           >
             <p className="text-xl font-semibold text-foreground text-center">
-              Resultado: <span className="text-brand-secondary">inteligencia aplicada</span> que impacta costos, ventas y decisiones.
+              Resultado:{" "}
+              <span className="text-brand-secondary">
+                menos costos, más ventas, mejores decisiones
+              </span>{" "}
+              — medible desde el primer mes.
             </p>
           </motion.div>
         </div>

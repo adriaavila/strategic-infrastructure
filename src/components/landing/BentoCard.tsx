@@ -62,6 +62,12 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
 
       mouseX.set(rotateYValue);
       mouseY.set(-rotateXValue);
+
+      // Set CSS custom properties for mouse-following spotlight
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const yPos = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty("--mouse-x", `${x}%`);
+      card.style.setProperty("--mouse-y", `${yPos}%`);
     };
 
     const handleMouseLeave = () => {
@@ -96,22 +102,22 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
         ease: [0.16, 1, 0.3, 1]
       }}
       whileHover={{
-        scale: 1.01,
+        scale: 1.02,
         borderColor: "hsl(var(--brand-secondary) / 0.3)",
-        boxShadow: "0 0 40px rgba(45, 212, 191, 0.1), 0 20px 40px rgba(0, 0, 0, 0.2)",
+        boxShadow: "0 0 60px rgba(45, 212, 191, 0.12), 0 20px 50px rgba(0, 0, 0, 0.25)",
         transition: { duration: 0.3, type: "spring", stiffness: 300, damping: 30 }
       }}
     >
       {/* Glossy Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white/[0.04] to-transparent pointer-events-none" />
       {/* Subtle gradient background */}
       <div className="absolute inset-0 gradient-mesh-subtle opacity-30" />
 
-      {/* Animated background gradient that follows mouse */}
-      <motion.div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+      {/* Mouse-following spotlight gradient */}
+      <div
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         style={{
-          background: "radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(var(--brand-secondary) / 0.08), transparent 40%)"
+          background: "radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(var(--brand-secondary) / 0.1), transparent 40%)"
         }}
       />
 
@@ -132,7 +138,7 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
 
       {/* Content */}
       <motion.h3
-        className="text-lg font-medium mb-2"
+        className="text-xl font-bold mb-1 font-heading"
         initial={{ opacity: 0, x: -20 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
         transition={{ delay: index * 0.1 + 0.3, duration: 0.4 }}
@@ -141,7 +147,7 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
       </motion.h3>
       {subtitle && (
         <motion.p
-          className="text-sm font-medium text-foreground mb-3"
+          className="text-xs font-bold uppercase tracking-wider text-brand-secondary mb-3"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ delay: index * 0.1 + 0.35, duration: 0.4 }}
@@ -150,7 +156,7 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
         </motion.p>
       )}
       <motion.div
-        className="text-sm text-muted-foreground leading-relaxed"
+        className="text-base text-muted-foreground leading-relaxed"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ delay: index * 0.1 + 0.4, duration: 0.4 }}

@@ -1,213 +1,439 @@
-import { Cpu, LayoutDashboard, LineChart, ShoppingCart, Workflow } from "lucide-react";
+import { Cpu, LayoutDashboard, LineChart, Workflow, Zap, Check, Search, ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { BentoCard } from "./BentoCard";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
-// Shared visual container: unified height and chrome
+// Shared visual container
 const VISUAL_HEIGHT = "h-52";
-const VISUAL_BASE = "bg-foreground/[0.03] border-t border-foreground/[0.08] overflow-hidden " + VISUAL_HEIGHT;
+const VISUAL_BASE =
+  "bg-foreground/[0.03] border-t border-foreground/[0.08] overflow-hidden " +
+  VISUAL_HEIGHT;
 
-// Custom Website Visual - static browser + wireframe (hero, grid, CTA)
-const CustomWebsiteVisual = () => {
+// ────────────────────────────────────────────────
+// Agentes Visual — Realistic chat conversation with
+// typing indicator, labels, and CTA bubble
+// ────────────────────────────────────────────────
+const AgentesVisual = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <div className={`${VISUAL_BASE} p-4`}>
-      <div className="rounded-lg border border-foreground/[0.08] overflow-hidden bg-card/50">
-        {/* Browser chrome */}
-        <div className="flex items-center gap-1.5 px-3 py-2 bg-foreground/[0.05] border-b border-foreground/[0.08]">
-          <div className="w-2 h-2 rounded-full bg-red-400/50" />
-          <div className="w-2 h-2 rounded-full bg-amber-400/50" />
-          <div className="w-2 h-2 rounded-full bg-brand-secondary/50" />
-          <div className="flex-1 mx-2 h-3.5 rounded bg-foreground/[0.06]" />
-        </div>
-        {/* Wireframe content */}
-        <div className="p-3 space-y-2">
-          <div className="h-7 rounded-md bg-brand-secondary/15" />
-          <div className="grid grid-cols-3 gap-2">
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="h-11 rounded-md bg-foreground/[0.05] border border-foreground/[0.06]" />
-            ))}
+    <div className={`${VISUAL_BASE} p-5`}>
+      <div className="space-y-2.5">
+        {/* User message */}
+        <motion.div
+          className="flex gap-2"
+          initial={{ opacity: 0, x: -15 }}
+          animate={{
+            opacity: [0, 1, 1, 0],
+            x: [-15, 0, 0, -15],
+          }}
+          transition={{
+            duration: 5,
+            repeat: shouldReduceMotion ? 0 : Infinity,
+            repeatType: "loop",
+            ease: [0.16, 1, 0.3, 1],
+          }}
+        >
+          <div className="w-6 h-6 rounded-full bg-foreground/10 flex-shrink-0 flex items-center justify-center">
+            <span className="text-[9px] font-bold text-foreground/50">U</span>
           </div>
-          <div className="h-3.5 rounded-md bg-brand-primary/10" />
-        </div>
+          <div className="bg-foreground/[0.08] rounded-2xl rounded-tl-sm px-3 py-2 max-w-[78%]">
+            <p className="text-[11px] text-foreground/80 leading-relaxed">
+              ¿Cuánto cuesta el plan premium?
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Typing indicator */}
+        <motion.div
+          className="flex gap-2 justify-end"
+          animate={{ opacity: [0, 0, 1, 0, 0] }}
+          transition={{
+            delay: 1,
+            duration: 5,
+            repeat: shouldReduceMotion ? 0 : Infinity,
+            repeatType: "loop",
+          }}
+        >
+          <div className="bg-neutral-800 rounded-2xl rounded-tr-sm px-3 py-2.5">
+            <div className="flex gap-1">
+              {[0, 1, 2].map((i) => (
+                <motion.div
+                  key={i}
+                  className="w-1.5 h-1.5 rounded-full bg-white/50"
+                  animate={{ scale: [1, 1.4, 1], opacity: [0.4, 1, 0.4] }}
+                  transition={{ duration: 0.8, repeat: Infinity, delay: i * 0.15 }}
+                />
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Bot answer */}
+        <motion.div
+          className="flex gap-2 justify-end"
+          animate={{
+            opacity: [0, 0, 0, 1, 1, 0],
+            x: [15, 15, 15, 0, 0, 15],
+          }}
+          transition={{
+            delay: 1.8,
+            duration: 5,
+            repeat: shouldReduceMotion ? 0 : Infinity,
+            repeatType: "loop",
+            ease: [0.16, 1, 0.3, 1],
+          }}
+        >
+          <div className="bg-neutral-800 rounded-2xl rounded-tr-sm px-3 py-2 max-w-[78%]">
+            <p className="text-[11px] leading-relaxed text-white">
+              ¡Hola! El plan premium arranca en $297/mes. ¿Agendamos para verlo
+              en detalle?
+            </p>
+          </div>
+        </motion.div>
+
+        {/* CTA Button */}
+        <motion.div
+          className="flex justify-end"
+          animate={{
+            opacity: [0, 0, 0, 0, 1, 0],
+            scale: [0.9, 0.9, 0.9, 0.9, 1, 0.9],
+          }}
+          transition={{
+            delay: 2.8,
+            duration: 5,
+            repeat: shouldReduceMotion ? 0 : Infinity,
+            repeatType: "loop",
+          }}
+        >
+          <div className="bg-brand-secondary text-white rounded-xl px-3 py-1.5 flex items-center gap-1.5">
+            <Zap className="w-3 h-3" />
+            <span className="text-[10px] font-medium">Agendar →</span>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
 };
 
-// Web Apps Visual - static dashboard layout, scroll-triggered entry-only stagger
-const WebAppsVisual = () => {
-  const visualRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(visualRef, { once: true, margin: "-20px" });
+// ────────────────────────────────────────────────
+// Eco-Sistemas Visual — Animated workflow pipeline
+// with three connected nodes and data flowing between
+// ────────────────────────────────────────────────
+const EcoSistemasVisual = () => {
   const shouldReduceMotion = useReducedMotion();
 
-  const tiles = [
-    { bar: "w-full", sub: "w-3/4", accent: false },
-    { bar: "w-4/5", sub: "w-2/3", accent: false },
-    { bar: "w-3/4", sub: "w-1/2", accent: true },
-    { bar: "w-5/6", sub: "w-2/3", accent: false },
+  const nodes = [
+    { label: "CRM", icon: "●", color: "bg-blue-500/20 text-blue-400 border-blue-500/30" },
+    { label: "IA", icon: "⚡", color: "bg-brand-secondary/20 text-brand-secondary border-brand-secondary/30" },
+    { label: "ERP", icon: "◆", color: "bg-purple-500/20 text-purple-400 border-purple-500/30" },
   ];
 
-  const tileClassName = "rounded-lg border border-foreground/[0.08] p-2 bg-card/50";
-
-  if (shouldReduceMotion) {
-    return (
-      <div ref={visualRef} className={`${VISUAL_BASE} p-4`}>
-        <div className="space-y-3">
-          <div className="flex items-center justify-between p-2 rounded-lg bg-foreground/[0.05] border border-foreground/[0.08]">
-            <div className="h-2 w-16 rounded bg-foreground/[0.08]" />
-            <div className="w-5 h-5 rounded-full bg-brand-secondary/20" />
-          </div>
-          <div className="grid grid-cols-2 gap-2">
-            {tiles.map((t, i) => (
-              <div key={i} className={tileClassName}>
-                <div className={`h-2 rounded bg-foreground/[0.08] mb-1.5 ${t.bar}`} />
-                <div className={`h-1 rounded bg-foreground/[0.05] ${t.sub}`} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div ref={visualRef} className={`${VISUAL_BASE} p-4`}>
-      <div className="space-y-3">
-        <motion.div
-          className="flex items-center justify-between p-2 rounded-lg bg-foreground/[0.05] border border-foreground/[0.08]"
-          initial={{ opacity: 0, y: -8 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -8 }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <div className="h-2 w-16 rounded bg-foreground/[0.08]" />
-          <div className="w-5 h-5 rounded-full bg-brand-secondary/20" />
-        </motion.div>
-        <div className="grid grid-cols-2 gap-2">
-          {tiles.map((t, i) => (
+    <div className={`${VISUAL_BASE} p-5`}>
+      <div className="flex flex-col h-full justify-center gap-4">
+        {/* Workflow nodes row */}
+        <div className="flex items-center justify-between gap-2">
+          {nodes.map((node, i) => (
             <motion.div
-              key={i}
-              className={`${tileClassName} ${t.accent ? "ring-1 ring-brand-secondary/20" : ""}`}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+              key={node.label}
+              className="flex flex-col items-center gap-1.5 flex-1"
+              initial={{ opacity: 0, y: 10 }}
+              animate={
+                shouldReduceMotion
+                  ? { opacity: 1, y: 0 }
+                  : {
+                    opacity: [0, 1, 1, 0],
+                    y: [10, 0, 0, 10],
+                  }
+              }
               transition={{
-                delay: 0.08 + i * 0.06,
-                duration: 0.45,
+                delay: i * 0.3,
+                duration: shouldReduceMotion ? 0.5 : 5,
+                repeat: shouldReduceMotion ? 0 : Infinity,
+                repeatType: "loop",
                 ease: [0.16, 1, 0.3, 1],
               }}
             >
-              <div className={`h-2 rounded bg-foreground/[0.08] mb-1.5 ${t.bar}`} />
-              <div className={`h-1 rounded bg-foreground/[0.05] ${t.sub}`} />
+              <div
+                className={`w-11 h-11 rounded-xl border flex items-center justify-center text-sm ${node.color}`}
+              >
+                {node.icon}
+              </div>
+              <span className="text-[9px] font-mono text-muted-foreground font-medium uppercase tracking-wider">
+                {node.label}
+              </span>
             </motion.div>
           ))}
         </div>
-      </div>
-    </div>
-  );
-};
 
-// E-commerce Visual - static products + cart + checkout strip
-const EcommerceVisual = () => {
-  return (
-    <div className={`${VISUAL_BASE} p-4`}>
-      <div className="space-y-3">
-        {/* Product thumbnails */}
-        <div className="flex gap-2">
+        {/* Connection lines with flowing data */}
+        <div className="flex items-center gap-0 px-6">
           {[0, 1].map((i) => (
-            <div
-              key={i}
-              className="flex-1 rounded-lg border border-foreground/[0.08] p-2 bg-card/50"
+            <div key={i} className="flex-1 h-px bg-foreground/10 relative overflow-hidden">
+              <motion.div
+                className="absolute top-0 left-0 h-full w-8 bg-gradient-to-r from-transparent via-brand-secondary/60 to-transparent"
+                animate={{ x: shouldReduceMotion ? 0 : ["-100%", "400%"] }}
+                transition={{
+                  delay: i * 0.4,
+                  duration: 2,
+                  repeat: shouldReduceMotion ? 0 : Infinity,
+                  ease: "linear",
+                }}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Status bar */}
+        <motion.div
+          className="flex items-center gap-2 px-3 py-2 rounded-lg bg-brand-secondary/5 border border-brand-secondary/10"
+          animate={{
+            opacity: shouldReduceMotion ? 1 : [0, 0, 1, 1, 0],
+          }}
+          transition={{
+            delay: 1.5,
+            duration: 5,
+            repeat: shouldReduceMotion ? 0 : Infinity,
+            repeatType: "loop",
+          }}
+        >
+          <Check className="w-3 h-3 text-brand-secondary" />
+          <span className="text-[10px] text-brand-secondary font-medium">
+            3 sistemas sincronizados · 0 errores
+          </span>
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+// ────────────────────────────────────────────────
+// Auditoría ROI Visual — Mini ROI calculator with
+// metrics, bar charts, and a highlighted savings row
+// ────────────────────────────────────────────────
+const AuditoriaVisual = () => {
+  const shouldReduceMotion = useReducedMotion();
+
+  const metrics = [
+    { label: "Horas/Sem", before: "38h", after: "12h", savings: "68%" },
+    { label: "Costo Ops", before: "$4.2K", after: "$1.8K", savings: "57%" },
+    { label: "Errores", before: "15%", after: "2%", savings: "87%" },
+  ];
+
+  return (
+    <div className={`${VISUAL_BASE} p-5`}>
+      <div className="space-y-3">
+        {/* Header */}
+        <motion.div
+          className="flex items-center justify-between"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.4 }}
+        >
+          <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">
+            Antes vs Después
+          </span>
+          <span className="text-[10px] text-brand-secondary font-mono font-bold">
+            ROI: 340%
+          </span>
+        </motion.div>
+
+        {/* Metrics table */}
+        <div className="space-y-2">
+          {metrics.map((m, i) => (
+            <motion.div
+              key={m.label}
+              className="flex items-center gap-2"
+              initial={{ opacity: 0, x: -15 }}
+              animate={
+                shouldReduceMotion
+                  ? { opacity: 1, x: 0 }
+                  : {
+                    opacity: [0, 1, 1, 0],
+                    x: [-15, 0, 0, -15],
+                  }
+              }
+              transition={{
+                delay: 0.6 + i * 0.25,
+                duration: shouldReduceMotion ? 0.4 : 6,
+                repeat: shouldReduceMotion ? 0 : Infinity,
+                repeatType: "loop",
+                ease: [0.16, 1, 0.3, 1],
+              }}
             >
-              <div className="h-9 rounded-md bg-gradient-to-br from-brand-primary/15 to-brand-primary/30 mb-2" />
-              <div className="h-1.5 w-full rounded bg-foreground/[0.06]" />
-            </div>
+              <span className="text-[9px] text-muted-foreground w-14 shrink-0">
+                {m.label}
+              </span>
+              {/* Before bar */}
+              <div className="flex-1 h-4 rounded bg-red-500/10 flex items-center px-1.5">
+                <span className="text-[9px] font-mono text-red-400/80">
+                  {m.before}
+                </span>
+              </div>
+              <ArrowRight className="w-3 h-3 text-foreground/20 shrink-0" />
+              {/* After bar */}
+              <div className="flex-1 h-4 rounded bg-brand-secondary/10 flex items-center px-1.5">
+                <span className="text-[9px] font-mono text-brand-secondary">
+                  {m.after}
+                </span>
+              </div>
+              {/* Savings badge */}
+              <span className="text-[9px] font-mono font-bold text-brand-secondary bg-brand-secondary/10 rounded px-1.5 py-0.5 shrink-0">
+                -{m.savings}
+              </span>
+            </motion.div>
           ))}
         </div>
-        {/* Checkout strip */}
-        <div className="rounded-lg border border-foreground/[0.08] p-2.5 bg-card/50">
-          <div className="flex items-center justify-between mb-2">
-            <div className="h-2 w-12 rounded bg-foreground/[0.08]" />
-            <div className="w-6 h-6 rounded-full bg-brand-secondary/20 flex items-center justify-center">
-              <ShoppingCart className="w-3 h-3 text-brand-secondary" />
-            </div>
+
+        {/* Savings highlight */}
+        <motion.div
+          className="rounded-lg bg-brand-secondary/5 border border-brand-secondary/15 p-2.5 text-center"
+          animate={{
+            opacity: shouldReduceMotion ? 1 : [0, 0, 0, 1, 1, 0],
+          }}
+          transition={{
+            delay: 2,
+            duration: 6,
+            repeat: shouldReduceMotion ? 0 : Infinity,
+            repeatType: "loop",
+          }}
+        >
+          <div className="text-[11px] text-brand-secondary font-semibold">
+            Ahorro anual estimado: $28,800
           </div>
-          <div className="h-5 rounded-md bg-gradient-to-r from-brand-secondary/15 to-brand-primary/10" />
-        </div>
-        {/* Payment icons */}
-        <div className="flex gap-1.5 justify-end">
-          {[0, 1, 2].map((i) => (
-            <div key={i} className="w-6 h-4 rounded bg-foreground/[0.06]" />
-          ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
 };
 
-// Agentes Visual - voice waves + conversation cards
-const AgentesVisual = () => {
+// ────────────────────────────────────────────────
+// Cerebro Digital Visual — Knowledge search with
+// instant results, source cards, and confidence score
+// ────────────────────────────────────────────────
+const CerebroVisual = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <div className={`${VISUAL_BASE} p-6 flex items-center justify-center`}>
-      <div className="w-full space-y-4">
-        <div className="flex gap-3 items-center">
-          <div className="w-8 h-8 rounded-full bg-brand-secondary/20 flex items-center justify-center animate-pulse-soft">
-            <Cpu className="w-4 h-4 text-brand-secondary" />
-          </div>
-          <div className="flex-1 h-8 rounded-2xl bg-foreground/[0.05] border border-foreground/[0.08] flex items-center px-4">
-            <div className="h-1.5 w-1/2 rounded bg-brand-secondary/30" />
-          </div>
-        </div>
-        <div className="flex gap-3 items-center justify-end">
-          <div className="flex-1 h-8 rounded-2xl bg-brand-primary/10 border border-brand-primary/20 flex items-center px-4 justify-end">
-            <div className="h-1.5 w-2/3 rounded bg-brand-primary/30" />
-          </div>
-          <div className="w-8 h-8 rounded-full bg-brand-primary/20 flex items-center justify-center" />
-        </div>
-        <div className="flex gap-2 justify-center mt-2">
-          {[0, 1, 2, 3, 4].map((i) => (
-            <div
-              key={i}
-              className="w-1 bg-brand-secondary/40 rounded-full animate-float"
-              style={{ height: `${12 + Math.random() * 20}px`, animationDelay: `${i * 150}ms` }}
+    <div className={`${VISUAL_BASE} p-5`}>
+      <div className="space-y-3">
+        {/* Search bar */}
+        <motion.div
+          className="flex items-center gap-2 px-3 py-2 rounded-lg border border-foreground/[0.1] bg-foreground/[0.04]"
+          initial={{ opacity: 0, y: -5 }}
+          animate={
+            shouldReduceMotion
+              ? { opacity: 1, y: 0 }
+              : {
+                opacity: [0, 1, 1, 1, 0],
+                y: [-5, 0, 0, 0, -5],
+              }
+          }
+          transition={{
+            duration: shouldReduceMotion ? 0.5 : 6,
+            repeat: shouldReduceMotion ? 0 : Infinity,
+            repeatType: "loop",
+            ease: [0.16, 1, 0.3, 1],
+          }}
+        >
+          <Search className="w-3.5 h-3.5 text-foreground/30" />
+          <motion.span
+            className="text-[11px] text-foreground/60"
+            animate={
+              shouldReduceMotion
+                ? {}
+                : {
+                  opacity: [0, 0, 1, 1, 0],
+                }
+            }
+            transition={{
+              delay: 0.3,
+              duration: 6,
+              repeat: shouldReduceMotion ? 0 : Infinity,
+              repeatType: "loop",
+            }}
+          >
+            ¿Cuál es la política de devoluciones?
+          </motion.span>
+        </motion.div>
+
+        {/* Results */}
+        {[
+          {
+            title: "Política_Devoluciones.pdf",
+            snippet: "Plazo de 30 días para...",
+            confidence: "98%",
+          },
+          {
+            title: "FAQ_Clientes.docx",
+            snippet: "Sección 4.2 — Devoluciones...",
+            confidence: "91%",
+          },
+        ].map((result, i) => (
+          <motion.div
+            key={result.title}
+            className="rounded-lg border border-foreground/[0.08] bg-card/50 p-2.5"
+            animate={
+              shouldReduceMotion
+                ? { opacity: 1 }
+                : {
+                  opacity: [0, 0, 0, 1, 1, 0],
+                  y: [8, 8, 8, 0, 0, 8],
+                }
+            }
+            transition={{
+              delay: 1.5 + i * 0.3,
+              duration: 6,
+              repeat: shouldReduceMotion ? 0 : Infinity,
+              repeatType: "loop",
+              ease: [0.16, 1, 0.3, 1],
+            }}
+          >
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-[10px] font-medium text-foreground/80">
+                {result.title}
+              </span>
+              <span className="text-[9px] font-mono text-brand-secondary font-bold">
+                {result.confidence}
+              </span>
+            </div>
+            <p className="text-[9px] text-muted-foreground leading-relaxed">
+              {result.snippet}
+            </p>
+          </motion.div>
+        ))}
+
+        {/* AI confidence bar */}
+        <motion.div
+          className="flex items-center gap-2"
+          animate={{
+            opacity: shouldReduceMotion ? 1 : [0, 0, 0, 0, 1, 0],
+          }}
+          transition={{
+            delay: 2.5,
+            duration: 6,
+            repeat: shouldReduceMotion ? 0 : Infinity,
+            repeatType: "loop",
+          }}
+        >
+          <div className="flex-1 h-1 rounded-full bg-foreground/[0.08] overflow-hidden">
+            <motion.div
+              className="h-full rounded-full bg-gradient-to-r from-brand-secondary to-brand-primary"
+              animate={{ width: shouldReduceMotion ? "95%" : ["0%", "95%"] }}
+              transition={{
+                delay: 2.8,
+                duration: 0.6,
+                repeat: shouldReduceMotion ? 0 : Infinity,
+                repeatDelay: 5.4,
+              }}
             />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// Knowledge Base Visual - network nodes
-const KnowledgeBaseVisual = () => {
-  return (
-    <div className={`${VISUAL_BASE} p-6 relative overflow-hidden`}>
-      <div className="absolute inset-0 architectural-grid-dense opacity-10" />
-      <div className="relative z-10 flex flex-col h-full justify-between">
-        <div className="grid grid-cols-3 gap-2">
-          {[0, 1, 2].map((i) => (
-            <div key={i} className="h-10 rounded border border-foreground/[0.1] bg-card/60 backdrop-blur-sm p-2">
-              <div className="h-1 w-full rounded bg-foreground/[0.1] mb-1" />
-              <div className="h-1 w-2/3 rounded bg-foreground/[0.05]" />
-            </div>
-          ))}
-        </div>
-        <div className="flex items-center justify-center py-4">
-          <div className="relative">
-            <div className="w-12 h-12 rounded-xl bg-brand-primary/20 border border-brand-primary/40 flex items-center justify-center z-10 relative">
-              <LayoutDashboard className="w-6 h-6 text-brand-primary" />
-            </div>
-            <div className="absolute -inset-4 bg-brand-primary/10 rounded-full blur-xl animate-pulse-soft" />
           </div>
-        </div>
-        <div className="h-12 rounded-lg border border-brand-secondary/20 bg-brand-secondary/5 p-2 overflow-hidden">
-          <div className="flex gap-2">
-            <div className="w-1 h-full bg-brand-secondary/30" />
-            <div className="space-y-1 w-full">
-              <div className="h-1.5 w-full bg-brand-secondary/20 rounded" />
-              <div className="h-1.5 w-4/5 bg-brand-secondary/10 rounded" />
-            </div>
-          </div>
-        </div>
+          <span className="text-[9px] text-brand-secondary font-mono">
+            Confianza IA
+          </span>
+        </motion.div>
       </div>
     </div>
   );
@@ -217,16 +443,8 @@ const services = [
   {
     title: "Agentes Autónomos",
     subtitle: "Ventas y Soporte 24/7",
-    description: (
-      <>
-        <p className="mb-3 text-foreground/80">
-          Implementamos agentes que califican leads y resuelven dudas con tono humano.
-        </p>
-        <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Captura cada oportunidad de venta sin mover un dedo.
-        </p>
-      </>
-    ),
+    description:
+      "Atendé y cerrá ventas en automático. Tus mejores vendedores, siempre activos y con tono humano.",
     icon: <Cpu className="w-5 h-5 text-foreground/70" />,
     visual: <AgentesVisual />,
     className: "lg:col-span-2 lg:row-span-1",
@@ -235,55 +453,37 @@ const services = [
   },
   {
     title: "Eco-Sistemas",
-    subtitle: "Conectividad total",
-    description: (
-      <>
-        <p className="mb-3 text-foreground/80">
-          Conectamos tus herramientas para que el trabajo tedioso se haga solo.
-        </p>
-      </>
-    ),
+    subtitle: "Automatización Total",
+    description:
+      "Conectamos tus herramientas para eliminar el trabajo manual y tedioso.",
     icon: <Workflow className="w-5 h-5 text-foreground/70" />,
-    visual: <EcommerceVisual />,
+    visual: <EcoSistemasVisual />,
     className: "lg:col-span-1 lg:row-span-1",
     delay: 300,
     accent: "blue" as const,
   },
   {
     title: "Auditoría ROI",
-    subtitle: "Dónde invertir en IA",
-    description: (
-      <>
-        <p className="mb-3 text-foreground/80">
-          Identificamos los puntos de retorno real para tu negocio hoy.
-        </p>
-      </>
-    ),
+    subtitle: "Inversión Inteligente",
+    description:
+      "Identificamos los puntos donde la IA genera mayor retorno real para tu negocio.",
     icon: <LineChart className="w-5 h-5 text-foreground/70" />,
-    visual: <CustomWebsiteVisual />,
+    visual: <AuditoriaVisual />,
     className: "lg:col-span-1 lg:row-span-1",
     delay: 400,
     accent: "amber" as const,
   },
   {
     title: "Cerebro Digital",
-    subtitle: "RAG & Knowledge Base",
-    description: (
-      <>
-        <p className="mb-3 text-foreground/80">
-          "Habla" con tus documentos. Todo el conocimiento de tu empresa, accesible en segundos.
-        </p>
-        <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          Decisiones rápidas basadas en certezas, no en suposiciones.
-        </p>
-      </>
-    ),
+    subtitle: "Base de Conocimiento",
+    description:
+      "Toda la información de tu empresa accesible en segundos. Decisiones rápidas basadas en datos.",
     icon: <LayoutDashboard className="w-5 h-5 text-foreground/70" />,
-    visual: <KnowledgeBaseVisual />,
+    visual: <CerebroVisual />,
     className: "lg:col-span-2 lg:row-span-1",
     delay: 500,
     accent: "purple" as const,
-  }
+  },
 ];
 
 export const ServicePillars = () => {
@@ -291,25 +491,38 @@ export const ServicePillars = () => {
   const isInView = useInView(containerRef, { once: true, margin: "-50px" });
 
   return (
-    <section id="pilares" className="relative py-24 md:py-32 scroll-mt-20 gradient-mesh-subtle" ref={containerRef}>
+    <section
+      id="pilares"
+      className="relative py-24 md:py-32 scroll-mt-20 gradient-mesh-subtle"
+      ref={containerRef}
+    >
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <motion.h2
             className="text-4xl md:text-5xl font-bold tracking-tight mb-4 font-heading"
             initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={
+              isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+            }
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Sistemas que Escaladamente Funcionan
+            Soluciones de IA que mueven la aguja
           </motion.h2>
           <motion.p
             className="text-lg text-muted-foreground"
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            animate={
+              isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+            }
+            transition={{
+              delay: 0.1,
+              duration: 0.6,
+              ease: [0.16, 1, 0.3, 1],
+            }}
           >
-            Infraestructura de IA diseñada para mover la aguja del negocio.
+            Sistemas diseñados para resultados tangibles, no para promesas
+            vacías.
           </motion.p>
         </div>
 
@@ -321,9 +534,9 @@ export const ServicePillars = () => {
             show: {
               opacity: 1,
               transition: {
-                staggerChildren: 0.1
-              }
-            }
+                staggerChildren: 0.1,
+              },
+            },
           }}
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
