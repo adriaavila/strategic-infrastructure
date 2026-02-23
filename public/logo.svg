@@ -1,15 +1,64 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-labelledby="logo-title">
   <title id="logo-title">Servicios Creativos</title>
   <defs>
+    <!-- Background Gradient - Deep space/dark theme -->
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#9D7BF7"/>
-      <stop offset="100%" stop-color="#8B5CF6"/>
+      <stop offset="0%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
     </linearGradient>
-    <linearGradient id="stripe" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#5EEAD4"/>
-      <stop offset="100%" stop-color="#2DD4BF"/>
+    
+    <!-- Primary Mark Gradient - vibrant tech transition (Teal to Violet) -->
+    <linearGradient id="mark-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2DD4BF"/>
+      <stop offset="40%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#C084FC"/>
     </linearGradient>
+    
+    <!-- Inner subtle glow/highlight -->
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0"/>
+    </linearGradient>
+
+    <!-- Drop Shadow for depth -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
   </defs>
-  <rect width="100" height="100" rx="10" ry="10" fill="url(#bg)"/>
-  <polygon points="0,8 92,0 100,92 8,100" fill="url(#stripe)"/>
+  
+  <!-- Sleek Dark Rounded Squircle Background -->
+  <rect width="100" height="100" rx="28" ry="28" fill="url(#bg)"/>
+  
+  <!-- Subtle inner border for premium feel -->
+  <rect x="2" y="2" width="96" height="96" rx="26" ry="26" fill="none" stroke="url(#glow)" stroke-width="0.5" opacity="0.4"/>
+  
+  <!-- 
+    The Mark: A continuous, abstract geometric knot/S-shape 
+    Signifying connection, automation (infinity), and structure.
+  -->
+  <g filter="url(#shadow)" transform="translate(18, 20)">
+    <!-- Main sweeping path -->
+    <path 
+      d="M 12 45 
+         C 12 25, 25 10, 45 10
+         C 60 10, 68 18, 68 18
+         L 54 32
+         C 54 32, 48 26, 42 26
+         C 32 26, 28 32, 28 40
+         C 28 50, 40 55, 50 60
+         C 63 66, 72 75, 72 85
+         C 72 105, 55 115, 35 115
+         C 15 115, 5 105, 5 105
+         L 18 92
+         C 18 92, 25 99, 35 99
+         C 48 99, 52 92, 52 85
+         C 52 75, 42 70, 32 65
+         C 18 58, 12 52, 12 45 Z" 
+      fill="url(#mark-grad)" 
+      transform="scale(0.7) translate(8, -12)"
+    />
+    
+    <!-- Abstract connecting sphere/dot (representing the "punto" online or AI node) -->
+    <circle cx="56" cy="18" r="8" fill="url(#mark-grad)" transform="scale(0.7) translate(8, -12)"/>
+  </g>
 </svg>

@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 const footerLinks = {
   Links: [
     { label: "Servicios", href: "/#pilares" },
-    { label: "Precios", href: "/#precios" },
+    { label: "Proceso", href: "/proceso" },
     { label: "Portfolio", href: "/#proyectos" },
   ],
 };
@@ -13,15 +13,18 @@ export const Footer = () => {
     <footer className="relative bg-brand-dark text-white min-h-[50vh] pt-10 pb-6">
       {/* Top Border Gradient */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-      
+
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-0 mb-4">
-              <span className="text-lg font-semibold text-white">servicioscreativos</span>
-              <span className="text-brand-primary">.</span>
-              <span className="text-lg font-semibold text-white">online</span>
+            <div className="flex flex-col gap-4 mb-4">
+              <img src="/logo.svg" alt="Servicios Creativos Logo" className="w-16 h-16 rounded-xl" />
+              <div className="flex items-center gap-0">
+                <span className="text-lg font-semibold text-white">servicioscreativos</span>
+                <span className="text-brand-primary">.</span>
+                <span className="text-lg font-semibold text-white">online</span>
+              </div>
             </div>
             <p className="text-brand-slate text-sm leading-relaxed mb-4">
               Implementación de IA y sistemas inteligentes para operar mejor.

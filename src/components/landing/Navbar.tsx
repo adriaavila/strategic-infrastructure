@@ -3,10 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Servicios", href: "/#pilares" },
-  { label: "Automatizaciones", href: "/automatizaciones" },
-  { label: "Marketing", href: "/marketing" },
-  { label: "Precios", href: "/#precios" },
+  { label: "Historia", href: "/historia" },
+  { label: "Proceso", href: "/proceso" },
   { label: "Blog", href: "/blog" },
 ];
 
@@ -24,11 +22,10 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-brand-dark/80 backdrop-blur-xl border-b border-white/10"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? "bg-brand-dark/80 backdrop-blur-xl border-b border-white/10"
+        : "bg-transparent"
+        }`}
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
@@ -51,7 +48,7 @@ export const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <a href="/#contacto">
+            <a href="/contacto">
               <Button variant="hero" size="sm" className="rounded-lg">
                 Contacto
               </Button>
@@ -86,7 +83,7 @@ export const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <a href="/#contacto" onClick={() => setIsMobileMenuOpen(false)}>
+              <a href="/contacto" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button variant="hero" size="sm" className="w-full rounded-lg">
                   Contacto
                 </Button>

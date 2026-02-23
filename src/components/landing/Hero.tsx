@@ -5,9 +5,9 @@ import { useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
 const headlineLines = [
-  { text: "Tu Equipo Gasta Horas.", highlight: false },
-  { text: "La IA Lo Resuelve", highlight: false },
-  { text: "en Minutos.", highlight: true },
+  { text: "Ingeniería de Software", highlight: false },
+  { text: "y Automatización Inteligente", highlight: false },
+  { text: "para Escalar tu Operación.", highlight: true },
 ];
 
 export const Hero = () => {
@@ -53,7 +53,7 @@ export const Hero = () => {
           >
             <span className="w-2 h-2 rounded-full bg-brand-secondary animate-pulse-soft" />
             <span className="text-sm text-white/70 font-medium tracking-wide">
-              Automatización Inteligente para Empresas Serias
+              Desarrollo Web · Inteligencia de Negocios · Automatización
             </span>
           </motion.div>
 
@@ -87,8 +87,8 @@ export const Hero = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.55, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Implementamos agentes y automatizaciones que eliminan tareas repetitivas, reducen costos y liberan a tu equipo
-            <span className="text-white font-medium"> — desde la primera semana.</span>
+            Transformamos tus operaciones con software a medida, análisis de datos en tiempo real y flujos automatizados
+            <span className="text-white font-medium"> para llevar tu empresa al siguiente nivel de eficiencia y rentabilidad.</span>
           </motion.p>
 
           {/* CTA */}
@@ -107,7 +107,7 @@ export const Hero = () => {
               <a href="/#contacto">
                 {/* Glow effect behind button */}
                 <span className="absolute inset-0 rounded-[inherit] bg-brand-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
-                Diagnosticar Mi Operación — Gratis
+                Agendar Sesión Arquitectónica
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1.5" />
               </a>
             </Button>
@@ -120,7 +120,7 @@ export const Hero = () => {
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.9, duration: 0.6 }}
           >
-            Llamada de 15 min · Sin compromiso · Sin presión
+            Llamada técnica de 15 min · Sin compromiso
           </motion.p>
         </div>
       </motion.div>

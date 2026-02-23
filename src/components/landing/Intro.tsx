@@ -4,15 +4,15 @@ import { motion, useInView } from "framer-motion";
 const painPoints = [
   {
     num: "01",
-    text: "Tu equipo gasta demasiado tiempo en tareas repetitivas que una IA resolvería en segundos",
+    text: "Tu equipo pierde horas moviendo información manualmente entre sistemas desconectados e incompatibles.",
   },
   {
     num: "02",
-    text: "Tenés datos dispersos que no sabés cómo convertir en decisiones y ventajas reales",
+    text: "Tenés datos valiosos atrapados en planillas o ERPs, sin dashboards en tiempo real que guíen tus decisiones.",
   },
   {
     num: "03",
-    text: "Buscás una ventaja competitiva real — no más herramientas, sino sistemas que ejecutan",
+    text: "Tus procesos actuales y software heredado son el cuello de botella que frena la escalabilidad de tu operación.",
   },
 ];
 
@@ -38,10 +38,10 @@ export const Intro = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
-                El 80% del Trabajo Operativo
+                La Infraestructura Correcta
                 <br />
                 <span className="text-brand-secondary">
-                  es Automatizable.
+                  Define tu Escala.
                 </span>
               </motion.h2>
 
@@ -57,12 +57,11 @@ export const Intro = () => {
                 }}
               >
                 <p>
-                  Tu equipo no necesita más herramientas. Necesita{" "}
+                  Tu empresa no necesita más herramientas genéricas. Necesita{" "}
                   <span className="text-foreground/90 font-medium">
-                    sistemas que resuelvan tareas por ellos.
+                    sistemas construidos a medida para sus procesos.
                   </span>{" "}
-                  Automatizamos la carga operativa con modelos entrenados en tus
-                  propios datos — y lo demostramos en 7 días.
+                  Desarrollamos aplicaciones web de alto rendimiento, plataformas analíticas y flujos automatizados que resuelven problemas complejos.
                 </p>
                 <p className="text-foreground/80 font-semibold">
                   Ideal si:
@@ -134,9 +133,9 @@ export const Intro = () => {
             <p className="text-xl font-semibold text-foreground text-center">
               Resultado:{" "}
               <span className="text-brand-secondary">
-                menos costos, más ventas, mejores decisiones
+                operaciones ágiles, datos accionables, mayor rentabilidad
               </span>{" "}
-              — medible desde el primer mes.
+              — un ecosistema digital conectado.
             </p>
           </motion.div>
         </div>

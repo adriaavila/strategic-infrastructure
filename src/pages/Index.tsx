@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
 import { Intro } from "@/components/landing/Intro";
+import { CoreServices } from "@/components/landing/CoreServices";
 import { ServicePillars } from "@/components/landing/BentoGrid";
 import { EngagementModel } from "@/components/landing/EngagementModel";
 import { Pricing } from "@/components/landing/Pricing";
@@ -16,14 +17,15 @@ const Index = () => {
     <div className="relative min-h-screen bg-brand-dark">
       {/* Noise Texture Overlay */}
       <div className="noise-overlay" />
-      
+
       {/* Navigation */}
       <Navbar />
-      
+
       {/* Main Content */}
       <main>
         <Hero />
         <Intro />
+        <CoreServices />
         <ServicePillars />
         <EngagementModel />
         <Pricing />
@@ -33,7 +35,7 @@ const Index = () => {
         <IdealClient />
         <CTAFinal />
       </main>
-      
+
       {/* Footer */}
       <Footer />
     </div>
