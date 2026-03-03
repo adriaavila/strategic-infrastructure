@@ -45,7 +45,7 @@ const Historia = () => {
                             transition={{ duration: 0.5, delay: 0.3 }}
                             className="text-xl md:text-2xl text-brand-slate max-w-3xl mx-auto leading-relaxed"
                         >
-                            Tecnología diseñada con <span className="text-white font-medium">buen gusto</span>, elevando la estética para crear experiencias inolvidables.
+                            La estética no es solo visual, es una herramienta de ventas. Construimos tecnología que enamora y cierra contratos.
                         </motion.p>
                     </section>
 
@@ -62,13 +62,13 @@ const Historia = () => {
                                 Hola, soy Adrian Avila.
                             </h2>
                             <p>
-                                Soy la mente creativa de <strong className="text-white font-medium">servicioscreativos.online</strong>. Mi pasión no es sólo construir tecnología funcional, sino asegurarme de que sea <span className="text-brand-primary">visualmente excepcional</span>.
+                                Soy la mente detrás de <strong className="text-white font-medium">servicioscreativos.online</strong>. Sé que un software feo y complicado hace que tus clientes abandonen y tus ventas caigan, sin importar qué tan avanzado sea el código detrás.
                             </p>
                             <p>
-                                Entiendo que un proyecto técnico sin sensibilidad artística suele quedarse a medias. Por eso, he fusionado mi experiencia en desarrollo de automatizaciones e inteligencia artificial con un inquebrantable <strong className="text-white font-medium">enfoque en UI/UX</strong> y estética visual.
+                                Por eso fusiono ingeniería de software, automatizaciones y análisis de datos con un <strong className="text-white font-medium">diseño premium enfocado en usabilidad (UI/UX)</strong>.
                             </p>
                             <p>
-                                Creo firmemente que la <strong className="text-white">belleza y el diseño</strong> no son accesorios; son el puente principal entre tu tecnología y el éxito de tu cliente. Cada proyecto que lidero es único, hecho a medida y con un nivel de detalle milimétrico.
+                                Creo firmemente que la estética de un producto digital es una ventaja competitiva directa. Un software hermoso retiene clientes y destaca sobre los demás. Cada proyecto que hacemos está diseñado para multiplicar tu rentabilidad con un nivel de detalle milimétrico.
                             </p>
                         </motion.div>
 
@@ -103,10 +103,10 @@ const Historia = () => {
                             <div className="max-w-3xl">
                                 <h3 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
                                     <Sparkles className="text-brand-primary w-8 h-8" />
-                                    El Factor UX / UI
+                                    El Diseño Como Motor de Ventas
                                 </h3>
                                 <p className="text-brand-slate text-lg leading-relaxed mb-8">
-                                    Para que una solución tecnológica, automatización o herramienta realmente funcione, las personas deben <em>querer</em> usarla. Interfaz intuitiva, animaciones fluidas, paletas de colores coherentes y jerarquías claras. Esa es nuestra promesa: entregar soluciones robustas que parezcan obras de arte.
+                                    Si tu tecnología es difícil de usar, pierdes clientes. Diseñamos con interfaces intuitivas, animaciones fluidas y estéticas premium que transmiten confianza inmediata. Nuestra promesa es entregar herramientas robustas que hagan lucir a tu negocio inalcanzable para tu competencia.
                                 </p>
 
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -140,7 +140,7 @@ const Historia = () => {
                             </div>
                             <h2 className="text-4xl font-bold mb-6 text-white">Haz tu Briefing</h2>
                             <p className="text-brand-slate text-lg mb-10">
-                                Construyamos algo único e inteligente. Cuéntanos sobre tu visión, tus problemas y te mostraremos cómo podemos resolverlos con extrema elegancia técnica y visual.
+                                Construyamos algo único y altamente rentable. Cuéntanos tu desafío y te mostraremos cómo podemos resolverlo generando más volumen de negocio de forma atractiva y funcional.
                             </p>
 
                             <Button size="lg" className="h-14 px-8 rounded-full text-lg shadow-[0_0_40px_-10px_rgba(157,123,247,0.5)] hover:shadow-[0_0_60px_-10px_rgba(157,123,247,0.7)] transition-all">

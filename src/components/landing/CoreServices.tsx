@@ -148,11 +148,11 @@ const AutomationVisual = () => {
 const pillarServices = [
     {
         title: "Desarrollo de Software a Medida",
-        subtitle: "Infraestructura Escalable y SaaS",
+        subtitle: "Plataformas que tus clientes amarán usar",
         description: (
             <>
                 <p className="mb-3 text-foreground/80">
-                    Creamos aplicaciones web de alto rendimiento, portales a medida, módulos personalizados y plataformas escalables diseñadas para resolver tus cuellos de botella operativos más complejos.
+                    Creamos aplicaciones web y portales a medida con un diseño premium que diferencian tu marca y te ayudan a cerrar más ventas sin fricción.
                 </p>
                 <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
                     Node.js · React · Next.js · Bases de Datos Escalables
@@ -167,11 +167,11 @@ const pillarServices = [
     },
     {
         title: "Business Intelligence",
-        subtitle: "Datos Accionables en Tiempo Real",
+        subtitle: "Tus números claros para decisiones rentables",
         description: (
             <>
                 <p className="mb-3 text-foreground/80">
-                    Extraemos datos atrapados en tus sistemas y los transformamos en dashboards interactivos y reportes automatizados. Información clara para decisiones estratégicas.
+                    Extraemos datos atrapados en tus sistemas y los transformamos en dashboards interactivos. Información clara para que sepas dónde está tu dinero y cómo multiplicarlo.
                 </p>
                 <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
                     KPIs · ETL · Visualización de Datos
@@ -186,11 +186,11 @@ const pillarServices = [
     },
     {
         title: "Automatización de Tareas",
-        subtitle: "Eliminación del Trabajo Manual",
+        subtitle: "Cero trabajo manual. Más tiempo para vender.",
         description: (
             <>
                 <p className="mb-3 text-foreground/80">
-                    Conectamos tus sistemas incompatibles (ERP, CRM, software de contabilidad) creando flujos de trabajo autónomos que eliminan la carga de datos manual y aceleran tu operación.
+                    Conectamos tus sistemas creando flujos de trabajo autónomos que eliminan la carga manual, dándote más horas al día para enfocarte en hacer crecer tu negocio.
                 </p>
                 <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
                     n8n · APIs Custom · Webhooks
@@ -264,7 +264,7 @@ export const CoreServices = () => {
                         >
                             Tecnología que ejecuta,
                             <br />
-                            <span className="text-brand-secondary">datos que dirigen.</span>
+                            <span className="text-brand-secondary">diseño que vende.</span>
                         </motion.h1>
 
                         {/* Subheader */}
@@ -282,7 +282,7 @@ export const CoreServices = () => {
                                 ease: [0.16, 1, 0.3, 1],
                             }}
                         >
-                            Construimos el ecosistema de software a medida que tu empresa necesita para eliminar dependencias manuales y multiplicar su capacidad de procesamiento.
+                            Construimos el ecosistema digital exacto que tu empresa necesita para eliminar dependencias manuales, multiplicar tu capacidad operativa y cerrar más negocios sin fricción.
                         </motion.p>
                     </div>
                 </div>

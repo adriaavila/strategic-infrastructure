@@ -133,7 +133,7 @@ const FlujoTrabajoVisual = () => {
         >
           <Check className="w-3 h-3 text-brand-secondary" />
           <span className="text-[10px] text-brand-secondary font-medium">
-            Procesando 12 órdenes/min sin error humano
+            Multiplicando ventas sin error humano
           </span>
         </motion.div>
       </div>
@@ -161,7 +161,7 @@ const DashboardFinancieroVisual = () => {
           transition={{ delay: 0.5, duration: 0.4 }}
         >
           <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">
-            Optimización Financiera
+            Aceleración de Cobranza
           </span>
         </motion.div>
 
@@ -194,7 +194,7 @@ const DashboardFinancieroVisual = () => {
           animate={{ opacity: shouldReduceMotion ? 1 : [0, 0, 0, 1, 1, 0] }}
           transition={{ delay: 2, duration: 6, repeat: shouldReduceMotion ? 0 : Infinity, repeatType: "loop" }}
         >
-          <div className="text-[11px] text-foreground/80 font-medium">Reportes automatizados en PowerBI</div>
+          <div className="text-[11px] text-foreground/80 font-medium">Reportes que muestran tu rentabilidad</div>
         </motion.div>
       </div>
     </div>
@@ -248,8 +248,8 @@ const PortalAutogestionVisual = () => {
 const useCases = [
   {
     title: "Sistema de Reservas Inmobiliario",
-    subtitle: "Desarrollo de Software a Medida",
-    description: "Plataforma personalizada para gestionar inventario, pagos y contratos en tiempo real, conectando el CRM con el departamento legal y ventas.",
+    subtitle: "Ventas sin fricción",
+    description: "Plataforma a medida que conecta tu CRM con ventas, eliminando demoras y acelerando el cobro.",
     icon: <Building2 className="w-5 h-5 text-foreground/70" />,
     visual: <PortalInmobiliarioVisual />,
     className: "lg:col-span-2 lg:row-span-1",
@@ -258,8 +258,8 @@ const useCases = [
   },
   {
     title: "Dashboard Financiero Integrado",
-    subtitle: "Business Intelligence",
-    description: "Extracción y consolidación de datos de múltiples ERPs obsoletos hacia un panel de control directivo con métricas en tiempo real.",
+    subtitle: "ROI Claro en Tiempo Real",
+    description: "Visualiza la rentabilidad exacta de cada operación sin tener que abrir Excel nunca más.",
     icon: <LineChart className="w-5 h-5 text-foreground/70" />,
     visual: <DashboardFinancieroVisual />,
     className: "lg:col-span-1 lg:row-span-1",
@@ -268,8 +268,8 @@ const useCases = [
   },
   {
     title: "Flujo de Órdenes Automatizado",
-    subtitle: "Automatización de Tareas",
-    description: "Conexión de la plataforma de clientes con el sistema central logística para procesar órdenes automáticamente sin intervención humana.",
+    subtitle: "Cero Trabajo Manual",
+    description: "Procesa el triple de órdenes sin contratar más personal, conectando tu tienda directamente con logística.",
     icon: <FolderKanban className="w-5 h-5 text-foreground/70" />,
     visual: <FlujoTrabajoVisual />,
     className: "lg:col-span-1 lg:row-span-1",
@@ -278,8 +278,8 @@ const useCases = [
   },
   {
     title: "Portales de Cliente y Autogestión",
-    subtitle: "Plataformas Web Especializadas",
-    description: "Sitios privados para que tus clientes consulten facturas, hagan pedidos recurrentes y descarguen reportes de forma autónoma.",
+    subtitle: "Experiencia Premium",
+    description: "Portales con diseño obsesivo donde tus clientes pueden comprar y gestionarse solos, aumentando su lealtad.",
     icon: <Users className="w-5 h-5 text-foreground/70" />,
     visual: <PortalAutogestionVisual />,
     className: "lg:col-span-2 lg:row-span-1",

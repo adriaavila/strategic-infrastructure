@@ -7,7 +7,6 @@ import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 import Historia from "./pages/Historia";
-import Proceso from "./pages/Proceso";
 import Contacto from "./pages/Contacto";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 
@@ -23,7 +22,6 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/historia" element={<Historia />} />
-          <Route path="/proceso" element={<Proceso />} />
           <Route path="/contacto" element={<Contacto />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

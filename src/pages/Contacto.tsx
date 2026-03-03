@@ -12,10 +12,10 @@ const Contacto = () => {
                 <div className="container mx-auto px-6 relative z-10 max-w-3xl">
                     <div className="mb-16 animate-fade-in">
                         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
-                            Contacto
+                            Hagamos que suceda
                         </h1>
                         <p className="text-lg text-brand-slate max-w-xl">
-                            Estamos disponibles para discutir cómo podemos transformar la infraestructura de tu empresa con automatizaciones y análisis de datos.
+                            Cuéntame tu desafío y veamos cómo podemos escalarlo. Eliminemos hoy mismo tus cuellos de botella.
                         </p>
                     </div>
 
