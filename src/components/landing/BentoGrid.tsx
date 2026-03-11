@@ -248,8 +248,8 @@ const PortalAutogestionVisual = () => {
 const useCases = [
   {
     title: "Sistema de Reservas Inmobiliario",
-    subtitle: "Ventas sin fricción",
-    description: "Plataforma a medida que conecta tu CRM con ventas, eliminando demoras y acelerando el cobro.",
+    subtitle: "Web Profesional y Conversión",
+    description: "Una web rápida y optimizada que te ayuda a captar la atención de tus clientes ideales, mostrando tus servicios o productos con claridad.",
     icon: <Building2 className="w-5 h-5 text-foreground/70" />,
     visual: <PortalInmobiliarioVisual />,
     className: "lg:col-span-2 lg:row-span-1",
@@ -258,8 +258,8 @@ const useCases = [
   },
   {
     title: "Dashboard Financiero Integrado",
-    subtitle: "ROI Claro en Tiempo Real",
-    description: "Visualiza la rentabilidad exacta de cada operación sin tener que abrir Excel nunca más.",
+    subtitle: "Automatización de Tareas",
+    description: "Conectamos tus formularios con Google Sheets, WhatsApp y tu correo para que no pierdas horas moviendo información manualmente.",
     icon: <LineChart className="w-5 h-5 text-foreground/70" />,
     visual: <DashboardFinancieroVisual />,
     className: "lg:col-span-1 lg:row-span-1",
@@ -278,8 +278,8 @@ const useCases = [
   },
   {
     title: "Portales de Cliente y Autogestión",
-    subtitle: "Experiencia Premium",
-    description: "Portales con diseño obsesivo donde tus clientes pueden comprar y gestionarse solos, aumentando su lealtad.",
+    subtitle: "Dashboards y Reportes",
+    description: "Visualiza tus métricas clave de ventas y operaciones de un vistazo. Entiende de dónde vienen tus ingresos y en qué puedes mejorar.",
     icon: <Users className="w-5 h-5 text-foreground/70" />,
     visual: <PortalAutogestionVisual />,
     className: "lg:col-span-2 lg:row-span-1",

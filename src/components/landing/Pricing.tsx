@@ -1,182 +1,139 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, TrendingUp, Layers, Cpu } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
-const investmentFactors = [
+const pricingPlans = [
   {
-    num: "01",
-    label: "Complejidad de la Arquitectura",
-    detail: "Cuántos sistemas conectamos y qué tan profunda es la integración.",
-    icon: <Layers className="w-4 h-4" />,
+    name: "Landing page",
+    price: "$150",
+    idealFor: "marca personal, negocio local, validación rápida",
+    features: [
+      "Diseño responsive",
+      "1 página (One-pager)",
+      "Copy estructurado para ventas",
+      "Botón de WhatsApp flotante",
+      "Formulario de contacto",
+      "SEO básico",
+      "Entrega rápida",
+    ],
+    recommended: false,
   },
   {
-    num: "02",
-    label: "Volumen de Datos a Procesar",
-    detail: "El scale de operaciones define la infraestructura necesaria.",
-    icon: <Cpu className="w-4 h-4" />,
+    name: "Website empresa",
+    price: "$300",
+    idealFor: "empresas pequeñas, servicios, constructoras, agencias",
+    features: [
+      "Hasta 5 secciones o páginas",
+      "Diseño profesional",
+      "Formularios de captación",
+      "Integración total con WhatsApp",
+      "SEO básico",
+      "Panel editable (si aplica)",
+    ],
+    recommended: true,
   },
   {
-    num: "03",
-    label: "Nivel de Autonomía Requerido",
-    detail: "Desde alertas inteligentes hasta agentes que ejecutan decisiones.",
-    icon: <TrendingUp className="w-4 h-4" />,
+    name: "Ecommerce",
+    price: "$600",
+    idealFor: "tiendas pequeñas, venta directa, catálogos online",
+    features: [
+      "Catálogo de productos",
+      "Carrito y Checkout",
+      "Configuración inicial",
+      "Carga de productos base",
+      "Integración de pasarela de pagos",
+      "Capacitación breve",
+    ],
+    recommended: false,
   },
 ];
 
 export const Pricing = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+  const isInView = useInView(containerRef, { once: true, margin: "-50px" });
 
   return (
     <section
       id="precios"
       className="relative py-24 md:py-32 scroll-mt-20 gradient-mesh-subtle overflow-hidden"
     >
-      {/* Decorative gradient orbs */}
-      <div className="absolute top-1/4 left-0 w-80 h-80 bg-brand-primary/[0.05] rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-brand-secondary/[0.06] rounded-full blur-[100px] pointer-events-none" />
-
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto" ref={containerRef}>
-          {/* Title */}
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-3xl mx-auto text-center mb-16" ref={containerRef}>
           <motion.h2
-            className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-center font-heading"
+            className="text-4xl md:text-5xl font-bold tracking-tight mb-4 font-heading"
             initial={{ opacity: 0, y: 30 }}
-            animate={
-              isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
-            }
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Cada Dólar Invertido{" "}
-            <span className="text-brand-secondary">Vuelve Multiplicado.</span>
+            Diseño y desarrollo web para negocios que necesitan verse{" "}
+            <span className="text-brand-secondary">profesionales y convertir.</span>
           </motion.h2>
-
-          <motion.p
-            className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={
-              isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-            }
-            transition={{
-              delay: 0.1,
-              duration: 0.6,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-          >
-            No vendemos horas de desarrollo. Diseñamos sistemas cuyo retorno se
-            mide en eficiencia operativa y crecimiento real.
-          </motion.p>
-
-          {/* Main Content Card — with glowing border */}
-          <motion.div
-            className="relative group"
-            initial={{ opacity: 0, y: 20 }}
-            animate={
-              isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-            }
-            transition={{
-              delay: 0.2,
-              duration: 0.6,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-          >
-            {/* Animated border glow */}
-            <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-brand-secondary/20 via-brand-primary/20 to-brand-secondary/20 opacity-50 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
-
-            <div className="relative bg-card border border-foreground/[0.08] rounded-2xl p-8 md:p-12 shadow-architectural">
-              {/* Inner top gradient line */}
-              <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-brand-secondary/40 to-transparent" />
-
-              <div className="grid md:grid-cols-2 gap-12">
-                <div>
-                  <h3 className="text-xl font-bold mb-4 font-heading">
-                    Enfoque 100% en ROI
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    Cada implementación está diseñada para retornar su inversión
-                    mediante eficiencia operativa y crecimiento en ventas.
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    No cobramos por funcionalidades. Cobramos por{" "}
-                    <span className="text-foreground font-medium">
-                      resultados medibles
-                    </span>{" "}
-                    que impactan tu negocio desde el primer mes.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold mb-6 font-heading">
-                    Qué define la inversión:
-                  </h3>
-                  <ul className="space-y-4">
-                    {investmentFactors.map((factor, index) => (
-                      <motion.li
-                        key={index}
-                        className="group/item flex items-start gap-4 p-4 rounded-lg bg-muted/30 hover:bg-muted/50 border border-transparent hover:border-foreground/[0.06] transition-all duration-300"
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={
-                          isInView
-                            ? { opacity: 1, x: 0 }
-                            : { opacity: 0, x: -20 }
-                        }
-                        transition={{
-                          delay: 0.3 + index * 0.1,
-                          duration: 0.4,
-                        }}
-                      >
-                        {/* Number + icon */}
-                        <div className="flex flex-col items-center gap-1 shrink-0">
-                          <span className="text-brand-secondary font-mono text-xs font-bold">
-                            {factor.num}
-                          </span>
-                          <span className="text-foreground/30 group-hover/item:text-brand-secondary/60 transition-colors">
-                            {factor.icon}
-                          </span>
-                        </div>
-                        <div>
-                          <span className="text-foreground/90 font-medium text-sm block mb-0.5">
-                            {factor.label}
-                          </span>
-                          <span className="text-muted-foreground text-xs leading-relaxed">
-                            {factor.detail}
-                          </span>
-                        </div>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              {/* Gradient divider */}
-              <div className="mt-8 mb-8 h-px bg-gradient-to-r from-transparent via-foreground/10 to-transparent" />
-
-              {/* Bottom CTA area */}
-              <div className="text-center">
-                <p className="text-lg font-semibold text-foreground mb-2">
-                  Diseñamos una propuesta a medida para tu negocio.
-                </p>
-                <p className="text-sm text-muted-foreground mb-6">
-                  Si no ves retorno en 90 días, revisamos la estrategia sin
-                  costo.
-                </p>
-                <Button
-                  size="lg"
-                  variant="hero"
-                  asChild
-                  className="group relative shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
-                >
-                  <a href="#contacto">
-                    <span className="absolute inset-0 rounded-[inherit] bg-brand-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
-                    Hablemos de tu Proyecto
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </a>
-                </Button>
-              </div>
-            </div>
-          </motion.div>
         </div>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {pricingPlans.map((plan, index) => (
+            <motion.div
+              key={index}
+              className={`relative bg-card rounded-2xl p-8 border ${plan.recommended
+                  ? "border-brand-secondary/50 shadow-[0_0_30px_rgba(235,94,40,0.15)] transform md:-translate-y-4"
+                  : "border-foreground/[0.08]"
+                }`}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
+            >
+              {plan.recommended && (
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-secondary text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full">
+                  Más Popular
+                </div>
+              )}
+
+              <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
+              <div className="mb-4">
+                <span className="text-4xl font-bold font-heading">{plan.price}</span>
+              </div>
+
+              <p className="text-sm text-muted-foreground mb-6 min-h-[40px]">
+                <span className="font-semibold text-foreground">Ideal para:</span> {plan.idealFor}
+              </p>
+
+              <ul className="space-y-3 mb-8">
+                {plan.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-brand-secondary shrink-0" />
+                    <span className="text-sm text-muted-foreground">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Button
+                variant={plan.recommended ? "hero" : "outline"}
+                className="w-full"
+                asChild
+              >
+                <a href="/#contacto">Elegir Paquete</a>
+              </Button>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          className="mt-16 text-center max-w-2xl mx-auto p-6 bg-card/50 border border-foreground/[0.05] rounded-xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+        >
+          <h4 className="text-lg font-bold mb-2">Automatización, Dashboards y Soluciones SaaS</h4>
+          <p className="text-muted-foreground mb-4">
+            Los precios varían según la complejidad de la integración y el volumen de datos.
+          </p>
+          <Button variant="link" asChild className="text-brand-secondary hover:text-brand-secondary/80">
+            <a href="/#contacto">
+              Solicitar Cotización Personalizada <ArrowRight className="w-4 h-4 ml-1" />
+            </a>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

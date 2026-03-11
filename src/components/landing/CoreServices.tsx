@@ -147,15 +147,15 @@ const AutomationVisual = () => {
 
 const pillarServices = [
     {
-        title: "Desarrollo de Software a Medida",
-        subtitle: "Plataformas que tus clientes amarán usar",
+        title: "Desarrollo Web",
+        subtitle: "Landing pages, websites corporativos y ecommerce",
         description: (
             <>
                 <p className="mb-3 text-foreground/80">
-                    Creamos aplicaciones web y portales a medida con un diseño premium que diferencian tu marca y te ayudan a cerrar más ventas sin fricción.
+                    Diseño profesional y enfoque en conversión para negocios que necesitan verse profesionales y convertir visitas en clientes recurrentes.
                 </p>
                 <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-                    Node.js · React · Next.js · Bases de Datos Escalables
+                    React · Next.js · Interfaces Optimizadas
                 </p>
             </>
         ),
@@ -166,15 +166,15 @@ const pillarServices = [
         accent: "blue" as const,
     },
     {
-        title: "Business Intelligence",
-        subtitle: "Tus números claros para decisiones rentables",
+        title: "Dashboards y Automatización",
+        subtitle: "Control operacional y ventas",
         description: (
             <>
                 <p className="mb-3 text-foreground/80">
-                    Extraemos datos atrapados en tus sistemas y los transformamos en dashboards interactivos. Información clara para que sepas dónde está tu dinero y cómo multiplicarlo.
+                    Organiza tu operación, automatiza tareas repetitivas y visualiza métricas clave en tiempo real. Te ayudamos a ahorrar tiempo y reducir tareas manuales.
                 </p>
                 <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-                    KPIs · ETL · Visualización de Datos
+                    KPIs en Tiempo Real · Seguimiento Automatizado
                 </p>
             </>
         ),
@@ -185,15 +185,15 @@ const pillarServices = [
         accent: "emerald" as const,
     },
     {
-        title: "Automatización de Tareas",
-        subtitle: "Cero trabajo manual. Más tiempo para vender.",
+        title: "Software y SaaS",
+        subtitle: "Productos y soluciones a medida",
         description: (
             <>
                 <p className="mb-3 text-foreground/80">
-                    Conectamos tus sistemas creando flujos de trabajo autónomos que eliminan la carga manual, dándote más horas al día para enfocarte en hacer crecer tu negocio.
+                    Creamos soluciones propias, herramientas a medida para necesidades específicas y sistemas internos que acompañan el crecimiento estratégico de tu empresa.
                 </p>
                 <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-                    n8n · APIs Custom · Webhooks
+                    SaaS · Herramientas Internas · Integraciones
                 </p>
             </>
         ),
@@ -262,9 +262,9 @@ export const CoreServices = () => {
                                 ease: [0.16, 1, 0.3, 1],
                             }}
                         >
-                            Tecnología que ejecuta,
+                            Websites, automatizaciones,
                             <br />
-                            <span className="text-brand-secondary">diseño que vende.</span>
+                            <span className="text-brand-secondary">y software.</span>
                         </motion.h1>
 
                         {/* Subheader */}
@@ -282,7 +282,7 @@ export const CoreServices = () => {
                                 ease: [0.16, 1, 0.3, 1],
                             }}
                         >
-                            Construimos el ecosistema digital exacto que tu empresa necesita para eliminar dependencias manuales, multiplicar tu capacidad operativa y cerrar más negocios sin fricción.
+                            Diseñamos páginas web, dashboards y soluciones digitales para empresas que quieren vender más y trabajar mejor.
                         </motion.p>
                     </div>
                 </div>

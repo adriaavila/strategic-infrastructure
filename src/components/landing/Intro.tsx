@@ -4,15 +4,15 @@ import { motion, useInView } from "framer-motion";
 const painPoints = [
   {
     num: "01",
-    text: "Pierdes horas moviendo información a mano entre sistemas desconectados que complican a tus clientes.",
+    text: "Sitios invisibles: Tu web actual no atrae clientes y parece obsoleta en lugar de inspirar confianza.",
   },
   {
     num: "02",
-    text: "Tienes datos valiosos ocultos en hojas de cálculo, sin una forma de usarlos para cerrar más ventas.",
+    text: "Trabajo manual: Pierdes horas en tareas operativas, moviendo datos y con equipos usando Excel.",
   },
   {
     num: "03",
-    text: "Tus procesos manuales son lentos y poco estéticos, limitando la cantidad de clientes que puedes manejar.",
+    text: "Sin respuestas: No sabes exactamente de dónde vienen tus ventas o en qué falla tu proceso.",
   },
 ];
 
@@ -38,10 +38,10 @@ export const Intro = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
-                Menos fricción.
+                Menos burocracia.
                 <br />
                 <span className="text-brand-secondary">
-                  Más contratos cerrados.
+                  Mejores ventas.
                 </span>
               </motion.h2>
 
@@ -57,14 +57,14 @@ export const Intro = () => {
                 }}
               >
                 <p>
-                  Tu empresa no necesita más herramientas genéricas feas. Necesita{" "}
+                  Creamos websites, automatizaciones y herramientas digitales para negocios que quieren {" "}
                   <span className="text-foreground/90 font-medium">
-                    sistemas construidos a medida que enamoren a tus prospectos.
+                    vender más y operar mejor.
                   </span>{" "}
-                  Desarrollamos aplicaciones web de alto rendimiento, plataformas analíticas y flujos automatizados pensados para aumentar tu rentabilidad.
+                  Soluciones prácticas, entrega rápida y comunicación directa, sin procesos corporativos lentos.
                 </p>
                 <p className="text-foreground/80 font-semibold">
-                  Ideal si:
+                  Ideal para: Negocios locales, marcas personales, pymes y equipos que usan Excel.
                 </p>
               </motion.div>
             </div>
@@ -133,9 +133,8 @@ export const Intro = () => {
             <p className="text-xl font-semibold text-foreground text-center">
               Resultado:{" "}
               <span className="text-brand-secondary">
-                Sistemas elegantes, tiempo recuperado, negocios ganados
-              </span>{" "}
-              — una máquina de ventas eficiente.
+                Web profesional, control de ventas, procesos ordenados
+              </span>
             </p>
           </motion.div>
         </div>

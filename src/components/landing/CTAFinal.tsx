@@ -23,9 +23,9 @@ export const CTAFinal = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            ¿Listo para escalar con
+            ¿Necesitas una web,
             <br />
-            <span className="text-brand-secondary">IA que realmente funciona?</span>
+            <span className="text-brand-secondary">automatizar un proceso o desarrollar una herramienta digital?</span>
           </motion.h2>
 
           {/* Copy */}
@@ -35,7 +35,7 @@ export const CTAFinal = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Empezá hoy mismo a reducir costos y aumentar tus ventas con sistemas autónomos.
+            Hablemos hoy sobre cómo podemos ayudarte a vender más y trabajar mejor.
           </motion.p>
 
           {/* CTA */}
@@ -50,7 +50,7 @@ export const CTAFinal = () => {
               size="lg"
               className="group shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
-              Agendar Llamada Gratuita
+              Escríbeme por WhatsApp
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </motion.div>
@@ -62,7 +62,7 @@ export const CTAFinal = () => {
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            Llamada de 15 min para evaluar tu potencial de automatización.
+            Respuesta rápida. Sin burocracia.
           </motion.p>
         </div>
       </div>

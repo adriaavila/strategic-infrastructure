@@ -30,7 +30,7 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo - servicioscreativos.online with violet dot */}
           <a href="/" className="flex items-center gap-2 text-lg font-semibold tracking-tight text-white">
-            <img src="/logo.svg" alt="" className="w-8 h-8 rounded-sm flex-shrink-0" />
+            <img src="/logo.svg" alt="servicioscreativos.online" className="w-8 h-8 rounded-sm flex-shrink-0" />
             <span>servicioscreativos</span>
             <span className="text-brand-primary">.</span>
             <span>online</span>
