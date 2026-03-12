@@ -88,17 +88,6 @@ const ProjectDetail = () => {
                       Ver proyecto
                     </a>
                   )}
-                  {project.githubUrl && project.visibility !== "private" && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-card/60 border border-white/10 text-white/80 hover:border-brand-secondary/30 hover:text-brand-secondary transition-colors"
-                    >
-                      <Github className="w-4 h-4" />
-                      Ver código
-                    </a>
-                  )}
                 </div>
               </motion.div>
 

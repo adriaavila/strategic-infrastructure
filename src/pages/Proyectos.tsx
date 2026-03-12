@@ -151,8 +151,8 @@ const Proyectos = () => {
                   }}
                   className="group rounded-[1.75rem] overflow-hidden border border-white/8 bg-card/30 backdrop-blur-sm hover:border-brand-secondary/25 transition-colors"
                 >
-                  <div className="grid lg:grid-cols-[1.05fr_0.95fr] h-full">
-                    <div className="relative min-h-[280px] lg:min-h-full overflow-hidden">
+                  <div className="flex flex-col h-full">
+                    <div className="relative aspect-[16/10] w-full overflow-hidden shrink-0">
                       <img
                         src={project.image}
                         alt={project.title}
@@ -173,7 +173,7 @@ const Proyectos = () => {
                       </div>
                     </div>
 
-                    <div className="p-6 md:p-7 flex flex-col">
+                    <div className="p-6 md:p-7 flex flex-col flex-1">
                       <div className="flex items-start justify-between gap-4 mb-4">
                         <div>
                           <h3 className="text-2xl font-bold tracking-tight text-white font-heading">
@@ -232,17 +232,6 @@ const Proyectos = () => {
                           >
                             <ExternalLink className="w-4 h-4" />
                             Ver en vivo
-                          </a>
-                        )}
-                        {project.githubUrl && project.visibility !== "private" && (
-                          <a
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-sm text-white/55 hover:text-white/80 transition-colors"
-                          >
-                            <Github className="w-4 h-4" />
-                            Código
                           </a>
                         )}
                       </div>

@@ -38,7 +38,7 @@ export const projects: ProjectEntry[] = [
       "La web ayuda a que el visitante entienda el costo de no cambiar.",
     ],
     tags: ["B2B", "Consultoría", "Landing", "Scrollytelling"],
-    image: "/projects/portfolio/intrega.png",
+    image: "/projects/intrega.png",
     githubUrl: "https://github.com/adriaavila/intrega-landing",
     liveUrl: "https://intrega-landing.vercel.app",
     accent: "from-emerald-500/20 to-teal-500/10",
@@ -68,7 +68,6 @@ export const projects: ProjectEntry[] = [
     tags: ["Inventario", "Dashboard", "Operaciones", "Convex"],
     image: "/projects/portfolio/almacen-vc.png",
     githubUrl: "https://github.com/adriaavila/almacen-vc",
-    liveUrl: "https://almacen-vc.vercel.app",
     accent: "from-blue-500/20 to-indigo-500/10",
     featured: true,
     visibility: "public",
@@ -129,60 +128,7 @@ export const projects: ProjectEntry[] = [
     featured: true,
     visibility: "public",
   },
-  {
-    slug: "creativv",
-    title: "Creativv",
-    shortDescription:
-      "Website para agencia creativa con branding marcado, copy orientado a conversión y foco en presencia digital sólida.",
-    overview:
-      "Sitio web oficial de Creativv, orientado a presentar servicios creativos y transformación digital con una estética moderna y una identidad visual muy definida.",
-    challenge:
-      "Construir una presencia de agencia que se sintiera elegante, clara y vendible sin caer en una landing genérica de servicios.",
-    solution: [
-      "Trabajé una interfaz moderna alineada con la paleta visual de la marca.",
-      "Priorizé performance, responsividad, SEO y accesibilidad como base del sitio.",
-      "Usé un lenguaje visual consistente para reforzar posicionamiento y confianza.",
-      "Mantuve el recorrido centrado en claridad de oferta y conversión.",
-    ],
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Radix UI", "Lucide React"],
-    outcomes: [
-      "Funciona como pieza comercial y de marca al mismo tiempo.",
-      "Muestra criterio para construir sitios de agencia con base estratégica.",
-    ],
-    tags: ["Agencia", "Branding", "Landing", "Marketing"],
-    image: "/projects/portfolio/creativv.png",
-    githubUrl: "https://github.com/adriaavila/creativv",
-    liveUrl: "https://creativv.vercel.app",
-    accent: "from-brand-secondary/20 to-emerald-500/10",
-    visibility: "public",
-  },
-  {
-    slug: "allok",
-    title: "Allok",
-    shortDescription:
-      "Experiencia web 3D con animaciones avanzadas y enfoque tipo Awwwards para elevar percepción y diferenciación.",
-    overview:
-      "Sitio/portfolio inmersivo construido con React, GSAP y Three.js, pensado como experiencia interactiva de alto impacto visual.",
-    challenge:
-      "Lograr una experiencia de portafolio que impresionara por ejecución y dirección visual sin perder solidez técnica.",
-    solution: [
-      "Construí una experiencia con scroll animations, escenas 3D y motion de alto nivel.",
-      "Usé React Three Fiber y Drei para sostener la parte inmersiva del sitio.",
-      "Trabajé una interfaz orientada a impacto visual y diferenciación frente a portfolios convencionales.",
-      "Mantuve una base productiva usando React y Tailwind para estructurar la experiencia.",
-    ],
-    stack: ["React", "Vite", "Tailwind CSS", "GSAP", "Three.js", "React Three Fiber", "Drei"],
-    outcomes: [
-      "Muestra dominio de experiencias visuales complejas.",
-      "Refuerza la capacidad de construir sitios memorables para captar atención.",
-    ],
-    tags: ["3D", "Animación", "Experiencia", "Portfolio"],
-    image: "/projects/portfolio/allok.png",
-    githubUrl: "https://github.com/adriaavila/allok",
-    liveUrl: "https://allok-nine.vercel.app",
-    accent: "from-rose-500/20 to-pink-500/10",
-    visibility: "public",
-  },
+
   {
     slug: "avepane",
     title: "AVEPANE",
@@ -204,12 +150,12 @@ export const projects: ProjectEntry[] = [
       "Muestra sensibilidad para representar causas reales con estructura y criterio.",
     ],
     tags: ["Institucional", "Impacto social", "Accesibilidad", "Landing"],
-    image: "/projects/portfolio/avepane.png",
+    image: "/projects/portfolio/verona-saas.png",
     githubUrl: "https://github.com/adriaavila/avepane",
     accent: "from-cyan-500/20 to-sky-500/10",
     visibility: "public",
   },
-  {
+  /*{
     slug: "verona-saas",
     title: "Verona SaaS",
     shortDescription:
@@ -365,9 +311,13 @@ export const projects: ProjectEntry[] = [
     accent: "from-teal-500/20 to-cyan-500/10",
     visibility: "public",
   },
+  */
 ];
 
 export const featuredProjects = projects.filter((project) => project.featured);
 
 export const getProjectBySlug = (slug: string) =>
   projects.find((project) => project.slug === slug);
+
+
+
