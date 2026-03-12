@@ -19,7 +19,7 @@ export const Footer = () => {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-[1.3fr_0.7fr_0.7fr] gap-8 mb-12 items-start">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <div className="flex flex-col gap-4 mb-4">
