@@ -1,49 +1,8 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ExternalLink, ArrowRight } from "lucide-react";
-
-const featuredProjects = [
-  {
-    title: "Intrega",
-    description:
-      "Landing page para consultoría y transformación digital enfocada en el sector hospitalidad.",
-    tags: ["React", "TypeScript", "UI/UX"],
-    liveUrl: "https://intrega-landing.vercel.app",
-    image: "/projects/intrega.png",
-    className: "md:col-span-2 md:row-span-2",
-    featured: true,
-  },
-  {
-    title: "Almacen VC",
-    description:
-      "Sistema de control de almacén e inventario para la empresa Vistacampo.",
-    tags: ["TypeScript", "Gestión", "Dashboard"],
-    liveUrl: "https://almacen-vc.vercel.app",
-    image: "/projects/almacen-vc.png",
-    className: "md:col-span-1 md:row-span-1",
-    featured: false,
-  },
-  {
-    title: "Viaja Ven",
-    description:
-      "Plataforma de turismo gastronómico con diseño interactivo e intuitivo.",
-    tags: ["TypeScript", "Turismo", "Plataforma"],
-    liveUrl: "https://viaja-ven.vercel.app",
-    image: "/projects/viaja-ven.png",
-    className: "md:col-span-1 md:row-span-1",
-    featured: false,
-  },
-  {
-    title: "Artist The Way",
-    description:
-      "Plataforma de E-commerce dedicada a exponer e impulsar artistas creativos.",
-    tags: ["TypeScript", "E-commerce"],
-    liveUrl: "https://artistheway.vercel.app",
-    image: "/projects/artistheway.png",
-    className: "md:col-span-1 md:row-span-1",
-    featured: false,
-  },
-];
+import { ArrowRight, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
+import { featuredProjects } from "@/data/projects";
 
 export const ProjectsShowcase = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -56,7 +15,6 @@ export const ProjectsShowcase = () => {
       ref={containerRef}
     >
       <div className="container mx-auto px-6">
-        {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <motion.div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-foreground/10 bg-card/60 backdrop-blur-sm mb-6"
@@ -74,130 +32,112 @@ export const ProjectsShowcase = () => {
             className="text-4xl md:text-5xl font-bold tracking-tight mb-4 font-heading"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{
-              delay: 0.1,
-              duration: 0.6,
-              ease: [0.16, 1, 0.3, 1],
-            }}
+            transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Proyectos{" "}
-            <span className="text-brand-secondary">Realizados</span>
+            Proyectos <span className="text-brand-secondary">Realizados</span>
           </motion.h2>
           <motion.p
             className="text-lg text-muted-foreground leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{
-              delay: 0.2,
-              duration: 0.6,
-              ease: [0.16, 1, 0.3, 1],
-            }}
+            transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Cada proyecto empieza con un problema concreto y termina en un
-            sistema funcional y estéticamente cuidado.
+            Ahora cada proyecto tiene mejor contexto visual y narrativo: qué problema resolvió,
+            cómo fue planteado y por qué vale la pena mostrarlo.
           </motion.p>
         </div>
 
-        {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 auto-rows-[280px] md:auto-rows-[260px]">
-          {featuredProjects.map((project, index) => (
-            <motion.a
-              key={project.title}
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`group relative rounded-2xl overflow-hidden cursor-pointer ${project.className}`}
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              animate={
-                isInView
-                  ? { opacity: 1, y: 0, scale: 1 }
-                  : { opacity: 0, y: 40, scale: 0.95 }
-              }
-              transition={{
-                delay: 0.3 + index * 0.1,
-                duration: 0.6,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              whileHover={{
-                scale: 1.015,
-                transition: { duration: 0.3, type: "spring", stiffness: 300, damping: 30 },
-              }}
-            >
-              {/* Background Image */}
-              <div className="absolute inset-0">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
-                  loading="lazy"
-                />
-              </div>
+          {featuredProjects.map((project, index) => {
+            const className = index === 0 ? "md:col-span-2 md:row-span-2" : "md:col-span-1 md:row-span-1";
+            const featured = index === 0;
 
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 group-hover:from-black/95 group-hover:via-black/50 transition-all duration-500" />
+            return (
+              <motion.div
+                key={project.slug}
+                className={`group relative rounded-2xl overflow-hidden ${className}`}
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 40, scale: 0.95 }}
+                transition={{
+                  delay: 0.3 + index * 0.1,
+                  duration: 0.6,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                whileHover={{
+                  scale: 1.015,
+                  transition: { duration: 0.3, type: "spring", stiffness: 300, damping: 30 },
+                }}
+              >
+                <div className="absolute inset-0">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                </div>
 
-              {/* Glassmorphism Border Glow on Hover */}
-              <div className="absolute inset-0 rounded-2xl border border-white/[0.08] group-hover:border-brand-secondary/30 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 group-hover:from-black/95 group-hover:via-black/50 transition-all duration-500" />
+                <div className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-70 mix-blend-screen`} />
+                <div className="absolute inset-0 rounded-2xl border border-white/[0.08] group-hover:border-brand-secondary/30 transition-colors duration-500" />
 
-              {/* Spotlight gradient on hover */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-tr from-brand-secondary/10 via-transparent to-brand-primary/5" />
+                <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                  <div className="flex flex-wrap gap-1.5 mb-3">
+                    {project.tags.slice(0, featured ? 4 : 3).map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider bg-white/10 backdrop-blur-sm border border-white/10 rounded-full text-white/80"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
 
-              {/* Content */}
-              <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                {/* Tags */}
-                <div className="flex flex-wrap gap-1.5 mb-3">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider bg-white/10 backdrop-blur-sm border border-white/10 rounded-full text-white/80"
+                  <h3 className={`font-bold tracking-tight text-white mb-1.5 ${featured ? "text-2xl md:text-3xl" : "text-xl"}`}>
+                    {project.title}
+                  </h3>
+                  <p className={`text-white/60 leading-relaxed ${featured ? "text-sm md:text-base max-w-lg" : "text-sm line-clamp-2"}`}>
+                    {project.shortDescription}
+                  </p>
+
+                  <div className="mt-3 flex items-center gap-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-brand-secondary text-xs md:text-sm font-medium hover:text-brand-secondary/80 transition-colors"
+                      >
+                        <ExternalLink className="w-3.5 h-3.5" />
+                        Ver proyecto
+                      </a>
+                    )}
+                    <Link
+                      to={`/proyectos/${project.slug}`}
+                      className="inline-flex items-center gap-1.5 text-white/65 text-xs md:text-sm font-medium hover:text-white transition-colors"
                     >
-                      {tag}
-                    </span>
-                  ))}
+                      Leer caso
+                    </Link>
+                  </div>
                 </div>
-
-                {/* Title & Description */}
-                <h3
-                  className={`font-bold tracking-tight text-white mb-1.5 ${
-                    project.featured
-                      ? "text-2xl md:text-3xl"
-                      : "text-xl"
-                  }`}
-                >
-                  {project.title}
-                </h3>
-                <p
-                  className={`text-white/60 leading-relaxed ${
-                    project.featured ? "text-sm md:text-base max-w-lg" : "text-sm line-clamp-2"
-                  }`}
-                >
-                  {project.description}
-                </p>
-
-                {/* Link Indicator */}
-                <div className="mt-3 flex items-center gap-1.5 text-brand-secondary opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                  <ExternalLink className="w-3.5 h-3.5" />
-                  <span className="text-xs font-medium">Ver proyecto</span>
-                </div>
-              </div>
-            </motion.a>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
 
-        {/* CTA to full projects page */}
         <motion.div
           className="mt-12 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ delay: 0.8, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <a
-            href="/proyectos"
+          <Link
+            to="/proyectos"
             className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-card/60 backdrop-blur-sm border border-foreground/[0.08] hover:border-brand-secondary/30 text-foreground/80 hover:text-brand-secondary transition-all duration-300 text-sm font-medium"
           >
             Ver todos los proyectos
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>
