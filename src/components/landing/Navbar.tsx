@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { getWhatsAppUrl } from "@/config/contact";
 
 const navLinks = [
   { label: "Proyectos", href: "/proyectos" },
@@ -48,7 +49,7 @@ export const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <a href="/contacto">
+            <a href={getWhatsAppUrl("Hola, me gustaría solicitar información sobre un proyecto.")} target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="sm" className="rounded-lg">
                 Contacto
               </Button>
@@ -83,7 +84,7 @@ export const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <a href="/contacto" onClick={() => setIsMobileMenuOpen(false)}>
+              <a href={getWhatsAppUrl("Hola, me gustaría solicitar información sobre un proyecto.")} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button variant="hero" size="sm" className="w-full rounded-lg">
                   Contacto
                 </Button>

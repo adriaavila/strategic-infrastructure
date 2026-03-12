@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { ParticleBackground } from "@/components/particles/ParticleBackground";
 import { useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { getWhatsAppUrl } from "@/config/contact";
 
 const headlineLines = [
   { text: "Desarrollo web,", highlight: false },
@@ -104,7 +105,7 @@ export const Hero = () => {
               asChild
               className="group relative shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
             >
-              <a href="/#contacto">
+              <a href={getWhatsAppUrl("Hola, ví su sitio web y me gustaría solicitar información.")} target="_blank" rel="noopener noreferrer">
                 {/* Glow effect behind button */}
                 <span className="absolute inset-0 rounded-[inherit] bg-brand-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
                 Escríbeme por WhatsApp

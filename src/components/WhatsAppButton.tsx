@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
+import { getWhatsAppUrl } from "@/config/contact";
 
 export const WhatsAppButton = () => {
-    // WhatsApp number - replace with the actual number when provided
-    // For now using a generic link as found in the browser inspection
-    const whatsappUrl = "https://wa.me/";
+    const whatsappUrl = getWhatsAppUrl();
 
     return (
         <motion.a

@@ -230,23 +230,6 @@ export const CoreServices = () => {
                     ref={heroRef}
                 >
                     <div className="max-w-5xl mx-auto text-center">
-                        {/* Badge */}
-                        <motion.div
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/10 bg-card/80 backdrop-blur-sm mb-8"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={
-                                heroInView
-                                    ? { opacity: 1, y: 0 }
-                                    : { opacity: 0, y: 20 }
-                            }
-                            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                        >
-                            <span className="w-2 h-2 rounded-full bg-brand-secondary animate-pulse-soft" />
-                            <span className="text-sm text-muted-foreground font-medium">
-                                Arquitectura Tecnológica Escalable
-                            </span>
-                        </motion.div>
-
                         {/* Headline */}
                         <motion.h1
                             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-6 text-balance font-heading"
@@ -262,28 +245,8 @@ export const CoreServices = () => {
                                 ease: [0.16, 1, 0.3, 1],
                             }}
                         >
-                            Websites, automatizaciones,
-                            <br />
-                            <span className="text-brand-secondary">y software.</span>
+                            Servicios
                         </motion.h1>
-
-                        {/* Subheader */}
-                        <motion.p
-                            className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={
-                                heroInView
-                                    ? { opacity: 1, y: 0 }
-                                    : { opacity: 0, y: 20 }
-                            }
-                            transition={{
-                                delay: 0.2,
-                                duration: 0.6,
-                                ease: [0.16, 1, 0.3, 1],
-                            }}
-                        >
-                            Diseñamos páginas web, dashboards y soluciones digitales para empresas que quieren vender más y trabajar mejor.
-                        </motion.p>
                     </div>
                 </div>
 

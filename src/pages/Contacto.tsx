@@ -2,6 +2,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
 import { Calendar, Mail, MessageSquare, ArrowRight } from "lucide-react";
+import { getWhatsAppUrl } from "@/config/contact";
 
 const Contacto = () => {
     return (
@@ -59,7 +60,7 @@ const Contacto = () => {
                         </a>
 
                         <a
-                            href="https://wa.me/"
+                            href={getWhatsAppUrl("Hola, me gustaría solicitar un presupuesto.")}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors"

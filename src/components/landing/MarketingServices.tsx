@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { BentoCard } from "./BentoCard";
 import { ParticleBackground } from "@/components/particles/ParticleBackground";
 import { Button } from "@/components/ui/button";
+import { getWhatsAppUrl } from "@/config/contact";
 
 // ────────────────────────────────────────────────
 // Branding Visual — Style-guide specimen
@@ -476,10 +477,13 @@ export const MarketingServices = () => {
                 variant="hero"
                 size="lg"
                 className="group relative shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden"
+                asChild
               >
-                <span className="absolute inset-0 rounded-[inherit] bg-brand-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
-                Agendar Llamada de Descubrimiento
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <a href={getWhatsAppUrl("Hola, me interesa el servicio de Marketing Autónomo.")} target="_blank" rel="noopener noreferrer">
+                  <span className="absolute inset-0 rounded-[inherit] bg-brand-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                  Agendar Llamada de Descubrimiento
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </a>
               </Button>
             </motion.div>
 

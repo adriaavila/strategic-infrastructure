@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { getWhatsAppUrl } from "@/config/contact";
 
 export const CTAFinal = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -49,9 +50,12 @@ export const CTAFinal = () => {
               variant="hero"
               size="lg"
               className="group shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              asChild
             >
-              Escríbeme por WhatsApp
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              <a href={getWhatsAppUrl("Hola, me gustaría agendar una llamada para hablar de un proyecto.")} target="_blank" rel="noopener noreferrer">
+                Escríbeme por WhatsApp
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </a>
             </Button>
           </motion.div>
 
