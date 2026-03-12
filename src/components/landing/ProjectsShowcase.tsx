@@ -16,18 +16,6 @@ export const ProjectsShowcase = () => {
     >
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <motion.div
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-foreground/10 bg-card/60 backdrop-blur-sm mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-secondary animate-pulse-soft" />
-            <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">
-              Portfolio
-            </span>
-          </motion.div>
-
           <motion.h2
             className="text-4xl md:text-5xl font-bold tracking-tight mb-4 font-heading"
             initial={{ opacity: 0, y: 30 }}
@@ -36,15 +24,6 @@ export const ProjectsShowcase = () => {
           >
             Proyectos <span className="text-brand-secondary">Realizados</span>
           </motion.h2>
-          <motion.p
-            className="text-lg text-muted-foreground leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          >
-            Ahora cada proyecto tiene mejor contexto visual y narrativo: qué problema resolvió,
-            cómo fue planteado y por qué vale la pena mostrarlo.
-          </motion.p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 auto-rows-[280px] md:auto-rows-[260px]">

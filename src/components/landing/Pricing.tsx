@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { getWhatsAppUrl } from "@/config/contact";
 
 const pricingPlans = [
   {
@@ -112,7 +113,13 @@ export const Pricing = () => {
                 className="w-full"
                 asChild
               >
-                <a href="/#contacto">Elegir Paquete</a>
+                <a
+                  href={getWhatsAppUrl(`¡Hola! Estoy interesado en el paquete de ${plan.name} de ${plan.price}.`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Elegir Paquete
+                </a>
               </Button>
             </motion.div>
           ))}
@@ -129,7 +136,11 @@ export const Pricing = () => {
             Los precios varían según la complejidad de la integración y el volumen de datos.
           </p>
           <Button variant="link" asChild className="text-brand-secondary hover:text-brand-secondary/80">
-            <a href="/#contacto">
+            <a
+              href={getWhatsAppUrl("¡Hola! Me gustaría solicitar una cotización personalizada para una solución de Automatización, Dashboards o SaaS.")}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Solicitar Cotización Personalizada <ArrowRight className="w-4 h-4 ml-1" />
             </a>
           </Button>

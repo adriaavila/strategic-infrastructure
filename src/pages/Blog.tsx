@@ -16,13 +16,23 @@ const Blog = () => {
     path: "/blog",
   });
 
-  const filtered = useMemo(
-    () =>
-      activeTopic === "Todos"
-        ? blogPosts
-        : blogPosts.filter((p) => p.category === activeTopic),
-    [activeTopic],
-  );
+  const parseSpanishDate = (dateStr: string) => {
+    const months: { [key: string]: number } = {
+      'Ene': 0, 'Feb': 1, 'Mar': 2, 'Abr': 3, 'May': 4, 'Jun': 5,
+      'Jul': 6, 'Ago': 7, 'Sep': 8, 'Oct': 9, 'Nov': 10, 'Dic': 11
+    };
+    const [day, month, year] = dateStr.split(' ');
+    return new Date(parseInt(year), months[month], parseInt(day));
+  };
+
+  const filtered = useMemo(() => {
+    const sorted = [...blogPosts].sort((a, b) => 
+      parseSpanishDate(b.date).getTime() - parseSpanishDate(a.date).getTime()
+    );
+    return activeTopic === "Todos"
+      ? sorted
+      : sorted.filter((p) => p.category === activeTopic);
+  }, [activeTopic]);
 
   const featured = filtered[0];
   const gridPosts = filtered.slice(activeTopic === "Todos" ? 1 : 0);
