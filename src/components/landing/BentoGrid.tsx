@@ -74,9 +74,9 @@ const FlujoTrabajoVisual = () => {
   const shouldReduceMotion = useReducedMotion();
 
   const nodes = [
-    { label: "App", icon: "📱", color: "bg-blue-500/20 text-blue-400 border-blue-500/30" },
+    { label: "WhatsApp", icon: "💬", color: "bg-green-500/20 text-green-400 border-green-500/30" },
     { label: "N8N", icon: "⚡", color: "bg-brand-secondary/20 text-brand-secondary border-brand-secondary/30" },
-    { label: "ERP", icon: "🏛️", color: "bg-purple-500/20 text-purple-400 border-purple-500/30" },
+    { label: "Excel", icon: "📊", color: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30" },
   ];
 
   return (

@@ -2,12 +2,11 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
 import { Intro } from "@/components/landing/Intro";
 import { CoreServices } from "@/components/landing/CoreServices";
-import { ServicePillars } from "@/components/landing/BentoGrid";
+import { ProjectsShowcase } from "@/components/landing/ProjectsShowcase";
 import { EngagementModel } from "@/components/landing/EngagementModel";
 import { Pricing } from "@/components/landing/Pricing";
 import { CustomMade } from "@/components/landing/CustomMade";
 import { Positioning } from "@/components/landing/Positioning";
-import { Portfolio } from "@/components/landing/Portfolio";
 import { IdealClient } from "@/components/landing/IdealClient";
 import { CTAFinal } from "@/components/landing/CTAFinal";
 import { Footer } from "@/components/landing/Footer";
@@ -26,12 +25,11 @@ const Index = () => {
         <Hero />
         <Intro />
         <CoreServices />
-        <ServicePillars />
+        <ProjectsShowcase />
         <EngagementModel />
         <Pricing />
         <CustomMade />
         <Positioning />
-        <Portfolio />
         <IdealClient />
         <CTAFinal />
       </main>

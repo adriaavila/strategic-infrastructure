@@ -8,6 +8,7 @@ import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 import Historia from "./pages/Historia";
 import Contacto from "./pages/Contacto";
+import Proyectos from "./pages/Proyectos";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/historia" element={<Historia />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/proyectos" element={<Proyectos />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

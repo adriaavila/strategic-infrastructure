@@ -90,9 +90,9 @@ const BIVisual = () => {
 const AutomationVisual = () => {
     const shouldReduceMotion = useReducedMotion();
     const nodes = [
-        { label: "ERP", icon: "ERP", color: "bg-blue-500/20 text-blue-400 border-blue-500/30" },
+        { label: "WhatsApp", icon: "💬", color: "bg-green-500/20 text-green-400 border-green-500/30" },
         { label: "n8n", icon: "⚡", color: "bg-brand-secondary/20 text-brand-secondary border-brand-secondary/30" },
-        { label: "CRM", icon: "CRM", color: "bg-purple-500/20 text-purple-400 border-purple-500/30" },
+        { label: "Excel", icon: "📊", color: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30" },
     ];
 
     return (
@@ -185,15 +185,15 @@ const pillarServices = [
         accent: "emerald" as const,
     },
     {
-        title: "Software y SaaS",
-        subtitle: "Productos y soluciones a medida",
+        title: "Software e IA",
+        subtitle: "Productos y soluciones inteligentes",
         description: (
             <>
                 <p className="mb-3 text-foreground/80">
-                    Creamos soluciones propias, herramientas a medida para necesidades específicas y sistemas internos que acompañan el crecimiento estratégico de tu empresa.
+                    Creamos soluciones con inteligencia artificial, herramientas a medida y sistemas que automatizan decisiones y acompañan el crecimiento estratégico de tu empresa.
                 </p>
                 <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-                    SaaS · Herramientas Internas · Integraciones
+                    IA · Herramientas Internas · Integraciones
                 </p>
             </>
         ),

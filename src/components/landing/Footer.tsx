@@ -2,8 +2,8 @@ import { ArrowUpRight } from "lucide-react";
 
 const footerLinks = {
   Links: [
-    { label: "Servicios", href: "/#pilares" },
-    { label: "Portfolio", href: "/#proyectos" },
+    { label: "Servicios", href: "/#servicios" },
+    { label: "Proyectos", href: "/proyectos" },
   ],
 };
 
