@@ -48,8 +48,7 @@ const Blog = () => {
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-brand-slate mb-10 leading-relaxed">
-                Estrategias, guías y análisis para negocios que quieren conectar mejor sus sistemas,
-                vender con más claridad y usar automatización con criterio.
+                Contenido pensado para equipos B2B que ya venden, pero necesitan mejor infraestructura comercial, automatización útil y sistemas que sostengan crecimiento sin caos operativo.
               </p>
             </motion.div>
 
