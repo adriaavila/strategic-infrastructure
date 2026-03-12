@@ -1,10 +1,17 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
+import { useSEO } from "@/lib/seo";
 import { motion } from "framer-motion";
 import { FileText, Sparkles, Heart } from "lucide-react";
 
 const Historia = () => {
+    useSEO({
+        title: "Historia y enfoque",
+        description: "Conoce la historia, la visión de producto y el enfoque de diseño y automatización detrás de servicioscreativos.online.",
+        path: "/historia",
+    });
+
     return (
         <div className="relative min-h-screen bg-brand-dark text-white selection:bg-brand-primary/30">
             <div className="noise-overlay" />
@@ -143,8 +150,8 @@ const Historia = () => {
                                 Construyamos algo único y altamente rentable. Cuéntanos tu desafío y te mostraremos cómo podemos resolverlo generando más volumen de negocio de forma atractiva y funcional.
                             </p>
 
-                            <Button size="lg" className="h-14 px-8 rounded-full text-lg shadow-[0_0_40px_-10px_rgba(157,123,247,0.5)] hover:shadow-[0_0_60px_-10px_rgba(157,123,247,0.7)] transition-all">
-                                Completar el Brief
+                            <Button asChild size="lg" className="h-14 px-8 rounded-full text-lg shadow-[0_0_40px_-10px_rgba(157,123,247,0.5)] hover:shadow-[0_0_60px_-10px_rgba(157,123,247,0.7)] transition-all">
+                                <a href="/brief?source=historia">Completar el Brief</a>
                             </Button>
                         </motion.div>
                     </section>

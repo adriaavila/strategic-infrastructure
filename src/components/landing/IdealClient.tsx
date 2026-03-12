@@ -3,15 +3,15 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const idealClientPoints = [
-  "ya vendés y querés eficiencia y crecimiento",
-  "tenés datos y querés convertirlos en decisiones",
-  "buscás automatización y sistemas que tu equipo use"
+  "ya vendes y buscas más eficiencia, claridad operativa y crecimiento",
+  "tienes datos, procesos o clientes, pero todavía no un sistema que lo ordene bien",
+  "quieres automatización y herramientas que tu equipo realmente use"
 ];
 
 const notFitPoints = [
-  "buscás solo “probar IA” sin objetivo de negocio",
-  "querés un sistema genérico sin adaptación real",
-  "no estás listo para ordenar datos ni procesos"
+  "solo quieres “probar IA” sin un objetivo de negocio claro",
+  "buscas una solución genérica sin adaptación real a tu operación",
+  "todavía no estás dispuesto a ordenar procesos, datos o responsables"
 ];
 
 export const IdealClient = () => {

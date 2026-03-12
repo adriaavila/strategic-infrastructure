@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { getWhatsAppUrl } from "@/config/contact";
 
 export const CTAFinal = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -10,14 +9,11 @@ export const CTAFinal = () => {
 
   return (
     <section id="contacto" className="relative py-32 md:py-40 scroll-mt-20 overflow-hidden">
-      {/* Background with gradient mesh */}
       <div className="absolute inset-0 gradient-mesh" />
       <div className="absolute inset-0 architectural-grid opacity-20" />
 
-      {/* Content */}
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center" ref={containerRef}>
-          {/* Headline */}
           <motion.h2
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 font-heading"
             initial={{ opacity: 0, y: 30 }}
@@ -29,7 +25,6 @@ export const CTAFinal = () => {
             <span className="text-brand-secondary">automatizar un proceso o desarrollar una herramienta digital?</span>
           </motion.h2>
 
-          {/* Copy */}
           <motion.p
             className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
@@ -39,7 +34,6 @@ export const CTAFinal = () => {
             Hablemos hoy sobre cómo podemos ayudarte a vender más y trabajar mejor.
           </motion.p>
 
-          {/* CTA */}
           <motion.div
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
@@ -49,17 +43,16 @@ export const CTAFinal = () => {
             <Button
               variant="hero"
               size="lg"
-              className="group shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
               asChild
+              className="group shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
-              <a href={getWhatsAppUrl("Hola, me gustaría agendar una llamada para hablar de un proyecto.")} target="_blank" rel="noopener noreferrer">
+              <a href="/brief?source=contacto">
                 Escríbeme por WhatsApp
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
           </motion.div>
 
-          {/* Trust indicator */}
           <motion.p
             className="text-sm text-muted-foreground mt-6"
             initial={{ opacity: 0 }}

@@ -119,7 +119,7 @@ export const Hero = () => {
               asChild
               className="bg-transparent text-white border-white/20 hover:bg-white/10"
             >
-              <a href="/#servicios">
+              <a href="/brief?source=hero">
                 Solicitar proyecto
               </a>
             </Button>

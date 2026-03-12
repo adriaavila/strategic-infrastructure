@@ -1,0 +1,43 @@
+import { Footer } from "@/components/landing/Footer";
+import { Navbar } from "@/components/landing/Navbar";
+import { siteConfig } from "@/data/site";
+import { useSEO } from "@/lib/seo";
+
+const LegalTerms = () => {
+  useSEO({
+    title: "Términos y condiciones",
+    description: "Términos y condiciones de servicioscreativos.online para servicios de software, automatización, integración y comunicación empresarial.",
+    path: "/terminos",
+  });
+
+  return (
+    <div className="min-h-screen bg-brand-dark text-white">
+      <Navbar />
+      <main className="pt-32 pb-24">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Términos y Condiciones</h1>
+          <p className="text-brand-slate text-lg mb-10 leading-relaxed">
+            Estos términos regulan el acceso y uso del sitio y de los servicios prestados por {siteConfig.name}, operado por {siteConfig.legalName}. Están redactados con criterio profesional para acompañar servicios de desarrollo, automatización, integraciones, infraestructura digital y soluciones orientadas a canales como WhatsApp, correo y APIs empresariales.
+          </p>
+
+          <div className="space-y-8 text-white/80 leading-8">
+            <section><h2 className="text-2xl font-semibold mb-3 text-white">1. Alcance</h2><p>El sitio presenta servicios de consultoría, diseño, desarrollo, automatización, integraciones, soporte y activos digitales. Cualquier contratación específica se rige además por propuesta comercial, alcance aprobado, cronograma, condiciones de pago y acuerdos complementarios.</p></section>
+            <section><h2 className="text-2xl font-semibold mb-3 text-white">2. Uso permitido</h2><p>El usuario se compromete a usar el sitio de forma lícita y profesional. No podrá intentar interferir con su seguridad, extraer información sin autorización, abusar de formularios ni utilizar el sitio para fines fraudulentos, difamatorios o contrarios a regulación aplicable.</p></section>
+            <section><h2 className="text-2xl font-semibold mb-3 text-white">3. Propuestas, presupuestos y contratación</h2><p>La información publicada no constituye una oferta irrevocable. Toda cotización, estimación de tiempo, alcance o fee puede cambiar luego de discovery, revisión técnica o validación operativa. La contratación se considera efectiva cuando existe aceptación escrita o pago inicial según corresponda.</p></section>
+            <section><h2 className="text-2xl font-semibold mb-3 text-white">4. Responsabilidades del cliente</h2><p>El cliente debe suministrar información veraz, acceso oportuno a cuentas, material legalmente utilizable, feedback razonable y aprobaciones dentro de plazos compatibles con el proyecto. Retrasos del cliente pueden afectar cronograma, presupuesto y fechas de entrega.</p></section>
+            <section><h2 className="text-2xl font-semibold mb-3 text-white">5. Propiedad intelectual</h2><p>Salvo pacto distinto, el estudio conserva metodologías, frameworks, componentes reutilizables, documentación interna, prompts, automatizaciones base y know-how. El cliente obtiene derechos de uso sobre entregables pagados conforme al alcance aprobado. Terceros como Meta, OpenAI, Vercel, Supabase u otros mantienen sus propias licencias y términos.</p></section>
+            <section><h2 className="text-2xl font-semibold mb-3 text-white">6. Servicios conectados a plataformas de terceros</h2><p>Si una solución integra WhatsApp Business Platform, Meta APIs, correo, CRMs, ERPs, pasarelas de pago o proveedores cloud, el cliente entiende que la continuidad del servicio también depende de políticas, límites, verificaciones, disponibilidad y cumplimiento exigido por esos terceros.</p></section>
+            <section><h2 className="text-2xl font-semibold mb-3 text-white">7. Compliance y actividades restringidas</h2><p>No se desarrollarán flujos destinados a spam, scraping ilícito, evasión de controles, desinformación, fraude, ingeniería social, incumplimiento de políticas de plataformas ni tratamientos de datos prohibidos por ley o por estándares de proveedores tecnológicos.</p></section>
+            <section><h2 className="text-2xl font-semibold mb-3 text-white">8. Limitación de responsabilidad</h2><p>En la medida permitida por ley, {siteConfig.legalName} no será responsable por daños indirectos, lucro cesante, pérdida de oportunidades, suspensión de cuentas de terceros, fallas de proveedores, errores originados por datos incorrectos del cliente o decisiones ejecutadas por personal externo al estudio.</p></section>
+            <section><h2 className="text-2xl font-semibold mb-3 text-white">9. Confidencialidad</h2><p>Toda información sensible compartida en discovery o ejecución será tratada con reserva razonable. Cuando el proyecto lo requiera, podrá formalizarse NDA o cláusulas específicas de seguridad, acceso, almacenamiento y retención de datos.</p></section>
+            <section><h2 className="text-2xl font-semibold mb-3 text-white">10. Terminación</h2><p>Podremos suspender o terminar conversaciones, propuestas o servicios si detectamos uso indebido, fraude, incumplimiento material, falta de cooperación, impago, solicitudes incompatibles con compliance o riesgos reputacionales/técnicos relevantes.</p></section>
+            <section><h2 className="text-2xl font-semibold mb-3 text-white">11. Contacto legal</h2><p>Para asuntos legales, privacidad o cumplimiento puedes escribir a <a className="text-brand-secondary hover:underline" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>.</p></section>
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default LegalTerms;

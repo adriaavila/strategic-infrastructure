@@ -6,11 +6,15 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 import Historia from "./pages/Historia";
 import Contacto from "./pages/Contacto";
 import Proyectos from "./pages/Proyectos";
 import ProjectDetail from "./pages/ProjectDetail";
+import Brief from "./pages/Brief";
+import LegalTerms from "./pages/LegalTerms";
+import LegalPrivacy from "./pages/LegalPrivacy";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 
 const queryClient = new QueryClient();
@@ -25,8 +29,12 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/historia" element={<Historia />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/brief" element={<Brief />} />
+          <Route path="/terminos" element={<LegalTerms />} />
+          <Route path="/privacidad" element={<LegalPrivacy />} />
           <Route path="/proyectos" element={<Proyectos />} />
           <Route path="/proyectos/:slug" element={<ProjectDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

@@ -1,9 +1,14 @@
 import { ArrowUpRight } from "lucide-react";
 
 const footerLinks = {
-  Links: [
+  Navegación: [
     { label: "Servicios", href: "/#servicios" },
     { label: "Proyectos", href: "/proyectos" },
+    { label: "Blog", href: "/blog" },
+  ],
+  Legal: [
+    { label: "Términos", href: "/terminos" },
+    { label: "Privacidad", href: "/privacidad" },
   ],
 };
 
@@ -26,7 +31,7 @@ export const Footer = () => {
               </div>
             </div>
             <p className="text-brand-slate text-sm leading-relaxed mb-4">
-              Implementación de IA y sistemas inteligentes para operar mejor.
+              Desarrollo web, automatización, integraciones y sistemas pensados para operar mejor hoy y escalar con estándares de compliance empresarial.
             </p>
             <div className="flex items-center gap-4">
               <a href="https://x.com/allok_llc" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors">

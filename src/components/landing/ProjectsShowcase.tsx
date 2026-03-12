@@ -78,7 +78,7 @@ export const ProjectsShowcase = () => {
                 </div>
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 group-hover:from-black/95 group-hover:via-black/50 transition-all duration-500" />
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-70 mix-blend-screen`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-60" />
                 <div className="absolute inset-0 rounded-2xl border border-white/[0.08] group-hover:border-brand-secondary/30 transition-colors duration-500" />
 
                 <div className="absolute inset-0 p-6 flex flex-col justify-end">
