@@ -13,6 +13,13 @@
     <filter id="blur" x="0" y="0" width="1200" height="630" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
       <feGaussianBlur stdDeviation="72"/>
     </filter>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
 
   <rect width="1200" height="630" rx="28" fill="url(#bg)"/>
@@ -25,8 +32,9 @@
 
   <rect x="42" y="42" width="1116" height="546" rx="26" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.08)"/>
 
-  <rect x="420" y="92" width="360" height="360" rx="102" fill="#0D1424" stroke="rgba(255,255,255,0.09)"/>
-  <path d="M554 204C573 175 603 160 641 160C684 160 714 174 733 203L688 242C675 225 661 219 642 219C615 219 597 236 597 259C597 282 616 295 652 310C709 330 742 357 742 404C742 454 702 486 640 486C588 486 550 468 527 436L575 399C588 421 608 432 640 432C673 432 691 418 691 398C691 375 671 359 633 346C577 327 544 302 544 260C544 240 547 220 554 204Z" fill="url(#accent)"/>
+  <g filter="url(#glow)" transform="translate(600 270) scale(-4.8 4.8) translate(-50 -50)">
+    <path d="M34 33C38 27 44 24 52 24C61 24 67 27 71 33L61 41C58 37 55 35 51 35C45 35 41 39 41 44C41 49 45 52 53 55C65 59 72 65 72 75C72 85 64 92 51 92C40 92 32 88 27 81L38 73C41 78 45 81 51 81C58 81 62 78 62 73C62 68 58 65 50 62C38 58 31 52 31 43C31 39 32 36 34 33Z" fill="url(#accent)"/>
+  </g>
 
   <text x="600" y="525" text-anchor="middle" fill="white" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="0.4">servicioscreativos.online</text>
   <text x="600" y="564" text-anchor="middle" fill="#9AA6BF" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="500" letter-spacing="0.3">Websites · Automatización · Software</text>

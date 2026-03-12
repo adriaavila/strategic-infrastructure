@@ -7,15 +7,14 @@
       <stop offset="100%" stop-color="#38D6C4"/>
     </linearGradient>
     <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feGaussianBlur stdDeviation="4" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
-  <rect x="8" y="8" width="84" height="84" rx="24" fill="#0B1020" stroke="rgba(255,255,255,0.08)"/>
-  <g filter="url(#glow)">
+  <g filter="url(#glow)" transform="translate(50 50) scale(-1 1) translate(-50 -50)">
     <path d="M34 33C38 27 44 24 52 24C61 24 67 27 71 33L61 41C58 37 55 35 51 35C45 35 41 39 41 44C41 49 45 52 53 55C65 59 72 65 72 75C72 85 64 92 51 92C40 92 32 88 27 81L38 73C41 78 45 81 51 81C58 81 62 78 62 73C62 68 58 65 50 62C38 58 31 52 31 43C31 39 32 36 34 33Z" fill="url(#mark-grad)"/>
   </g>
 </svg>
