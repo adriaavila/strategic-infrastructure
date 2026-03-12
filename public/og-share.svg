@@ -1,0 +1,71 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="80" y1="40" x2="1120" y2="590" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1020"/>
+      <stop offset="0.55" stop-color="#151B2F"/>
+      <stop offset="1" stop-color="#0A0D18"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="250" y1="80" x2="940" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF7A18"/>
+      <stop offset="0.5" stop-color="#9D7BF7"/>
+      <stop offset="1" stop-color="#38D6C4"/>
+    </linearGradient>
+    <filter id="blurA" x="34" y="40" width="1132" height="550" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="48"/>
+    </filter>
+    <filter id="blurB" x="0" y="0" width="1200" height="630" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="90"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" rx="28" fill="url(#bg)"/>
+
+  <g opacity="0.65" filter="url(#blurB)">
+    <circle cx="285" cy="180" r="120" fill="#FF7A18"/>
+    <circle cx="900" cy="170" r="120" fill="#9D7BF7"/>
+    <circle cx="830" cy="500" r="150" fill="#38D6C4"/>
+  </g>
+
+  <rect x="42" y="42" width="1116" height="546" rx="26" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.08)"/>
+
+  <g opacity="0.18">
+    <path d="M74 115H1127" stroke="white" stroke-width="1"/>
+    <path d="M74 185H1127" stroke="white" stroke-width="1"/>
+    <path d="M74 255H1127" stroke="white" stroke-width="1"/>
+    <path d="M74 325H1127" stroke="white" stroke-width="1"/>
+    <path d="M74 395H1127" stroke="white" stroke-width="1"/>
+    <path d="M74 465H1127" stroke="white" stroke-width="1"/>
+    <path d="M74 535H1127" stroke="white" stroke-width="1"/>
+    <path d="M160 60V570" stroke="white" stroke-width="1"/>
+    <path d="M325 60V570" stroke="white" stroke-width="1"/>
+    <path d="M490 60V570" stroke="white" stroke-width="1"/>
+    <path d="M655 60V570" stroke="white" stroke-width="1"/>
+    <path d="M820 60V570" stroke="white" stroke-width="1"/>
+    <path d="M985 60V570" stroke="white" stroke-width="1"/>
+  </g>
+
+  <g filter="url(#blurA)" opacity="0.45">
+    <rect x="310" y="70" width="570" height="200" rx="34" fill="url(#accent)"/>
+  </g>
+
+  <rect x="86" y="78" width="188" height="44" rx="22" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)"/>
+  <circle cx="112" cy="100" r="6" fill="#38D6C4"/>
+  <text x="130" y="106" fill="#C9D1E3" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="2">ALL0K LLC</text>
+
+  <text x="86" y="220" fill="white" font-family="Inter, Arial, sans-serif" font-size="68" font-weight="800">Websites, automatización</text>
+  <text x="86" y="298" fill="white" font-family="Inter, Arial, sans-serif" font-size="68" font-weight="800">e infraestructura digital</text>
+  <text x="86" y="376" fill="url(#accent)" font-family="Inter, Arial, sans-serif" font-size="68" font-weight="800">para negocios que quieren crecer</text>
+
+  <text x="90" y="452" fill="#B2BDD3" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500">Proyectos reales · UX cuidada · IA · Integraciones · WhatsApp · Dashboards</text>
+  <text x="90" y="498" fill="#8F9BB3" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="400">servicioscreativos.online</text>
+
+  <g>
+    <rect x="846" y="415" width="264" height="118" rx="26" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+    <rect x="874" y="442" width="92" height="12" rx="6" fill="#38D6C4" opacity="0.95"/>
+    <rect x="874" y="468" width="182" height="10" rx="5" fill="white" opacity="0.8"/>
+    <rect x="874" y="490" width="145" height="10" rx="5" fill="white" opacity="0.45"/>
+    <rect x="1015" y="438" width="61" height="61" rx="18" fill="url(#accent)"/>
+    <path d="M1036 469H1056" stroke="#08101D" stroke-width="4" stroke-linecap="round"/>
+    <path d="M1046 459L1056 469L1046 479" stroke="#08101D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
