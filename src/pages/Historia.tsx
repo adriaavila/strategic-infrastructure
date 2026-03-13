@@ -84,10 +84,10 @@ const Historia = () => {
                             whileInView={{ x: 0, opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="relative h-[500px] w-full bg-gradient-to-br from-white/5 to-white/10 rounded-3xl border border-white/10 overflow-hidden group flex items-center justify-center backdrop-blur-sm"
+                            className="relative h-[500px] w-full bg-gradient-to-br from-white/5 to-white/10 rounded-3xl border border-white/10 overflow-hidden group flex items-center justify-center backdrop-blur-sm light:from-white light:to-slate-50 light:border-slate-200"
                         >
                             {/* Optional: Replace this placeholder with an actual photo of Adrian Avila if available */}
-                            <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-sm z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-sm z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center light:bg-white/55">
                                 <p className="text-white/80 font-medium tracking-widest uppercase text-sm">Adrian Avila</p>
                             </div>
                             <div className="flex flex-col items-center gap-6 text-brand-slate/50 z-0">
@@ -117,15 +117,15 @@ const Historia = () => {
                                 </p>
 
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                    <div className="border border-white/10 bg-black/20 rounded-2xl p-6">
+                                    <div className="border border-white/10 bg-black/20 rounded-2xl p-6 light:bg-white/70 light:border-slate-200">
                                         <h4 className="text-white font-medium mb-2">Interfaces Pulidas</h4>
                                         <p className="text-sm text-brand-slate">Diseños minimalistas y modernos que reducen la fricción cognitiva.</p>
                                     </div>
-                                    <div className="border border-white/10 bg-black/20 rounded-2xl p-6">
+                                    <div className="border border-white/10 bg-black/20 rounded-2xl p-6 light:bg-white/70 light:border-slate-200">
                                         <h4 className="text-white font-medium mb-2">Micro Interacciones</h4>
                                         <p className="text-sm text-brand-slate">Detalles animados que guían y recompensan al usuario sin abrumarlo.</p>
                                     </div>
-                                    <div className="border border-white/10 bg-black/20 rounded-2xl p-6">
+                                    <div className="border border-white/10 bg-black/20 rounded-2xl p-6 light:bg-white/70 light:border-slate-200">
                                         <h4 className="text-white font-medium mb-2">Estética Única</h4>
                                         <p className="text-sm text-brand-slate">Ni plantillas genéricas ni soluciones aburridas. Tailor-made.</p>
                                     </div>

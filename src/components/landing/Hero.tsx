@@ -117,7 +117,7 @@ export const Hero = () => {
               variant="outline"
               size="lg"
               asChild
-              className="bg-transparent text-white border-white/20 hover:bg-white/10"
+              className="bg-transparent text-white border-white/20 hover:bg-white/10 light:text-foreground light:border-foreground/15 light:hover:bg-foreground/5"
             >
               <a href="/brief?source=hero">
                 Solicitar proyecto

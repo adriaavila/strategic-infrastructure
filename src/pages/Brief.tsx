@@ -99,8 +99,8 @@ const Brief = () => {
                 <div><label className="text-sm text-white/80 mb-2 block">Sitio actual</label><Input value={form.website} onChange={(e) => setForm({ ...form, website: e.target.value })} placeholder="https://..." /></div>
                 <div>
                   <label className="text-sm text-white/80 mb-2 block">Tipo de proyecto</label>
-                  <select value={form.projectType} onChange={(e) => setForm({ ...form, projectType: e.target.value })} className="w-full h-10 rounded-lg border border-white/10 bg-transparent px-3 text-sm text-white">
-                    {projectTypeOptions.map((option) => <option key={option} value={option} className="bg-brand-dark">{option}</option>)}
+                  <select value={form.projectType} onChange={(e) => setForm({ ...form, projectType: e.target.value })} className="w-full h-10 rounded-lg border border-white/10 bg-transparent px-3 text-sm text-white light:text-foreground light:border-foreground/10 light:bg-white/70">
+                    {projectTypeOptions.map((option) => <option key={option} value={option} className="bg-brand-dark light:bg-white">{option}</option>)}
                   </select>
                 </div>
                 <div><label className="text-sm text-white/80 mb-2 block">Presupuesto estimado</label><Input value={form.budget} onChange={(e) => setForm({ ...form, budget: e.target.value })} placeholder="Ej. 1.500 - 3.000 USD" /></div>
@@ -128,8 +128,8 @@ const Brief = () => {
               </p>
 
               <div className="grid grid-cols-2 gap-3 mb-6">
-                <button type="button" onClick={() => setContactPreference("whatsapp")} className={`rounded-2xl border px-4 py-3 text-sm transition-colors ${contactPreference === "whatsapp" ? "border-brand-secondary bg-brand-secondary/15 text-brand-secondary" : "border-white/10 text-white/70 bg-white/5"}`}>WhatsApp</button>
-                <button type="button" onClick={() => setContactPreference("email")} className={`rounded-2xl border px-4 py-3 text-sm transition-colors ${contactPreference === "email" ? "border-brand-secondary bg-brand-secondary/15 text-brand-secondary" : "border-white/10 text-white/70 bg-white/5"}`}>Correo</button>
+                <button type="button" onClick={() => setContactPreference("whatsapp")} className={`rounded-2xl border px-4 py-3 text-sm transition-colors ${contactPreference === "whatsapp" ? "border-brand-secondary bg-brand-secondary/15 text-brand-secondary" : "border-white/10 text-white/70 bg-white/5 light:text-foreground/70 light:bg-white/70 light:border-foreground/10"}`}>WhatsApp</button>
+                <button type="button" onClick={() => setContactPreference("email")} className={`rounded-2xl border px-4 py-3 text-sm transition-colors ${contactPreference === "email" ? "border-brand-secondary bg-brand-secondary/15 text-brand-secondary" : "border-white/10 text-white/70 bg-white/5 light:text-foreground/70 light:bg-white/70 light:border-foreground/10"}`}>Correo</button>
               </div>
 
               <div className="rounded-2xl border border-white/10 bg-black/20 p-4 mb-6">
@@ -143,7 +143,7 @@ const Brief = () => {
                     <MessageCircle className="w-4 h-4" /> Enviar por WhatsApp
                   </a>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="w-full bg-transparent text-white border-white/15 hover:bg-white/10">
+                <Button asChild size="lg" variant="outline" className="w-full bg-transparent text-white border-white/15 hover:bg-white/10 light:text-foreground light:border-foreground/15 light:hover:bg-foreground/5">
                   <a href={emailHref}>
                     <Mail className="w-4 h-4" /> Enviar por correo
                   </a>
