@@ -69,13 +69,13 @@ const Historia = () => {
                                 Hola, soy Adrian Avila.
                             </h2>
                             <p>
-                                Soy la mente detrás de <strong className="text-white font-medium light:text-foreground">servicioscreativos.online</strong>. Sé que un software feo y complicado hace que tus clientes abandonen y tus ventas caigan, sin importar qué tan avanzado sea el código detrás.
+                                Soy la mente detrás de <strong className="text-white font-medium light:text-foreground">servicioscreativos.online</strong>. Me enfoco en crear productos digitales con una experiencia clara, una estética cuidada y una base técnica sólida para que cada interacción transmita profesionalismo y confianza.
                             </p>
                             <p>
-                                Por eso fusiono ingeniería de software, automatizaciones y análisis de datos con un <strong className="text-white font-medium light:text-foreground">diseño premium enfocado en usabilidad (UI/UX)</strong>.
+                                Por eso combino ingeniería de software, automatización y análisis de datos con un <strong className="text-white font-medium light:text-foreground">diseño premium enfocado en usabilidad y experiencia</strong>.
                             </p>
                             <p>
-                                Creo firmemente que la estética de un producto digital es una ventaja competitiva directa. Un software hermoso retiene clientes y destaca sobre los demás. Cada proyecto que hacemos está diseñado para multiplicar tu rentabilidad con un nivel de detalle milimétrico.
+                                Creo que la estética de un producto digital es una ventaja competitiva real. Un buen diseño mejora la percepción de marca, facilita el uso y eleva la calidad de cada punto de contacto. Cada proyecto se desarrolla con atención al detalle, criterio funcional y una ejecución alineada con objetivos de negocio.
                             </p>
                         </motion.div>
 
