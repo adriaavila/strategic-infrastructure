@@ -554,7 +554,7 @@ html.light .to-brand-dark {
 }
 
 html.light .bg-hero-gradient {
-  background-image: radial-gradient(circle at top center, rgba(157, 123, 247, 0.12) 0%, rgba(246, 248, 252, 1) 65%) !important;
+  background-image: radial-gradient(circle at top center, rgba(157, 123, 247, 0.10) 0%, rgba(246, 248, 252, 1) 58%) !important;
 }
 
 html.light .gradient-mesh,
@@ -577,6 +577,10 @@ html.light .architectural-grid-dense {
 html.light .text-white,
 html.light .hover\:text-white:hover {
   color: hsl(var(--foreground)) !important;
+}
+
+html.light .text-transparent {
+  color: transparent !important;
 }
 
 html.light .text-white\/90 { color: hsl(var(--foreground) / 0.9) !important; }
