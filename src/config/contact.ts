@@ -1,6 +1,6 @@
 export const CONTACT_INFO = {
   phoneNumber: "+584220023684",
-  whatsappMessage: "Hola, quiero información sobre el agente de WhatsApp con IA para mi negocio.",
+  whatsappMessage: "Hola, me gustaría solicitar información sobre sus servicios.",
 };
 
 export const getWhatsAppUrl = (message?: string) => {
