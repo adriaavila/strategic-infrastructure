@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navLinks = [
+  { label: "Servicios", href: "/#servicios" },
   { label: "Proyectos", href: "/proyectos" },
   { label: "Historia", href: "/historia" },
   { label: "Blog", href: "/blog" },
@@ -15,43 +16,39 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? "bg-brand-dark/80 backdrop-blur-xl border-b border-white/10 light:!bg-[#F6F8FC]/96 light:border-slate-200"
-        : "bg-transparent"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-brand-dark/78 backdrop-blur-2xl border-b border-white/10 light:!bg-[#F6F8FC]/94 light:border-slate-200"
+          : "bg-transparent"
+      }`}
     >
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 text-lg font-semibold tracking-tight text-white">
-            <img src="/logo.svg" alt="servicioscreativos.online" className="w-8 h-8 rounded-sm flex-shrink-0" />
-            <span>servicioscreativos</span>
-            <span className="text-brand-primary">.</span>
-            <span>online</span>
+        <div className="flex items-center justify-between h-[72px]">
+          <Link to="/" className="flex items-center gap-3 text-white">
+            <img src="/logo.svg" alt="servicioscreativos.online" className="w-9 h-9 rounded-sm flex-shrink-0" />
+            <div className="leading-none">
+              <div className="text-[15px] font-semibold tracking-tight text-white">servicioscreativos.online</div>
+              <div className="text-[11px] text-white/40 light:text-slate-500">Diseño, desarrollo y automatización</div>
+            </div>
           </Link>
 
-          <div className="hidden md:flex items-center gap-5">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                to={link.href}
-                className="text-sm text-brand-slate hover:text-white transition-colors"
-              >
+              <Link key={link.label} to={link.href} className="text-sm text-brand-slate hover:text-white transition-colors">
                 {link.label}
               </Link>
             ))}
             <ThemeToggle />
-            <Link to="/contacto">
-              <Button variant="hero" size="sm" className="rounded-lg">
-                Contacto
+            <Link to="/brief">
+              <Button variant="hero" size="sm" className="rounded-xl px-4">
+                Solicitar proyecto
               </Button>
             </Link>
           </div>
@@ -61,16 +58,12 @@ export const Navbar = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
           >
-            {isMobileMenuOpen ? (
-              <X className="w-5 h-5" />
-            ) : (
-              <Menu className="w-5 h-5" />
-            )}
+            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
 
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-brand-dark border-b border-white/10 py-4 animate-fade-in">
+          <div className="md:hidden absolute top-[72px] left-0 right-0 bg-brand-dark/96 backdrop-blur-2xl border-b border-white/10 py-4 animate-fade-in">
             <div className="container mx-auto px-6 flex flex-col gap-4">
               <div className="flex justify-start">
                 <ThemeToggle />
@@ -85,9 +78,9 @@ export const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              <Link to="/contacto" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button variant="hero" size="sm" className="w-full rounded-lg">
-                  Contacto
+              <Link to="/brief" onClick={() => setIsMobileMenuOpen(false)}>
+                <Button variant="hero" size="sm" className="w-full rounded-xl">
+                  Solicitar proyecto
                 </Button>
               </Link>
             </div>

@@ -4,6 +4,7 @@ const footerLinks = {
   Navegación: [
     { label: "Servicios", href: "/#servicios" },
     { label: "Proyectos", href: "/proyectos" },
+    { label: "Historia", href: "/historia" },
     { label: "Blog", href: "/blog" },
   ],
   Legal: [
@@ -14,50 +15,28 @@ const footerLinks = {
 
 export const Footer = () => {
   return (
-    <footer className="relative bg-brand-dark text-white min-h-[50vh] pt-10 pb-6">
-      {/* Top Border Gradient */}
+    <footer className="relative bg-brand-dark text-white pt-14 pb-8">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-[1.3fr_0.7fr_0.7fr] gap-8 mb-12 items-start">
-          {/* Brand Column */}
-          <div className="lg:col-span-1">
+        <div className="grid grid-cols-1 md:grid-cols-[1.4fr_0.8fr_0.8fr] gap-10 mb-12 items-start">
+          <div>
             <div className="flex flex-col gap-4 mb-4">
-              <img src="/logo.svg" alt="Servicios Creativos Logo" className="w-16 h-16 rounded-xl" />
-              <div className="flex items-center gap-0">
-                <span className="text-lg font-semibold text-white">servicioscreativos</span>
-                <span className="text-brand-primary">.</span>
-                <span className="text-lg font-semibold text-white">online</span>
+              <img src="/logo.svg" alt="Servicios Creativos Logo" className="w-14 h-14 rounded-xl" />
+              <div>
+                <div className="text-lg font-semibold tracking-tight text-white">servicioscreativos.online</div>
+                <div className="text-sm text-white/42 mt-1">Diseño, desarrollo y automatización para negocios que buscan una presencia más sólida y una operación más clara.</div>
               </div>
-            </div>
-            <p className="text-brand-slate text-sm leading-relaxed mb-4">
-              Desarrollo web, automatización, integraciones y sistemas pensados para operar mejor hoy y escalar con estándares de compliance empresarial.
-            </p>
-            <div className="flex items-center gap-4">
-              <a href="https://x.com/allok_llc" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-              </a>
-              <a href="https://linkedin.com/company/allok" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
-              </a>
             </div>
           </div>
 
-          {/* Links Columns */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h4 className="text-sm font-medium mb-3">{category}</h4>
-              <ul className="space-y-2">
+              <h4 className="text-sm font-medium mb-3 text-white/84">{category}</h4>
+              <ul className="space-y-2.5">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="group text-sm text-brand-slate hover:text-white transition-colors inline-flex items-center gap-1"
-                    >
+                    <a href={link.href} className="group text-sm text-brand-slate hover:text-white transition-colors inline-flex items-center gap-1">
                       {link.label}
                       <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-0.5 translate-x-0.5 group-hover:opacity-100 transition-all" />
                     </a>
@@ -68,15 +47,10 @@ export const Footer = () => {
           ))}
         </div>
 
-        {/* Bottom Bar */}
         <div className="pt-6 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3">
-            <p className="text-xs text-brand-slate/80">
-              servicioscreativos.online | An Allok LLC Business. Hecho para crecer.
-            </p>
-            <p className="text-xs text-brand-slate/80">
-              © {new Date().getFullYear()} Todos los derechos reservados.
-            </p>
+            <p className="text-xs text-brand-slate/80">servicioscreativos.online · Allok LLC</p>
+            <p className="text-xs text-brand-slate/80">© {new Date().getFullYear()} Todos los derechos reservados.</p>
           </div>
         </div>
       </div>

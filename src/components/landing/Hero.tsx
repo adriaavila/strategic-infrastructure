@@ -31,14 +31,15 @@ export const Hero = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-dark bg-hero-gradient light:bg-[#F6F8FC]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-dark bg-hero-gradient light:bg-[linear-gradient(180deg,#f8fafc_0%,#f6f8fc_45%,#eef2ff_100%)]"
     >
-      <div className="absolute inset-0 architectural-grid opacity-25" />
-      <div className="absolute inset-0 gradient-mesh" />
-      <div className="absolute inset-0 z-[1] overflow-hidden">
+      <div className="absolute inset-0 architectural-grid opacity-25 light:opacity-[0.12]" />
+      <div className="absolute inset-0 gradient-mesh light:opacity-60" />
+      <div className="absolute inset-0 z-[1] overflow-hidden light:opacity-70">
         <ParticleBackground />
       </div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 w-[760px] h-[520px] bg-brand-primary/[0.07] rounded-full blur-[120px] pointer-events-none light:bg-brand-primary/[0.04]" />
+      <div className="absolute inset-x-0 top-0 h-[420px] bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.10),transparent_62%)] pointer-events-none light:bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.14),transparent_58%)]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 w-[760px] h-[520px] bg-brand-primary/[0.07] rounded-full blur-[120px] pointer-events-none light:bg-brand-primary/[0.03]" />
 
       <motion.div
         className="relative z-10 container mx-auto px-6 pt-28 pb-24"
