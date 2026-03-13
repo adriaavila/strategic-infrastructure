@@ -41,7 +41,7 @@ const Historia = () => {
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
-                            className="text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-white/90 to-white/70"
+                            className="text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-white/90 to-white/70 light:from-slate-900 light:via-slate-800 light:to-slate-600"
                         >
                             La Historia Detrás
                         </motion.h1>
@@ -65,14 +65,14 @@ const Historia = () => {
                             transition={{ duration: 0.6 }}
                             className="space-y-6 text-brand-slate text-lg leading-relaxed"
                         >
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 light:text-foreground">
                                 Hola, soy Adrian Avila.
                             </h2>
                             <p>
-                                Soy la mente detrás de <strong className="text-white font-medium">servicioscreativos.online</strong>. Sé que un software feo y complicado hace que tus clientes abandonen y tus ventas caigan, sin importar qué tan avanzado sea el código detrás.
+                                Soy la mente detrás de <strong className="text-white font-medium light:text-foreground">servicioscreativos.online</strong>. Sé que un software feo y complicado hace que tus clientes abandonen y tus ventas caigan, sin importar qué tan avanzado sea el código detrás.
                             </p>
                             <p>
-                                Por eso fusiono ingeniería de software, automatizaciones y análisis de datos con un <strong className="text-white font-medium">diseño premium enfocado en usabilidad (UI/UX)</strong>.
+                                Por eso fusiono ingeniería de software, automatizaciones y análisis de datos con un <strong className="text-white font-medium light:text-foreground">diseño premium enfocado en usabilidad (UI/UX)</strong>.
                             </p>
                             <p>
                                 Creo firmemente que la estética de un producto digital es una ventaja competitiva directa. Un software hermoso retiene clientes y destaca sobre los demás. Cada proyecto que hacemos está diseñado para multiplicar tu rentabilidad con un nivel de detalle milimétrico.
@@ -108,7 +108,7 @@ const Historia = () => {
                         >
                             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-secondary/20 rounded-full blur-[80px] -z-10 translate-x-1/2 -translate-y-1/2" />
                             <div className="max-w-3xl">
-                                <h3 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+                                <h3 className="text-3xl font-bold text-white mb-6 flex items-center gap-3 light:text-foreground">
                                     <Sparkles className="text-brand-primary w-8 h-8" />
                                     El Diseño Como Motor de Ventas
                                 </h3>
@@ -118,15 +118,15 @@ const Historia = () => {
 
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                     <div className="border border-white/10 bg-black/20 rounded-2xl p-6 light:bg-white/70 light:border-slate-200">
-                                        <h4 className="text-white font-medium mb-2">Interfaces Pulidas</h4>
+                                        <h4 className="text-white font-medium mb-2 light:text-foreground">Interfaces Pulidas</h4>
                                         <p className="text-sm text-brand-slate">Diseños minimalistas y modernos que reducen la fricción cognitiva.</p>
                                     </div>
                                     <div className="border border-white/10 bg-black/20 rounded-2xl p-6 light:bg-white/70 light:border-slate-200">
-                                        <h4 className="text-white font-medium mb-2">Micro Interacciones</h4>
+                                        <h4 className="text-white font-medium mb-2 light:text-foreground">Micro Interacciones</h4>
                                         <p className="text-sm text-brand-slate">Detalles animados que guían y recompensan al usuario sin abrumarlo.</p>
                                     </div>
                                     <div className="border border-white/10 bg-black/20 rounded-2xl p-6 light:bg-white/70 light:border-slate-200">
-                                        <h4 className="text-white font-medium mb-2">Estética Única</h4>
+                                        <h4 className="text-white font-medium mb-2 light:text-foreground">Estética Única</h4>
                                         <p className="text-sm text-brand-slate">Ni plantillas genéricas ni soluciones aburridas. Tailor-made.</p>
                                     </div>
                                 </div>
@@ -145,7 +145,7 @@ const Historia = () => {
                             <div className="w-16 h-16 bg-brand-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-8 border border-brand-primary/30">
                                 <FileText className="w-8 h-8 text-brand-primary" />
                             </div>
-                            <h2 className="text-4xl font-bold mb-6 text-white">Haz tu Briefing</h2>
+                            <h2 className="text-4xl font-bold mb-6 text-white light:text-foreground">Haz tu Briefing</h2>
                             <p className="text-brand-slate text-lg mb-10">
                                 Construyamos algo único y altamente rentable. Cuéntanos tu desafío y te mostraremos cómo podemos resolverlo generando más volumen de negocio de forma atractiva y funcional.
                             </p>
