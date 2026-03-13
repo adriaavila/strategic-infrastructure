@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navLinks = [
   { label: "Proyectos", href: "/proyectos" },
@@ -37,7 +38,7 @@ export const Navbar = () => {
             <span>online</span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-5">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
@@ -47,6 +48,7 @@ export const Navbar = () => {
                 {link.label}
               </Link>
             ))}
+            <ThemeToggle />
             <Link to="/contacto">
               <Button variant="hero" size="sm" className="rounded-lg">
                 Contacto
@@ -70,6 +72,9 @@ export const Navbar = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden absolute top-16 left-0 right-0 bg-brand-dark border-b border-white/10 py-4 animate-fade-in">
             <div className="container mx-auto px-6 flex flex-col gap-4">
+              <div className="flex justify-start">
+                <ThemeToggle />
+              </div>
               {navLinks.map((link) => (
                 <Link
                   key={link.label}
