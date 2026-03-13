@@ -127,7 +127,7 @@ export const Hero = () => {
 
           {/* Trust micro-copy */}
           <motion.p
-            className="text-sm text-white/30 mt-5"
+            className="text-sm text-white/30 mt-5 light:text-foreground/55"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.9, duration: 0.6 }}
