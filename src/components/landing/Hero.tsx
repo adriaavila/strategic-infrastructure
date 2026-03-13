@@ -34,7 +34,9 @@ export const Hero = () => {
       <div className="absolute inset-0 gradient-mesh" />
 
       {/* Particle Animation Background */}
-      <ParticleBackground />
+      <div className="absolute inset-0 z-[1] overflow-hidden">
+        <ParticleBackground />
+      </div>
 
       {/* Radial glow behind CTA area */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 w-[800px] h-[600px] bg-brand-primary/[0.07] rounded-full blur-[120px] pointer-events-none light:bg-brand-primary/[0.04]" />

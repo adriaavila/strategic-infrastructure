@@ -41,7 +41,7 @@ const Historia = () => {
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
-                            className="text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-white/90 to-white/70 light:bg-none light:text-slate-950 light:[-webkit-text-fill-color:theme(colors.slate.950)]"
+                            className="text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-white/90 to-white/70 light:bg-none light:!text-slate-950 light:[-webkit-text-fill-color:#020617]"
                         >
                             La Historia Detrás
                         </motion.h1>
