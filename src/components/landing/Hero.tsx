@@ -138,7 +138,7 @@ export const Hero = () => {
       </motion.div>
 
       {/* Bottom Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent light:from-background light:via-background/85" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent light:from-[#F6F8FC] light:via-[#F6F8FC]/95 light:to-transparent" />
     </section>
   );
 };
