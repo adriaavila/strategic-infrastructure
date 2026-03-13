@@ -25,7 +25,7 @@ export const Hero = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-dark bg-hero-gradient"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-dark bg-hero-gradient light:bg-[#F6F8FC]"
     >
       {/* Architectural Grid Overlay */}
       <div className="absolute inset-0 architectural-grid opacity-30" />
@@ -37,7 +37,7 @@ export const Hero = () => {
       <ParticleBackground />
 
       {/* Radial glow behind CTA area */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 w-[800px] h-[600px] bg-brand-primary/[0.07] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 w-[800px] h-[600px] bg-brand-primary/[0.07] rounded-full blur-[120px] pointer-events-none light:bg-brand-primary/[0.04]" />
 
       {/* Content */}
       <motion.div
@@ -138,7 +138,7 @@ export const Hero = () => {
       </motion.div>
 
       {/* Bottom Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent light:from-[#F6F8FC] light:via-[#F6F8FC]/95 light:to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent light:bg-gradient-to-t light:from-[#F6F8FC] light:via-[#F6F8FC] light:to-[#F6F8FC]/0" />
     </section>
   );
 };

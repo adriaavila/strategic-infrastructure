@@ -553,8 +553,18 @@ html.light .to-brand-dark {
   background-color: hsl(var(--background)) !important;
 }
 
+html.light .from-brand-dark {
+  --tw-gradient-from: #F6F8FC var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgb(246 248 252 / 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+html.light .via-brand-dark\/80 {
+  --tw-gradient-stops: var(--tw-gradient-from), #F6F8FC var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+
 html.light .bg-hero-gradient {
-  background-image: radial-gradient(circle at top center, rgba(157, 123, 247, 0.10) 0%, rgba(246, 248, 252, 1) 58%) !important;
+  background-image: radial-gradient(circle at top center, rgba(157, 123, 247, 0.08) 0%, rgba(246, 248, 252, 1) 52%) !important;
 }
 
 html.light .gradient-mesh,
