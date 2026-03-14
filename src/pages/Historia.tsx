@@ -3,12 +3,40 @@ import { Footer } from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
 import { useSEO } from "@/lib/seo";
 import { motion } from "framer-motion";
-import { FileText, Sparkles, Heart } from "lucide-react";
+import { ArrowRight, Brain, Cpu, LineChart, Sparkles } from "lucide-react";
+
+const milestones = [
+  {
+    title: "Origen",
+    body: "Servicioscreativos.online nace como una práctica de diseño y desarrollo enfocada en construir productos digitales con mejor criterio visual y técnico.",
+  },
+  {
+    title: "Aprendizaje en producto",
+    body: "El trabajo con websites, ecommerce y sistemas internos mostró que el mayor valor no estaba en entregar piezas aisladas, sino en diseñar sistemas que conectaran presencia, operación y datos.",
+  },
+  {
+    title: "Enfoque actual",
+    body: "Hoy la propuesta se posiciona como constructor de sistemas digitales con IA: productos que combinan interfaces, automatización e inteligencia operativa para ayudar a negocios a vender mejor y operar con más eficiencia.",
+  },
+];
+
+const thesis = [
+  "La mayoría de negocios no necesita más herramientas sueltas. Necesita sistemas claros que conecten mejor marketing, operación y datos.",
+  "La IA y la automatización no son un extra decorativo. Son una capa práctica para reducir trabajo manual, acelerar procesos y ampliar capacidad.",
+  "El diseño sigue siendo una ventaja competitiva. Una interfaz clara hace que la tecnología se entienda, se use y genere más valor.",
+];
+
+const startupSignals = [
+  "Constructor técnico con foco en producto, automatización e interfaces.",
+  "Exploración constante de herramientas de IA aplicadas a casos reales de negocio.",
+  "Tesis clara: convertir servicios digitales en sistemas más escalables y medibles.",
+  "Capacidad de diseñar, desarrollar y conectar producto, operación y narrativa comercial.",
+];
 
 const Historia = () => {
   useSEO({
-    title: "Historia y enfoque",
-    description: "Conoce la historia, la visión de producto y el enfoque de diseño y automatización detrás de servicioscreativos.online.",
+    title: "Historia y visión de producto",
+    description: "Historia, tesis y enfoque actual de servicioscreativos.online como constructor de sistemas digitales con IA.",
     path: "/historia",
   });
 
@@ -22,129 +50,95 @@ const Historia = () => {
         <div className="absolute bottom-40 right-1/4 w-[400px] h-[400px] bg-brand-secondary/14 rounded-full blur-[100px] -z-10" />
 
         <div className="container mx-auto px-6 max-w-5xl">
-          <section className="text-center mb-28 flex flex-col items-center justify-center pt-10">
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative mb-10"
-            >
-              <div className="relative w-44 h-44 md:w-56 md:h-56 mx-auto drop-shadow-2xl flex items-center justify-center before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-tr before:from-brand-primary/35 before:to-brand-secondary/35 before:blur-3xl before:-z-10 rounded-full">
-                <img src="/logo.svg" alt="Servicios Creativos Logo" className="w-full h-full object-contain" />
-              </div>
-            </motion.div>
-
-            <motion.h1
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-5xl md:text-7xl font-semibold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-white/90 to-white/70 light:bg-none light:!text-slate-950 light:[-webkit-text-fill-color:#020617]"
-            >
-              Historia y enfoque
+          <section className="text-center mb-24 pt-10">
+            <motion.h1 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} className="text-5xl md:text-7xl font-semibold tracking-tight mb-6 text-white light:text-slate-950">
+              Historia y visión de producto
             </motion.h1>
-
-            <motion.p
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-xl md:text-2xl text-brand-slate max-w-3xl mx-auto leading-relaxed"
-            >
-              Diseño, desarrollo y automatización aplicados con criterio para construir productos digitales más claros, funcionales y profesionales.
+            <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }} className="text-xl md:text-2xl text-brand-slate max-w-3xl mx-auto leading-relaxed">
+              Una presentación más clara de servicioscreativos.online como constructor de sistemas digitales con IA, pensada para partners, clientes y programas como EmprendeLatam o YC.
             </motion.p>
           </section>
 
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-28">
-            <motion.div
-              initial={{ x: -30, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="space-y-6 text-brand-slate text-lg leading-relaxed"
-            >
-              <h2 className="text-3xl md:text-4xl font-semibold text-white mb-8 light:text-foreground">
-                Hola, soy Adrian Avila.
+          <section className="mb-24 grid gap-6 md:grid-cols-3">
+            {milestones.map((item, index) => (
+              <motion.div key={item.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.08, duration: 0.5 }} className="rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm">
+                <div className="text-sm text-brand-secondary font-semibold mb-3">{item.title}</div>
+                <p className="text-brand-slate leading-relaxed">{item.body}</p>
+              </motion.div>
+            ))}
+          </section>
+
+          <section className="mb-24 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            <motion.div initial={{ x: -30, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="space-y-6 text-brand-slate text-lg leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-semibold text-white mb-2 light:text-foreground">
+                Qué estoy construyendo
               </h2>
               <p>
-                Soy la persona detrás de <strong className="text-white font-medium light:text-foreground">servicioscreativos.online</strong>. Mi enfoque está en crear productos digitales con una experiencia clara, una estética cuidada y una base técnica sólida para que cada interacción transmita profesionalismo y confianza.
+                Soy Adrian Avila. Mi trabajo ha evolucionado desde proyectos de diseño y desarrollo web hacia un enfoque más amplio: construir sistemas digitales donde presencia, automatización e inteligencia del negocio funcionen como una sola capa.
               </p>
               <p>
-                Por eso combino ingeniería de software, automatización y análisis de datos con un <strong className="text-white font-medium light:text-foreground">diseño premium enfocado en usabilidad y experiencia</strong>.
+                La tesis central es simple: muchos negocios ya no necesitan solo una web o una automatización aislada. Necesitan una infraestructura digital que les permita vender mejor, reducir trabajo manual y operar con más claridad.
               </p>
               <p>
-                Creo que la estética de un producto digital es una ventaja competitiva real. Un buen diseño mejora la percepción de marca, facilita el uso y eleva la calidad de cada punto de contacto. Cada proyecto se desarrolla con atención al detalle, criterio funcional y una ejecución alineada con objetivos de negocio.
+                Por eso servicioscreativos.online ya no se presenta solo como un proveedor de servicios digitales, sino como un constructor de sistemas digitales con IA.
               </p>
             </motion.div>
 
-            <motion.div
-              initial={{ x: 30, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative h-[460px] w-full bg-gradient-to-br from-white/5 to-white/10 rounded-3xl border border-white/10 overflow-hidden group flex items-center justify-center backdrop-blur-sm light:from-white light:to-slate-50 light:border-slate-200"
-            >
-              <div className="absolute inset-0 bg-brand-dark/36 backdrop-blur-sm z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center light:bg-white/55">
-                <p className="text-white/80 font-medium tracking-widest uppercase text-sm">Adrian Avila</p>
-              </div>
-              <div className="flex flex-col items-center gap-6 text-brand-slate/50 z-0 px-8 text-center">
-                <Heart className="w-16 h-16 text-brand-primary/40" />
-                <span className="text-2xl font-light italic">"El diseño también comunica valor."</span>
+            <motion.div initial={{ x: 30, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+              <h3 className="text-2xl font-semibold text-white mb-5">Tesis de producto</h3>
+              <div className="space-y-4">
+                {thesis.map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <Sparkles className="w-5 h-5 text-brand-secondary mt-1 shrink-0" />
+                    <p className="text-brand-slate leading-relaxed">{item}</p>
+                  </div>
+                ))}
               </div>
             </motion.div>
           </section>
 
-          <section className="mb-28">
-            <motion.div
-              initial={{ y: 30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="bg-white/5 border border-white/10 rounded-3xl p-10 md:p-16 backdrop-blur-md relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-secondary/16 rounded-full blur-[80px] -z-10 translate-x-1/2 -translate-y-1/2" />
-              <div className="max-w-3xl">
-                <h3 className="text-3xl font-semibold text-white mb-6 flex items-center gap-3 light:text-foreground">
-                  <Sparkles className="text-brand-primary w-8 h-8" />
-                  Diseño como ventaja competitiva
-                </h3>
-                <p className="text-brand-slate text-lg leading-relaxed mb-8">
-                  Una buena experiencia digital transmite confianza, orden y nivel de ejecución. Por eso el diseño no se trata solo de estética: también mejora la claridad, la adopción y la percepción general de valor.
-                </p>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="border border-white/10 bg-black/20 rounded-2xl p-6 light:bg-white/70 light:border-slate-200">
-                    <h4 className="text-white font-medium mb-2 light:text-foreground">Interfaces claras</h4>
-                    <p className="text-sm text-brand-slate">Estructuras visuales limpias que hacen más fácil entender, usar y adoptar cada producto.</p>
-                  </div>
-                  <div className="border border-white/10 bg-black/20 rounded-2xl p-6 light:bg-white/70 light:border-slate-200">
-                    <h4 className="text-white font-medium mb-2 light:text-foreground">Detalles bien resueltos</h4>
-                    <p className="text-sm text-brand-slate">Interacciones y decisiones de diseño que aportan continuidad, ritmo y una sensación de calidad real.</p>
-                  </div>
-                  <div className="border border-white/10 bg-black/20 rounded-2xl p-6 light:bg-white/70 light:border-slate-200">
-                    <h4 className="text-white font-medium mb-2 light:text-foreground">Ejecución a medida</h4>
-                    <p className="text-sm text-brand-slate">Soluciones pensadas para el contexto específico de cada negocio, con criterio visual y técnico.</p>
-                  </div>
-                </div>
+          <section className="mb-24 rounded-3xl border border-white/10 bg-white/5 p-8 md:p-10 backdrop-blur-sm">
+            <div className="grid gap-8 md:grid-cols-3">
+              <div>
+                <Brain className="w-8 h-8 text-brand-secondary mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">IA aplicada</h3>
+                <p className="text-brand-slate leading-relaxed">Exploración constante de herramientas de IA para resolver problemas reales de operación, atención, ventas y reporting.</p>
               </div>
-            </motion.div>
+              <div>
+                <Cpu className="w-8 h-8 text-brand-secondary mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Construcción técnica</h3>
+                <p className="text-brand-slate leading-relaxed">Capacidad para diseñar, desarrollar e integrar soluciones sin depender de equipos fragmentados para cada parte del sistema.</p>
+              </div>
+              <div>
+                <LineChart className="w-8 h-8 text-brand-secondary mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Impacto en negocio</h3>
+                <p className="text-brand-slate leading-relaxed">Enfoque en ventas, eficiencia, visibilidad operativa y decisiones más claras, no solo en entregar interfaces bonitas.</p>
+              </div>
+            </div>
+          </section>
+
+          <section className="mb-24">
+            <h2 className="text-3xl md:text-4xl font-semibold text-white mb-8">Señales para programas y partners</h2>
+            <div className="grid gap-4 md:grid-cols-2">
+              {startupSignals.map((item) => (
+                <div key={item} className="rounded-2xl border border-white/10 bg-black/20 p-5 text-brand-slate leading-relaxed">
+                  {item}
+                </div>
+              ))}
+            </div>
           </section>
 
           <section className="text-center py-20 border-t border-white/10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-2xl mx-auto"
-            >
-              <div className="w-16 h-16 bg-brand-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-8 border border-brand-primary/30">
-                <FileText className="w-8 h-8 text-brand-primary" />
-              </div>
-              <h2 className="text-4xl font-semibold mb-6 text-white light:text-foreground">Cuéntame tu proyecto</h2>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mx-auto">
+              <h2 className="text-4xl font-semibold mb-6 text-white light:text-foreground">Cuéntame qué sistema quieres construir</h2>
               <p className="text-brand-slate text-lg mb-10">
-                Si estás evaluando una web, una automatización o una herramienta digital, puedo ayudarte a convertir esa necesidad en una solución clara, funcional y bien ejecutada.
+                Si estás evaluando una web, una automatización o una solución más amplia para tu negocio, puedo ayudarte a definir qué tiene sentido construir primero.
               </p>
-
               <Button asChild size="lg" className="h-14 px-8 rounded-full text-lg shadow-[0_0_40px_-10px_rgba(157,123,247,0.5)] hover:shadow-[0_0_60px_-10px_rgba(157,123,247,0.7)] transition-all">
-                <a href="/brief?source=historia">Completar el brief</a>
+                <a href="/brief?source=historia">
+                  Agendar una llamada
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </a>
               </Button>
             </motion.div>
           </section>

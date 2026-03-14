@@ -3,196 +3,61 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { BentoCard } from "./BentoCard";
 import { ParticleBackground } from "@/components/particles/ParticleBackground";
-import { useReducedMotion } from "@/hooks/use-reduced-motion";
-
-const WebDevVisual = () => {
-  return (
-    <div className="bg-foreground/[0.02] border-t border-foreground/[0.05] p-5 h-52 overflow-hidden">
-      <div className="space-y-3">
-        <div className="flex items-center gap-1.5 mb-2">
-          <div className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
-          <div className="w-2.5 h-2.5 rounded-full bg-amber-400/80" />
-          <div className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
-        </div>
-        <motion.div
-          className="rounded-lg border border-foreground/[0.08] bg-[#0A0A0B] p-3 font-mono text-[10px] space-y-2 text-foreground/70"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="text-brand-secondary">
-            <span className="text-purple-400">export const</span> <span className="text-blue-400">BrandExperience</span> = () =&gt; {"{"}
-          </div>
-          <div className="pl-4">const interface = useDesignSystem();</div>
-          <div className="pl-4">return &lt;Website experience={"{"}interface{"}"} /&gt;;</div>
-          <div>{"}"}</div>
-        </motion.div>
-        <motion.div
-          className="h-8 rounded border border-foreground/[0.08] bg-card/50 px-3 flex items-center justify-between"
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-        >
-          <div className="w-16 h-2 rounded bg-foreground/10" />
-          <div className="w-8 h-4 rounded bg-brand-primary/20" />
-        </motion.div>
-      </div>
-    </div>
-  );
-};
-
-const BIVisual = () => {
-  const shouldReduceMotion = useReducedMotion();
-  const metrics = [
-    { label: "Ingresos", val: "$2.4M", color: "text-brand-secondary" },
-    { label: "Margen", val: "42%", color: "text-brand-primary" },
-    { label: "CAC", val: "$350", color: "text-amber-500" },
-  ];
-
-  return (
-    <div className="bg-foreground/[0.02] border-t border-foreground/[0.05] p-5 h-52 overflow-hidden">
-      <div className="space-y-5">
-        <div className="flex gap-2">
-          {metrics.map((m, i) => (
-            <motion.div
-              key={m.label}
-              className="flex-1 rounded-md bg-foreground/[0.04] border border-foreground/[0.06] p-2"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.15 }}
-            >
-              <div className={`text-[12px] font-mono font-bold ${m.color}`}>{m.val}</div>
-              <div className="text-[9px] text-muted-foreground uppercase tracking-wide mt-0.5">{m.label}</div>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="flex items-end gap-2 h-16 pt-2">
-          {[40, 65, 45, 80, 55, 90, 75].map((h, i) => (
-            <motion.div
-              key={i}
-              className="flex-1 bg-brand-secondary/20 rounded-t"
-              initial={{ height: 0 }}
-              animate={shouldReduceMotion ? { height: `${h}%` } : { height: `${h}%` }}
-              transition={{ delay: 0.5 + i * 0.05, duration: 0.6, ease: "easeOut" }}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const AutomationVisual = () => {
-  const shouldReduceMotion = useReducedMotion();
-  const nodes = [
-    { label: "WhatsApp", icon: "💬", color: "bg-green-500/20 text-green-400 border-green-500/30" },
-    { label: "n8n", icon: "⚡", color: "bg-brand-secondary/20 text-brand-secondary border-brand-secondary/30" },
-    { label: "Excel", icon: "📊", color: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30" },
-  ];
-
-  return (
-    <div className="bg-foreground/[0.03] border-t border-foreground/[0.08] overflow-hidden h-52 p-5">
-      <div className="flex flex-col h-full justify-center gap-5">
-        <div className="flex items-center justify-between gap-2 relative z-10">
-          {nodes.map((node, i) => (
-            <motion.div
-              key={node.label}
-              className="flex flex-col items-center gap-2 flex-1 relative bg-card rounded-xl"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: i * 0.2 }}
-            >
-              <div className={`w-12 h-12 rounded-xl border flex items-center justify-center text-[11px] font-bold ${node.color} shadow-sm backdrop-blur-sm bg-background/50`}>
-                {node.icon}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="absolute top-1/2 left-0 right-0 -translate-y-[45px] flex items-center justify-center pointer-events-none px-[15%]">
-          <div className="w-full flex">
-            {[0, 1].map((i) => (
-              <div key={i} className="flex-1 h-px bg-foreground/10 relative overflow-hidden">
-                <motion.div
-                  className="absolute top-0 left-0 h-full w-12 bg-gradient-to-r from-transparent via-brand-secondary/80 to-transparent"
-                  animate={{ x: shouldReduceMotion ? 0 : ["-100%", "400%"] }}
-                  transition={{ delay: i * 0.4, duration: 2.5, repeat: Infinity, ease: "linear" }}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <motion.div
-          className="text-center mt-2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-        >
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-secondary/10 border border-brand-secondary/20 text-[10px] text-brand-secondary font-medium">
-            Integración continua · Operación conectada
-          </span>
-        </motion.div>
-      </div>
-    </div>
-  );
-};
 
 const pillarServices = [
   {
-    title: "Desarrollo web",
-    subtitle: "Landing pages, websites corporativos y ecommerce",
+    title: "Presencia digital",
+    subtitle: "Webs y ecommerce diseñados para convertir",
     description: (
       <>
         <p className="mb-3 text-foreground/80">
-          Diseñamos experiencias digitales con una estética cuidada, estructura clara y enfoque comercial para que tu marca se presente con más nivel y convierta mejor.
+          Construyo websites, landing pages y ecommerce con estructura clara, copy orientado a negocio y una experiencia que ayuda a convertir visitas en oportunidades reales.
         </p>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          React · Next.js · Experiencias optimizadas
+          Webs corporativas · Ecommerce · Landing pages
         </p>
       </>
     ),
     icon: <Code2 className="w-5 h-5 text-foreground/70" />,
-    visual: <WebDevVisual />,
+    visual: <div className="h-52 border-t border-foreground/[0.05] bg-gradient-to-br from-brand-primary/10 to-transparent p-5"><div className="h-full rounded-2xl border border-foreground/10 bg-card/60 p-4"><div className="h-6 w-24 rounded bg-foreground/10 mb-4" /><div className="grid grid-cols-2 gap-3 h-[calc(100%-2.5rem)]"><div className="rounded-xl bg-foreground/[0.05]" /><div className="space-y-3"><div className="h-4 rounded bg-foreground/[0.08]" /><div className="h-4 w-4/5 rounded bg-foreground/[0.06]" /><div className="h-10 w-28 rounded-xl bg-brand-secondary/20" /></div></div></div></div>,
     className: "lg:col-span-2",
     delay: 200,
     accent: "blue" as const,
   },
   {
-    title: "Dashboards y automatización",
-    subtitle: "Control operacional y seguimiento comercial",
+    title: "Automatización con IA",
+    subtitle: "Procesos que eliminan trabajo manual",
     description: (
       <>
         <p className="mb-3 text-foreground/80">
-          Organizamos métricas, procesos e integraciones para que tu operación gane claridad y tu equipo trabaje con más consistencia y mejor visibilidad.
+          Diseño automatizaciones que responden más rápido, organizan mejor la operación y conectan herramientas para que el negocio dependa menos de tareas repetitivas.
         </p>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          KPIs en tiempo real · Seguimiento automatizado
+          Flujos con IA · Integraciones · Automatización operativa
         </p>
       </>
     ),
-    icon: <BarChart3 className="w-5 h-5 text-foreground/70" />,
-    visual: <BIVisual />,
+    icon: <Workflow className="w-5 h-5 text-foreground/70" />,
+    visual: <div className="h-52 border-t border-foreground/[0.05] bg-gradient-to-br from-brand-secondary/10 to-transparent p-5"><div className="flex h-full items-center justify-between gap-3"><div className="flex-1 rounded-2xl border border-foreground/10 bg-card/60 p-3 text-center text-sm">WhatsApp</div><div className="w-10 h-px bg-brand-secondary/40" /><div className="flex-1 rounded-2xl border border-foreground/10 bg-card/60 p-3 text-center text-sm">IA</div><div className="w-10 h-px bg-brand-secondary/40" /><div className="flex-1 rounded-2xl border border-foreground/10 bg-card/60 p-3 text-center text-sm">CRM</div></div></div>,
     className: "",
     delay: 300,
     accent: "emerald" as const,
   },
   {
-    title: "Software e IA",
-    subtitle: "Herramientas, integraciones y soluciones a medida",
+    title: "Inteligencia del negocio",
+    subtitle: "Dashboards y análisis para decidir mejor",
     description: (
       <>
         <p className="mb-3 text-foreground/80">
-          Creamos productos internos, flujos inteligentes y herramientas conectadas con tu negocio para ampliar capacidad, mejorar ejecución y acompañar nuevas etapas de crecimiento.
+          Construyo tableros y sistemas de reporting para que cada equipo pueda ver métricas clave, seguir resultados y tomar decisiones con datos en tiempo real.
         </p>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
-          IA · Herramientas internas · Integraciones
+          Dashboards · KPIs · Reporting operativo
         </p>
       </>
     ),
-    icon: <Workflow className="w-5 h-5 text-foreground/70" />,
-    visual: <AutomationVisual />,
+    icon: <BarChart3 className="w-5 h-5 text-foreground/70" />,
+    visual: <div className="h-52 border-t border-foreground/[0.05] bg-gradient-to-br from-brand-primary/10 to-transparent p-5"><div className="grid grid-cols-3 gap-2 mb-3">{["Ventas","Horas","Leads"].map((label)=><div key={label} className="rounded-xl border border-foreground/10 bg-card/60 p-2 text-center text-[10px]">{label}<div className="mt-1 h-4 rounded bg-brand-secondary/20" /></div>)}</div><div className="flex items-end gap-2 h-24">{[35,55,45,70,60,82].map((h,i)=><div key={i} className="flex-1 rounded-t bg-brand-secondary/20" style={{height:`${h}%`}} />)}</div></div>,
     className: "lg:col-span-3",
     delay: 400,
     accent: "purple" as const,
@@ -214,21 +79,21 @@ export const CoreServices = () => {
 
         <div className="relative z-10 container mx-auto px-6 pt-32 pb-24" ref={heroRef}>
           <div className="max-w-5xl mx-auto text-center">
-            <motion.h1
+            <motion.h2
               className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] mb-4 text-balance font-heading"
               initial={{ opacity: 0, y: 30 }}
               animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Servicios digitales con una ejecución más clara, elegante y útil
-            </motion.h1>
+              La oferta se organiza en tres capas de sistema digital
+            </motion.h2>
             <motion.p
               className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Combinamos diseño, desarrollo y automatización para construir una base digital más consistente para tu negocio.
+              Así es más fácil entender qué construyo, cómo se conecta y qué impacto tiene en ventas, eficiencia y operación.
             </motion.p>
           </div>
         </div>
@@ -238,35 +103,13 @@ export const CoreServices = () => {
 
       <section className="relative pb-32 scroll-mt-20 gradient-mesh-subtle" ref={containerRef}>
         <div className="container mx-auto px-6">
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6"
-            variants={{
-              hidden: { opacity: 0 },
-              show: {
-                opacity: 1,
-                transition: { staggerChildren: 0.1 },
-              },
-            }}
-            initial="hidden"
-            animate={isInView ? "show" : "hidden"}
-          >
+          <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" initial="hidden" animate={isInView ? "show" : "hidden"}>
             {pillarServices.map((service, index) => (
-              <BentoCard
-                key={service.title}
-                title={service.title}
-                subtitle={service.subtitle}
-                description={service.description}
-                icon={service.icon}
-                visual={service.visual}
-                className={service.className}
-                delay={service.delay}
-                index={index}
-                accent={service.accent}
-              />
+              <BentoCard key={service.title} title={service.title} subtitle={service.subtitle} description={service.description} icon={service.icon} visual={service.visual} className={service.className} delay={service.delay} index={index} accent={service.accent} />
             ))}
           </motion.div>
         </div>
       </section>
     </>
   );
-};
+}

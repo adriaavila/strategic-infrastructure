@@ -4,15 +4,15 @@ import { motion, useInView } from "framer-motion";
 const valuePoints = [
   {
     num: "01",
-    text: "Presencia digital con una estética más sólida, una estructura clara y una experiencia alineada con la calidad de tu negocio.",
+    text: "Presencia digital. Webs y ecommerce diseñados para convertir visitantes en clientes.",
   },
   {
     num: "02",
-    text: "Procesos más ágiles mediante automatización, integraciones y herramientas que organizan mejor la operación diaria.",
+    text: "Automatización con IA. Procesos que reducen trabajo manual y aceleran atención, ventas y operación.",
   },
   {
     num: "03",
-    text: "Mayor visibilidad sobre ventas, seguimiento y rendimiento con dashboards pensados para tomar decisiones con más claridad.",
+    text: "Inteligencia del negocio. Dashboards y sistemas que ayudan a tomar decisiones con datos claros.",
   },
 ];
 
@@ -32,9 +32,7 @@ export const Intro = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
-                Una base digital más elegante.
-                <br />
-                <span className="text-brand-secondary">Una operación más eficiente.</span>
+                Sistemas digitales para negocios construidos con IA y automatización
               </motion.h2>
 
               <motion.div
@@ -44,10 +42,10 @@ export const Intro = () => {
                 transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
                 <p>
-                  Diseñamos websites, automatizaciones y herramientas digitales para negocios que quieren presentar mejor su propuesta, ordenar procesos y sostener su crecimiento con una infraestructura más clara.
+                  En lugar de ofrecer servicios sueltos, diseño y construyo sistemas que conectan presencia digital, automatización e inteligencia operativa para que un negocio pueda crecer con más orden.
                 </p>
                 <p className="text-foreground/80 font-medium">
-                  Ideal para marcas personales, negocios locales, pymes y equipos que necesitan una ejecución profesional y práctica.
+                  El foco no está en la tecnología por sí sola. Está en ventas, eficiencia y una operación que funciona mejor.
                 </p>
               </motion.div>
             </div>
@@ -75,26 +73,8 @@ export const Intro = () => {
               </ul>
             </motion.div>
           </div>
-
-          <motion.div
-            className="mt-12 h-px bg-gradient-to-r from-transparent via-brand-secondary/30 to-transparent"
-            initial={{ scaleX: 0 }}
-            animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
-            transition={{ delay: 0.6, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          />
-
-          <motion.div
-            className="mt-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.7, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <p className="text-xl font-semibold text-foreground text-center">
-              Resultado: <span className="text-brand-secondary">Una presencia más profesional y procesos digitales mejor estructurados</span>
-            </p>
-          </motion.div>
         </div>
       </div>
     </section>
   );
-};
+}

@@ -12,19 +12,24 @@ import { useSearchParams } from "react-router-dom";
 type ContactPreference = "whatsapp" | "email";
 
 const projectTypeOptions = [
-  "Landing page",
-  "Website corporativo",
+  "Sistema web para ventas",
+  "Website o landing page",
   "Ecommerce",
-  "Dashboard interno",
-  "Automatización",
-  "Integración con WhatsApp/API",
+  "Automatización con IA",
+  "Dashboard o sistema interno",
+  "Integración con WhatsApp o API",
   "Otro",
 ];
 
 const sourceLabels: Record<string, string> = {
   hero: "Solicitud desde el hero principal",
-  historia: "Brief iniciado desde la página Historia",
-  contacto: "Solicitud desde la sección de contacto",
+  "hero-call": "Llamada solicitada desde el hero",
+  historia: "Solicitud desde Historia",
+  contacto: "Solicitud desde contacto",
+  "contact-page": "Solicitud desde la página de contacto",
+  "cta-final": "Solicitud desde el CTA final",
+  "oferta-home": "Solicitud desde la sección de oferta",
+  "processo-home": "Solicitud desde cómo trabajo",
 };
 
 const Brief = () => {
@@ -37,7 +42,7 @@ const Brief = () => {
     email: "",
     whatsapp: "",
     website: "",
-    projectType: "Landing page",
+    projectType: "Sistema web para ventas",
     budget: "",
     timeline: "",
     goals: "",
@@ -47,7 +52,7 @@ const Brief = () => {
 
   useSEO({
     title: "Solicitar proyecto",
-    description: "Completa el brief para compartir objetivos, alcance y datos de contacto de tu próximo proyecto.",
+    description: "Completa el brief para compartir objetivos, alcance y contexto de tu próximo sistema digital.",
     path: "/brief",
   });
 
@@ -63,7 +68,7 @@ const Brief = () => {
       `Presupuesto estimado: ${form.budget || "No indicado"}`,
       `Tiempo esperado: ${form.timeline || "No indicado"}`,
       `Objetivo principal: ${form.goals || "No indicado"}`,
-      `Qué necesita el proyecto: ${form.scope || "No indicado"}`,
+      `Qué necesita el sistema: ${form.scope || "No indicado"}`,
       `Referencias / links: ${form.references || "No indicado"}`,
       `Canal preferido del cliente: ${contactPreference === "whatsapp" ? "WhatsApp" : "Correo"}`,
     ];
@@ -81,11 +86,11 @@ const Brief = () => {
           <div className="max-w-3xl mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-foreground/10 bg-card/60 backdrop-blur-sm mb-6 text-xs uppercase tracking-wider text-muted-foreground">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-secondary animate-pulse-soft" />
-              Brief de proyecto
+              Brief de sistema digital
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-5">Cuéntame qué necesitas construir</h1>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-5">Cuéntame qué quieres construir</h1>
             <p className="text-lg text-brand-slate leading-relaxed">
-              Este flujo está pensado para acelerar discovery. Recojo lo esencial del proyecto y luego puedes enviarlo por WhatsApp o por correo con un solo clic.
+              Este brief me ayuda a entender si el mayor impacto está en una web, una automatización con IA o un sistema más amplio para tu negocio.
             </p>
           </div>
 
@@ -103,28 +108,28 @@ const Brief = () => {
                     {projectTypeOptions.map((option) => <option key={option} value={option} className="bg-brand-dark light:bg-white">{option}</option>)}
                   </select>
                 </div>
-                <div><label className="text-sm text-white/80 mb-2 block">Presupuesto estimado</label><Input value={form.budget} onChange={(e) => setForm({ ...form, budget: e.target.value })} placeholder="Ej. 1.500 - 3.000 USD" /></div>
-                <div><label className="text-sm text-white/80 mb-2 block">Tiempo esperado</label><Input value={form.timeline} onChange={(e) => setForm({ ...form, timeline: e.target.value })} placeholder="Ej. 3 semanas" /></div>
+                <div><label className="text-sm text-white/80 mb-2 block">Presupuesto estimado</label><Input value={form.budget} onChange={(e) => setForm({ ...form, budget: e.target.value })} placeholder="Ej. 2.000 - 5.000 USD" /></div>
+                <div><label className="text-sm text-white/80 mb-2 block">Tiempo esperado</label><Input value={form.timeline} onChange={(e) => setForm({ ...form, timeline: e.target.value })} placeholder="Ej. 4 semanas" /></div>
               </div>
 
               <div>
                 <label className="text-sm text-white/80 mb-2 block">Objetivo principal</label>
-                <Textarea value={form.goals} onChange={(e) => setForm({ ...form, goals: e.target.value })} placeholder="¿Qué quieres lograr con este proyecto?" className="min-h-[110px]" />
+                <Textarea value={form.goals} onChange={(e) => setForm({ ...form, goals: e.target.value })} placeholder="¿Qué quieres mejorar en ventas, operación o eficiencia?" className="min-h-[110px]" />
               </div>
               <div>
-                <label className="text-sm text-white/80 mb-2 block">Qué necesita el proyecto</label>
-                <Textarea value={form.scope} onChange={(e) => setForm({ ...form, scope: e.target.value })} placeholder="Páginas, funcionalidades, integraciones, embudos, automatizaciones, etc." className="min-h-[140px]" />
+                <label className="text-sm text-white/80 mb-2 block">Qué necesita el sistema</label>
+                <Textarea value={form.scope} onChange={(e) => setForm({ ...form, scope: e.target.value })} placeholder="Páginas, automatizaciones, flujos, integraciones, dashboards, atención por WhatsApp, etc." className="min-h-[140px]" />
               </div>
               <div>
                 <label className="text-sm text-white/80 mb-2 block">Referencias</label>
-                <Textarea value={form.references} onChange={(e) => setForm({ ...form, references: e.target.value })} placeholder="Links de referencia, competidores, notas, inspiración visual" className="min-h-[100px]" />
+                <Textarea value={form.references} onChange={(e) => setForm({ ...form, references: e.target.value })} placeholder="Links de referencia, competidores, herramientas actuales, inspiración visual" className="min-h-[100px]" />
               </div>
             </div>
 
             <aside className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-7 md:p-8 h-fit lg:sticky lg:top-28">
               <h2 className="text-2xl font-semibold mb-4">Enviar brief</h2>
               <p className="text-sm text-brand-slate leading-relaxed mb-6">
-                Elige el canal principal para que podamos responderte. El mensaje se genera con toda la información del formulario.
+                Elige el canal principal y envía el resumen con un clic. Así puedo responderte con una propuesta más clara.
               </p>
 
               <div className="grid grid-cols-2 gap-3 mb-6">
@@ -134,7 +139,7 @@ const Brief = () => {
 
               <div className="rounded-2xl border border-white/10 bg-black/20 p-4 mb-6">
                 <div className="text-[11px] uppercase tracking-[0.22em] text-brand-secondary/80 font-semibold mb-2">Origen</div>
-                <p className="text-sm text-white/75">{sourceLabels[source] || "Solicitud general de proyecto"}</p>
+                <p className="text-sm text-white/75">{sourceLabels[source] || "Solicitud general"}</p>
               </div>
 
               <div className="space-y-3">
@@ -151,7 +156,7 @@ const Brief = () => {
               </div>
 
               <div className="mt-6 pt-6 border-t border-white/10 text-sm text-brand-slate leading-relaxed">
-                <p className="flex items-start gap-2"><Send className="w-4 h-4 mt-0.5 text-brand-secondary" />Recomendación: mientras más claro sea el brief, más rápido puedo proponerte alcance, tiempos y estructura del proyecto.</p>
+                <p className="flex items-start gap-2"><Send className="w-4 h-4 mt-0.5 text-brand-secondary" />Mientras más claro sea el contexto del negocio, más precisa será la recomendación sobre qué construir primero.</p>
               </div>
             </aside>
           </div>
