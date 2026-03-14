@@ -6,7 +6,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navLinks = [
   { label: "Servicios", href: "/#servicios" },
-  { label: "Proyectos", href: "/proyectos" },
+  { label: "Casos", href: "/#casos" },
   { label: "Historia", href: "/historia" },
   { label: "Blog", href: "/blog" },
 ];
@@ -22,20 +22,14 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-brand-dark/78 backdrop-blur-2xl border-b border-white/10 light:!bg-[#F6F8FC]/94 light:border-slate-200"
-          : "bg-transparent"
-      }`}
-    >
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-brand-dark/78 backdrop-blur-2xl border-b border-white/10 light:!bg-[#F6F8FC]/94 light:border-slate-200" : "bg-transparent"}`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-[72px]">
           <Link to="/" className="flex items-center gap-3 text-white">
             <img src="/logo.svg" alt="servicioscreativos.online" className="w-9 h-9 rounded-sm flex-shrink-0" />
             <div className="leading-none">
               <div className="text-[15px] font-semibold tracking-tight text-white">servicioscreativos.online</div>
-              <div className="text-[11px] text-white/40 light:text-slate-500">Diseño, desarrollo y automatización</div>
+              <div className="text-[11px] text-white/44 light:text-slate-500">Sistemas digitales con IA para negocio</div>
             </div>
           </Link>
 
@@ -46,18 +40,14 @@ export const Navbar = () => {
               </Link>
             ))}
             <ThemeToggle />
-            <Link to="/brief">
+            <Link to="/brief?source=navbar">
               <Button variant="hero" size="sm" className="rounded-xl px-4">
-                Solicitar proyecto
+                Solicitar diagnóstico
               </Button>
             </Link>
           </div>
 
-          <button
-            className="md:hidden p-2 -mr-2 text-white"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
-          >
+          <button className="md:hidden p-2 -mr-2 text-white" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}>
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
@@ -65,23 +55,14 @@ export const Navbar = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden absolute top-[72px] left-0 right-0 bg-brand-dark/96 backdrop-blur-2xl border-b border-white/10 py-4 animate-fade-in">
             <div className="container mx-auto px-6 flex flex-col gap-4">
-              <div className="flex justify-start">
-                <ThemeToggle />
-              </div>
+              <div className="flex justify-start"><ThemeToggle /></div>
               {navLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  to={link.href}
-                  className="text-sm text-brand-slate hover:text-white transition-colors py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
+                <Link key={link.label} to={link.href} className="text-sm text-brand-slate hover:text-white transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>
                   {link.label}
                 </Link>
               ))}
-              <Link to="/brief" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button variant="hero" size="sm" className="w-full rounded-xl">
-                  Solicitar proyecto
-                </Button>
+              <Link to="/brief?source=navbar-mobile" onClick={() => setIsMobileMenuOpen(false)}>
+                <Button variant="hero" size="sm" className="w-full rounded-xl">Solicitar diagnóstico</Button>
               </Link>
             </div>
           </div>

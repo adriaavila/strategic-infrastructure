@@ -80,7 +80,7 @@ const Historia = () => {
                 La tesis central es simple: muchos negocios ya no necesitan solo una web o una automatización aislada. Necesitan una infraestructura digital que les permita vender mejor, reducir trabajo manual y operar con más claridad.
               </p>
               <p>
-                Por eso servicioscreativos.online ya no se presenta solo como un proveedor de servicios digitales, sino como un constructor de sistemas digitales con IA.
+                Hoy eso se traduce en una propuesta clara para el cliente: diseñar y construir webs, automatizaciones y sistemas internos que ayuden a vender mejor y operar con menos fricción.
               </p>
             </motion.div>
 

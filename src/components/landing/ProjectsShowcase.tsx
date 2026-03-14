@@ -58,8 +58,8 @@ export const ProjectsShowcase = () => {
                     ))}
                   </div>
                   <h3 className={`font-bold tracking-tight text-white mb-1.5 ${featured ? "text-2xl md:text-3xl" : "text-xl"}`}>{project.title}</h3>
-                  <p className={`text-white/60 leading-relaxed ${featured ? "text-sm md:text-base max-w-lg" : "text-sm line-clamp-2"}`}>{project.shortDescription}</p>
-                  <div className="mt-3 flex items-center gap-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                  <p className={`text-white/72 leading-relaxed ${featured ? "text-sm md:text-base max-w-lg" : "text-sm line-clamp-2"}`}>{project.shortDescription}</p>
+                  <div className="mt-3 flex items-center gap-4 opacity-100 translate-y-0 transition-all duration-300">
                     {project.liveUrl && (
                       <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-brand-secondary text-xs md:text-sm font-medium hover:text-brand-secondary/80 transition-colors">
                         <ExternalLink className="w-3.5 h-3.5" />

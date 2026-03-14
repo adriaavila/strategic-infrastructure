@@ -33,12 +33,12 @@ const Contacto = () => {
                   <Calendar className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-white font-medium mb-1">Agendar una llamada</h3>
-                  <p className="text-sm text-brand-slate">Cuéntame tu contexto y definimos qué sistema conviene construir primero.</p>
+                  <h3 className="text-white font-medium mb-1">Solicitar diagnóstico</h3>
+                  <p className="text-sm text-brand-slate">Compárteme tu contexto y te recomiendo qué sistema conviene construir primero.</p>
                 </div>
               </div>
               <Button variant="ghost" className="group-hover:text-brand-primary px-0 hover:bg-transparent">
-                Ir al brief <ArrowRight className="w-4 h-4 ml-2" />
+                Completar brief <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </a>
 

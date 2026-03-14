@@ -9,7 +9,7 @@ export const WhatsAppButton = () => {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="fixed bottom-6 right-6 z-[100] flex items-center justify-center w-14 h-14 rounded-full shadow-lg cursor-pointer bg-brand-secondary text-brand-dark hover:shadow-glow transition-shadow duration-300 group"
+            className="fixed bottom-6 right-6 z-[100] hidden sm:flex items-center justify-center w-14 h-14 rounded-full shadow-lg cursor-pointer bg-brand-secondary text-brand-dark hover:shadow-glow transition-shadow duration-300 group"
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             whileHover={{ scale: 1.1 }}

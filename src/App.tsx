@@ -12,6 +12,8 @@ import NotFound from "./pages/NotFound";
 import Historia from "./pages/Historia";
 import Contacto from "./pages/Contacto";
 import Proyectos from "./pages/Proyectos";
+import Automatizaciones from "./pages/Automatizaciones";
+import Marketing from "./pages/Marketing";
 import ProjectDetail from "./pages/ProjectDetail";
 import Brief from "./pages/Brief";
 import LegalTerms from "./pages/LegalTerms";
@@ -35,6 +37,8 @@ const App = () => (
             <Route path="/historia" element={<Historia />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/brief" element={<Brief />} />
+            <Route path="/automatizaciones" element={<Automatizaciones />} />
+            <Route path="/marketing" element={<Marketing />} />
             <Route path="/terminos" element={<LegalTerms />} />
             <Route path="/privacidad" element={<LegalPrivacy />} />
             <Route path="/proyectos" element={<Proyectos />} />

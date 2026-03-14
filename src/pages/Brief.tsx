@@ -30,6 +30,8 @@ const sourceLabels: Record<string, string> = {
   "cta-final": "Solicitud desde el CTA final",
   "oferta-home": "Solicitud desde la sección de oferta",
   "processo-home": "Solicitud desde cómo trabajo",
+  navbar: "Solicitud desde navegación",
+  "navbar-mobile": "Solicitud desde navegación móvil",
 };
 
 const Brief = () => {
@@ -51,8 +53,8 @@ const Brief = () => {
   });
 
   useSEO({
-    title: "Solicitar proyecto",
-    description: "Completa el brief para compartir objetivos, alcance y contexto de tu próximo sistema digital.",
+    title: "Solicitar diagnóstico",
+    description: "Completa este brief breve para compartir objetivos, alcance y contexto de tu próximo sistema digital.",
     path: "/brief",
   });
 
@@ -86,50 +88,60 @@ const Brief = () => {
           <div className="max-w-3xl mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-foreground/10 bg-card/60 backdrop-blur-sm mb-6 text-xs uppercase tracking-wider text-muted-foreground">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-secondary animate-pulse-soft" />
-              Brief de sistema digital
+              Solicitar diagnóstico
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-5">Cuéntame qué quieres construir</h1>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-5">Cuéntame qué quieres resolver</h1>
             <p className="text-lg text-brand-slate leading-relaxed">
-              Este brief me ayuda a entender si el mayor impacto está en una web, una automatización con IA o un sistema más amplio para tu negocio.
+              Este brief toma 2–3 minutos. Con esto puedo decirte qué sistema conviene construir primero y si hay buen encaje para trabajar juntos.
             </p>
           </div>
 
           <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
             <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-7 md:p-8 space-y-6">
-              <div className="grid gap-5 md:grid-cols-2">
-                <div><label className="text-sm text-white/80 mb-2 block">Nombre</label><Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Tu nombre" /></div>
-                <div><label className="text-sm text-white/80 mb-2 block">Empresa</label><Input value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} placeholder="Empresa / marca" /></div>
-                <div><label className="text-sm text-white/80 mb-2 block">Correo</label><Input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="tu@empresa.com" /></div>
-                <div><label className="text-sm text-white/80 mb-2 block">WhatsApp</label><Input value={form.whatsapp} onChange={(e) => setForm({ ...form, whatsapp: e.target.value })} placeholder="+58..." /></div>
-                <div><label className="text-sm text-white/80 mb-2 block">Sitio actual</label><Input value={form.website} onChange={(e) => setForm({ ...form, website: e.target.value })} placeholder="https://..." /></div>
-                <div>
-                  <label className="text-sm text-white/80 mb-2 block">Tipo de proyecto</label>
-                  <select value={form.projectType} onChange={(e) => setForm({ ...form, projectType: e.target.value })} className="w-full h-10 rounded-lg border border-white/10 bg-transparent px-3 text-sm text-white light:text-foreground light:border-foreground/10 light:bg-white/70">
-                    {projectTypeOptions.map((option) => <option key={option} value={option} className="bg-brand-dark light:bg-white">{option}</option>)}
-                  </select>
+              <div>
+                <h2 className="text-2xl font-semibold mb-2">1. Datos básicos</h2>
+                <p className="text-sm text-brand-slate mb-5">Estos campos me ayudan a entender el contexto general y cómo responderte.</p>
+                <div className="grid gap-5 md:grid-cols-2">
+                  <div><label className="text-sm text-white/80 mb-2 block">Nombre</label><Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Tu nombre" /></div>
+                  <div><label className="text-sm text-white/80 mb-2 block">Empresa</label><Input value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} placeholder="Empresa / marca" /></div>
+                  <div><label className="text-sm text-white/80 mb-2 block">Correo</label><Input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="tu@empresa.com" /></div>
+                  <div><label className="text-sm text-white/80 mb-2 block">WhatsApp</label><Input value={form.whatsapp} onChange={(e) => setForm({ ...form, whatsapp: e.target.value })} placeholder="+58..." /></div>
+                  <div><label className="text-sm text-white/80 mb-2 block">Sitio actual <span className="text-white/40">(opcional)</span></label><Input value={form.website} onChange={(e) => setForm({ ...form, website: e.target.value })} placeholder="https://..." /></div>
+                  <div>
+                    <label className="text-sm text-white/80 mb-2 block">Tipo de proyecto</label>
+                    <select value={form.projectType} onChange={(e) => setForm({ ...form, projectType: e.target.value })} className="w-full h-10 rounded-lg border border-white/10 bg-transparent px-3 text-sm text-white light:text-foreground light:border-foreground/10 light:bg-white/70">
+                      {projectTypeOptions.map((option) => <option key={option} value={option} className="bg-brand-dark light:bg-white">{option}</option>)}
+                    </select>
+                  </div>
                 </div>
-                <div><label className="text-sm text-white/80 mb-2 block">Presupuesto estimado</label><Input value={form.budget} onChange={(e) => setForm({ ...form, budget: e.target.value })} placeholder="Ej. 2.000 - 5.000 USD" /></div>
-                <div><label className="text-sm text-white/80 mb-2 block">Tiempo esperado</label><Input value={form.timeline} onChange={(e) => setForm({ ...form, timeline: e.target.value })} placeholder="Ej. 4 semanas" /></div>
               </div>
 
               <div>
-                <label className="text-sm text-white/80 mb-2 block">Objetivo principal</label>
-                <Textarea value={form.goals} onChange={(e) => setForm({ ...form, goals: e.target.value })} placeholder="¿Qué quieres mejorar en ventas, operación o eficiencia?" className="min-h-[110px]" />
-              </div>
-              <div>
-                <label className="text-sm text-white/80 mb-2 block">Qué necesita el sistema</label>
-                <Textarea value={form.scope} onChange={(e) => setForm({ ...form, scope: e.target.value })} placeholder="Páginas, automatizaciones, flujos, integraciones, dashboards, atención por WhatsApp, etc." className="min-h-[140px]" />
-              </div>
-              <div>
-                <label className="text-sm text-white/80 mb-2 block">Referencias</label>
-                <Textarea value={form.references} onChange={(e) => setForm({ ...form, references: e.target.value })} placeholder="Links de referencia, competidores, herramientas actuales, inspiración visual" className="min-h-[100px]" />
+                <h2 className="text-2xl font-semibold mb-2">2. Objetivo y alcance</h2>
+                <p className="text-sm text-brand-slate mb-5">Aquí está la parte importante: qué quieres mejorar y qué crees que necesitas.</p>
+                <div className="grid gap-5 md:grid-cols-2 mb-5">
+                  <div><label className="text-sm text-white/80 mb-2 block">Presupuesto estimado <span className="text-white/40">(opcional)</span></label><Input value={form.budget} onChange={(e) => setForm({ ...form, budget: e.target.value })} placeholder="Ej. 2.000 - 5.000 USD" /></div>
+                  <div><label className="text-sm text-white/80 mb-2 block">Tiempo esperado <span className="text-white/40">(opcional)</span></label><Input value={form.timeline} onChange={(e) => setForm({ ...form, timeline: e.target.value })} placeholder="Ej. 4 semanas" /></div>
+                </div>
+                <div className="mb-5">
+                  <label className="text-sm text-white/80 mb-2 block">Objetivo principal</label>
+                  <Textarea value={form.goals} onChange={(e) => setForm({ ...form, goals: e.target.value })} placeholder="¿Qué quieres mejorar en ventas, operación o eficiencia?" className="min-h-[110px]" />
+                </div>
+                <div className="mb-5">
+                  <label className="text-sm text-white/80 mb-2 block">Qué necesita el sistema</label>
+                  <Textarea value={form.scope} onChange={(e) => setForm({ ...form, scope: e.target.value })} placeholder="Páginas, automatizaciones, flujos, integraciones, dashboards, atención por WhatsApp, etc." className="min-h-[140px]" />
+                </div>
+                <div>
+                  <label className="text-sm text-white/80 mb-2 block">Referencias <span className="text-white/40">(opcional)</span></label>
+                  <Textarea value={form.references} onChange={(e) => setForm({ ...form, references: e.target.value })} placeholder="Links de referencia, competidores, herramientas actuales, inspiración visual" className="min-h-[100px]" />
+                </div>
               </div>
             </div>
 
             <aside className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-7 md:p-8 h-fit lg:sticky lg:top-28">
-              <h2 className="text-2xl font-semibold mb-4">Enviar brief</h2>
+              <h2 className="text-2xl font-semibold mb-4">3. Enviar información</h2>
               <p className="text-sm text-brand-slate leading-relaxed mb-6">
-                Elige el canal principal y envía el resumen con un clic. Así puedo responderte con una propuesta más clara.
+                Elige el canal principal. Después del envío te responderé con una recomendación inicial sobre qué conviene construir primero.
               </p>
 
               <div className="grid grid-cols-2 gap-3 mb-6">
@@ -155,8 +167,9 @@ const Brief = () => {
                 </Button>
               </div>
 
-              <div className="mt-6 pt-6 border-t border-white/10 text-sm text-brand-slate leading-relaxed">
-                <p className="flex items-start gap-2"><Send className="w-4 h-4 mt-0.5 text-brand-secondary" />Mientras más claro sea el contexto del negocio, más precisa será la recomendación sobre qué construir primero.</p>
+              <div className="mt-6 pt-6 border-t border-white/10 text-sm text-brand-slate leading-relaxed space-y-3">
+                <p className="flex items-start gap-2"><Send className="w-4 h-4 mt-0.5 text-brand-secondary" />Respuesta inicial con recomendación, alcance probable y siguiente paso.</p>
+                <p>Campos clave: nombre, empresa, objetivo principal y qué necesita el sistema.</p>
               </div>
             </aside>
           </div>

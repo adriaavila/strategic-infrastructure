@@ -25,7 +25,7 @@ export const CTAFinal = () => {
           <motion.div className="flex flex-col sm:flex-row items-center justify-center gap-4" initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}>
             <Button variant="hero" size="lg" asChild className="group shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
               <a href="/brief?source=cta-final">
-                Analizar mi negocio
+                Solicitar diagnóstico
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>

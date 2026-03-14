@@ -82,7 +82,7 @@ export const EngagementModel = () => {
           <motion.div className="text-center mt-12" initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ delay: 0.6, duration: 0.6 }}>
             <Button variant="hero" size="lg" asChild className="group shadow-lg hover:shadow-xl">
               <a href="/brief?source=processo-home">
-                Agendar una llamada
+                Solicitar diagnóstico
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
