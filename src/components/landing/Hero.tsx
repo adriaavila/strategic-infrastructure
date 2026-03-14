@@ -4,11 +4,7 @@ import { ParticleBackground } from "@/components/particles/ParticleBackground";
 import { useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
-const proofItems = [
-  "+ proyectos en web, ecommerce y sistemas internos",
-  "Automatización con IA para reducir trabajo manual",
-  "Enfoque en conversión, operación y datos",
-];
+
 
 export const Hero = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -20,7 +16,7 @@ export const Hero = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-dark bg-hero-gradient light:bg-[linear-gradient(180deg,#f8fafc_0%,#f6f8fc_45%,#eef2ff_100%)]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-dark bg-hero-gradient"
     >
       <div className="absolute inset-0 architectural-grid opacity-[0.16] light:opacity-[0.08]" />
       <div className="absolute inset-0 z-[1] overflow-hidden opacity-55 light:opacity-45">
@@ -39,40 +35,37 @@ export const Hero = () => {
           >
             <span className="w-2 h-2 rounded-full bg-brand-secondary animate-pulse-soft" />
             <span className="text-sm text-white/72 font-medium tracking-wide light:text-slate-700">
-              Constructor de sistemas digitales con IA
+              Webs · Automatización · Dashboards
             </span>
           </motion.div>
 
           <motion.h1
-            className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.03] mb-6 font-heading text-white light:text-slate-950"
+            className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.08] mb-6 font-heading text-white light:text-slate-950"
             initial={{ opacity: 0, y: 36, filter: "blur(8px)" }}
             animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
             transition={{ delay: 0.15, duration: 0.72, ease: [0.16, 1, 0.3, 1] }}
           >
-            Diseño webs, automatizaciones y sistemas internos para negocios que quieren vender mejor y operar con menos fricción
+            Una{" "}
+            <span className="inline-block bg-gradient-to-r from-brand-primary via-purple-400 to-brand-secondary bg-clip-text text-transparent animate-gradient-x bg-[length:200%_auto]">
+              web que venda
+            </span>
+            , procesos que{" "}
+            <span className="relative inline-block">
+              <span className="relative z-10">no dependan de ti</span>
+              <motion.span
+                className="absolute -bottom-1 left-0 h-[3px] bg-gradient-to-r from-brand-secondary to-brand-primary rounded-full"
+                initial={{ width: 0 }}
+                animate={isInView ? { width: "100%" } : {}}
+                transition={{ delay: 0.9, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              />
+            </span>{" "}
+            y{" "}
+            <span className="inline-block bg-gradient-to-r from-brand-secondary to-emerald-400 bg-clip-text text-transparent">
+              datos para decidir mejor
+            </span>
           </motion.h1>
 
-          <motion.p
-            className="text-lg md:text-xl text-brand-slate max-w-3xl mx-auto mb-8 leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.35, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          >
-            Construyo presencia digital, automatización con IA e inteligencia operativa para que tu negocio convierta mejor, ahorre tiempo y tome decisiones con más claridad.
-          </motion.p>
 
-          <motion.div
-            className="flex flex-wrap items-center justify-center gap-3 mb-8"
-            initial={{ opacity: 0, y: 16 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.45, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          >
-            {proofItems.map((item) => (
-              <span key={item} className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-white/72 backdrop-blur-sm light:text-slate-700 light:border-slate-200 light:bg-white/75">
-                {item}
-              </span>
-            ))}
-          </motion.div>
 
           <motion.div
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
@@ -106,12 +99,12 @@ export const Hero = () => {
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.75, duration: 0.6 }}
           >
-            Diagnóstico inicial claro · Recomendación sobre qué construir primero · Brief de 2–3 minutos
+            Sin compromiso · Brief de 2 minutos · Respuesta en 24h
           </motion.p>
         </div>
       </motion.div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent light:bg-gradient-to-t light:from-[#F6F8FC] light:via-[#F6F8FC] light:to-[#F6F8FC]/0" />
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent hidden dark:block" />
     </section>
   );
 }

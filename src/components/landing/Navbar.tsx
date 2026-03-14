@@ -6,7 +6,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navLinks = [
   { label: "Servicios", href: "/#servicios" },
-  { label: "Casos", href: "/#casos" },
+  { label: "Proyectos", href: "/proyectos" },
   { label: "Historia", href: "/historia" },
   { label: "Blog", href: "/blog" },
 ];
@@ -47,7 +47,7 @@ export const Navbar = () => {
             </Link>
           </div>
 
-          <button className="md:hidden p-2 -mr-2 text-white" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}>
+          <button className="md:hidden p-2 -mr-2 text-brand-primary" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}>
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>

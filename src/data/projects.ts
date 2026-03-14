@@ -9,6 +9,7 @@ export type ProjectEntry = {
   outcomes: string[];
   tags: string[];
   image: string;
+  gallery?: string[];
   githubUrl?: string;
   liveUrl?: string;
   accent: string;
@@ -23,22 +24,29 @@ export const projects: ProjectEntry[] = [
     shortDescription:
       "Landing B2B para consultoría y transformación digital con narrativa de diagnóstico, autoridad y conversión.",
     overview:
-      "Landing page para Intrega, una propuesta de consultoría y transformación digital enfocada en operaciones, integración de sistemas y mejora de procesos para negocios del sector hospitalidad.",
+      "Una experiencia de scrollytelling diseñada para Intrega, una consultora de transformación digital. El objetivo era alejar el diseño de las webs corporativas genéricas y centrarlo en una narrativa de autoridad que diagnostica los problemas del sector hospitality antes de proponer la solución.",
     challenge:
-      "Convertir un servicio abstracto en una experiencia web que hiciera evidente el problema del cliente antes de vender la solución.",
+      "Convertir un servicio estratégico y abstracto en una propuesta de valor tangible. El reto residía en equilibrar una estética premium con mensajes directos sobre eficiencia operativa, reducción de mermas y aumento de márgenes.",
     solution: [
-      "Construí una experiencia tipo scrollytelling con una apertura visual fuerte.",
-      "Organicé la página alrededor de diagnóstico, servicios y manifiesto.",
-      "Usé motion y progresión narrativa para sostener atención y reforzar posicionamiento.",
-      "Priorizé un lenguaje orientado a negocio: margen, riesgo, datos y operación.",
+      "Arquitectura de scrollytelling que guía al usuario desde el problema hasta la solución.",
+      "Diseño visual minimalista con tipos de letra fuertes y alto contraste.",
+      "Secciones dedicadas a diagnóstico operativo, manifiesto de marca y pilares de servicio.",
+      "Micro-interacciones fluidas para mantener el engagement durante la navegación.",
     ],
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel Analytics"],
     outcomes: [
-      "Muestra capacidad para vender transformación, no solo mostrar una empresa.",
-      "La web ayuda a que el visitante entienda el costo de no cambiar.",
+      "Incremento percibido en la autoridad de marca desde el primer contacto visual.",
+      "Mejora en la retención de usuarios gracias a la estructura narrativa.",
+      "Claridad total en la oferta de servicios complejos de consultoría.",
     ],
     tags: ["B2B", "Consultoría", "Landing", "Scrollytelling"],
     image: "/projects/intrega.png",
+    gallery: [
+      "/projects/gallery/intrega/hero.png",
+      "/projects/gallery/intrega/diagnostic.png",
+      "/projects/gallery/intrega/services.png",
+      "/projects/gallery/intrega/footer.png",
+    ],
     githubUrl: "https://github.com/adriaavila/intrega-landing",
     liveUrl: "https://intrega-landing.vercel.app",
     accent: "from-emerald-500/20 to-teal-500/10",
@@ -49,24 +57,30 @@ export const projects: ProjectEntry[] = [
     slug: "almacen-vc",
     title: "Almacén VC",
     shortDescription:
-      "Sistema interno para pedidos, inventario, mantenimiento y analítica operativa dentro de Vistacampo.",
+      "Sistema operativo interno para pedidos, inventario, mantenimiento y analítica operativa en tiempo real.",
     overview:
-      "Aplicación web interna para centralizar control de stock, pedidos entre áreas, mantenimiento y métricas operativas dentro de Vistacampo Centro Terapéutico.",
+      "Software a medida diseñado para centralizar la operación logística y de mantenimiento de Vistacampo. Esta aplicación sustituye procesos manuales dispersos por un flujo de trabajo digital que conecta diferentes áreas de la organización.",
     challenge:
-      "Sustituir procesos manuales y dispersos por un sistema operativo, intuitivo y escalable sin requerir capacitación compleja.",
+      "Digitalizar una operación física compleja sin añadir fricción a los empleados. Se necesitaba una herramienta que fuera lo suficientemente potente para la gerencia (con métricas y control) pero extremadamente simple para los operarios de campo.",
     solution: [
-      "Diseñé una aplicación con roles diferenciados para solicitantes, administración, mantenimiento y owner.",
-      "Incorporé flujo completo de pedidos internos, inventario editable con alertas y módulo de mantenimiento.",
-      "Añadí dashboard gerencial con gráficos, filtros y exportación CSV para toma de decisiones.",
-      "Mantuve la interfaz en español y orientada a rapidez de uso diario.",
+      "Desarrollo de un backend reactivo con Convex para actualizaciones en tiempo real sin recarga.",
+      "Sistema de roles granular: solicitantes, aprobadores, mantenimiento y administrador.",
+      "Módulo de inventario inteligente con alertas de stock bajo y trazabilidad completa.",
+      "Dashboard de analítica operativa con visualización de tendencias y exportación de datos.",
     ],
     stack: ["Next.js", "React", "Tailwind CSS", "Convex", "Zustand", "Recharts"],
     outcomes: [
-      "Ordena operación real entre áreas y mejora visibilidad del stock.",
-      "Demuestra dominio de software interno con flujos multirol.",
+      "Reducción drástica en errores de inventario y pedidos duplicados.",
+      "Visibilidad total de los tiempos de respuesta en mantenimiento.",
+      "Toma de decisiones basada en datos reales, no en estimaciones.",
     ],
     tags: ["Inventario", "Dashboard", "Operaciones", "Convex"],
     image: "/projects/portfolio/almacen-vc.png",
+    gallery: [
+      "/projects/gallery/almacen-vc/hero.png",
+      "/projects/gallery/almacen-vc/details.png",
+      "/projects/gallery/almacen-vc/full.png",
+    ],
     githubUrl: "https://github.com/adriaavila/almacen-vc",
     accent: "from-blue-500/20 to-indigo-500/10",
     featured: true,
@@ -76,24 +90,31 @@ export const projects: ProjectEntry[] = [
     slug: "viaja-ven",
     title: "Viaja Ven",
     shortDescription:
-      "Plataforma de turismo gastronómico que combina inspiración visual, rutas temáticas y planificación de experiencias.",
+      "Plataforma de turismo gastronómico que combina inspiración visual, rutas temáticas y descubrimiento sensorial.",
     overview:
-      "Proyecto web de turismo gastronómico centrado en experiencias locales, rutas temáticas y planificación de recorridos en Colonia Tovar.",
+      "Una plataforma web dedicada a elevar la experiencia del turismo gastronómico en la Colonia Tovar. Viaja Ven no es solo un catálogo, es una herramienta de descubrimiento que utiliza la dirección visual para vender el sabor y la cultura del destino.",
     challenge:
-      "Unir inspiración y utilidad en la misma interfaz sin que el producto se sintiera solo como una landing o solo como un catálogo.",
+      "Unificar la inspiración visual con la utilidad práctica. El reto era crear una interfaz que 'abriera el apetito' al usuario mientras le proporcionaba las herramientas necesarias para planificar su visita de forma eficiente.",
     solution: [
-      "Diseñé una home con hero narrativo y microanimaciones para elevar la percepción del destino.",
-      "Organicé las experiencias con tarjetas visuales, ratings y categorías.",
-      "Incorporé rutas temáticas y lógica de plan para acercar la experiencia a una herramienta útil.",
-      "Trabajé una estética cálida y editorial para reforzar la identidad gastronómica del lugar.",
+      "Diseño orientado a la fotografía de alta calidad para destacar el producto gastronómico.",
+      "Sistema de rutas curadas por categorías: café, repostería, platos fuertes.",
+      "Filtros inteligentes por presupuesto, popularidad y tipo de experiencia.",
+      "Arquitectura móvil primero (mobile-first) para uso en el destino.",
     ],
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Componentes UI personalizados"],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     outcomes: [
-      "Demuestra capacidad para diseñar experiencias orientadas a exploración y decisión.",
-      "Equilibra contenido, descubrimiento y conversión en un mismo producto.",
+      "Creación de un ecosistema digital que dignifica el turismo local.",
+      "UX optimizada para la conversión: del descubrimiento al plan en 3 clics.",
+      "Estética editorial que diferencia la marca de catálogos turísticos genéricos.",
     ],
     tags: ["Turismo", "Gastronomía", "UX", "Plataforma"],
     image: "/projects/portfolio/viaja-ven.png",
+    gallery: [
+      "/projects/gallery/viaja-ven/hero.png",
+      "/projects/gallery/viaja-ven/trending.png",
+      "/projects/gallery/viaja-ven/routes.png",
+      "/projects/gallery/viaja-ven/footer.png",
+    ],
     githubUrl: "https://github.com/adriaavila/viaja-ven",
     liveUrl: "https://viaja-ven.vercel.app",
     accent: "from-amber-500/20 to-orange-500/10",
@@ -104,24 +125,31 @@ export const projects: ProjectEntry[] = [
     slug: "artistheway",
     title: "Artistheway",
     shortDescription:
-      "Ecommerce editorial que mezcla catálogo, storytelling cultural y dirección visual para arte y fotografía.",
+      "Ecommerce editorial centrado en la herencia cultural chapaqueña y la curaduría de arte fino.",
     overview:
-      "Ecommerce editorial para una colección de pinturas y fotografía inspirada en la herencia cultural de Tarija, Bolivia.",
+      "Una tienda online diseñada como una galería de arte digital. Artistheway comercializa piezas exclusivas de artistas de Tarija, Bolivia, utilizando el storytelling para dar contexto y valor a cada obra individual.",
     challenge:
-      "Construir una tienda que vendiera piezas artísticas sin sentirse como un ecommerce genérico.",
+      "Vender arte online requiere generar una confianza absoluta en la calidad y el origen. El reto fue diseñar un ecommerce que se sintiera como una galería de lujo, donde la interfaz no compite con la obra, sino que la enmarca.",
     solution: [
-      "Diseñé una home con fuerte dirección visual y narrativa de marca.",
-      "Organicé el catálogo en colecciones y categorías para facilitar exploración.",
-      "Trabajé el diseño de producto para que cada pieza se sintiera curada, no listada de forma mecánica.",
-      "Combiné componentes de ecommerce con una estética editorial y artística.",
+      "Fichas de producto enriquecidas con narrativa sobre el artista y la técnica.",
+      "Integración de pasarela de pagos segura y optimizada para transacciones de alto valor.",
+      "Layouts asimétricos y tipografía elegante para reforzar el carácter artístico.",
+      "Optimización de imágenes para mantener la fidelidad visual sin penalizar el rendimiento.",
     ],
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Stripe", "Three.js", "React Three Fiber", "Vercel"],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Stripe", "Framer Motion"],
     outcomes: [
-      "Demuestra cómo un ecommerce puede construir universo de marca alrededor del producto.",
-      "Refuerza el valor percibido desde la dirección visual y el storytelling.",
+      "Digitalización de un mercado tradicionalmente físico y local.",
+      "Elevación del valor percibido de las obras a través de la presentación digital.",
+      "Alcance internacional para artistas locales gracias a una plataforma profesional.",
     ],
     tags: ["Ecommerce", "Arte", "Storytelling", "Branding"],
     image: "/projects/portfolio/artistheway.png",
+    gallery: [
+      "/projects/gallery/artistheway/hero.png",
+      "/projects/gallery/artistheway/artworks.png",
+      "/projects/gallery/artistheway/collections.png",
+      "/projects/gallery/artistheway/footer.png",
+    ],
     githubUrl: "https://github.com/adriaavila/artistheway",
     liveUrl: "https://artistheway.vercel.app",
     accent: "from-purple-500/20 to-violet-500/10",
@@ -133,21 +161,22 @@ export const projects: ProjectEntry[] = [
     slug: "avepane",
     title: "AVEPANE",
     shortDescription:
-      "Sitio institucional para una organización social, diseñado para comunicar impacto, programas y confianza con claridad.",
+      "Sitio institucional para una organización social, diseñado para comunicar impacto y transparencia.",
     overview:
-      "Sitio web institucional para AVEPANE, una organización con más de 50 años de trabajo en inclusión, formación y oportunidades para personas con discapacidad intelectual en Venezuela.",
+      "Rediseño y desarrollo de la presencia digital de AVEPANE. El foco principal fue estructurar 50 años de historia y servicios en una interfaz que transmita profesionalismo, esperanza y facilidad de acceso para las familias.",
     challenge:
-      "Comunicar una labor social profunda sin caer en una presentación fría, confusa o demasiado corporativa.",
+      "Organizar una gran cantidad de servicios institucionales y programas sociales en una jerarquía de información lógica que no abrume al visitante.",
     solution: [
-      "Diseñé una landing con narrativa clara desde el primer bloque.",
-      "Organicé los programas como piezas entendibles y accionables.",
-      "Usé una interfaz visual limpia para reforzar inclusión, credibilidad y legibilidad.",
-      "Estructuré el contenido para presentar mejor la organización ante familias, aliados y colaboradores.",
+      "Diseño basado en componentes modulares para facilitar la actualización de contenidos.",
+      "Enfoque en accesibilidad (WCAG) para garantizar el uso por parte de toda la comunidad.",
+      "Secciones de impacto visual que resumen la labor social en cifras y testimonios reales.",
+      "Integración de formularios de contacto y donación optimizados.",
     ],
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "v0", "Vercel"],
     outcomes: [
-      "Traduce impacto social en producto digital.",
-      "Muestra sensibilidad para representar causas reales con estructura y criterio.",
+      "Modernización total de la imagen institucional de la organización.",
+      "Mejora en la captación de aliados y voluntarios a través del canal digital.",
+      "UX simplificada para que los beneficiarios encuentren servicios rápidamente.",
     ],
     tags: ["Institucional", "Impacto social", "Accesibilidad", "Landing"],
     image: "/projects/portfolio/verona-saas.png",
@@ -155,163 +184,6 @@ export const projects: ProjectEntry[] = [
     accent: "from-cyan-500/20 to-sky-500/10",
     visibility: "public",
   },
-  /*{
-    slug: "verona-saas",
-    title: "Verona SaaS",
-    shortDescription:
-      "Dashboard administrativo para condominios con reservas, residentes, finanzas y operación interna en una sola interfaz.",
-    overview:
-      "Dashboard SaaS para administración residencial, enfocado en reservas de amenidades, directorio de residentes, finanzas y operación interna.",
-    challenge:
-      "Dar forma de producto a una operación administrativa que normalmente vive fragmentada entre mensajes, hojas de cálculo y procesos manuales.",
-    solution: [
-      "Diseñé una estructura tipo dashboard con layout persistente y navegación móvil.",
-      "Separé los flujos críticos en módulos claros: reservaciones, residentes, finanzas y ajustes.",
-      "Trabajé componentes reutilizables para sostener consistencia en toda la interfaz.",
-      "Enfoqué la experiencia en legibilidad, velocidad de uso y organización operacional.",
-    ],
-    stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "React Router", "TanStack Query", "Lovable"],
-    outcomes: [
-      "Demuestra lógica de producto en interfaces SaaS multiárea.",
-      "Hace visible una operación diaria compleja dentro de una experiencia ordenada.",
-    ],
-    tags: ["SaaS", "Dashboard", "Residencial", "Operaciones"],
-    image: "/projects/portfolio/verona-saas.png",
-    githubUrl: "https://github.com/adriaavila/verona-saas",
-    accent: "from-fuchsia-500/20 to-purple-500/10",
-    visibility: "private",
-  },
-  {
-    slug: "sober-tech",
-    title: "Sober Tech",
-    shortDescription:
-      "App de acompañamiento personal con check-ins, recovery curve y herramientas de soporte para contextos sensibles.",
-    overview:
-      "Aplicación web enfocada en acompañamiento de recuperación personal, check-ins diarios, visualización de señales emocionales y herramientas de apoyo en momentos críticos.",
-    challenge:
-      "Diseñar una herramienta sensible y útil para un contexto emocionalmente delicado, con fricción mínima y experiencia calmada.",
-    solution: [
-      "Organicé la app alrededor de check-ins, perfil, anclas personales e historial.",
-      "Incorporé autenticación, onboarding y persistencia de estado para darle continuidad real al uso.",
-      "Diseñé una interfaz calmada, mobile-first y orientada a hábitos.",
-      "Incluí una visualización de recovery curve para traducir información emocional en algo más tangible.",
-    ],
-    stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase", "React Router", "TanStack Query", "Framer Motion"],
-    outcomes: [
-      "Combina UX, producto y sensibilidad humana.",
-      "Reduce fricción en acciones importantes para usuarios vulnerables.",
-    ],
-    tags: ["Wellness", "Mobile first", "Supabase", "Producto"],
-    image: "/projects/portfolio/sober-tech.png",
-    githubUrl: "https://github.com/adriaavila/sober-tech",
-    accent: "from-lime-500/20 to-emerald-500/10",
-    visibility: "private",
-  },
-  {
-    slug: "taller-samer",
-    title: "Taller Samer",
-    shortDescription:
-      "Sistema web para gestión operativa de un taller mecánico con dashboard, jornadas y control de trabajo.",
-    overview:
-      "Sistema web para gestión operativa de un taller mecánico, con foco en jornadas, órdenes de trabajo, planificación y control interno.",
-    challenge:
-      "Transformar la operación de un taller en una experiencia digital clara, rápida y accionable.",
-    solution: [
-      "Diseñé un dashboard orientado a operación diaria, no solo a visualización.",
-      "Organicé accesos directos para registrar jornada, gestionar órdenes y revisar planificación.",
-      "Incorporé indicadores y gráficos para dar contexto sin saturar la interfaz.",
-      "Priorizé una estructura limpia para que el producto se sienta usable desde el primer vistazo.",
-    ],
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Recharts"],
-    outcomes: [
-      "Muestra capacidad para ordenar trabajo real dentro de una herramienta interna.",
-      "Demuestra enfoque en claridad operacional y velocidad de uso.",
-    ],
-    tags: ["Dashboard", "Operaciones", "Taller", "B2B"],
-    image: "/projects/portfolio/taller-samer.png",
-    githubUrl: "https://github.com/adriaavila/taller-samer",
-    accent: "from-zinc-500/20 to-stone-500/10",
-    visibility: "public",
-  },
-  {
-    slug: "wasap-creativ",
-    title: "Wasap Creativ",
-    shortDescription:
-      "Base SaaS para agentes de WhatsApp con IA, webhooks, multi-tenancy y arquitectura lista para producto.",
-    overview:
-      "Plataforma SaaS para agentes de WhatsApp con IA, integrada con backend en Convex y enfoque multi-organización.",
-    challenge:
-      "Conectar mensajería real, lógica de producto y backend moderno en una sola arquitectura confiable.",
-    solution: [
-      "Organicé el proyecto sobre Next.js + Convex para combinar UI y backend reactivo.",
-      "Integré el flujo de webhook para Meta/WhatsApp.",
-      "Planteé una arquitectura con scoping por organización para entornos multi-tenant.",
-      "Dejé preparado el sistema para trabajar prompts dinámicos del agente y despliegue en Vercel.",
-    ],
-    stack: ["Next.js", "React", "TypeScript", "Convex", "OpenAI API", "Clerk", "Tailwind CSS", "WhatsApp Cloud API"],
-    outcomes: [
-      "Combina IA, mensajería, producto SaaS y arquitectura backend.",
-      "Funciona como base sólida para un producto conversacional real.",
-    ],
-    tags: ["WhatsApp", "IA", "SaaS", "Convex"],
-    image: "/projects/portfolio/wasap-creativ.png",
-    githubUrl: "https://github.com/adriaavila/wasap-creativ",
-    accent: "from-green-500/20 to-emerald-500/10",
-    visibility: "public",
-  },
-  {
-    slug: "adrianavilamolina",
-    title: "AdrianAvilaMolina",
-    shortDescription:
-      "Portfolio personal con narrativa profesional, journal y capa de interacción asistida por IA.",
-    overview:
-      "Portfolio personal y journal de construcción digital orientado a mostrar experiencia, proyectos, narrativa profesional y una capa de interacción asistida por IA.",
-    challenge:
-      "Crear un portfolio que no se sintiera como una hoja de vida estática.",
-    solution: [
-      "Organicé el contenido como una experiencia de marca personal, no solo como CV.",
-      "Centralicé la información del portfolio en datos locales para facilitar mantenimiento.",
-      "Estructuré la web para combinar presentación profesional, proyectos y journal.",
-      "Incorporé una capa de AI Twin para hacer la experiencia más interactiva y distintiva.",
-    ],
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Clerk", "OpenAI"],
-    outcomes: [
-      "Convierte el portfolio en un producto personal con identidad.",
-      "Refuerza posicionamiento profesional más allá del historial laboral.",
-    ],
-    tags: ["Portfolio", "Marca personal", "IA", "Journal"],
-    image: "/projects/portfolio/adrianavilamolina.png",
-    githubUrl: "https://github.com/adriaavila/adrianavilamolina",
-    accent: "from-slate-500/20 to-neutral-500/10",
-    visibility: "public",
-  },
-  {
-    slug: "vistacampo-redesign",
-    title: "Vistacampo Redesign",
-    shortDescription:
-      "Sitio institucional multilingüe para un centro de rehabilitación, enfocado en confianza, claridad y accesibilidad.",
-    overview:
-      "Sitio web institucional para un centro especializado en rehabilitación de adicciones, con enfoque en confianza, accesibilidad, contenido multilingüe y presencia digital profesional.",
-    challenge:
-      "Diseñar una experiencia web sensible, creíble y bien estructurada para un tema profundamente delicado.",
-    solution: [
-      "Construí una arquitectura multilingüe para español e inglés.",
-      "Organicé contenido institucional, blog, noticias, equipo e instalaciones en una estructura coherente.",
-      "Incorporé MDX y rutas dinámicas para facilitar publicación de contenido.",
-      "Trabajé una identidad visual sobria y profesional orientada a transmitir calma, credibilidad y acompañamiento.",
-    ],
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "MDX", "i18n", "Vercel Analytics"],
-    outcomes: [
-      "Demuestra capacidad para construir experiencias digitales para sectores sensibles.",
-      "Une contenido, diseño y arquitectura para generar confianza real.",
-    ],
-    tags: ["Salud", "Multilenguaje", "Institucional", "SEO"],
-    image: "/projects/portfolio/vistacampo-redesign.png",
-    githubUrl: "https://github.com/adriaavila/vistacampo-redesign-4r",
-    accent: "from-teal-500/20 to-cyan-500/10",
-    visibility: "public",
-  },
-  */
 ];
 
 export const featuredProjects = projects.filter((project) => project.featured);

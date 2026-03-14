@@ -15,11 +15,11 @@ export const CTAFinal = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center" ref={containerRef}>
           <motion.h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-6 font-heading" initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}>
-            Si quieres construir un sistema digital que venda más y opere mejor, conversemos
+            ¿Listo para dejar de perder ventas y tiempo?
           </motion.h2>
 
           <motion.p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto" initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}>
-            Cuéntame en qué etapa está tu negocio y te diré qué sistema conviene construir primero.
+            Llena el brief en 2 minutos. Te respondo en 24h con una propuesta clara.
           </motion.p>
 
           <motion.div className="flex flex-col sm:flex-row items-center justify-center gap-4" initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}>
@@ -32,7 +32,7 @@ export const CTAFinal = () => {
           </motion.div>
 
           <motion.p className="text-sm text-muted-foreground mt-6" initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : { opacity: 0 }} transition={{ delay: 0.3, duration: 0.6 }}>
-            Brief claro · Diagnóstico rápido · Propuesta enfocada en impacto
+            Sin compromiso · Respuesta en 24h · Propuesta clara
           </motion.p>
         </div>
       </div>

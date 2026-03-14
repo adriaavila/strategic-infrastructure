@@ -94,20 +94,59 @@ const ProjectDetail = () => {
               <motion.div
                 {...fadeUp}
                 transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="relative"
+                className="relative lg:mt-0 mt-12"
               >
                 <div className={`absolute -inset-6 rounded-[2rem] bg-gradient-to-br ${project.accent} blur-3xl opacity-60`} />
-                <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/5 backdrop-blur-sm shadow-2xl">
+                <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/5 backdrop-blur-sm shadow-2xl group">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full aspect-[4/3] object-cover object-top"
+                    className="w-full aspect-[4/3] object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                 </div>
               </motion.div>
             </div>
           </div>
         </section>
+
+        {project.gallery && project.gallery.length > 0 && (
+          <section className="py-20 md:py-28 overflow-hidden bg-brand-dark/50">
+            <div className="container mx-auto px-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mb-12 md:mb-16"
+              >
+                <h2 className="text-2xl md:text-3xl font-bold font-heading mb-4">Interfaz y Detalles</h2>
+                <div className="w-12 h-1 bg-brand-secondary rounded-full" />
+              </motion.div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                {project.gallery.map((img, index) => (
+                  <motion.div
+                    key={img}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className={`relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 group shadow-xl ${
+                      index === 0 ? "md:col-span-2 aspect-[21/9]" : "aspect-[16/10]"
+                    }`}
+                  >
+                    <img
+                      src={img}
+                      alt={`${project.title} screenshot ${index + 1}`}
+                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                    />
+                    <div className="absolute inset-0 bg-brand-dark/0 group-hover:bg-brand-dark/10 transition-colors pointer-events-none" />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         <section className="pb-24 md:pb-32">
           <div className="container mx-auto px-6">

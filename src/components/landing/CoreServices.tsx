@@ -11,7 +11,7 @@ const pillarServices = [
     description: (
       <>
         <p className="mb-3 text-foreground/80">
-          Construyo websites, landing pages y ecommerce con estructura clara, copy orientado a negocio y una experiencia que ayuda a convertir visitas en oportunidades reales.
+          Rápidas, responsivas y hechas para que el visitante tomé acción: agendar, comprar o escribirte.
         </p>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
           Webs corporativas · Ecommerce · Landing pages
@@ -30,7 +30,7 @@ const pillarServices = [
     description: (
       <>
         <p className="mb-3 text-foreground/80">
-          Diseño automatizaciones que responden más rápido, organizan mejor la operación y conectan herramientas para que el negocio dependa menos de tareas repetitivas.
+          Responden clientes por WhatsApp, organizan pedidos y conectan tus herramientas. Sin intervención manual.
         </p>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
           Flujos con IA · Integraciones · Automatización operativa
@@ -49,7 +49,7 @@ const pillarServices = [
     description: (
       <>
         <p className="mb-3 text-foreground/80">
-          Construyo tableros y sistemas de reporting para que cada equipo pueda ver métricas clave, seguir resultados y tomar decisiones con datos en tiempo real.
+          Tableros con los números que importan: ventas, costos, leads y tiempos de entrega. Sin Excel, actualizado en tiempo real.
         </p>
         <p className="font-semibold text-foreground pt-2 border-t border-foreground/10 text-sm">
           Dashboards · KPIs · Reporting operativo
@@ -72,7 +72,7 @@ export const CoreServices = () => {
 
   return (
     <>
-      <section id="servicios" className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
+      <section id="servicios" className="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-hero-gradient">
         <div className="absolute inset-0 architectural-grid opacity-30" />
         <div className="absolute inset-0 gradient-mesh" />
         <ParticleBackground />
@@ -85,7 +85,7 @@ export const CoreServices = () => {
               animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              La oferta se organiza en tres capas de sistema digital
+              Servicios
             </motion.h2>
             <motion.p
               className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto"
@@ -93,12 +93,12 @@ export const CoreServices = () => {
               animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Así es más fácil entender qué construyo, cómo se conecta y qué impacto tiene en ventas, eficiencia y operación.
+              Tres soluciones que funcionan solas o conectadas entre sí.
             </motion.p>
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-background/80 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-background/80 to-transparent hidden dark:block" />
       </section>
 
       <section className="relative pb-32 scroll-mt-20 gradient-mesh-subtle" ref={containerRef}>

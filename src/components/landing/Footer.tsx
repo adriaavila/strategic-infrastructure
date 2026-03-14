@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 const footerLinks = {
   Navegación: [
     { label: "Servicios", href: "/#servicios" },
-    { label: "Casos", href: "/#casos" },
+    { label: "Proyectos", href: "/proyectos" },
     { label: "Historia", href: "/historia" },
     { label: "Blog", href: "/blog" },
   ],

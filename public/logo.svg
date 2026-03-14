@@ -3,9 +3,9 @@
   <defs>
     <!-- Primary Mark Gradient - vibrant tech transition (Teal to Violet) -->
     <linearGradient id="mark-grad" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#2DD4BF"/>
-      <stop offset="40%" stop-color="#8B5CF6"/>
-      <stop offset="100%" stop-color="#C084FC"/>
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="50%" stop-color="#C084FC"/>
+      <stop offset="100%" stop-color="#2DD4BF"/>
     </linearGradient>
 
     <!-- Drop Shadow for depth -->

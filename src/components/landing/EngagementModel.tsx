@@ -7,27 +7,27 @@ const steps = [
   {
     number: "01",
     title: "Diagnóstico",
-    description: "Analizo el negocio, el flujo actual y el punto donde una web, una automatización o un sistema puede generar más impacto.",
-    bullets: ["Objetivo principal del proyecto", "Oportunidades de conversión y eficiencia"],
-    note: "Resultado: claridad sobre alcance y prioridad.",
+    description: "Me cuentas el problema. Yo te digo qué construir primero.",
+    bullets: ["Objetivo del proyecto", "Oportunidades de mejora"],
+    note: "Resultado: alcance y prioridad claros.",
     icon: FileText,
     color: "mint",
   },
   {
     number: "02",
     title: "Diseño del sistema",
-    description: "Defino la estructura, la experiencia y la lógica técnica para que la solución no se vea como piezas separadas sino como un sistema coherente.",
-    bullets: ["Arquitectura funcional", "Integraciones y automatización"],
-    note: "Resultado: una solución pensada para operar de verdad.",
+    description: "Estructura, integraciones y flujo de uso de tu equipo.",
+    bullets: ["Arquitectura funcional", "Integraciones y flujos"],
+    note: "Resultado: solución pensada para operar.",
     icon: Hammer,
     color: "blue",
   },
   {
     number: "03",
     title: "Implementación y mejora",
-    description: "Construyo el proyecto, conecto herramientas, pruebo flujos reales y dejo una base lista para iterar con datos y uso real.",
-    bullets: ["Salida a producción", "Optimización sobre resultados"],
-    note: "Resultado: un sistema digital útil desde el primer despliegue.",
+    description: "Construyo, conecto, pruebo y entrego listo para usar.",
+    bullets: ["Producción", "Optimización con datos"],
+    note: "Resultado: sistema útil desde día uno.",
     icon: Cpu,
     color: "mint",
   },
@@ -42,10 +42,10 @@ export const EngagementModel = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16" ref={containerRef}>
           <motion.h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 font-heading" initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}>
-            Cómo trabajo
+            Cómo funciona
           </motion.h2>
           <motion.p className="text-lg text-muted-foreground" initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}>
-            Un proceso simple para pasar de una necesidad aislada a un sistema digital claro y bien ejecutado.
+            De la primera conversación a un sistema funcionando, en tres pasos.
           </motion.p>
         </div>
 

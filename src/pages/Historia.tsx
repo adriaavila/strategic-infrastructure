@@ -7,30 +7,30 @@ import { ArrowRight, Brain, Cpu, LineChart, Sparkles } from "lucide-react";
 
 const milestones = [
   {
-    title: "Origen",
-    body: "Servicioscreativos.online nace como una práctica de diseño y desarrollo enfocada en construir productos digitales con mejor criterio visual y técnico.",
+    title: "El Origen",
+    body: "Nacimos para cerrar la brecha entre el diseño visual y la eficiencia técnica. Construimos productos que no solo se ven bien, sino que funcionan mejor.",
   },
   {
-    title: "Aprendizaje en producto",
-    body: "El trabajo con websites, ecommerce y sistemas internos mostró que el mayor valor no estaba en entregar piezas aisladas, sino en diseñar sistemas que conectaran presencia, operación y datos.",
+    title: "La Evolución",
+    body: "Entendimos que una web o un software por sí solos no cubren la necesidad real. Los negocios necesitan infraestructuras donde presencia, operación y datos funcionen como un solo sistema.",
   },
   {
-    title: "Enfoque actual",
-    body: "Hoy la propuesta se posiciona como constructor de sistemas digitales con IA: productos que combinan interfaces, automatización e inteligencia operativa para ayudar a negocios a vender mejor y operar con más eficiencia.",
+    title: "El Presente",
+    body: "Hoy diseñamos la arquitectura del mañana: sistemas impulsados por IA que eliminan la carga operativa, aceleran tus procesos y multiplican tu capacidad de vender y decidir.",
   },
 ];
 
 const thesis = [
-  "La mayoría de negocios no necesita más herramientas sueltas. Necesita sistemas claros que conecten mejor marketing, operación y datos.",
-  "La IA y la automatización no son un extra decorativo. Son una capa práctica para reducir trabajo manual, acelerar procesos y ampliar capacidad.",
-  "El diseño sigue siendo una ventaja competitiva. Una interfaz clara hace que la tecnología se entienda, se use y genere más valor.",
+  "Los sistemas derrotan a las herramientas. Un negocio no necesita más software suelto, necesita una infraestructura técnica que los unifique todos.",
+  "La IA no es un extra, es el nuevo estándar. La automatización es el único camino para escalar un negocio sin multiplicar la carga de trabajo manual.",
+  "La claridad visual es claridad operativa. Una interfaz bien diseñada es lo que permite que una tecnología compleja se convierta en una ventaja competitiva real.",
 ];
 
 const startupSignals = [
-  "Constructor técnico con foco en producto, automatización e interfaces.",
-  "Exploración constante de herramientas de IA aplicadas a casos reales de negocio.",
-  "Tesis clara: convertir servicios digitales en sistemas más escalables y medibles.",
-  "Capacidad de diseñar, desarrollar y conectar producto, operación y narrativa comercial.",
+  "Arquitectura técnica con enfoque en producto, automatización y experiencia de usuario.",
+  "Exploración constante de herramientas de IA aplicadas a flujos reales de negocio.",
+  "Tesis clara: convertir los activos digitales en sistemas escalables, medibles y rentables.",
+  "Capacidad de integrar diseño, código y narrativa comercial en una sola entrega.",
 ];
 
 const Historia = () => {
@@ -52,10 +52,10 @@ const Historia = () => {
         <div className="container mx-auto px-6 max-w-5xl">
           <section className="text-center mb-24 pt-10">
             <motion.h1 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} className="text-5xl md:text-7xl font-semibold tracking-tight mb-6 text-white light:text-slate-950">
-              Historia y visión de producto
+              Nuestra Visión y Enfoque
             </motion.h1>
             <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }} className="text-xl md:text-2xl text-brand-slate max-w-3xl mx-auto leading-relaxed">
-              Una presentación más clara de servicioscreativos.online como constructor de sistemas digitales con IA, pensada para partners, clientes y programas como EmprendeLatam o YC.
+              Construyendo la infraestructura digital para los negocios que liderarán la próxima década a través de IA, automatización y diseño.
             </motion.p>
           </section>
 
@@ -71,16 +71,16 @@ const Historia = () => {
           <section className="mb-24 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             <motion.div initial={{ x: -30, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="space-y-6 text-brand-slate text-lg leading-relaxed">
               <h2 className="text-3xl md:text-4xl font-semibold text-white mb-2 light:text-foreground">
-                Qué estoy construyendo
+                El futuro de tu operación digital
               </h2>
               <p>
-                Soy Adrian Avila. Mi trabajo ha evolucionado desde proyectos de diseño y desarrollo web hacia un enfoque más amplio: construir sistemas digitales donde presencia, automatización e inteligencia del negocio funcionen como una sola capa.
+                Servicioscreativos.online nació con una misión clara: ayudar a las empresas con la última tecnología en IA para crear sistemas que funcionan de forma autónoma.
               </p>
               <p>
-                La tesis central es simple: muchos negocios ya no necesitan solo una web o una automatización aislada. Necesitan una infraestructura digital que les permita vender mejor, reducir trabajo manual y operar con más claridad.
+                Creemos que la tecnología debe ser invisible: tú te centras en la estrategia, y el sistema se encarga de la captura de leads, el seguimiento, la organización de datos y la entrega de reportes.
               </p>
               <p>
-                Hoy eso se traduce en una propuesta clara para el cliente: diseñar y construir webs, automatizaciones y sistemas internos que ayuden a vender mejor y operar con menos fricción.
+                Hoy, eso significa construir infraestructuras donde cada pieza (web, CRM, automatización) está alineada para un solo objetivo: que tu negocio crezca con menos fricción y más inteligencia.
               </p>
             </motion.div>
 

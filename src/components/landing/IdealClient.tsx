@@ -3,15 +3,15 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const idealClientPoints = [
-  "Quieres vender mejor y mejorar la forma en que tu negocio opera digitalmente.",
-  "Tienes procesos manuales o herramientas dispersas que ya están frenando tu crecimiento.",
-  "Buscas a alguien que piense el sistema completo y no solo una pieza aislada.",
+  "Quieres una web que traiga clientes, no solo que se vea bonita.",
+  "Pierdes tiempo en tareas manuales que podrían resolverse solas.",
+  "Necesitas que alguien conecte las piezas: web, datos y operación.",
 ];
 
 const collaborationPoints = [
-  "Definimos el problema de negocio antes de elegir la tecnología.",
-  "Priorizamos el sistema con mayor impacto para construir primero.",
-  "Trabajamos con enfoque técnico, criterio comercial y ejecución directa.",
+  "Primero entendemos tu negocio, después elegimos la herramienta.",
+  "Empezamos por lo que más impacto tiene en tus ventas o tu operación.",
+  "Ejecución directa: sin jerga, sin etapas innecesarias.",
 ];
 
 export const IdealClient = () => {
@@ -23,10 +23,10 @@ export const IdealClient = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center mb-16" ref={containerRef}>
           <motion.h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4" initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}>
-            Para quién tiene más sentido este enfoque
+            ¿Es para ti?
           </motion.h2>
           <motion.p className="text-muted-foreground text-lg" initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}>
-            Funciona mejor cuando el negocio quiere ordenar su presencia, su operación y su crecimiento en una misma dirección.
+            Si te identificas con alguno de estos puntos, tiene sentido que hablemos.
           </motion.p>
         </div>
 

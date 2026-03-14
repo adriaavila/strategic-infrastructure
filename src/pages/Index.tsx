@@ -12,7 +12,7 @@ const Index = () => {
     <div className="relative min-h-screen bg-brand-dark">
       <div className="noise-overlay" />
       <Navbar />
-      <main>
+      <main className="bg-hero-gradient">
         <Hero />
         <CoreServices />
         <ProjectsShowcase />
