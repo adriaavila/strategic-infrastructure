@@ -614,14 +614,15 @@ html.light .bg-white\/6,
 html.light .bg-white\/8,
 html.light .bg-white\/10,
 html.light .bg-white\/\[0\.03\],
+html.light .bg-card,
 html.light .bg-card\/30,
 html.light .bg-card\/40,
 html.light .bg-card\/50,
 html.light .bg-card\/60,
 html.light .bg-card\/70,
 html.light .bg-card\/80 {
-  background-color: rgba(255,255,255,0.78) !important;
-  backdrop-filter: blur(16px);
+  background-color: rgba(255,255,255,0.85) !important;
+  backdrop-filter: blur(20px);
 }
 
 html.light .border-white\/10,
@@ -635,6 +636,8 @@ html.light .border-foreground\/\[0\.05\] {
 
 html.light .bg-black\/20,
 html.light .bg-black\/35,
+html.light .bg-black\/40,
+html.light .from-black\/95,
 html.light .from-black\/90,
 html.light .from-black\/80,
 html.light .from-black\/70,
@@ -643,6 +646,11 @@ html.light .via-black\/15,
 html.light .to-black\/10,
 html.light .to-transparent {
   color: inherit;
+}
+
+html.light .mix-blend-screen {
+  mix-blend-mode: multiply !important;
+  opacity: 0.15 !important;
 }
 
 html.light .shadow-architectural,

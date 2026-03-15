@@ -3,6 +3,7 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ArrowRight, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { featuredProjects, ProjectEntry } from "@/data/projects";
+import { getTagColor } from "@/lib/project-utils";
 
 const ProjectCard = ({ project, index, featured, isInView }: { 
   project: ProjectEntry; 
@@ -88,7 +89,7 @@ const ProjectCard = ({ project, index, featured, isInView }: {
       <div className="absolute inset-0 p-6 flex flex-col justify-end">
         <div className="flex flex-wrap gap-1.5 mb-3">
           {project.tags.slice(0, featured ? 4 : 3).map((tag) => (
-            <span key={tag} className="px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider bg-white/10 backdrop-blur-sm border border-white/10 rounded-full text-white/80">
+            <span key={tag} className={`px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider backdrop-blur-sm border rounded-full ${getTagColor(tag)}`}>
               {tag}
             </span>
           ))}
