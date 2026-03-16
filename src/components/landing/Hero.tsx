@@ -51,12 +51,18 @@ export const Hero = () => {
             </span>{" "}
             <span className="block sm:inline">procesos que </span>
             <motion.span
-              className="mt-2 inline-block rounded-[0.35em] bg-gradient-to-r from-brand-secondary/20 to-brand-primary/20 px-[0.18em] py-[0.05em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14)] light:text-slate-950 sm:mt-0 sm:inline"
+              className="relative mt-2 inline-block px-[0.08em] pb-[0.16em] text-white light:text-slate-950 sm:mt-0 sm:inline-block"
               initial={{ opacity: 0, y: 16 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.5, duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
             >
               no dependan de ti
+              <motion.span
+                className="absolute -bottom-1 left-0 h-[3px] rounded-full bg-gradient-to-r from-brand-secondary to-brand-primary"
+                initial={{ width: 0 }}
+                animate={isInView ? { width: "100%" } : {}}
+                transition={{ delay: 0.9, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              />
             </motion.span>{" "}
             <span className="mt-2 block sm:mt-0 sm:inline">
               y{" "}
