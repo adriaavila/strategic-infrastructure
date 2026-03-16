@@ -16,64 +16,68 @@ export const Hero = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-dark bg-hero-gradient"
+      className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-brand-dark bg-hero-gradient md:min-h-screen"
     >
       <div className="absolute inset-0 architectural-grid opacity-[0.16] light:opacity-[0.08]" />
       <div className="absolute inset-0 z-[1] overflow-hidden opacity-55 light:opacity-45">
         <ParticleBackground />
       </div>
       <div className="absolute inset-x-0 top-0 h-[420px] bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.10),transparent_62%)] pointer-events-none light:bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.14),transparent_58%)]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 w-[760px] h-[520px] bg-brand-primary/[0.06] rounded-full blur-[120px] pointer-events-none light:bg-brand-primary/[0.03]" />
+      <div className="absolute top-1/2 left-1/2 h-[400px] w-[560px] -translate-x-1/2 -translate-y-1/4 rounded-full bg-brand-primary/[0.06] blur-[120px] pointer-events-none light:bg-brand-primary/[0.03] sm:h-[520px] sm:w-[760px]" />
 
-      <motion.div className="relative z-10 container mx-auto px-6 pt-28 pb-24" style={{ y: headlineY, opacity }}>
-        <div className="max-w-5xl mx-auto text-center">
+      <motion.div className="relative z-10 container mx-auto px-5 pt-24 pb-16 sm:px-6 sm:pt-28 sm:pb-24" style={{ y: headlineY, opacity }}>
+        <div className="mx-auto max-w-5xl text-center">
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-card/80 backdrop-blur-sm mb-8 shadow-architectural"
+            className="mb-6 inline-flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-white/10 bg-card/80 px-4 py-2.5 shadow-architectural backdrop-blur-sm sm:mb-8 sm:px-5"
             initial={{ opacity: 0, y: 20, scale: 0.96 }}
             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <span className="w-2 h-2 rounded-full bg-brand-secondary animate-pulse-soft" />
-            <span className="text-sm text-white/72 font-medium tracking-wide light:text-slate-700">
+            <span className="text-[0.92rem] font-medium tracking-[0.01em] text-white/72 light:text-slate-700 sm:text-sm sm:tracking-wide">
               Webs · Automatización · Dashboards
             </span>
           </motion.div>
 
           <motion.h1
-            className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.08] mb-6 font-heading text-white light:text-slate-950"
+            className="mb-5 font-heading text-[clamp(2.8rem,12vw,4.5rem)] font-semibold leading-[0.95] tracking-[-0.05em] text-white light:text-slate-950 sm:mb-6 sm:text-5xl sm:leading-[1.02] sm:tracking-tight md:text-6xl lg:text-7xl"
             initial={{ opacity: 0, y: 36, filter: "blur(8px)" }}
             animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
             transition={{ delay: 0.15, duration: 0.72, ease: [0.16, 1, 0.3, 1] }}
           >
-            Una{" "}
-            <span className="inline-block bg-gradient-to-r from-brand-primary via-purple-400 to-brand-secondary bg-clip-text text-transparent animate-gradient-x bg-[length:200%_auto]">
-              web que venda
-            </span>
-            , procesos que{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10">no dependan de ti</span>
-              <motion.span
-                className="absolute -bottom-1 left-0 h-[3px] bg-gradient-to-r from-brand-secondary to-brand-primary rounded-full"
-                initial={{ width: 0 }}
-                animate={isInView ? { width: "100%" } : {}}
-                transition={{ delay: 0.9, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              />
+            <span className="block sm:inline">Una </span>
+            <span className="block bg-gradient-to-r from-brand-primary via-purple-400 to-brand-secondary bg-clip-text text-transparent animate-gradient-x bg-[length:200%_auto] sm:inline-block">
+              web que venda,
             </span>{" "}
-            y{" "}
-            <span className="inline-block bg-gradient-to-r from-brand-secondary to-emerald-400 bg-clip-text text-transparent">
-              datos para decidir mejor
+            <span className="block sm:inline">procesos que </span>
+            <motion.span
+              className="mt-2 inline-block rounded-[0.35em] bg-gradient-to-r from-brand-secondary/20 to-brand-primary/20 px-[0.18em] py-[0.05em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14)] light:text-slate-950 sm:mt-0 sm:inline"
+              initial={{ opacity: 0, y: 16 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.5, duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+            >
+              no dependan de ti
+            </motion.span>{" "}
+            <span className="mt-2 block sm:mt-0 sm:inline">
+              y{" "}
+              <span className="bg-gradient-to-r from-brand-secondary to-emerald-400 bg-clip-text text-transparent sm:inline-block">
+                datos para decidir mejor
+              </span>
             </span>
           </motion.h1>
 
-
-
           <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="mx-auto flex w-full max-w-sm flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:items-center sm:gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.55, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            <Button variant="hero" size="lg" asChild className="group relative shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
+            <Button
+              variant="hero"
+              size="lg"
+              asChild
+              className="group relative w-full justify-center overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl sm:w-auto"
+            >
               <a href="/brief?source=hero-call">
                 Solicitar diagnóstico
                 <CalendarDays className="w-4 h-4 transition-transform group-hover:translate-x-1.5" />
@@ -84,7 +88,7 @@ export const Hero = () => {
               variant="outline"
               size="lg"
               asChild
-              className="bg-transparent text-white border-white/20 hover:bg-white/10 light:text-foreground light:border-foreground/15 light:hover:bg-foreground/5"
+              className="w-full justify-center border-white/20 bg-transparent text-white hover:bg-white/10 light:border-foreground/15 light:text-foreground light:hover:bg-foreground/5 sm:w-auto"
             >
               <a href="/proyectos">
                 Ver casos de éxito
@@ -94,7 +98,7 @@ export const Hero = () => {
           </motion.div>
 
           <motion.p
-            className="text-sm text-white/42 mt-5 light:text-slate-700 light:font-medium"
+            className="mt-4 max-w-[24rem] text-sm text-white/42 light:font-medium light:text-slate-700 sm:mt-5 sm:max-w-none"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.75, duration: 0.6 }}
