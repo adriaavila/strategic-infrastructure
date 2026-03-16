@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission Control — Servicios Creativos</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+  <style>
+    :root {
+      --bg: #09090b;
+      --card: #18181b;
+      --border: #27272a;
+      --text: #fafafa;
+      --muted: #a1a1aa;
+      --green: #22c55e;
+      --yellow: #eab308;
+      --red: #ef4444;
+      --blue: #3b82f6;
+      --purple: #a855f7;
+      --orange: #f97316;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'SF Pro Display', -apple-system, system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+    
+    .header { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .header h1 { font-size: 1.25rem; font-weight: 600; display: flex; align-items: center; gap: 0.5rem; }
+    .header .status { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--muted); }
+    .header .status .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    
+    .container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    
+    /* KPI Cards */
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .kpi-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+    .kpi-card .label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+    .kpi-card .value { font-size: 2rem; font-weight: 700; }
+    .kpi-card .target { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+    .kpi-card .progress { height: 4px; background: var(--border); border-radius: 2px; margin-top: 0.75rem; overflow: hidden; }
+    .kpi-card .progress-bar { height: 100%; border-radius: 2px; transition: width 0.5s ease; }
+    
+    /* Sections */
+    .section { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .section h2 { font-size: 1rem; font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    
+    /* Cron Jobs */
+    .cron-list { display: flex; flex-direction: column; gap: 0.5rem; }
+    .cron-item { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1rem; background: var(--bg); border-radius: 8px; border: 1px solid var(--border); }
+    .cron-item .name { font-size: 0.875rem; font-weight: 500; }
+    .cron-item .schedule { font-size: 0.75rem; color: var(--muted); }
+    .cron-item .badge { font-size: 0.625rem; padding: 0.25rem 0.5rem; border-radius: 4px; font-weight: 600; text-transform: uppercase; }
+    .badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+    .badge-pending { background: rgba(234,179,8,0.15); color: var(--yellow); }
+    
+    /* Content Table */
+    .content-table { width: 100%; border-collapse: collapse; }
+    .content-table th { text-align: left; font-size: 0.75rem; color: var(--muted); text-transform: uppercase; padding: 0.5rem; border-bottom: 1px solid var(--border); }
+    .content-table td { padding: 0.75rem 0.5rem; font-size: 0.875rem; border-bottom: 1px solid var(--border); }
+    .content-table tr:last-child td { border-bottom: none; }
+    .status-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; margin-right: 0.5rem; }
+    
+    /* Funnel */
+    .funnel { display: flex; flex-direction: column; gap: 0.5rem; }
+    .funnel-step { display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--bg); border-radius: 8px; border: 1px solid var(--border); }
+    .funnel-step .step-icon { font-size: 1.5rem; }
+    .funnel-step .step-info { flex: 1; }
+    .funnel-step .step-name { font-size: 0.875rem; font-weight: 500; }
+    .funnel-step .step-value { font-size: 0.75rem; color: var(--muted); }
+    .funnel-step .step-count { font-size: 1.25rem; font-weight: 700; }
+    .funnel-arrow { text-align: center; color: var(--muted); font-size: 0.75rem; }
+    
+    /* Two column layout */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+    
+    /* Quick Actions */
+    .actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
+    .action-btn { padding: 0.5rem 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.75rem; cursor: pointer; transition: all 0.2s; text-decoration: none; }
+    .action-btn:hover { border-color: var(--purple); background: rgba(168,85,247,0.1); }
+    
+    .footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.75rem; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🎯 Mission Control</h1>
+    <div class="status">
+      <span class="dot"></span>
+      <span id="lastUpdate">Actualizando...</span>
+    </div>
+  </div>
+  
+  <div class="container">
+    <!-- KPIs -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="label">📝 Artículos Blog</div>
+        <div class="value" id="blogCount">0</div>
+        <div class="target">Meta: 30/mes</div>
+        <div class="progress"><div class="progress-bar" id="blogProgress" style="width: 0%; background: var(--blue);"></div></div>
+      </div>
+      <div class="kpi-card">
+        <div class="label">📄 Páginas pSEO</div>
+        <div class="value" id="pseoCount">195</div>
+        <div class="target">Meta: 500</div>
+        <div class="progress"><div class="progress-bar" id="pseoProgress" style="width: 39%; background: var(--purple);"></div></div>
+      </div>
+      <div class="kpi-card">
+        <div class="label">🔑 Keywords</div>
+        <div class="value" id="keywordCount">0</div>
+        <div class="target">Meta: 50 top 20</div>
+        <div class="progress"><div class="progress-bar" id="keywordProgress" style="width: 0%; background: var(--green);"></div></div>
+      </div>
+      <div class="kpi-card">
+        <div class="label">👥 Leads</div>
+        <div class="value" id="leadCount">0</div>
+        <div class="target">Meta: 50/mes</div>
+        <div class="progress"><div class="progress-bar" id="leadProgress" style="width: 0%; background: var(--orange);"></div></div>
+      </div>
+      <div class="kpi-card">
+        <div class="label">📱 Social Posts</div>
+        <div class="value" id="socialCount">0</div>
+        <div class="target">3 plataformas/día</div>
+        <div class="progress"><div class="progress-bar" id="socialProgress" style="width: 0%; background: var(--yellow);"></div></div>
+      </div>
+    </div>
+    
+    <div class="grid-2">
+      <!-- Cron Jobs -->
+      <div class="section">
+        <h2>⏰ Cron Jobs Activos</h2>
+        <div class="cron-list">
+          <div class="cron-item">
+            <div><div class="name">🔍 SEO Monitor</div><div class="schedule">Diario 6:00 AM</div></div>
+            <span class="badge badge-active">Activo</span>
+          </div>
+          <div class="cron-item">
+            <div><div class="name">✍️ Blog Article</div><div class="schedule">Diario 9:00 AM</div></div>
+            <span class="badge badge-active">Activo</span>
+          </div>
+          <div class="cron-item">
+            <div><div class="name">📱 Social Distribution</div><div class="schedule">Diario 10:00 AM</div></div>
+            <span class="badge badge-active">Activo</span>
+          </div>
+          <div class="cron-item">
+            <div><div class="name">🔑 Keyword Research</div><div class="schedule">Lunes 8:00 AM</div></div>
+            <span class="badge badge-active">Activo</span>
+          </div>
+          <div class="cron-item">
+            <div><div class="name">📈 pSEO Expansion</div><div class="schedule">Miércoles 7:00 AM</div></div>
+            <span class="badge badge-active">Activo</span>
+          </div>
+          <div class="cron-item">
+            <div><div class="name">📊 Marketing Report</div><div class="schedule">Viernes 5:00 PM</div></div>
+            <span class="badge badge-active">Activo</span>
+          </div>
+        </div>
+        <div class="actions">
+          <a href="https://github.com" class="action-btn" target="_blank">Ver Logs</a>
+          <a href="/contacto" class="action-btn">Configurar</a>
+        </div>
+      </div>
+      
+      <!-- Funnel -->
+      <div class="section">
+        <h2>📐 Funnel de Conversión</h2>
+        <div class="funnel">
+          <div class="funnel-step">
+            <div class="step-icon">🌐</div>
+            <div class="step-info"><div class="step-name">Tráfico Orgánico</div><div class="step-value">pSEO + Blog</div></div>
+            <div class="step-count" id="trafficCount">0</div>
+          </div>
+          <div class="funnel-arrow">↓ 3-5% CTR</div>
+          <div class="funnel-step">
+            <div class="step-icon">💬</div>
+            <div class="step-info"><div class="step-name">Contactos (Demo/WhatsApp)</div><div class="step-value">CTA en páginas</div></div>
+            <div class="step-count" id="contactCount">0</div>
+          </div>
+          <div class="funnel-arrow">↓ 20-30% calificación</div>
+          <div class="funnel-step">
+            <div class="step-icon">🔥</div>
+            <div class="step-info"><div class="step-name">Leads Calientes</div><div class="step-value">Gloria clasifica</div></div>
+            <div class="step-count" id="hotLeadCount">0</div>
+          </div>
+          <div class="funnel-arrow">↓ 10-20% cierre</div>
+          <div class="funnel-step">
+            <div class="step-icon">💰</div>
+            <div class="step-info"><div class="step-name">Clientes</div><div class="step-value">Meta: 20 en 90 días</div></div>
+            <div class="step-count" id="clientCount">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Timeline -->
+    <div class="section">
+      <h2>📅 Plan 90 Días</h2>
+      <table class="content-table">
+        <thead>
+          <tr><th>Fase</th><th>Período</th><th>Objetivo</th><th>Estado</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🏗️ Fundación</td>
+            <td>Mes 1 (actual)</td>
+            <td>195 pSEO + 30 artículos + estructura SEO</td>
+            <td><span class="status-dot" style="background: var(--green);"></span>En progreso</td>
+          </tr>
+          <tr>
+            <td>📈 Tracción</td>
+            <td>Mes 2</td>
+            <td>300 pSEO + 60 artículos + primeros leads</td>
+            <td><span class="status-dot" style="background: var(--border);"></span>Pendiente</td>
+          </tr>
+          <tr>
+            <td>🚀 Escala</td>
+            <td>Mes 3</td>
+            <td>500 pSEO + 90 artículos + 50 leads/mes</td>
+            <td><span class="status-dot" style="background: var(--border);"></span>Pendiente</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Quick Actions -->
+    <div class="section">
+      <h2>⚡ Acciones Rápidas</h2>
+      <div class="actions">
+        <a href="https://servicioscreativos.online" class="action-btn" target="_blank">🌐 Ver Sitio</a>
+        <a href="https://servicioscreativos.online/blog" class="action-btn" target="_blank">📝 Blog</a>
+        <a href="https://servicioscreativos.online/contacto" class="action-btn" target="_blank">📞 Contacto</a>
+        <a href="https://search.google.com/search-console" class="action-btn" target="_blank">🔍 Search Console</a>
+        <a href="https://analytics.google.com" class="action-btn" target="_blank">📊 Analytics</a>
+        <a href="https://github.com" class="action-btn" target="_blank">💻 GitHub</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer">
+    Mission Control — Servicios Creativos · Powered by OpenClaw · <span id="year"></span>
+  </div>
+  
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('lastUpdate').textContent = `Actualizado: ${new Date().toLocaleTimeString('es-VE', { timeZone: 'America/Caracas' })}`;
+    
+    // Animate counters on load
+    function animateValue(id, start, end, duration) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const range = end - start;
+      const startTime = performance.now();
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        el.textContent = Math.floor(start + range * progress);
+        if (progress < 1) requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+    
+    // Initial values (will be replaced by API calls)
+    animateValue('blogCount', 0, 0, 1000);
+    animateValue('pseoCount', 0, 195, 1000);
+    animateValue('keywordCount', 0, 5, 1000);
+    animateValue('leadCount', 0, 0, 1000);
+    animateValue('socialCount', 0, 0, 1000);
+    animateValue('trafficCount', 0, 0, 1000);
+    animateValue('contactCount', 0, 0, 1000);
+    animateValue('hotLeadCount', 0, 0, 1000);
+    animateValue('clientCount', 0, 0, 1000);
+    
+    // Auto-refresh every 5 minutes
+    setInterval(() => {
+      document.getElementById('lastUpdate').textContent = `Actualizado: ${new Date().toLocaleTimeString('es-VE', { timeZone: 'America/Caracas' })}`;
+    }, 300000);
+  </script>
+</body>
+</html>
