@@ -103,16 +103,11 @@ const ProjectCard = ({ project, index, isInView }: { project: ProjectEntry; inde
           </div>
         </div>
 
-        <div className="p-6 md:p-7 flex flex-col flex-1">
-          <div className="flex items-start justify-between gap-4 mb-4">
-            <div>
-              <h3 className="text-2xl font-bold tracking-tight font-heading group-hover:text-brand-secondary transition-colors">
-                {project.title}
-              </h3>
-              <p className="text-sm text-muted-foreground mt-2 leading-relaxed line-clamp-2">
-                {project.shortDescription}
-              </p>
-            </div>
+        <div className="p-6 md:p-8 flex flex-col flex-1">
+          <div className="flex items-start justify-between gap-4 mb-3">
+            <h3 className="text-2xl font-bold tracking-tight font-heading group-hover:text-brand-secondary transition-colors">
+              {project.title}
+            </h3>
             {project.visibility === "private" && (
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-amber-400/20 bg-amber-400/10 text-amber-500 dark:text-amber-200 text-[10px] uppercase tracking-wider shrink-0">
                 <Lock className="w-3 h-3" />
@@ -121,35 +116,14 @@ const ProjectCard = ({ project, index, isInView }: { project: ProjectEntry; inde
             )}
           </div>
 
-          <div className="rounded-2xl bg-foreground/[0.03] border border-foreground/[0.05] p-4 mb-4">
-            <div className="text-[11px] uppercase tracking-[0.22em] text-brand-secondary/80 font-bold mb-2">
-              El reto
-            </div>
-            <p className="text-sm text-foreground/80 leading-relaxed line-clamp-3">
-              {project.challenge}
-            </p>
-          </div>
+          <p className="text-sm text-muted-foreground mb-6 leading-relaxed line-clamp-3">
+            {project.shortDescription}
+          </p>
 
-          <div className="mb-5">
-            <div className="text-[11px] uppercase tracking-[0.22em] text-brand-secondary/80 font-bold mb-3">
-              Stack principal
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {project.stack.slice(0, 5).map((item) => (
-                <span
-                  key={item}
-                  className="px-2.5 py-1 rounded-lg bg-foreground/[0.03] border border-foreground/5 text-[11px] font-medium text-muted-foreground"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-5 border-t border-foreground/[0.05]">
+          <div className="mt-auto flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-foreground/[0.05]">
             <Link
               to={`/proyectos/${project.slug}`}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-secondary text-brand-dark text-sm font-bold hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-secondary text-brand-dark text-sm font-bold hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-brand-secondary/10"
             >
               Leer caso
             </Link>
@@ -158,10 +132,10 @@ const ProjectCard = ({ project, index, isInView }: { project: ProjectEntry; inde
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-brand-secondary hover:underline transition-all"
+                className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-brand-secondary transition-colors group/link"
               >
+                <span className="border-b border-transparent group-hover:border-brand-secondary/50">Ver en vivo</span>
                 <ExternalLink className="w-4 h-4" />
-                Ver en vivo
               </a>
             )}
           </div>
@@ -180,11 +154,26 @@ const Proyectos = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: "-50px" });
   const [activeTag, setActiveTag] = useState("Todos");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const visibleProjects = useMemo(() => {
-    if (activeTag === "Todos") return projects;
-    return projects.filter((project) => project.tags.includes(activeTag));
-  }, [activeTag]);
+    let filtered = projects;
+    
+    if (activeTag !== "Todos") {
+      filtered = filtered.filter((project) => project.tags.includes(activeTag));
+    }
+    
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      filtered = filtered.filter((project) => 
+        project.title.toLowerCase().includes(query) || 
+        project.tags.some(tag => tag.toLowerCase().includes(query)) ||
+        project.stack.some(s => s.toLowerCase().includes(query))
+      );
+    }
+    
+    return filtered;
+  }, [activeTag, searchQuery]);
 
   return (
     <div className="relative min-h-screen bg-background transition-colors duration-300">
@@ -266,9 +255,15 @@ const Proyectos = () => {
                 </p>
               </div>
 
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-card/40 px-4 py-2 text-sm text-muted-foreground">
-                <Search className="w-4 h-4" />
-                Filtra por categoría
+              <div className="relative w-full md:w-80 group">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground group-focus-within:text-brand-secondary transition-colors" />
+                <input
+                  type="text"
+                  placeholder="Busca por nombre o stack..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-11 pr-4 py-3 rounded-2xl border border-foreground/[0.08] bg-card/40 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-brand-secondary/20 focus:border-brand-secondary/40 transition-all placeholder:text-muted-foreground/60 text-sm"
+                />
               </div>
             </div>
 

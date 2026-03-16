@@ -20,11 +20,6 @@ const milestones = [
   },
 ];
 
-const thesis = [
-  "Los sistemas derrotan a las herramientas. Un negocio no necesita más software suelto, necesita una infraestructura técnica que los unifique todos.",
-  "La IA no es un extra, es el nuevo estándar. La automatización es el único camino para escalar un negocio sin multiplicar la carga de trabajo manual.",
-  "La claridad visual es claridad operativa. Una interfaz bien diseñada es lo que permite que una tecnología compleja se convierta en una ventaja competitiva real.",
-];
 
 const startupSignals = [
   "Arquitectura técnica con enfoque en producto, automatización y experiencia de usuario.",
@@ -84,15 +79,24 @@ const Historia = () => {
               </p>
             </motion.div>
 
-            <motion.div initial={{ x: 30, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
-              <h3 className="text-2xl font-semibold text-white mb-5">Tesis de producto</h3>
-              <div className="space-y-4">
-                {thesis.map((item) => (
-                  <div key={item} className="flex items-start gap-3">
-                    <Sparkles className="w-5 h-5 text-brand-secondary mt-1 shrink-0" />
-                    <p className="text-brand-slate leading-relaxed">{item}</p>
-                  </div>
-                ))}
+            <motion.div 
+              initial={{ x: 30, opacity: 0 }} 
+              whileInView={{ x: 0, opacity: 1 }} 
+              viewport={{ once: true }} 
+              transition={{ duration: 0.8 }} 
+              className="relative aspect-square rounded-3xl overflow-hidden border border-white/10 group"
+            >
+              <div className="absolute inset-0 bg-gradient-to-tr from-brand-primary/20 to-brand-secondary/20 mix-blend-overlay z-10" />
+              <img 
+                src="/vision_abstract_v1.png" 
+                alt="Infraestructura digital abstracta" 
+                className="w-full h-full object-cover grayscale opacity-50 contrast-125 transition-all duration-700 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
+              />
+              <div className="absolute bottom-6 left-6 right-6 z-20">
+
+                <h4 className="text-xl font-semibold text-white drop-shadow-md">
+                  Arquitectura impulsada por IA
+                </h4>
               </div>
             </motion.div>
           </section>

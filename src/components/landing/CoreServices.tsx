@@ -1,7 +1,9 @@
-import { Code2, BarChart3, Workflow } from "lucide-react";
+import { Code2, BarChart3, Workflow, ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { Link } from "react-router-dom";
 import { BentoCard } from "./BentoCard";
+import { Button } from "@/components/ui/button";
 import { ParticleBackground } from "@/components/particles/ParticleBackground";
 
 const pillarServices = [
@@ -93,7 +95,7 @@ export const CoreServices = () => {
               animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Tres soluciones que funcionan solas o conectadas entre sí.
+              Soluciones que funcionan solas o conectadas entre sí.
             </motion.p>
           </div>
         </div>
@@ -107,6 +109,14 @@ export const CoreServices = () => {
             {pillarServices.map((service, index) => (
               <BentoCard key={service.title} title={service.title} subtitle={service.subtitle} description={service.description} icon={service.icon} visual={service.visual} className={service.className} delay={service.delay} index={index} accent={service.accent} />
             ))}
+          </motion.div>
+          <motion.div className="mt-16 text-center" initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ delay: 0.6, duration: 0.5 }}>
+            <Link to="/servicios">
+              <Button variant="hero" size="lg" className="rounded-2xl px-8 group">
+                Ver más servicios
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </section>

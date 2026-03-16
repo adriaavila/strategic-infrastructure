@@ -19,37 +19,35 @@ export type ProjectEntry = {
 
 export const projects: ProjectEntry[] = [
   {
-    slug: "intrega",
-    title: "Intrega",
+    slug: "avepane",
+    title: "AVEPANE",
     shortDescription:
-      "Landing B2B para consultoría y transformación digital con narrativa de diagnóstico, autoridad y conversión.",
+      "Sitio institucional para una organización social, diseñado para comunicar impacto y transparencia.",
     overview:
-      "Una experiencia de scrollytelling diseñada para Intrega, una consultora de transformación digital. El objetivo era alejar el diseño de las webs corporativas genéricas y centrarlo en una narrativa de autoridad que diagnostica los problemas del sector hospitality antes de proponer la solución.",
+      "Rediseño y desarrollo de la presencia digital de AVEPANE. El foco principal fue estructurar 50 años de historia y servicios en una interfaz que transmita profesionalismo, esperanza y facilidad de acceso para las familias.",
     challenge:
-      "Convertir un servicio estratégico y abstracto en una propuesta de valor tangible. El reto residía en equilibrar una estética premium con mensajes directos sobre eficiencia operativa, reducción de mermas y aumento de márgenes.",
+      "Organizar una gran cantidad de servicios institucionales y programas sociales en una jerarquía de información lógica que no abrume al visitante.",
     solution: [
-      "Arquitectura de scrollytelling que guía al usuario desde el problema hasta la solución.",
-      "Diseño visual minimalista con tipos de letra fuertes y alto contraste.",
-      "Secciones dedicadas a diagnóstico operativo, manifiesto de marca y pilares de servicio.",
-      "Micro-interacciones fluidas para mantener el engagement durante la navegación.",
+      "Diseño basado en componentes modulares para facilitar la actualización de contenidos.",
+      "Enfoque en accesibilidad (WCAG) para garantizar el uso por parte de toda la comunidad.",
+      "Secciones de impacto visual que resumen la labor social en cifras y testimonios reales.",
+      "Integración de formularios de contacto y donación optimizados.",
     ],
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel Analytics"],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "v0", "Vercel"],
     outcomes: [
-      "Incremento percibido en la autoridad de marca desde el primer contacto visual.",
-      "Mejora en la retención de usuarios gracias a la estructura narrativa.",
-      "Claridad total en la oferta de servicios complejos de consultoría.",
+      "Modernización total de la imagen institucional de la organización.",
+      "Mejora en la captación de aliados y voluntarios a través del canal digital.",
+      "UX simplificada para que los beneficiarios encuentren servicios rápidamente.",
     ],
-    tags: ["B2B", "Consultoría", "Landing", "Scrollytelling"],
-    image: "/projects/intrega.png",
+    tags: ["Institucional", "Impacto social", "Accesibilidad", "Landing"],
+    image: "/projects/portfolio/avepane.png",
     gallery: [
-      "/projects/gallery/intrega/hero.png",
-      "/projects/gallery/intrega/diagnostic.png",
-      "/projects/gallery/intrega/services.png",
-      "/projects/gallery/intrega/footer.png",
+      "/projects/gallery/avepane/content.png",
+      "/projects/gallery/avepane/footer.png",
     ],
-    githubUrl: "https://github.com/adriaavila/intrega-landing",
-    liveUrl: "https://intrega-landing.vercel.app",
-    accent: "from-emerald-500/20 to-teal-500/10",
+    githubUrl: "https://github.com/adriaavila/avepane",
+    liveUrl: "https://avepane.vercel.app/",
+    accent: "from-cyan-500/20 to-sky-500/10",
     featured: true,
     visibility: "public",
   },
@@ -93,7 +91,7 @@ export const projects: ProjectEntry[] = [
     overview:
       "Una plataforma web dedicada a elevar la experiencia del turismo gastronómico en la Colonia Tovar. Viaja Ven no es solo un catálogo, es una herramienta de descubrimiento que utiliza la dirección visual para vender el sabor y la cultura del destino.",
     challenge:
-      "Unificar la inspiración visual con la utilidad práctica. El reto era crear una interfaz que 'abriera el apetito' al usuario mientras le proporcionaba las herramientas necesarias para planificar su visita de forma eficiente.",
+      "Unificar la inspiración visual con la utilidad práctica. El resto era crear una interfaz que 'abriera el apetito' al usuario mientras le proporcionaba las herramientas necesarias para planificar su visita de forma eficiente.",
     solution: [
       "Diseño orientado a la fotografía de alta calidad para destacar el producto gastronómico.",
       "Sistema de rutas curadas por categorías: café, repostería, platos fuertes.",
@@ -154,37 +152,38 @@ export const projects: ProjectEntry[] = [
     featured: true,
     visibility: "public",
   },
-
   {
-    slug: "avepane",
-    title: "AVEPANE",
+    slug: "intrega",
+    title: "Intrega",
     shortDescription:
-      "Sitio institucional para una organización social, diseñado para comunicar impacto y transparencia.",
+      "Landing B2B para consultoría y transformación digital con narrativa de diagnóstico, autoridad y conversión.",
     overview:
-      "Rediseño y desarrollo de la presencia digital de AVEPANE. El foco principal fue estructurar 50 años de historia y servicios en una interfaz que transmita profesionalismo, esperanza y facilidad de acceso para las familias.",
+      "Una experiencia de scrollytelling diseñada para Intrega, una consultora de transformación digital. El objetivo era alejar el diseño de las webs corporativas genéricas y centrarlo en una narrativa de autoridad que diagnostica los problemas del sector hospitality antes de proponer la solución.",
     challenge:
-      "Organizar una gran cantidad de servicios institucionales y programas sociales en una jerarquía de información lógica que no abrume al visitante.",
+      "Convertir un servicio estratégico y abstracto en una propuesta de valor tangible. El reto residía en equilibrar una estética premium con mensajes directos sobre eficiencia operativa, reducción de mermas y aumento de márgenes.",
     solution: [
-      "Diseño basado en componentes modulares para facilitar la actualización de contenidos.",
-      "Enfoque en accesibilidad (WCAG) para garantizar el uso por parte de toda la comunidad.",
-      "Secciones de impacto visual que resumen la labor social en cifras y testimonios reales.",
-      "Integración de formularios de contacto y donación optimizados.",
+      "Arquitectura de scrollytelling que guía al usuario desde el problema hasta la solución.",
+      "Diseño visual minimalista con tipos de letra fuertes y alto contraste.",
+      "Secciones dedicadas a diagnóstico operativo, manifiesto de marca y pilares de servicio.",
+      "Micro-interacciones fluidas para mantener el engagement durante la navegación.",
     ],
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "v0", "Vercel"],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel Analytics"],
     outcomes: [
-      "Modernización total de la imagen institucional de la organización.",
-      "Mejora en la captación de aliados y voluntarios a través del canal digital.",
-      "UX simplificada para que los beneficiarios encuentren servicios rápidamente.",
+      "Incremento percibido en la autoridad de marca desde el primer contacto visual.",
+      "Mejora en la retención de usuarios gracias a la estructura narrativa.",
+      "Claridad total en la oferta de servicios complejos de consultoría.",
     ],
-    tags: ["Institucional", "Impacto social", "Accesibilidad", "Landing"],
-    image: "/projects/portfolio/avepane.png",
+    tags: ["B2B", "Consultoría", "Landing", "Scrollytelling"],
+    image: "/projects/intrega.png",
     gallery: [
-      "/projects/gallery/avepane/content.png",
-      "/projects/gallery/avepane/footer.png",
+      "/projects/gallery/intrega/hero.png",
+      "/projects/gallery/intrega/diagnostic.png",
+      "/projects/gallery/intrega/services.png",
+      "/projects/gallery/intrega/footer.png",
     ],
-    githubUrl: "https://github.com/adriaavila/avepane",
-    liveUrl: "https://avepane.vercel.app/",
-    accent: "from-cyan-500/20 to-sky-500/10",
+    githubUrl: "https://github.com/adriaavila/intrega-landing",
+    liveUrl: "https://intrega-landing.vercel.app",
+    accent: "from-emerald-500/20 to-teal-500/10",
     featured: true,
     visibility: "public",
   },
@@ -194,6 +193,3 @@ export const featuredProjects = projects.filter((project) => project.featured);
 
 export const getProjectBySlug = (slug: string) =>
   projects.find((project) => project.slug === slug);
-
-
-

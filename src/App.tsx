@@ -14,6 +14,7 @@ import Contacto from "./pages/Contacto";
 import Proyectos from "./pages/Proyectos";
 import Automatizaciones from "./pages/Automatizaciones";
 import Marketing from "./pages/Marketing";
+import Servicios from "./pages/Servicios";
 import ProjectDetail from "./pages/ProjectDetail";
 import Brief from "./pages/Brief";
 import LegalTerms from "./pages/LegalTerms";
@@ -62,6 +63,7 @@ const App = () => (
             <Route path="/marketing" element={<Marketing />} />
             <Route path="/terminos" element={<LegalTerms />} />
             <Route path="/privacidad" element={<LegalPrivacy />} />
+            <Route path="/servicios" element={<Servicios />} />
             <Route path="/proyectos" element={<Proyectos />} />
             <Route path="/proyectos/:slug" element={<ProjectDetail />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

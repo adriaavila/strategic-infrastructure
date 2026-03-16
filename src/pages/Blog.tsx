@@ -38,7 +38,7 @@ const Blog = () => {
   const gridPosts = filtered.slice(activeTopic === "Todos" ? 1 : 0);
 
   return (
-    <div className="min-h-screen bg-brand-dark selection:bg-brand-primary/30 selection:text-white">
+    <div className="min-h-screen bg-background selection:bg-brand-primary/30 selection:text-foreground">
       <Navbar />
 
       <main className="pt-32 pb-24">
@@ -50,7 +50,7 @@ const Blog = () => {
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground to-foreground/70">
                   Insights &
                 </span>{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">
@@ -98,7 +98,7 @@ const Blog = () => {
                       Destacado · {featured.category}
                     </span>
                   </div>
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white transition-all duration-300">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground transition-all duration-300">
                     <Link to={`/blog/${featured.slug}`} className="focus:outline-none hover:text-brand-primary">
                       {featured.title}
                     </Link>
@@ -113,7 +113,7 @@ const Blog = () => {
                         </div>
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-white">{featured.author}</p>
+                         <p className="text-sm font-medium text-foreground">{featured.author}</p>
                         <div className="flex items-center gap-3 text-xs text-brand-slate mt-0.5">
                           <span className="flex items-center gap-1"><Calendar className="h-3 w-3" />{featured.date}</span>
                           <span className="w-1 h-1 rounded-full bg-brand-slate/50" />
@@ -149,7 +149,7 @@ const Blog = () => {
                         {post.category}
                       </span>
                     </div>
-                    <h2 className="text-2xl font-bold mb-4 text-white group-hover:text-brand-primary transition-colors duration-300 line-clamp-2">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground group-hover:text-brand-primary transition-colors duration-300 line-clamp-2">
                       <Link to={`/blog/${post.slug}`}>{post.title}</Link>
                     </h2>
                     <p className="text-brand-slate text-sm leading-relaxed mb-6 line-clamp-3">{post.excerpt}</p>
@@ -158,10 +158,10 @@ const Blog = () => {
                       <div className="flex items-center justify-between gap-4">
                         <div className="flex items-center gap-2">
                           <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
-                            <span className="text-xs font-semibold text-white">{post.author.charAt(0)}</span>
+                             <span className="text-xs font-semibold text-foreground">{post.author.charAt(0)}</span>
                           </div>
                           <div className="flex flex-col">
-                            <span className="text-xs font-medium text-white">{post.author}</span>
+                             <span className="text-xs font-medium text-foreground">{post.author}</span>
                             <span className="text-[10px] text-brand-slate flex items-center gap-1">{post.date}</span>
                           </div>
                         </div>

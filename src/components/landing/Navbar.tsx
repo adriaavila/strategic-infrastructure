@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navLinks = [
-  { label: "Servicios", href: "/#servicios" },
-  { label: "Proyectos", href: "/proyectos" },
   { label: "Historia", href: "/historia" },
+  { label: "Servicios", href: "/servicios" },
+  { label: "Proyectos", href: "/proyectos" },
   { label: "Blog", href: "/blog" },
 ];
 
@@ -22,7 +22,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-brand-dark/78 backdrop-blur-2xl border-b border-white/10 light:!bg-[#F6F8FC]/94 light:border-slate-200" : "bg-transparent"}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-brand-dark/78 dark:bg-brand-dark/78 backdrop-blur-2xl border-b border-foreground/10 light:bg-background/90" : "bg-transparent"}`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-[72px]">
           <Link to="/" className="flex items-center gap-3 text-white">
@@ -40,9 +40,9 @@ export const Navbar = () => {
               </Link>
             ))}
             <ThemeToggle />
-            <Link to="/brief?source=navbar">
+            <Link to="/contacto">
               <Button variant="hero" size="sm" className="rounded-xl px-4">
-                Solicitar diagnóstico
+                Contacto
               </Button>
             </Link>
           </div>
@@ -61,8 +61,8 @@ export const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              <Link to="/brief?source=navbar-mobile" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button variant="hero" size="sm" className="w-full rounded-xl">Solicitar diagnóstico</Button>
+              <Link to="/contacto" onClick={() => setIsMobileMenuOpen(false)}>
+                <Button variant="hero" size="sm" className="w-full rounded-xl">Contacto</Button>
               </Link>
             </div>
           </div>
