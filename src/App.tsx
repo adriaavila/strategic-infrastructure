@@ -19,7 +19,6 @@ import ProjectDetail from "./pages/ProjectDetail";
 import Brief from "./pages/Brief";
 import LegalTerms from "./pages/LegalTerms";
 import LegalPrivacy from "./pages/LegalPrivacy";
-import MissionControl from "./pages/MissionControl";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 import { useEffect } from "react";
 
@@ -67,7 +66,6 @@ const App = () => (
             <Route path="/servicios" element={<Servicios />} />
             <Route path="/proyectos" element={<Proyectos />} />
             <Route path="/proyectos/:slug" element={<ProjectDetail />} />
-            <Route path="/mission-control" element={<MissionControl />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
