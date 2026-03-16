@@ -1,0 +1,1166 @@
+{
+  "generatedAt": "2026-03-15T23:20:48.304Z",
+  "source": "/home/avilamolinaadrian/.openclaw/agency-agents",
+  "requiredFiles": [
+    "AGENTS.md",
+    "SOUL.md",
+    "USER.md",
+    "IDENTITY.md",
+    "TOOLS.md"
+  ],
+  "total": 144,
+  "agents": [
+    {
+      "slug": "accessibility-auditor",
+      "name": "accessibility-auditor",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/accessibility-auditor",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "account-strategist",
+      "name": "account-strategist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/account-strategist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "accounts-payable-agent",
+      "name": "accounts-payable-agent",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/accounts-payable-agent",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "ad-creative-strategist",
+      "name": "ad-creative-strategist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/ad-creative-strategist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "agentic-identity-trust-architect",
+      "name": "agentic-identity-trust-architect",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/agentic-identity-trust-architect",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "agents-orchestrator",
+      "name": "agents-orchestrator",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/agents-orchestrator",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "ai-data-remediation-engineer",
+      "name": "ai-data-remediation-engineer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/ai-data-remediation-engineer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "ai-engineer",
+      "name": "ai-engineer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/ai-engineer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "analytics-reporter",
+      "name": "analytics-reporter",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/analytics-reporter",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "api-tester",
+      "name": "api-tester",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/api-tester",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "app-store-optimizer",
+      "name": "app-store-optimizer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/app-store-optimizer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "automation-governance-architect",
+      "name": "automation-governance-architect",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/automation-governance-architect",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "autonomous-optimization-architect",
+      "name": "autonomous-optimization-architect",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/autonomous-optimization-architect",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "backend-architect",
+      "name": "backend-architect",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/backend-architect",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "baidu-seo-specialist",
+      "name": "baidu-seo-specialist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/baidu-seo-specialist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "behavioral-nudge-engine",
+      "name": "behavioral-nudge-engine",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/behavioral-nudge-engine",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "bilibili-content-strategist",
+      "name": "bilibili-content-strategist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/bilibili-content-strategist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "blockchain-security-auditor",
+      "name": "blockchain-security-auditor",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/blockchain-security-auditor",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "book-co-author",
+      "name": "book-co-author",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/book-co-author",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "brand-guardian",
+      "name": "brand-guardian",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/brand-guardian",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "carousel-growth-engine",
+      "name": "carousel-growth-engine",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/carousel-growth-engine",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "china-e-commerce-operator",
+      "name": "china-e-commerce-operator",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/china-e-commerce-operator",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "code-reviewer",
+      "name": "code-reviewer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/code-reviewer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "compliance-auditor",
+      "name": "compliance-auditor",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/compliance-auditor",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "content-creator",
+      "name": "content-creator",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/content-creator",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "corporate-training-designer",
+      "name": "corporate-training-designer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/corporate-training-designer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "cross-border-e-commerce-specialist",
+      "name": "cross-border-e-commerce-specialist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/cross-border-e-commerce-specialist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "cultural-intelligence-strategist",
+      "name": "cultural-intelligence-strategist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/cultural-intelligence-strategist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "data-consolidation-agent",
+      "name": "data-consolidation-agent",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/data-consolidation-agent",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "data-engineer",
+      "name": "data-engineer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/data-engineer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "database-optimizer",
+      "name": "database-optimizer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/database-optimizer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "deal-strategist",
+      "name": "deal-strategist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/deal-strategist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "developer-advocate",
+      "name": "developer-advocate",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/developer-advocate",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "devops-automator",
+      "name": "devops-automator",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/devops-automator",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "discovery-coach",
+      "name": "discovery-coach",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/discovery-coach",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "document-generator",
+      "name": "document-generator",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/document-generator",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "douyin-strategist",
+      "name": "douyin-strategist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/douyin-strategist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "embedded-firmware-engineer",
+      "name": "embedded-firmware-engineer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/embedded-firmware-engineer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "evidence-collector",
+      "name": "evidence-collector",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/evidence-collector",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "executive-summary-generator",
+      "name": "executive-summary-generator",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/executive-summary-generator",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "experiment-tracker",
+      "name": "experiment-tracker",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/experiment-tracker",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "feedback-synthesizer",
+      "name": "feedback-synthesizer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/feedback-synthesizer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "feishu-integration-developer",
+      "name": "feishu-integration-developer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/feishu-integration-developer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "finance-tracker",
+      "name": "finance-tracker",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/finance-tracker",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "frontend-developer",
+      "name": "frontend-developer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/frontend-developer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "game-audio-engineer",
+      "name": "game-audio-engineer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/game-audio-engineer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "game-designer",
+      "name": "game-designer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/game-designer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "git-workflow-master",
+      "name": "git-workflow-master",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/git-workflow-master",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "godot-gameplay-scripter",
+      "name": "godot-gameplay-scripter",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/godot-gameplay-scripter",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "godot-multiplayer-engineer",
+      "name": "godot-multiplayer-engineer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/godot-multiplayer-engineer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "godot-shader-developer",
+      "name": "godot-shader-developer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/godot-shader-developer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "government-digital-presales-consultant",
+      "name": "government-digital-presales-consultant",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/government-digital-presales-consultant",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "growth-hacker",
+      "name": "growth-hacker",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/growth-hacker",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "healthcare-marketing-compliance-specialist",
+      "name": "healthcare-marketing-compliance-specialist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/healthcare-marketing-compliance-specialist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "identity-graph-operator",
+      "name": "identity-graph-operator",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/identity-graph-operator",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "image-prompt-engineer",
+      "name": "image-prompt-engineer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/image-prompt-engineer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "incident-response-commander",
+      "name": "incident-response-commander",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/incident-response-commander",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "inclusive-visuals-specialist",
+      "name": "inclusive-visuals-specialist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/inclusive-visuals-specialist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "infrastructure-maintainer",
+      "name": "infrastructure-maintainer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/infrastructure-maintainer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "instagram-curator",
+      "name": "instagram-curator",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/instagram-curator",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "jira-workflow-steward",
+      "name": "jira-workflow-steward",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/jira-workflow-steward",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "kuaishou-strategist",
+      "name": "kuaishou-strategist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/kuaishou-strategist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "legal-compliance-checker",
+      "name": "legal-compliance-checker",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/legal-compliance-checker",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "level-designer",
+      "name": "level-designer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/level-designer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "linkedin-content-creator",
+      "name": "linkedin-content-creator",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/linkedin-content-creator",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "livestream-commerce-coach",
+      "name": "livestream-commerce-coach",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/livestream-commerce-coach",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "lsp-index-engineer",
+      "name": "lsp-index-engineer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/lsp-index-engineer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "macos-spatial-metal-engineer",
+      "name": "macos-spatial-metal-engineer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/macos-spatial-metal-engineer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "mcp-builder",
+      "name": "mcp-builder",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/mcp-builder",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "mobile-app-builder",
+      "name": "mobile-app-builder",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/mobile-app-builder",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "model-qa-specialist",
+      "name": "model-qa-specialist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/model-qa-specialist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "narrative-designer",
+      "name": "narrative-designer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/narrative-designer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "outbound-strategist",
+      "name": "outbound-strategist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/outbound-strategist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "paid-media-auditor",
+      "name": "paid-media-auditor",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/paid-media-auditor",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "paid-social-strategist",
+      "name": "paid-social-strategist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/paid-social-strategist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "performance-benchmarker",
+      "name": "performance-benchmarker",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/performance-benchmarker",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "pipeline-analyst",
+      "name": "pipeline-analyst",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/pipeline-analyst",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "podcast-strategist",
+      "name": "podcast-strategist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/podcast-strategist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "ppc-campaign-strategist",
+      "name": "ppc-campaign-strategist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/ppc-campaign-strategist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "private-domain-operator",
+      "name": "private-domain-operator",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/private-domain-operator",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "programmatic-display-buyer",
+      "name": "programmatic-display-buyer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/programmatic-display-buyer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "project-shepherd",
+      "name": "project-shepherd",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/project-shepherd",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "proposal-strategist",
+      "name": "proposal-strategist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/proposal-strategist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "rapid-prototyper",
+      "name": "rapid-prototyper",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/rapid-prototyper",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "reality-checker",
+      "name": "reality-checker",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/reality-checker",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "recruitment-specialist",
+      "name": "recruitment-specialist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/recruitment-specialist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "reddit-community-builder",
+      "name": "reddit-community-builder",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/reddit-community-builder",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "report-distribution-agent",
+      "name": "report-distribution-agent",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/report-distribution-agent",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "roblox-avatar-creator",
+      "name": "roblox-avatar-creator",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/roblox-avatar-creator",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "roblox-experience-designer",
+      "name": "roblox-experience-designer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/roblox-experience-designer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "roblox-systems-scripter",
+      "name": "roblox-systems-scripter",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/roblox-systems-scripter",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "sales-coach",
+      "name": "sales-coach",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/sales-coach",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "sales-data-extraction-agent",
+      "name": "sales-data-extraction-agent",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/sales-data-extraction-agent",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "sales-engineer",
+      "name": "sales-engineer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/sales-engineer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "search-query-analyst",
+      "name": "search-query-analyst",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/search-query-analyst",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "security-engineer",
+      "name": "security-engineer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/security-engineer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "senior-developer",
+      "name": "senior-developer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/senior-developer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "senior-project-manager",
+      "name": "senior-project-manager",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/senior-project-manager",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "seo-specialist",
+      "name": "seo-specialist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/seo-specialist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "short-video-editing-coach",
+      "name": "short-video-editing-coach",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/short-video-editing-coach",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "social-media-strategist",
+      "name": "social-media-strategist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/social-media-strategist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "software-architect",
+      "name": "software-architect",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/software-architect",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "solidity-smart-contract-engineer",
+      "name": "solidity-smart-contract-engineer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/solidity-smart-contract-engineer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "sprint-prioritizer",
+      "name": "sprint-prioritizer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/sprint-prioritizer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "sre-site-reliability-engineer",
+      "name": "sre-site-reliability-engineer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/sre-site-reliability-engineer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "studio-operations",
+      "name": "studio-operations",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/studio-operations",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "studio-producer",
+      "name": "studio-producer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/studio-producer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "study-abroad-advisor",
+      "name": "study-abroad-advisor",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/study-abroad-advisor",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "supply-chain-strategist",
+      "name": "supply-chain-strategist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/supply-chain-strategist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "support-responder",
+      "name": "support-responder",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/support-responder",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "technical-artist",
+      "name": "technical-artist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/technical-artist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "technical-writer",
+      "name": "technical-writer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/technical-writer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "terminal-integration-specialist",
+      "name": "terminal-integration-specialist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/terminal-integration-specialist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "test-results-analyzer",
+      "name": "test-results-analyzer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/test-results-analyzer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "threat-detection-engineer",
+      "name": "threat-detection-engineer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/threat-detection-engineer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "tiktok-strategist",
+      "name": "tiktok-strategist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/tiktok-strategist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "tool-evaluator",
+      "name": "tool-evaluator",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/tool-evaluator",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "tracking-measurement-specialist",
+      "name": "tracking-measurement-specialist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/tracking-measurement-specialist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "trend-researcher",
+      "name": "trend-researcher",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/trend-researcher",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "twitter-engager",
+      "name": "twitter-engager",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/twitter-engager",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "ui-designer",
+      "name": "ui-designer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/ui-designer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "unity-architect",
+      "name": "unity-architect",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/unity-architect",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "unity-editor-tool-developer",
+      "name": "unity-editor-tool-developer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/unity-editor-tool-developer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "unity-multiplayer-engineer",
+      "name": "unity-multiplayer-engineer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/unity-multiplayer-engineer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "unity-shader-graph-artist",
+      "name": "unity-shader-graph-artist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/unity-shader-graph-artist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "unreal-multiplayer-architect",
+      "name": "unreal-multiplayer-architect",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/unreal-multiplayer-architect",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "unreal-systems-engineer",
+      "name": "unreal-systems-engineer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/unreal-systems-engineer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "unreal-technical-artist",
+      "name": "unreal-technical-artist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/unreal-technical-artist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "unreal-world-builder",
+      "name": "unreal-world-builder",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/unreal-world-builder",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "ux-architect",
+      "name": "ux-architect",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/ux-architect",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "ux-researcher",
+      "name": "ux-researcher",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/ux-researcher",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "visionos-spatial-engineer",
+      "name": "visionos-spatial-engineer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/visionos-spatial-engineer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "visual-storyteller",
+      "name": "visual-storyteller",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/visual-storyteller",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": true
+    },
+    {
+      "slug": "wechat-mini-program-developer",
+      "name": "wechat-mini-program-developer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/wechat-mini-program-developer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "wechat-official-account-manager",
+      "name": "wechat-official-account-manager",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/wechat-official-account-manager",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "weibo-strategist",
+      "name": "weibo-strategist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/weibo-strategist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "whimsy-injector",
+      "name": "whimsy-injector",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/whimsy-injector",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "workflow-optimizer",
+      "name": "workflow-optimizer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/workflow-optimizer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "xiaohongshu-specialist",
+      "name": "xiaohongshu-specialist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/xiaohongshu-specialist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "xr-cockpit-interaction-specialist",
+      "name": "xr-cockpit-interaction-specialist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/xr-cockpit-interaction-specialist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "xr-immersive-developer",
+      "name": "xr-immersive-developer",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/xr-immersive-developer",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "xr-interface-architect",
+      "name": "xr-interface-architect",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/xr-interface-architect",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "zhihu-strategist",
+      "name": "zhihu-strategist",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/zhihu-strategist",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    },
+    {
+      "slug": "zk-steward",
+      "name": "zk-steward",
+      "path": "/home/avilamolinaadrian/.openclaw/agency-agents/zk-steward",
+      "status": "ready",
+      "missingFiles": [],
+      "hasOpenClawDir": false
+    }
+  ]
+}

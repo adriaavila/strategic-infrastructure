@@ -1,73 +1,59 @@
-# Welcome to your Lovable project
+# Mission Control v0
 
-## Project info
+MVP local hecho sobre la base existente de Vite + React + TypeScript.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Qué incluye
 
-## How can I edit this code?
+- **Pantalla de agentes instalados** leyendo un snapshot generado desde `~/.openclaw/agency-agents`
+- **Tablero simple** con columnas `inbox`, `in_progress` y `done`
+- **Crear tareas** y **asignarlas a un agente**
+- **Mover tareas entre estados**
+- **Actividad reciente** para altas, asignaciones y cambios de estado
+- Persistencia local de tareas y actividad usando `localStorage`
 
-There are several ways of editing your application.
+## Cómo correrlo
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Luego abre:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- `http://localhost:8080/mission-control`
 
-**Use GitHub Codespaces**
+## Cómo funciona el listado de agentes
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Antes de `dev` y `build`, se ejecuta:
 
-## What technologies are used for this project?
+```bash
+node scripts/generate-agents-snapshot.mjs
+```
 
-This project is built with:
+Ese script recorre `~/.openclaw/agency-agents` y genera:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- `public/agents-snapshot.json`
 
-## How can I deploy this project?
+Con eso, la app puede mostrar agentes reales sin montar backend aparte.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Build
 
-## Can I connect a custom domain to my Lovable project?
+```bash
+npm run build
+```
 
-Yes, you can!
+## Detalles prácticos
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- Estado de agente:
+  - `ready`: tiene los archivos base esperados
+  - `incomplete`: le faltan archivos clave
+- Tareas y actividad se guardan en el navegador, no en servidor
+- Si agregas o borras agentes, vuelve a correr `npm run dev` o el script del snapshot
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Qué falta para dejarlo más presentable
+
+- drag and drop para mover tareas
+- filtros/búsqueda para agentes y tareas
+- edición/eliminación de tareas
+- refresco automático del snapshot sin reiniciar
+- backend real si más adelante se necesita compartir estado entre usuarios/sesiones
