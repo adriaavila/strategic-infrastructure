@@ -23,8 +23,10 @@ export const Footer = () => {
             <div className="flex flex-col gap-4 mb-4">
               <img src="/logo.svg" alt="Servicios Creativos Logo" className="w-14 h-14 rounded-xl" />
               <div>
-                <div className="text-lg font-semibold tracking-tight text-white">servicioscreativos.online</div>
-                <div className="text-sm text-white/42 mt-1">Sistemas digitales con IA para negocios que quieren vender mejor y operar con menos fricción.</div>
+                <div className="text-lg font-semibold tracking-tight text-white">
+                  servicios<span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">creativos</span>.online
+                </div>
+                <div className="text-sm text-white/42 mt-1 tracking-wider text-[10px] font-medium">transformacion digital con IA</div>
               </div>
             </div>
           </div>
@@ -46,7 +48,7 @@ export const Footer = () => {
         </div>
         <div className="pt-6 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3">
-            <p className="text-xs text-brand-slate/80">servicioscreativos.online · Allok LLC</p>
+            <p className="text-xs text-brand-slate/80">servicioscreativos<span className="text-brand-primary">.</span>online · Allok LLC</p>
             <p className="text-xs text-brand-slate/80">© {new Date().getFullYear()} Todos los derechos reservados.</p>
           </div>
         </div>

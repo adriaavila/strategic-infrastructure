@@ -2,351 +2,245 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
 import { useSEO } from "@/lib/seo";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { 
-  ArrowRight, 
-  Bot, 
-  Workflow, 
-  MessageSquare, 
-  Globe, 
-  ShoppingCart, 
-  LineChart,
-  Zap,
-  Target,
-  Sparkles
-} from "lucide-react";
-import { BentoCard } from "@/components/landing/BentoCard";
-import { ParticleBackground } from "@/components/particles/ParticleBackground";
+import { ArrowRight, BarChart3, Code2, Sparkles, Workflow } from "lucide-react";
 
-const FloatingOrb = ({ className, delay = 0 }: { className?: string, delay?: number }) => (
-  <motion.div
-    className={`absolute rounded-full blur-[120px] opacity-20 pointer-events-none ${className}`}
-    initial={{ scale: 0.8, opacity: 0 }}
-    animate={{ 
-      scale: [1, 1.2, 1],
-      opacity: [0.1, 0.25, 0.1],
-      x: [0, 20, 0],
-      y: [0, -20, 0]
-    }}
-    transition={{ 
-      duration: 10, 
-      repeat: Infinity, 
-      delay,
-      ease: "easeInOut" 
-    }}
-  />
-);
+type ServiceDetail = {
+  title: string;
+  subtitle: string;
+  description: string;
+  persuasion: string;
+  includes: string[];
+  outcomes: string[];
+  icon: React.ReactNode;
+  accent: "mint" | "violet";
+  ctaLabel: string;
+  ctaHref: string;
+};
+
+const services: ServiceDetail[] = [
+  {
+    title: "Presencia digital",
+    subtitle: "Webs y ecommerce diseniados para convertir",
+    description:
+      "Tu sitio no debe solo verse bien. Debe explicar tu oferta con claridad, generar confianza en minutos y mover al visitante a una accion concreta.",
+    persuasion:
+      "Si hoy tu web recibe visitas pero no genera suficientes conversaciones, cotizaciones o compras, no te falta trafico: te falta una estructura digital que guie bien la decision.",
+    includes: [
+      "Webs corporativas orientadas a conversion",
+      "Landing pages para campanias y captacion",
+      "Ecommerce con recorrido de compra claro",
+    ],
+    outcomes: [
+      "Mejor percepcion de marca desde el primer contacto",
+      "Mas consultas calificadas y menos rebote",
+      "Mejor aprovechamiento del trafico que ya pagas",
+    ],
+    icon: <Code2 className="h-5 w-5" />,
+    accent: "violet",
+    ctaLabel: "Ver pagina de presencia digital",
+    ctaHref: "/marketing",
+  },
+  {
+    title: "Automatizacion con IA",
+    subtitle: "Procesos que eliminan trabajo manual",
+    description:
+      "La operacion se frena cuando todo depende de seguimiento manual. Automatizo respuestas, flujos e integraciones para que el sistema avance con velocidad y consistencia.",
+    persuasion:
+      "Cuando ventas, atencion y operacion trabajan en silos, se pierden oportunidades y el equipo se desgasta. Una automatizacion bien planteada reduce friccion y libera horas de foco real.",
+    includes: [
+      "Flujos de atencion y ventas con IA",
+      "Integraciones con CRM, formularios y canales",
+      "Automatizacion de procesos operativos repetitivos",
+    ],
+    outcomes: [
+      "Respuestas mas rapidas en momentos criticos",
+      "Menos errores y menos retrabajo manual",
+      "Seguimiento comercial mas ordenado y constante",
+    ],
+    icon: <Workflow className="h-5 w-5" />,
+    accent: "mint",
+    ctaLabel: "Ver pagina de automatizacion",
+    ctaHref: "/automatizaciones",
+  },
+  {
+    title: "Inteligencia del negocio",
+    subtitle: "Dashboards y analisis para decidir mejor",
+    description:
+      "No se puede mejorar lo que no se mide bien. Construyo tableros y estructuras de datos para que tengas una lectura clara de ventas, operacion y rendimiento comercial.",
+    persuasion:
+      "Sin visibilidad real, cada decision depende de intuicion. Con datos accionables en un solo lugar, puedes priorizar mejor, reaccionar antes y escalar con menor riesgo.",
+    includes: [
+      "Dashboards ejecutivos y operativos",
+      "Definicion de KPIs utiles para el negocio",
+      "Reporting claro para seguimiento semanal o mensual",
+    ],
+    outcomes: [
+      "Decisiones mas rapidas y mejor fundamentadas",
+      "Deteccion temprana de cuellos de botella",
+      "Mayor control sobre crecimiento y rentabilidad",
+    ],
+    icon: <BarChart3 className="h-5 w-5" />,
+    accent: "violet",
+    ctaLabel: "Solicitar este servicio",
+    ctaHref: "/brief?source=inteligencia-negocio-servicios",
+  },
+];
+
+const accentClass = {
+  mint: {
+    pill: "text-brand-secondary",
+    icon: "border-brand-secondary/20 bg-brand-secondary/10 text-brand-secondary light:border-emerald-200 light:bg-emerald-50 light:text-emerald-700",
+    listDot: "bg-brand-secondary",
+    sectionGlow: "from-brand-secondary/12 to-transparent light:from-emerald-100",
+  },
+  violet: {
+    pill: "text-brand-primary light:text-violet-700",
+    icon: "border-brand-primary/20 bg-brand-primary/10 text-brand-primary light:border-violet-200 light:bg-violet-50 light:text-violet-700",
+    listDot: "bg-brand-primary",
+    sectionGlow: "from-brand-primary/12 to-transparent light:from-violet-100",
+  },
+};
+
+const cardClassName =
+  "relative overflow-hidden rounded-[30px] border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.03] p-7 md:p-9 backdrop-blur-sm shadow-[0_24px_60px_rgba(0,0,0,0.16)] light:border-slate-300 light:from-white light:to-slate-50 light:shadow-[0_22px_55px_rgba(15,23,42,0.09)]";
 
 const Servicios = () => {
   useSEO({
-    title: "Servicios | Automatización con IA y Marketing Digital",
-    description: "Soluciones de automatización con IA y marketing digital diseñadas para optimizar operaciones y escalar el crecimiento de tu negocio.",
+    title: "Servicios | Automatizacion con IA y Marketing Digital",
+    description:
+      "Servicios de presencia digital, automatizacion con IA e inteligencia del negocio para vender mejor, operar con menos friccion y decidir con datos claros.",
     path: "/servicios",
   });
 
-  const automationServices = [
-    {
-      title: "Atención y ventas",
-      subtitle: "IA conversacional",
-      description: "Asistentes inteligentes que responden en segundos, califican leads y cierran agendas de forma autónoma.",
-      icon: <Bot className="w-5 h-5 text-foreground/70" />,
-      visual: (
-        <div className="h-48 border-t border-foreground/[0.05] bg-gradient-to-br from-brand-secondary/10 to-transparent p-6 overflow-hidden">
-          <div className="flex flex-col gap-3">
-            <div className="flex justify-end">
-              <div className="bg-brand-secondary/20 rounded-2xl rounded-tr-none px-4 py-2 text-[10px] max-w-[80%] border border-brand-secondary/20">
-                ¿Cómo puedo optimizar mis ventas?
-              </div>
-            </div>
-            <div className="flex justify-start">
-              <div className="bg-foreground/5 rounded-2xl rounded-tl-none px-4 py-2 text-[10px] max-w-[80%] border border-foreground/10">
-                Podemos automatizar tu WhatsApp y CRM...
-              </div>
-            </div>
-            <div className="mt-2 flex gap-1 justify-center">
-              <div className="h-1 w-8 rounded-full bg-brand-secondary animate-pulse" />
-              <div className="h-1 w-4 rounded-full bg-brand-secondary/40" />
-            </div>
-          </div>
-        </div>
-      ),
-      className: "md:col-span-2",
-      accent: "emerald" as const,
-    },
-    {
-      title: "Procesos internos",
-      subtitle: "Flujos automáticos",
-      description: "Conectamos tus sistemas para que el dato fluya sin errores humanos.",
-      icon: <Workflow className="w-5 h-5 text-foreground/70" />,
-      visual: (
-        <div className="h-48 border-t border-foreground/[0.05] bg-gradient-to-br from-brand-secondary/10 to-transparent p-6 flex items-center justify-center">
-          <div className="relative w-full max-w-[120px]">
-            <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-8 h-8 rounded-lg bg-card border border-white/10 flex items-center justify-center shadow-lg"><Zap className="w-4 h-4 text-brand-secondary" /></div>
-            <div className="h-1 w-full bg-gradient-to-r from-transparent via-brand-secondary/50 to-transparent rounded-full" />
-            <div className="mt-4 grid grid-cols-2 gap-4">
-              <div className="h-10 rounded-xl bg-foreground/5 border border-foreground/10" />
-              <div className="h-10 rounded-xl bg-foreground/5 border border-foreground/10" />
-            </div>
-          </div>
-        </div>
-      ),
-      accent: "emerald" as const,
-    },
-    {
-      title: "Canales conectados",
-      subtitle: "Ecosistema Digital",
-      description: "WhatsApp, CRMs y Formularios comunicándose en tiempo real.",
-      icon: <Zap className="w-5 h-5 text-foreground/70" />,
-      visual: (
-        <div className="h-48 border-t border-foreground/[0.05] bg-gradient-to-br from-brand-secondary/10 to-transparent p-6 overflow-hidden">
-          <div className="grid grid-cols-2 gap-3 opacity-40">
-            {[1,2,3,4,5,6].map(i => (
-              <div key={i} className="h-8 rounded-lg border border-foreground/10 bg-foreground/[0.02]" />
-            ))}
-          </div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-16 h-16 rounded-2xl bg-brand-secondary/10 border border-brand-secondary/30 backdrop-blur-sm flex items-center justify-center animate-bounce-subtle">
-              <MessageSquare className="w-8 h-8 text-brand-secondary" />
-            </div>
-          </div>
-        </div>
-      ),
-      accent: "emerald" as const,
-    }
-  ];
-
-  const marketingServices = [
-    {
-      title: "Webs corporativas",
-      subtitle: "Diseño & Autoridad",
-      description: "Arquitecturas pensadas para posicionar tu marca como lider en su sector.",
-      icon: <Globe className="w-5 h-5 text-foreground/70" />,
-      visual: (
-        <div className="h-48 border-t border-foreground/[0.05] bg-gradient-to-br from-brand-primary/10 to-transparent p-6">
-          <div className="h-full rounded-xl border border-foreground/10 bg-card/60 relative overflow-hidden shadow-2xl">
-            <div className="h-3 border-b border-foreground/5 bg-foreground/5 flex items-center px-2 gap-1">
-              <div className="w-1 h-1 rounded-full bg-red-400/50" />
-              <div className="w-1 h-1 rounded-full bg-amber-400/50" />
-              <div className="w-1 h-1 rounded-full bg-emerald-400/50" />
-            </div>
-            <div className="p-4 space-y-3">
-              <div className="h-2 w-2/3 bg-brand-primary/20 rounded-full" />
-              <div className="h-12 w-full bg-foreground/5 rounded-lg" />
-              <div className="flex gap-2">
-                <div className="h-6 w-12 bg-brand-primary/10 rounded-md" />
-                <div className="h-6 w-12 bg-foreground/5 rounded-md" />
-              </div>
-            </div>
-            <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-brand-primary/10 blur-2xl" />
-          </div>
-        </div>
-      ),
-      accent: "blue" as const,
-    },
-    {
-      title: "Ecommerce Pro",
-      subtitle: "Ventas Sin Pausa",
-      description: "Tiendas escalables con experiencias de compra fluidas y rápidas.",
-      icon: <ShoppingCart className="w-5 h-5 text-foreground/70" />,
-      visual: (
-        <div className="h-48 border-t border-foreground/[0.05] bg-gradient-to-br from-brand-primary/10 to-transparent p-6">
-          <div className="grid grid-cols-2 gap-4 h-full">
-            <div className="rounded-xl border border-foreground/10 bg-card/40 p-3 flex flex-col justify-between">
-              <div className="w-full aspect-square bg-foreground/5 rounded-lg" />
-              <div className="h-2 w-full bg-brand-primary/20 rounded-full" />
-            </div>
-            <div className="rounded-xl border border-foreground/10 bg-card/40 p-3 flex flex-col justify-between">
-              <div className="w-full aspect-square bg-foreground/5 rounded-lg" />
-              <div className="h-2 w-full bg-brand-primary/20 rounded-full" />
-            </div>
-          </div>
-        </div>
-      ),
-      accent: "blue" as const,
-    },
-    {
-      title: "Embudo y captación",
-      subtitle: "Conversión de Alto Nivel",
-      description: "Landing pages optimizadas para maximizar el retorno de tu inversión publicitaria.",
-      icon: <Target className="w-5 h-5 text-foreground/70" />,
-      visual: (
-        <div className="h-48 border-t border-foreground/[0.05] bg-gradient-to-br from-brand-primary/10 to-transparent p-6 flex flex-col items-center justify-center">
-          <div className="relative w-full max-w-[160px] h-32 flex flex-col items-center">
-             <div className="w-full h-8 bg-brand-primary/5 border border-brand-primary/20 rounded-t-2xl flex items-center justify-center text-[10px] text-brand-primary/60">TRÁFICO</div>
-             <div className="w-[85%] h-10 bg-brand-primary/10 border-x border-brand-primary/20 flex items-center justify-center text-[10px] text-brand-primary/80">INTERÉS</div>
-             <div className="w-[70%] h-12 bg-brand-primary/20 border-x border-brand-primary/20 flex items-center justify-center text-[10px] font-bold text-brand-primary">VENTA</div>
-             <div className="absolute -right-4 top-1/2 -translate-y-1/2 flex flex-col gap-1">
-                {[1,2,3].map(i => <motion.div key={i} className="w-1 h-1 rounded-full bg-brand-secondary" animate={{ opacity: [0, 1, 0] }} transition={{ duration: 1, delay: i * 0.2, repeat: Infinity }} />)}
-             </div>
-          </div>
-        </div>
-      ),
-      className: "md:col-span-2",
-      accent: "blue" as const,
-    }
-  ];
-
   return (
-    <div className="relative min-h-screen bg-brand-dark overflow-hidden">
-      {/* Dynamic Background */}
-      <div className="absolute inset-0 architectural-grid opacity-20 pointer-events-none" />
-      <div className="absolute inset-0 bg-hero-gradient pointer-events-none" />
-      <ParticleBackground />
-      
-      {/* Floating Orbs */}
-      <FloatingOrb className="bg-brand-primary w-[500px] h-[500px] -top-48 -left-48" delay={0} />
-      <FloatingOrb className="bg-brand-secondary w-[400px] h-[400px] top-1/2 -right-48" delay={2} />
-      <FloatingOrb className="bg-brand-primary w-[300px] h-[300px] bottom-12 left-1/4" delay={5} />
+    <div className="relative min-h-screen bg-brand-dark text-white light:bg-slate-50 light:text-foreground">
+      <div className="noise-overlay light:opacity-[0.03]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(45,212,191,0.12),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(139,92,246,0.12),transparent_28%)] light:bg-[radial-gradient(circle_at_top,rgba(45,212,191,0.05),transparent_26%),radial-gradient(circle_at_80%_20%,rgba(139,92,246,0.05),transparent_24%)]" />
 
       <Navbar />
 
-      <main className="relative z-10 pt-40 pb-32">
-        {/* Hero Section */}
-        <section className="container mx-auto px-6 mb-32">
-          <div className="max-w-5xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-brand-secondary mb-8 backdrop-blur-md"
-            >
-              <Sparkles className="w-3 h-3" />
-              <span>Sistemas que trabajan por ti</span>
-            </motion.div>
-            
-            <motion.h1 
-              className="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[0.95] mb-8 font-heading text-balance"
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            >
-              Potenciamos tu negocio <br /> 
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-primary bg-[length:200%_auto] animate-gradient-slow shadow-sm">
-                con tecnología humana
-              </span>
-            </motion.h1>
-            
-            <motion.p 
-              className="text-lg md:text-xl text-brand-slate max-w-2xl mx-auto mb-12 text-balance leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-            >
-              No solo hacemos software. Diseñamos el puente entre donde estás hoy y la eficiencia absoluta que permite el crecimiento real.
-            </motion.p>
+      <main className="pt-32 pb-24">
+        <section className="container mx-auto max-w-6xl px-6">
+          <div className="max-w-4xl">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-brand-secondary backdrop-blur-sm light:border-slate-300 light:bg-white">
+              <Sparkles className="h-3.5 w-3.5" />
+              <span>Servicios que se conectan y escalan contigo</span>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="flex flex-wrap justify-center gap-4"
-            >
-              <Button asChild size="lg" variant="hero" className="rounded-2xl px-10 h-14 text-base">
-                <a href="#proyectos">Explorar soluciones</a>
+            <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white md:text-6xl light:text-slate-950">
+              Servicios diseniados para mejorar conversion, operacion y decisiones
+            </h1>
+
+            <p className="mt-5 max-w-3xl text-lg leading-relaxed text-brand-slate light:text-slate-600">
+              En Home mostramos tres servicios clave. Aqui tienes el detalle completo de cada uno para que entiendas cuando conviene activarlo, que incluye y que impacto real puede tener en tu negocio.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Button asChild size="lg" variant="hero">
+                <a href="#detalle-servicios">
+                  Ver detalle de servicios
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
               </Button>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Automaciones Section */}
-        <section className="container mx-auto px-6 mb-40 relative">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <div className="text-brand-secondary text-sm font-bold uppercase tracking-widest mb-4">Módulo A</div>
-                <h2 className="text-4xl md:text-5xl font-semibold font-heading tracking-tight">Automatización <br /> & Sistemas de IA</h2>
-              </motion.div>
-              <motion.p 
-                className="text-brand-slate max-w-md text-lg leading-relaxed"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-              >
-                Libera a tu equipo de la carga operativa. Creamos flujos digitales que trabajan 24/7 sin distracciones.
-              </motion.p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {automationServices.map((service, index) => (
-                <BentoCard key={service.title} {...service} index={index} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Marketing/Presence Section */}
-        <section className="container mx-auto px-6 mb-40 relative">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row-reverse md:items-end justify-between gap-6 mb-16">
-              <motion.div
-                className="text-right"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <div className="text-brand-primary text-sm font-bold uppercase tracking-widest mb-4">Módulo B</div>
-                <h2 className="text-4xl md:text-5xl font-semibold font-heading tracking-tight">Presencia Digital <br /> & Conversión</h2>
-              </motion.div>
-              <motion.p 
-                className="text-brand-slate max-w-md text-lg leading-relaxed text-left md:text-right"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-              >
-                Tu sitio web es tu mejor vendedor. Lo diseñamos para que cada pixel esté alineado con tus objetivos de negocio.
-              </motion.p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {marketingServices.map((service, index) => (
-                <BentoCard key={service.title} {...service} index={index + 3} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Call to action */}
-        <section className="container mx-auto px-6 pt-20">
-          <motion.div 
-            className="max-w-5xl mx-auto rounded-[32px] border border-white/10 bg-gradient-to-b from-white/[0.08] to-transparent backdrop-blur-2xl p-12 md:p-20 text-center relative overflow-hidden shadow-architectural"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="absolute inset-0 gradient-mesh-subtle opacity-10 pointer-events-none" />
-            <div className="absolute -top-24 -left-24 w-64 h-64 bg-brand-secondary/20 blur-[100px] pointer-events-none" />
-            <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-brand-primary/20 blur-[100px] pointer-events-none" />
-            
-            <div className="relative z-10">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-8 font-heading tracking-tight text-balance">
-                Construye el futuro de <br /> tu empresa hoy
-              </h2>
-              <p className="text-xl text-brand-slate mb-12 max-w-2xl mx-auto text-balance font-light">
-                No esperes a que la competencia se automatice primero. Toma la delantera con un sistema diseñado a medida.
-              </p>
-              <div className="flex flex-wrap justify-center gap-6">
-                <Button asChild size="lg" variant="hero" className="rounded-2xl px-12 h-16 text-lg group shadow-xl shadow-brand-secondary/10">
-                  <a href="/brief?source=servicios-cta">
-                    Comenzar ahora
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </a>
+              <Link to="/brief">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-white/15 bg-transparent text-white hover:bg-white/10 light:border-slate-300 light:bg-white light:text-slate-900 light:hover:bg-slate-100"
+                >
+                  Cuentame tu caso
                 </Button>
-                <Link to="/contacto">
-                   <Button variant="outline" size="lg" className="rounded-2xl px-10 h-16 text-lg border-white/10 hover:bg-white/5 bg-transparent backdrop-blur-md">
-                     Hablar con un experto
-                   </Button>
-                </Link>
-              </div>
+              </Link>
             </div>
-          </motion.div>
+          </div>
+        </section>
+
+        <section id="detalle-servicios" className="container mx-auto mt-16 max-w-6xl px-6 space-y-7">
+          {services.map((service) => {
+            const accent = accentClass[service.accent];
+
+            return (
+              <article key={service.title} className={cardClassName}>
+                <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${accent.sectionGlow} opacity-60`} />
+
+                <div className="relative grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+                  <div>
+                    <div className="mb-5 flex items-center gap-3">
+                      <div className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl border ${accent.icon}`}>
+                        {service.icon}
+                      </div>
+                      <div className={`text-[11px] font-semibold uppercase tracking-[0.22em] ${accent.pill}`}>{service.subtitle}</div>
+                    </div>
+
+                    <h2 className="text-3xl font-semibold tracking-tight text-white light:text-slate-950 md:text-4xl">{service.title}</h2>
+
+                    <p className="mt-4 text-base leading-relaxed text-brand-slate light:text-slate-600">{service.description}</p>
+                    <p className="mt-4 text-base leading-relaxed text-white/82 light:text-slate-700">{service.persuasion}</p>
+
+                    <Link to={service.ctaHref} className={`mt-6 inline-flex items-center text-sm font-medium ${accent.pill} hover:opacity-80`}>
+                      {service.ctaLabel}
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </div>
+
+                  <div className="grid gap-4">
+                    <div className="rounded-2xl border border-white/10 bg-black/10 p-5 light:border-slate-300 light:bg-white">
+                      <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/65 light:text-slate-700">Que incluye</h3>
+                      <ul className="mt-4 space-y-3">
+                        {service.includes.map((item) => (
+                          <li key={item} className="flex items-start gap-3 text-sm text-brand-slate light:text-slate-600">
+                            <span className={`mt-2 block h-1.5 w-1.5 rounded-full ${accent.listDot}`} />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="rounded-2xl border border-white/10 bg-black/10 p-5 light:border-slate-300 light:bg-white">
+                      <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/65 light:text-slate-700">Impacto esperado</h3>
+                      <ul className="mt-4 space-y-3">
+                        {service.outcomes.map((item) => (
+                          <li key={item} className="flex items-start gap-3 text-sm text-brand-slate light:text-slate-600">
+                            <span className={`mt-2 block h-1.5 w-1.5 rounded-full ${accent.listDot}`} />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </section>
+
+        <section className="container mx-auto mt-20 max-w-6xl px-6">
+          <div className={`${cardClassName} px-8 py-10 text-center md:px-10`}>
+            <h2 className="text-3xl font-semibold text-white md:text-4xl light:text-slate-950">
+              ¿Quieres definir por donde empezar primero?
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-brand-slate light:text-slate-600">
+              Si me compartes tu contexto actual, te recomiendo la prioridad correcta entre presencia digital, automatizacion o inteligencia del negocio para lograr impacto mas rapido.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <Button asChild size="lg" variant="hero">
+                <a href="/brief?source=servicios-page">
+                  Solicitar proyecto
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+              <Link to="/contacto">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-white/15 bg-transparent text-white hover:bg-white/10 light:border-slate-300 light:bg-white light:text-slate-900 light:hover:bg-slate-100"
+                >
+                  Hablar conmigo
+                </Button>
+              </Link>
+            </div>
+          </div>
         </section>
       </main>
 

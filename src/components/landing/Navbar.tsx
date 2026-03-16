@@ -28,8 +28,10 @@ export const Navbar = () => {
           <Link to="/" className="flex items-center gap-3 text-white">
             <img src="/logo.svg" alt="servicioscreativos.online" className="w-9 h-9 rounded-sm flex-shrink-0" />
             <div className="leading-none">
-              <div className="text-[15px] font-semibold tracking-tight text-white">servicioscreativos.online</div>
-              <div className="text-[11px] text-white/44 light:text-slate-500">Sistemas digitales con IA para negocio</div>
+              <div className="text-[15px] font-semibold tracking-tight text-white">
+                servicios<span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">creativos</span>.online
+              </div>
+              <div className="text-[11px] text-white/44 light:text-slate-500 tracking-[0.05em] font-medium">transformacion digital con IA</div>
             </div>
           </Link>
 
