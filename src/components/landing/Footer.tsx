@@ -18,33 +18,50 @@ export const Footer = () => {
     <footer className="relative bg-brand-dark text-white pt-14 pb-8">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-[1.4fr_0.8fr_0.8fr] gap-10 mb-12 items-start">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16 items-start">
+          <div className="md:col-span-2">
             <div className="flex flex-col gap-4 mb-4">
               <img src="/logo.svg" alt="Servicios Creativos Logo" className="w-14 h-14 rounded-xl" />
               <div>
                 <div className="text-lg font-semibold tracking-tight text-white">
                   servicios<span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">creativos</span>.online
                 </div>
-                <div className="text-sm text-white/42 mt-1 tracking-wider text-[10px] font-medium">transformacion digital con IA</div>
+                <div className="text-sm text-white/42 mt-1 tracking-wider text-[10px] font-medium uppercase">Arquitectura Digital & IA</div>
               </div>
             </div>
+            <p className="mt-4 text-brand-slate text-sm max-w-sm leading-relaxed">
+              Agentes autónomos, automatización de WhatsApp y ecosistemas digitales para empresas que persiguen el escalado infinito.
+            </p>
           </div>
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h4 className="text-sm font-medium mb-3 text-white/84">{category}</h4>
-              <ul className="space-y-2.5">
-                {links.map((link) => (
-                  <li key={link.label}>
-                    <a href={link.href} className="group text-sm text-brand-slate hover:text-white transition-colors inline-flex items-center gap-1">
-                      {link.label}
-                      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-0.5 translate-x-0.5 group-hover:opacity-100 transition-all" />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+
+          <div>
+            <h3 className="text-white font-medium mb-6">AI Agents</h3>
+            <ul className="space-y-3">
+              <li><a href="/ai-agent-real-estate" className="text-sm text-brand-slate hover:text-white transition-colors">Bienes Raíces</a></li>
+              <li><a href="/ai-agent-agencies" className="text-sm text-brand-slate hover:text-white transition-colors">Agencias y B2B</a></li>
+              <li><a href="/ai-agent-ecommerce" className="text-sm text-brand-slate hover:text-white transition-colors">Ecommerce</a></li>
+              <li><a href="/ai-agent-dental" className="text-sm text-brand-slate hover:text-white transition-colors">Odontología</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white font-medium mb-6">WhatsApp Auto</h3>
+            <ul className="space-y-3">
+              <li><a href="/whatsapp-automation-clinics" className="text-sm text-brand-slate hover:text-white transition-colors">Clínicas y Salud</a></li>
+              <li><a href="/whatsapp-automation-law-firms" className="text-sm text-brand-slate hover:text-white transition-colors">Bufetes Legales</a></li>
+              <li><a href="/whatsapp-automation-restaurants" className="text-sm text-brand-slate hover:text-white transition-colors">Restaurantes</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white font-medium mb-6">Company</h3>
+            <ul className="space-y-3">
+              <li><a href="/#servicios" className="text-sm text-brand-slate hover:text-white transition-colors">Servicios</a></li>
+              <li><a href="/industrias" className="text-sm text-brand-slate hover:text-white transition-colors font-medium text-brand-primary">Directorio Industrias</a></li>
+              <li><a href="/historia" className="text-sm text-brand-slate hover:text-white transition-colors">Nuestra historia</a></li>
+              <li><a href="/blog" className="text-sm text-brand-slate hover:text-white transition-colors">Blog</a></li>
+            </ul>
+          </div>
         </div>
         <div className="pt-6 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3">

@@ -17,11 +17,11 @@ export interface BentoCardProps {
 }
 
 const accentBorderClass: Record<BentoCardAccent, string> = {
-  emerald: "border-t-brand-secondary/50",
-  mint: "border-t-brand-secondary/50",
-  blue: "border-t-brand-primary/50",
-  purple: "border-t-brand-primary/50",
-  amber: "border-t-amber-500/50",
+  emerald: "border-b-brand-secondary/80",
+  mint: "border-b-brand-secondary/80",
+  blue: "border-b-brand-primary/80",
+  purple: "border-b-brand-primary/80",
+  amber: "border-b-amber-500/80",
 };
 
 export const BentoCard = ({ title, subtitle, description, icon, className, visual, delay = 0, index = 0, accent }: BentoCardProps) => {
@@ -86,7 +86,7 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
   return (
     <motion.div
       ref={cardRef}
-      className={`group relative bg-card/60 backdrop-blur-md border border-foreground/[0.08] rounded-2xl p-6 overflow-hidden shadow-architectural transition-all duration-500 ${accent ? `border-t-2 ${accentBorderClass[accent]}` : ""} ${className}`}
+      className={`group relative bg-white/70 dark:bg-card/60 backdrop-blur-2xl border border-white/60 dark:border-foreground/[0.08] rounded-[32px] p-8 md:p-10 overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04),_inset_0_1px_0_rgba(255,255,255,0.8)] dark:shadow-architectural transition-all duration-700 ${accent ? `border-b-[3px] ${accentBorderClass[accent]}` : ""} ${className}`}
       style={{
         y,
         rotateX: shouldReduceMotion ? 0 : rotateX,
@@ -108,10 +108,10 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
         transition: { duration: 0.3, type: "spring", stiffness: 300, damping: 30 }
       }}
     >
-      {/* Glossy Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/[0.04] to-transparent pointer-events-none" />
-      {/* Subtle gradient background */}
-      <div className="absolute inset-0 gradient-mesh-subtle opacity-30" />
+      {/* Glossy Overlay for tactile feel */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-transparent to-white/10 dark:from-white/[0.04] pointer-events-none" />
+      {/* Subtle grain/mesh background */}
+      <div className="absolute inset-0 noise-overlay opacity-[0.03] dark:opacity-30 mix-blend-overlay pointer-events-none" />
 
       {/* Mouse-following spotlight gradient */}
       <div
@@ -138,7 +138,7 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
 
       {/* Content */}
       <motion.h3
-        className="text-xl font-bold mb-1 font-heading"
+        className="text-2xl font-semibold mb-2 font-heading tracking-tight text-brand-dark dark:text-white"
         initial={{ opacity: 0, x: -20 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
         transition={{ delay: index * 0.1 + 0.3, duration: 0.4 }}
@@ -147,7 +147,7 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
       </motion.h3>
       {subtitle && (
         <motion.p
-          className="text-xs font-bold uppercase tracking-wider text-brand-secondary mb-3"
+          className="text-[11px] font-bold uppercase tracking-widest text-brand-secondary mb-4"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ delay: index * 0.1 + 0.35, duration: 0.4 }}
@@ -156,7 +156,7 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
         </motion.p>
       )}
       <motion.div
-        className="text-base text-muted-foreground leading-relaxed"
+        className="text-base text-brand-slate/80 dark:text-muted-foreground leading-relaxed"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ delay: index * 0.1 + 0.4, duration: 0.4 }}
@@ -166,7 +166,7 @@ export const BentoCard = ({ title, subtitle, description, icon, className, visua
 
       {/* Visual */}
       <motion.div
-        className="mt-6 -mx-6 -mb-6"
+        className="mt-8 -mx-10 -mb-10 h-64 md:h-80 lg:h-[22rem] xl:h-[26rem] overflow-hidden relative"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ delay: index * 0.1 + 0.5, duration: 0.5 }}

@@ -19,6 +19,8 @@ import ProjectDetail from "./pages/ProjectDetail";
 import Brief from "./pages/Brief";
 import LegalTerms from "./pages/LegalTerms";
 import LegalPrivacy from "./pages/LegalPrivacy";
+import IndustriasHub from "./pages/IndustriasHub";
+import PseoPage from "./pages/PseoPage";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 import { useEffect } from "react";
 
@@ -64,8 +66,10 @@ const App = () => (
             <Route path="/terminos" element={<LegalTerms />} />
             <Route path="/privacidad" element={<LegalPrivacy />} />
             <Route path="/servicios" element={<Servicios />} />
+            <Route path="/industrias" element={<IndustriasHub />} />
             <Route path="/proyectos" element={<Proyectos />} />
             <Route path="/proyectos/:slug" element={<ProjectDetail />} />
+            <Route path="/:slug" element={<PseoPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
