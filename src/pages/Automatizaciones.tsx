@@ -1,6 +1,5 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
-import { SolutionClusters } from "@/components/landing/SolutionClusters";
 import { Button } from "@/components/ui/button";
 import { useSEO } from "@/lib/seo";
 import { ArrowRight, Bot, Workflow, MessageSquare } from "lucide-react";
@@ -57,11 +56,6 @@ const Automatizaciones = () => {
             </Button>
           </div>
         </section>
-
-        <SolutionClusters
-          title="Rutas internas hacia las soluciones que queremos posicionar"
-          description="Estas entradas conectan la pagina de automatizacion con clusters de alta intencion comercial para que el descubrimiento no dependa solo del sitemap ni de enlaces aislados."
-        />
       </main>
 
       <Footer />
