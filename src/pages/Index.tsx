@@ -16,10 +16,10 @@ const Index = () => {
       <main className="bg-hero-gradient">
         <Hero />
         <CoreServices />
-        <SolutionClusters />
         <ProjectsShowcase />
         <EngagementModel />
         <IdealClient />
+        <SolutionClusters />
         <CTAFinal />
       </main>
       <Footer />
