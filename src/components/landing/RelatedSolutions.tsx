@@ -4,17 +4,27 @@ import { Link } from "react-router-dom";
 import { pseoData } from "@/data/pseo";
 
 export function RelatedSolutions({ currentSlug }: { currentSlug: string }) {
-  // Simple logic to get 3 other random solutions, ideally from the same "prefix" if possible
-  const prefix = currentSlug.split('-')[0];
-  let related = pseoData.filter(p => p.slug !== currentSlug && p.slug.startsWith(prefix));
-  
-  if (related.length < 3) {
-    const others = pseoData.filter(p => p.slug !== currentSlug && !p.slug.startsWith(prefix));
-    related = [...related, ...others].slice(0, 3);
-  } else {
-    // Shuffle or just take first 3 if there are many
-    related = related.sort(() => 0.5 - Math.random()).slice(0, 3);
-  }
+  const segments = currentSlug.split("-");
+  const familyPrefix = segments.slice(0, 2).join("-");
+  const primaryPrefix = segments[0];
+
+  const sameFamily = pseoData.filter(
+    (page) => page.slug !== currentSlug && page.slug.startsWith(familyPrefix)
+  );
+  const samePrimary = pseoData.filter(
+    (page) =>
+      page.slug !== currentSlug &&
+      !page.slug.startsWith(familyPrefix) &&
+      page.slug.startsWith(primaryPrefix)
+  );
+  const fallback = pseoData.filter(
+    (page) =>
+      page.slug !== currentSlug &&
+      !page.slug.startsWith(familyPrefix) &&
+      !page.slug.startsWith(primaryPrefix)
+  );
+
+  const related = [...sameFamily, ...samePrimary, ...fallback].slice(0, 3);
 
   return (
     <section className="border-t border-white/5 light:border-slate-200 py-24 mt-20 relative overflow-hidden">

@@ -6,6 +6,7 @@ import { EngagementModel } from "@/components/landing/EngagementModel";
 import { IdealClient } from "@/components/landing/IdealClient";
 import { CTAFinal } from "@/components/landing/CTAFinal";
 import { Footer } from "@/components/landing/Footer";
+import { SolutionClusters } from "@/components/landing/SolutionClusters";
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
       <main className="bg-hero-gradient">
         <Hero />
         <CoreServices />
+        <SolutionClusters />
         <ProjectsShowcase />
         <EngagementModel />
         <IdealClient />

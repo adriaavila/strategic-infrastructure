@@ -1,16 +1,8 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 User-agent: *
 Allow: /
 
 Sitemap: https://servicioscreativos.online/sitemap.xml
+Sitemap: https://servicioscreativos.online/sitemap-pages.xml
+Sitemap: https://servicioscreativos.online/sitemap-blog.xml
+Sitemap: https://servicioscreativos.online/sitemap-projects.xml
+Sitemap: https://servicioscreativos.online/sitemap-pseo.xml

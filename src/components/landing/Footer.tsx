@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 const footerLinks = {
   Navegación: [
     { label: "Servicios", href: "/#servicios" },
+    { label: "Industrias", href: "/industrias" },
     { label: "Proyectos", href: "/proyectos" },
     { label: "Historia", href: "/historia" },
     { label: "Blog", href: "/blog" },
@@ -37,6 +38,7 @@ export const Footer = () => {
           <div>
             <h3 className="text-white font-medium mb-6">AI Agents</h3>
             <ul className="space-y-3">
+              <li><a href="/ai-agent" className="text-sm text-brand-slate hover:text-white transition-colors">Agentes IA para negocios</a></li>
               <li><a href="/ai-agent-real-estate" className="text-sm text-brand-slate hover:text-white transition-colors">Bienes Raíces</a></li>
               <li><a href="/ai-agent-agencies" className="text-sm text-brand-slate hover:text-white transition-colors">Agencias y B2B</a></li>
               <li><a href="/ai-agent-ecommerce" className="text-sm text-brand-slate hover:text-white transition-colors">Ecommerce</a></li>
@@ -47,6 +49,7 @@ export const Footer = () => {
           <div>
             <h3 className="text-white font-medium mb-6">WhatsApp Auto</h3>
             <ul className="space-y-3">
+              <li><a href="/whatsapp-automation" className="text-sm text-brand-slate hover:text-white transition-colors">Automatización general</a></li>
               <li><a href="/whatsapp-automation-clinics" className="text-sm text-brand-slate hover:text-white transition-colors">Clínicas y Salud</a></li>
               <li><a href="/whatsapp-automation-law-firms" className="text-sm text-brand-slate hover:text-white transition-colors">Bufetes Legales</a></li>
               <li><a href="/whatsapp-automation-restaurants" className="text-sm text-brand-slate hover:text-white transition-colors">Restaurantes</a></li>

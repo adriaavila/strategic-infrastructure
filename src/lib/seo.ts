@@ -10,10 +10,27 @@ type SEOOptions = {
 const SITE_NAME = "servicioscreativos.online";
 const SITE_URL = "https://servicioscreativos.online";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-share.svg`;
+const TITLE_SEPARATORS = ["|", "-", "·"];
+
+const buildDocumentTitle = (title: string) => {
+  const normalizedTitle = title.trim();
+  const lowerSiteName = SITE_NAME.toLowerCase();
+  const lowerTitle = normalizedTitle.toLowerCase();
+
+  if (lowerTitle === lowerSiteName) {
+    return SITE_NAME;
+  }
+
+  const alreadyContainsSiteName = TITLE_SEPARATORS.some((separator) =>
+    lowerTitle.includes(`${separator} ${lowerSiteName}`)
+  );
+
+  return alreadyContainsSiteName ? normalizedTitle : `${normalizedTitle} | ${SITE_NAME}`;
+};
 
 export const useSEO = ({ title, description, path = "", type = "website" }: SEOOptions) => {
   useEffect(() => {
-    document.title = `${title} | ${SITE_NAME}`;
+    document.title = buildDocumentTitle(title);
 
     const ensureMeta = (selector: string, attrs: Record<string, string>) => {
       let element = document.head.querySelector(selector) as HTMLMetaElement | null;
@@ -30,6 +47,7 @@ export const useSEO = ({ title, description, path = "", type = "website" }: SEOO
     ensureMeta('meta[property="og:description"]', { property: 'og:description' }).setAttribute("content", description);
     ensureMeta('meta[property="og:type"]', { property: 'og:type' }).setAttribute("content", type);
     ensureMeta('meta[property="og:url"]', { property: 'og:url' }).setAttribute("content", `${SITE_URL}${path}`);
+    ensureMeta('meta[property="og:site_name"]', { property: 'og:site_name' }).setAttribute("content", SITE_NAME);
     ensureMeta('meta[property="og:image"]', { property: 'og:image' }).setAttribute("content", DEFAULT_OG_IMAGE);
     ensureMeta('meta[property="og:image:width"]', { property: 'og:image:width' }).setAttribute("content", "1200");
     ensureMeta('meta[property="og:image:height"]', { property: 'og:image:height' }).setAttribute("content", "630");
@@ -37,6 +55,7 @@ export const useSEO = ({ title, description, path = "", type = "website" }: SEOO
     ensureMeta('meta[name="twitter:title"]', { name: 'twitter:title' }).setAttribute("content", title);
     ensureMeta('meta[name="twitter:description"]', { name: 'twitter:description' }).setAttribute("content", description);
     ensureMeta('meta[name="twitter:image"]', { name: 'twitter:image' }).setAttribute("content", DEFAULT_OG_IMAGE);
+    ensureMeta('meta[name="robots"]', { name: "robots" }).setAttribute("content", "index,follow");
     let canonical = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonical) {
       canonical = document.createElement("link");
