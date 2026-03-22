@@ -48,12 +48,19 @@ const Marketing = () => {
             <p className="text-brand-slate max-w-2xl mx-auto mb-8">
               Si tu web actual no explica bien tu propuesta o no ayuda a convertir, puedo ayudarte a rediseñar esa capa del sistema.
             </p>
-            <Button asChild size="lg" variant="hero">
-              <a href="/brief?source=presencia-digital-page">
-                Solicitar proyecto
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </a>
-            </Button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button asChild size="lg" variant="hero">
+                <a href="/brief?source=presencia-digital-page">
+                  Solicitar proyecto
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </a>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <a href="/marketing/contenidos">
+                  Ver biblioteca de contenidos
+                </a>
+              </Button>
+            </div>
           </div>
         </section>
       </main>

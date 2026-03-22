@@ -21,6 +21,7 @@ import LegalTerms from "./pages/LegalTerms";
 import LegalPrivacy from "./pages/LegalPrivacy";
 import IndustriasHub from "./pages/IndustriasHub";
 import PseoPage from "./pages/PseoPage";
+import MarketingLibrary from "./pages/MarketingLibrary";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 import { useEffect } from "react";
 
@@ -63,6 +64,7 @@ const App = () => (
             <Route path="/brief" element={<Brief />} />
             <Route path="/automatizaciones" element={<Automatizaciones />} />
             <Route path="/marketing" element={<Marketing />} />
+            <Route path="/marketing/contenidos" element={<MarketingLibrary />} />
             <Route path="/terminos" element={<LegalTerms />} />
             <Route path="/privacidad" element={<LegalPrivacy />} />
             <Route path="/servicios" element={<Servicios />} />
