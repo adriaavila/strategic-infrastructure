@@ -1,41 +1,75 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MessageCircleMore } from "lucide-react";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { getWhatsAppUrl } from "@/config/contact";
 
 export const CTAFinal = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="contacto" className="relative py-32 md:py-40 scroll-mt-20 overflow-hidden">
-      <div className="absolute inset-0 gradient-mesh" />
-      <div className="absolute inset-0 architectural-grid opacity-20" />
+    <section id="contacto" className="relative py-24 md:py-32" ref={containerRef}>
+      <div className="container mx-auto px-6">
+        <div className="section-shell px-8 py-10 md:px-12 md:py-14">
+          <div className="absolute inset-0 gradient-mesh-subtle opacity-90" />
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center" ref={containerRef}>
-          <motion.h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-6 font-heading" initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}>
-            ¿Listo para dejar de perder ventas y tiempo?
-          </motion.h2>
+          <div className="relative z-10 max-w-3xl">
+            <div className="eyebrow mb-6">siguiente paso</div>
+            <motion.h2
+              className="max-w-[13ch] font-heading text-4xl font-semibold tracking-[-0.05em] text-brand-ink md:text-5xl"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              Si hoy tu negocio depende demasiado de tareas manuales, hablemos.
+            </motion.h2>
 
-          <motion.p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto" initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}>
-            Llena el brief en 2 minutos. Te respondo en 24h con una propuesta clara.
-          </motion.p>
+            <motion.p
+              className="mt-5 max-w-[40rem] text-lg leading-relaxed text-foreground/72"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.08, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              Cuéntame dónde está la fricción y te diré qué conviene construir primero. El
+              objetivo no es llenar tu stack: es dejar un sistema más claro, más útil y más rentable.
+            </motion.p>
 
-          <motion.div className="flex flex-col sm:flex-row items-center justify-center gap-4" initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}>
-            <Button variant="hero" size="lg" asChild className="group shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
-              <a href="/brief?source=cta-final">
-                Solicitar diagnóstico
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </Button>
-          </motion.div>
+            <motion.div
+              className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.18, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <Button variant="hero" size="lg" asChild className="justify-center">
+                <a href="/brief?source=cta-final">
+                  Solicitar diagnostico
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+              <Button variant="hero-outline" size="lg" asChild className="justify-center">
+                <a
+                  href={getWhatsAppUrl("Hola, quiero hablar sobre una automatización o sistema con IA para mi negocio.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Hablar por WhatsApp
+                  <MessageCircleMore className="h-4 w-4" />
+                </a>
+              </Button>
+            </motion.div>
 
-          <motion.p className="text-sm text-muted-foreground mt-6" initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : { opacity: 0 }} transition={{ delay: 0.3, duration: 0.6 }}>
-            Sin compromiso · Respuesta en 24h · Propuesta clara
-          </motion.p>
+            <motion.p
+              className="mt-5 text-sm text-muted-foreground"
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : {}}
+              transition={{ delay: 0.26, duration: 0.6 }}
+            >
+              Diagnostico breve · Respuesta clara · Sin propuesta inflada
+            </motion.p>
+          </div>
         </div>
       </div>
     </section>
   );
-}
+};

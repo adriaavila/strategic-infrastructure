@@ -6,20 +6,26 @@ import { EngagementModel } from "@/components/landing/EngagementModel";
 import { IdealClient } from "@/components/landing/IdealClient";
 import { CTAFinal } from "@/components/landing/CTAFinal";
 import { Footer } from "@/components/landing/Footer";
-import { SolutionClusters } from "@/components/landing/SolutionClusters";
+import { useSEO } from "@/lib/seo";
 
 const Index = () => {
+  useSEO({
+    title: "Creativv",
+    description:
+      "Creativv implementa agentes de IA, automatizaciones de WhatsApp, workflows y sistemas web para negocios que quieren vender mejor y operar con más claridad.",
+    path: "/",
+  });
+
   return (
-    <div className="relative min-h-screen bg-brand-dark">
+    <div className="relative min-h-screen bg-background">
       <div className="noise-overlay" />
       <Navbar />
-      <main className="bg-hero-gradient">
+      <main>
         <Hero />
         <CoreServices />
-        <ProjectsShowcase />
-        <EngagementModel />
         <IdealClient />
-        <SolutionClusters />
+        <EngagementModel />
+        <ProjectsShowcase />
         <CTAFinal />
       </main>
       <Footer />

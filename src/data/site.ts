@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "servicioscreativos.online",
+  name: "Creativv",
   legalName: "Allok LLC",
   email: "contacto@servicioscreativos.online",
   whatsappNumber: "584220023684",

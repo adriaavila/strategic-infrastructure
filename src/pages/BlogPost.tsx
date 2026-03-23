@@ -1,6 +1,8 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
+import { InternalLinksSection } from "@/components/seo/InternalLinksSection";
 import { blogPosts, getBlogPostBySlug } from "@/data/blog";
+import { getRelatedInternalLinksForBlogPost } from "@/data/internal-links";
 import { useSEO } from "@/lib/seo";
 import { ArrowRight, Calendar, ChevronLeft, Clock, User } from "lucide-react";
 import { Link, Navigate, useParams } from "react-router-dom";
@@ -9,16 +11,17 @@ const BlogPost = () => {
   const { slug } = useParams();
   const post = slug ? getBlogPostBySlug(slug) : undefined;
 
-  if (!post) return <Navigate to="/blog" replace />;
-
   useSEO({
-    title: post.seoTitle,
-    description: post.seoDescription,
-    path: `/blog/${post.slug}`,
+    title: post?.seoTitle || "Blog | Creativv",
+    description: post?.seoDescription || "Ideas y sistemas para vender, automatizar y crecer mejor.",
+    path: post ? `/blog/${post.slug}` : "/blog",
     type: "article",
   });
 
+  if (!post) return <Navigate to="/blog" replace />;
+
   const related = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 3);
+  const relatedInternalLinks = getRelatedInternalLinksForBlogPost(post, 4);
 
   return (
     <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-primary/30 selection:text-white">
@@ -158,6 +161,16 @@ const BlogPost = () => {
             </aside>
           </div>
         </article>
+
+        <div className="container mx-auto px-6 max-w-6xl mt-14">
+          <InternalLinksSection
+            eyebrow="Rutas sugeridas"
+            title="Páginas conectadas con este artículo"
+            description="Estos enlaces siguen la intención principal del contenido y ayudan a mover la lectura editorial hacia hubs comerciales y páginas SEO más específicas."
+            items={relatedInternalLinks}
+            variant="dark"
+          />
+        </div>
       </main>
 
       <Footer />

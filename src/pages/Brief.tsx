@@ -12,26 +12,27 @@ import { useSearchParams } from "react-router-dom";
 type ContactPreference = "whatsapp" | "email";
 
 const projectTypeOptions = [
-  "Sistema web para ventas",
-  "Website o landing page",
+  "Agente IA",
+  "Automatización de WhatsApp",
+  "AI workflow / integraciones",
+  "Website o landing",
   "Ecommerce",
-  "Automatización con IA",
-  "Dashboard o sistema interno",
-  "Integración con WhatsApp o API",
+  "Sistema interno o dashboard",
   "Otro",
 ];
 
 const sourceLabels: Record<string, string> = {
-  hero: "Solicitud desde el hero principal",
-  "hero-call": "Llamada solicitada desde el hero",
-  historia: "Solicitud desde Historia",
+  hero: "Solicitud desde la home",
+  "hero-call": "Solicitud desde el hero",
   contacto: "Solicitud desde contacto",
   "contact-page": "Solicitud desde la página de contacto",
   "cta-final": "Solicitud desde el CTA final",
-  "oferta-home": "Solicitud desde la sección de oferta",
-  "processo-home": "Solicitud desde cómo trabajo",
+  "oferta-home": "Solicitud desde la sección de soluciones",
+  "processo-home": "Solicitud desde el método",
+  "process-home": "Solicitud desde el método",
   navbar: "Solicitud desde navegación",
   "navbar-mobile": "Solicitud desde navegación móvil",
+  footer: "Solicitud desde footer",
 };
 
 const Brief = () => {
@@ -44,7 +45,7 @@ const Brief = () => {
     email: "",
     whatsapp: "",
     website: "",
-    projectType: "Sistema web para ventas",
+    projectType: "Agente IA",
     budget: "",
     timeline: "",
     goals: "",
@@ -53,8 +54,9 @@ const Brief = () => {
   });
 
   useSEO({
-    title: "Solicitar diagnóstico",
-    description: "Completa este brief breve para compartir objetivos, alcance y contexto de tu próximo sistema digital.",
+    title: "Solicitar diagnostico",
+    description:
+      "Comparte el contexto de tu negocio y el tipo de sistema que necesitas. Creativv responde con una recomendación clara sobre qué conviene construir primero.",
     path: "/brief",
   });
 
@@ -80,96 +82,201 @@ const Brief = () => {
   const whatsappHref = `${siteConfig.whatsappBaseUrl}?text=${encodeURIComponent(message)}`;
   const emailHref = `mailto:${siteConfig.email}?subject=${encodeURIComponent(`Nuevo brief desde ${siteConfig.name}`)}&body=${encodeURIComponent(message)}`;
 
+  const inputClassName =
+    "h-12 rounded-2xl border-border bg-white/86 px-4 text-foreground shadow-sm placeholder:text-muted-foreground focus-visible:ring-brand-primary/20";
+  const textareaClassName =
+    "rounded-[1.35rem] border-border bg-white/86 px-4 py-3 text-foreground shadow-sm placeholder:text-muted-foreground focus-visible:ring-brand-primary/20";
+
   return (
-    <div className="min-h-screen bg-brand-dark text-white">
+    <div className="min-h-screen bg-background text-foreground selection:bg-brand-primary/20 selection:text-foreground">
+      <div className="noise-overlay" />
       <Navbar />
-      <main className="pt-32 pb-24">
-        <div className="container mx-auto px-6 max-w-5xl">
-          <div className="max-w-3xl mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-foreground/10 bg-card/60 backdrop-blur-sm mb-6 text-xs uppercase tracking-wider text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-secondary animate-pulse-soft" />
-              Solicitar diagnóstico
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-5">Cuéntame qué quieres resolver</h1>
-            <p className="text-lg text-brand-slate leading-relaxed">
-              Este brief toma 2–3 minutos. Con esto puedo decirte qué sistema conviene construir primero y si hay buen encaje para trabajar juntos.
+      <main className="relative overflow-hidden pb-24 pt-32 md:pt-40">
+        <div className="absolute inset-0 gradient-mesh-subtle opacity-90" />
+        <div className="absolute inset-0 architectural-grid opacity-[0.16]" />
+
+        <div className="container relative z-10 mx-auto max-w-6xl px-6">
+          <div className="max-w-3xl">
+            <div className="eyebrow mb-6">solicitar diagnostico</div>
+            <h1 className="font-heading text-4xl font-semibold tracking-[-0.05em] text-brand-ink md:text-6xl">
+              Cuéntame qué quieres resolver y qué parte del negocio hoy genera fricción.
+            </h1>
+            <p className="mt-5 max-w-[42rem] text-lg leading-relaxed text-foreground/72">
+              Este brief toma unos minutos. Con esta información puedo decirte qué sistema conviene
+              construir primero y por dónde tiene más sentido empezar.
             </p>
           </div>
 
-          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
-            <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-7 md:p-8 space-y-6">
-              <div>
-                <h2 className="text-2xl font-semibold mb-2">1. Datos básicos</h2>
-                <p className="text-sm text-brand-slate mb-5">Estos campos me ayudan a entender el contexto general y cómo responderte.</p>
-                <div className="grid gap-5 md:grid-cols-2">
-                  <div><label className="text-sm text-white/80 mb-2 block">Nombre</label><Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Tu nombre" /></div>
-                  <div><label className="text-sm text-white/80 mb-2 block">Empresa</label><Input value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} placeholder="Empresa / marca" /></div>
-                  <div><label className="text-sm text-white/80 mb-2 block">Correo</label><Input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="tu@empresa.com" /></div>
-                  <div><label className="text-sm text-white/80 mb-2 block">WhatsApp</label><Input value={form.whatsapp} onChange={(e) => setForm({ ...form, whatsapp: e.target.value })} placeholder="+58..." /></div>
-                  <div><label className="text-sm text-white/80 mb-2 block">Sitio actual <span className="text-white/40">(opcional)</span></label><Input value={form.website} onChange={(e) => setForm({ ...form, website: e.target.value })} placeholder="https://..." /></div>
-                  <div>
-                    <label className="text-sm text-white/80 mb-2 block">Tipo de proyecto</label>
-                    <select value={form.projectType} onChange={(e) => setForm({ ...form, projectType: e.target.value })} className="w-full h-10 rounded-lg border border-white/10 bg-transparent px-3 text-sm text-white light:text-foreground light:border-foreground/10 light:bg-white/70">
-                      {projectTypeOptions.map((option) => <option key={option} value={option} className="bg-brand-dark light:bg-white">{option}</option>)}
-                    </select>
+          <div className="mt-12 grid gap-8 lg:grid-cols-[1.08fr_0.92fr]">
+            <div className="section-shell p-7 md:p-8">
+              <div className="relative z-10 space-y-8">
+                <section>
+                  <div className="mb-5">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                      Paso 1
+                    </div>
+                    <h2 className="mt-2 text-2xl font-semibold tracking-tight text-brand-ink">
+                      Contexto básico
+                    </h2>
+                    <p className="mt-2 text-sm text-foreground/68">
+                      Lo necesario para entender el negocio, el momento y cómo responderte.
+                    </p>
                   </div>
-                </div>
-              </div>
 
-              <div>
-                <h2 className="text-2xl font-semibold mb-2">2. Objetivo y alcance</h2>
-                <p className="text-sm text-brand-slate mb-5">Aquí está la parte importante: qué quieres mejorar y qué crees que necesitas.</p>
-                <div className="grid gap-5 md:grid-cols-2 mb-5">
-                  <div><label className="text-sm text-white/80 mb-2 block">Presupuesto estimado <span className="text-white/40">(opcional)</span></label><Input value={form.budget} onChange={(e) => setForm({ ...form, budget: e.target.value })} placeholder="Ej. 2.000 - 5.000 USD" /></div>
-                  <div><label className="text-sm text-white/80 mb-2 block">Tiempo esperado <span className="text-white/40">(opcional)</span></label><Input value={form.timeline} onChange={(e) => setForm({ ...form, timeline: e.target.value })} placeholder="Ej. 4 semanas" /></div>
-                </div>
-                <div className="mb-5">
-                  <label className="text-sm text-white/80 mb-2 block">Objetivo principal</label>
-                  <Textarea value={form.goals} onChange={(e) => setForm({ ...form, goals: e.target.value })} placeholder="¿Qué quieres mejorar en ventas, operación o eficiencia?" className="min-h-[110px]" />
-                </div>
-                <div className="mb-5">
-                  <label className="text-sm text-white/80 mb-2 block">Qué necesita el sistema</label>
-                  <Textarea value={form.scope} onChange={(e) => setForm({ ...form, scope: e.target.value })} placeholder="Páginas, automatizaciones, flujos, integraciones, dashboards, atención por WhatsApp, etc." className="min-h-[140px]" />
-                </div>
-                <div>
-                  <label className="text-sm text-white/80 mb-2 block">Referencias <span className="text-white/40">(opcional)</span></label>
-                  <Textarea value={form.references} onChange={(e) => setForm({ ...form, references: e.target.value })} placeholder="Links de referencia, competidores, herramientas actuales, inspiración visual" className="min-h-[100px]" />
-                </div>
+                  <div className="grid gap-5 md:grid-cols-2">
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-foreground/78">Nombre</label>
+                      <Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Tu nombre" className={inputClassName} />
+                    </div>
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-foreground/78">Empresa</label>
+                      <Input value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} placeholder="Empresa o marca" className={inputClassName} />
+                    </div>
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-foreground/78">Correo</label>
+                      <Input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="tu@empresa.com" className={inputClassName} />
+                    </div>
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-foreground/78">WhatsApp</label>
+                      <Input value={form.whatsapp} onChange={(e) => setForm({ ...form, whatsapp: e.target.value })} placeholder="+58..." className={inputClassName} />
+                    </div>
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-foreground/78">
+                        Sitio actual <span className="text-muted-foreground">(opcional)</span>
+                      </label>
+                      <Input value={form.website} onChange={(e) => setForm({ ...form, website: e.target.value })} placeholder="https://..." className={inputClassName} />
+                    </div>
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-foreground/78">Tipo de proyecto</label>
+                      <select
+                        value={form.projectType}
+                        onChange={(e) => setForm({ ...form, projectType: e.target.value })}
+                        className={`${inputClassName} w-full`}
+                      >
+                        {projectTypeOptions.map((option) => (
+                          <option key={option} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                </section>
+
+                <section>
+                  <div className="mb-5">
+                    <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                      Paso 2
+                    </div>
+                    <h2 className="mt-2 text-2xl font-semibold tracking-tight text-brand-ink">
+                      Objetivo y alcance
+                    </h2>
+                    <p className="mt-2 text-sm text-foreground/68">
+                      Aquí se entiende dónde está el cuello de botella y qué tan cerca estás de resolverlo.
+                    </p>
+                  </div>
+
+                  <div className="grid gap-5 md:grid-cols-2">
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-foreground/78">
+                        Presupuesto estimado <span className="text-muted-foreground">(opcional)</span>
+                      </label>
+                      <Input value={form.budget} onChange={(e) => setForm({ ...form, budget: e.target.value })} placeholder="Ej. 2.000 - 5.000 USD" className={inputClassName} />
+                    </div>
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-foreground/78">
+                        Tiempo esperado <span className="text-muted-foreground">(opcional)</span>
+                      </label>
+                      <Input value={form.timeline} onChange={(e) => setForm({ ...form, timeline: e.target.value })} placeholder="Ej. 4 semanas" className={inputClassName} />
+                    </div>
+                  </div>
+
+                  <div className="mt-5">
+                    <label className="mb-2 block text-sm font-medium text-foreground/78">Objetivo principal</label>
+                    <Textarea value={form.goals} onChange={(e) => setForm({ ...form, goals: e.target.value })} placeholder="¿Qué quieres mejorar en ventas, operación o eficiencia?" className={`${textareaClassName} min-h-[120px]`} />
+                  </div>
+
+                  <div className="mt-5">
+                    <label className="mb-2 block text-sm font-medium text-foreground/78">Qué necesita el sistema</label>
+                    <Textarea value={form.scope} onChange={(e) => setForm({ ...form, scope: e.target.value })} placeholder="Flujos, integraciones, automatizaciones, dashboard, WhatsApp, ecommerce, etc." className={`${textareaClassName} min-h-[145px]`} />
+                  </div>
+
+                  <div className="mt-5">
+                    <label className="mb-2 block text-sm font-medium text-foreground/78">
+                      Referencias <span className="text-muted-foreground">(opcional)</span>
+                    </label>
+                    <Textarea value={form.references} onChange={(e) => setForm({ ...form, references: e.target.value })} placeholder="Links, competidores, ejemplos o notas útiles" className={`${textareaClassName} min-h-[110px]`} />
+                  </div>
+                </section>
               </div>
             </div>
 
-            <aside className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-7 md:p-8 h-fit lg:sticky lg:top-28">
-              <h2 className="text-2xl font-semibold mb-4">3. Enviar información</h2>
-              <p className="text-sm text-brand-slate leading-relaxed mb-6">
-                Elige el canal principal. Después del envío te responderé con una recomendación inicial sobre qué conviene construir primero.
-              </p>
+            <aside className="section-shell h-fit p-7 lg:sticky lg:top-28 md:p-8">
+              <div className="relative z-10">
+                <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                  Paso 3
+                </div>
+                <h2 className="mt-2 text-2xl font-semibold tracking-tight text-brand-ink">
+                  Enviar información
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-foreground/68">
+                  Elige el canal principal y te responderé con una recomendación inicial sobre qué conviene construir primero.
+                </p>
 
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                <button type="button" onClick={() => setContactPreference("whatsapp")} className={`rounded-2xl border px-4 py-3 text-sm transition-colors ${contactPreference === "whatsapp" ? "border-brand-secondary bg-brand-secondary/15 text-brand-secondary" : "border-white/10 text-white/70 bg-white/5 light:text-foreground/70 light:bg-white/70 light:border-foreground/10"}`}>WhatsApp</button>
-                <button type="button" onClick={() => setContactPreference("email")} className={`rounded-2xl border px-4 py-3 text-sm transition-colors ${contactPreference === "email" ? "border-brand-secondary bg-brand-secondary/15 text-brand-secondary" : "border-white/10 text-white/70 bg-white/5 light:text-foreground/70 light:bg-white/70 light:border-foreground/10"}`}>Correo</button>
-              </div>
+                <div className="mt-6 grid grid-cols-2 gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setContactPreference("whatsapp")}
+                    className={`rounded-2xl border px-4 py-3 text-sm font-medium transition-colors ${
+                      contactPreference === "whatsapp"
+                        ? "border-brand-primary/15 bg-brand-primary/10 text-brand-secondary"
+                        : "border-border bg-white/72 text-foreground/70"
+                    }`}
+                  >
+                    WhatsApp
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setContactPreference("email")}
+                    className={`rounded-2xl border px-4 py-3 text-sm font-medium transition-colors ${
+                      contactPreference === "email"
+                        ? "border-brand-primary/15 bg-brand-primary/10 text-brand-secondary"
+                        : "border-border bg-white/72 text-foreground/70"
+                    }`}
+                  >
+                    Correo
+                  </button>
+                </div>
 
-              <div className="rounded-2xl border border-white/10 bg-black/20 p-4 mb-6">
-                <div className="text-[11px] uppercase tracking-[0.22em] text-brand-secondary/80 font-semibold mb-2">Origen</div>
-                <p className="text-sm text-white/75">{sourceLabels[source] || "Solicitud general"}</p>
-              </div>
+                <div className="mt-6 rounded-[1.35rem] border border-border bg-white/84 p-4 shadow-sm">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                    Origen
+                  </div>
+                  <p className="mt-2 text-sm text-foreground/72">{sourceLabels[source] || "Solicitud general"}</p>
+                </div>
 
-              <div className="space-y-3">
-                <Button asChild size="lg" className="w-full">
-                  <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="w-4 h-4" /> Enviar por WhatsApp
-                  </a>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="w-full bg-transparent text-white border-white/15 hover:bg-white/10 light:text-foreground light:border-foreground/15 light:hover:bg-foreground/5">
-                  <a href={emailHref}>
-                    <Mail className="w-4 h-4" /> Enviar por correo
-                  </a>
-                </Button>
-              </div>
+                <div className="mt-6 space-y-3">
+                  <Button asChild size="lg" variant="hero" className="w-full justify-center">
+                    <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
+                      <MessageCircle className="h-4 w-4" /> Enviar por WhatsApp
+                    </a>
+                  </Button>
+                  <Button asChild size="lg" variant="hero-outline" className="w-full justify-center">
+                    <a href={emailHref}>
+                      <Mail className="h-4 w-4" /> Enviar por correo
+                    </a>
+                  </Button>
+                </div>
 
-              <div className="mt-6 pt-6 border-t border-white/10 text-sm text-brand-slate leading-relaxed space-y-3">
-                <p className="flex items-start gap-2"><Send className="w-4 h-4 mt-0.5 text-brand-secondary" />Respuesta inicial con recomendación, alcance probable y siguiente paso.</p>
-                <p>Campos clave: nombre, empresa, objetivo principal y qué necesita el sistema.</p>
+                <div className="mt-6 rounded-[1.35rem] border border-border bg-[#F7F4FB] p-4">
+                  <div className="space-y-3 text-sm leading-relaxed text-foreground/70">
+                    <p className="flex items-start gap-2">
+                      <Send className="mt-0.5 h-4 w-4 text-brand-secondary" />
+                      Respuesta inicial con recomendación, alcance probable y siguiente paso.
+                    </p>
+                    <p>Campos clave: nombre, empresa, objetivo principal y qué necesita el sistema.</p>
+                  </div>
+                </div>
               </div>
             </aside>
           </div>

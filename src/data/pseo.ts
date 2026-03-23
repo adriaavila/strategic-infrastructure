@@ -27,6 +27,114 @@ export const pseoData: PseoData[] = [
     ]
   },
   {
+    "slug": "appointment-booking",
+    "title": "Reserva de citas para negocios | Servicios Creativos",
+    "description": "Automatizamos reservas, confirmaciones, recordatorios y reagendados para negocios que dependen de su agenda para vender o atender mejor.",
+    "h1": "Reserva de citas para negocios",
+    "paragraphs": [
+      "← Servicios Creativos",
+      "Diseñamos sistemas para que tus citas de ventas, consultas o visitas se agenden con menos fricción y más contexto desde el primer contacto.",
+      "Precalificación antes de reservar para que la agenda no se llene de ruido.",
+      "Confirmaciones, recordatorios y reagendados automáticos conectados con tu operación real.",
+      "Seguimiento antes y después de cada cita para mejorar asistencia y conversión."
+    ],
+    "h2s": [
+      "Qué se automatiza",
+      "Dónde genera más impacto",
+      "Cómo se implementa"
+    ]
+  },
+  {
+    "slug": "crm-integration",
+    "title": "Integración CRM para negocios | Servicios Creativos",
+    "description": "Conectamos WhatsApp, formularios, campañas y ventas con tu CRM para que cada oportunidad entre mejor clasificada y con seguimiento real.",
+    "h1": "Integración CRM para negocios",
+    "paragraphs": [
+      "← Servicios Creativos",
+      "La integración correcta no solo mueve datos: ordena pipeline, elimina carga manual y le da al equipo contexto útil para vender o atender mejor.",
+      "Captura automática desde formularios, chats y campañas.",
+      "Reglas de clasificación, asignación y seguimiento según tu proceso comercial.",
+      "Mejor trazabilidad para reporting, operación y decisiones de crecimiento."
+    ],
+    "h2s": [
+      "Qué conectamos",
+      "Beneficios operativos",
+      "Casos por industria"
+    ]
+  },
+  {
+    "slug": "customer-support",
+    "title": "Soporte al cliente automatizado | Servicios Creativos",
+    "description": "Creamos sistemas de soporte al cliente para responder FAQs, derivar casos y mantener una experiencia consistente sin saturar al equipo.",
+    "h1": "Soporte al cliente automatizado",
+    "paragraphs": [
+      "← Servicios Creativos",
+      "Automatizamos la capa repetitiva del soporte para que el equipo humano se enfoque en lo que sí necesita criterio, empatía o resolución más profunda.",
+      "Respuestas iniciales y FAQs con contexto del negocio.",
+      "Clasificación por urgencia, motivo o tipo de cliente.",
+      "Escalamiento limpio al humano correcto con resumen del caso."
+    ],
+    "h2s": [
+      "Qué tipo de soporte resolvemos",
+      "Cuándo conviene automatizar",
+      "Cómo cuidar la experiencia"
+    ]
+  },
+  {
+    "slug": "lead-generation",
+    "title": "Generación de leads para negocios | Servicios Creativos",
+    "description": "Diseñamos sistemas de generación de leads para captar mejor, calificar antes y activar seguimiento automático desde el primer contacto.",
+    "h1": "Generación de leads para negocios",
+    "paragraphs": [
+      "← Servicios Creativos",
+      "No se trata solo de conseguir más formularios. Se trata de convertir tráfico e interés en conversaciones mejor preparadas para ventas.",
+      "Captura conversacional, formularios y rutas de calificación más útiles.",
+      "Asignación al asesor o canal correcto según necesidad, presupuesto o urgencia.",
+      "Seguimiento automático para no dejar tibio lo que costó generar."
+    ],
+    "h2s": [
+      "Dónde se fuga el lead",
+      "Cómo mejorar la calidad",
+      "Industrias con mejor encaje"
+    ]
+  },
+  {
+    "slug": "sales-automation",
+    "title": "Automatización de ventas para negocios | Servicios Creativos",
+    "description": "Automatizamos seguimiento comercial, reactivación y organización del pipeline para que el proceso de ventas no dependa de memoria ni improvisación.",
+    "h1": "Automatización de ventas para negocios",
+    "paragraphs": [
+      "← Servicios Creativos",
+      "Cuando el pipeline crece, vender bien depende de constancia. Automatizamos la parte repetitiva del seguimiento para sostener ritmo sin perder criterio comercial.",
+      "Secuencias de seguimiento por etapa, interés o temperatura del lead.",
+      "Alertas, tareas y reactivación para oportunidades que se enfrían.",
+      "Visibilidad clara de próxima acción y estado comercial."
+    ],
+    "h2s": [
+      "Qué parte del proceso automatizamos",
+      "Cómo mejora el pipeline",
+      "Cuándo tiene mejor retorno"
+    ]
+  },
+  {
+    "slug": "chatbot",
+    "title": "Chatbot para negocios | Servicios Creativos",
+    "description": "Creamos chatbots para captar, orientar y responder más rápido en web o WhatsApp, con rutas claras hacia ventas, soporte o agenda.",
+    "h1": "Chatbot para negocios",
+    "paragraphs": [
+      "← Servicios Creativos",
+      "Un buen chatbot no reemplaza todo. Hace muy bien su trabajo: orientar, responder lo repetitivo y mover la conversación al siguiente paso correcto.",
+      "Preguntas frecuentes, menú guiado y captura inicial de contexto.",
+      "Derivación a humano, agenda o flujo automatizado según intención.",
+      "Ideal para negocios que necesitan velocidad y orden desde el primer mensaje."
+    ],
+    "h2s": [
+      "Qué puede resolver",
+      "Canales donde funciona mejor",
+      "Cómo evitar experiencias robóticas"
+    ]
+  },
+  {
     "slug": "ai-agent-agencies",
     "title": "AI Agent para Agencias | Servicios Creativos",
     "description": "Agente de IA para negocios de agencias. Implementación rápida, resultados medibles. Solicita una demo gratuita.",

@@ -1,9 +1,11 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
+import { InternalLinksSection } from "@/components/seo/InternalLinksSection";
 import { useSEO } from "@/lib/seo";
 import { Link } from "react-router-dom";
 import { ArrowRight, BarChart3, Code2, Sparkles, Workflow } from "lucide-react";
+import { servicesInternalLinks } from "@/data/internal-links";
 
 type ServiceDetail = {
   title: string;
@@ -213,6 +215,16 @@ const Servicios = () => {
               </article>
             );
           })}
+        </section>
+
+        <section className="container mx-auto mt-20 max-w-6xl px-6">
+          <InternalLinksSection
+            eyebrow="Exploración interna"
+            title="Hubs y páginas que ya alimentan el cluster SEO"
+            description="Desde aquí ya puedes entrar a las rutas más importantes del sistema: hubs de solución, directorios por industria y landings locales que ayudan a distribuir mejor la autoridad interna."
+            items={servicesInternalLinks}
+            variant="dark"
+          />
         </section>
 
         <section className="container mx-auto mt-20 max-w-6xl px-6">

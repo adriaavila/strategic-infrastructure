@@ -20,6 +20,8 @@ import Brief from "./pages/Brief";
 import LegalTerms from "./pages/LegalTerms";
 import LegalPrivacy from "./pages/LegalPrivacy";
 import IndustriasHub from "./pages/IndustriasHub";
+import CiudadesHub from "./pages/CiudadesHub";
+import SiteMapPage from "./pages/SiteMapPage";
 import PseoPage from "./pages/PseoPage";
 import MarketingLibrary from "./pages/MarketingLibrary";
 import { WhatsAppButton } from "./components/WhatsAppButton";
@@ -69,6 +71,8 @@ const App = () => (
             <Route path="/privacidad" element={<LegalPrivacy />} />
             <Route path="/servicios" element={<Servicios />} />
             <Route path="/industrias" element={<IndustriasHub />} />
+            <Route path="/ciudades" element={<CiudadesHub />} />
+            <Route path="/mapa-del-sitio" element={<SiteMapPage />} />
             <Route path="/proyectos" element={<Proyectos />} />
             <Route path="/proyectos/:slug" element={<ProjectDetail />} />
             <Route path="/:slug" element={<PseoPage />} />

@@ -5,9 +5,10 @@ type SEOOptions = {
   description: string;
   path?: string;
   type?: string;
+  structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
 };
 
-const SITE_NAME = "servicioscreativos.online";
+const SITE_NAME = "Creativv";
 const SITE_URL = "https://servicioscreativos.online";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-share.svg`;
 const TITLE_SEPARATORS = ["|", "-", "·"];
@@ -28,7 +29,13 @@ const buildDocumentTitle = (title: string) => {
   return alreadyContainsSiteName ? normalizedTitle : `${normalizedTitle} | ${SITE_NAME}`;
 };
 
-export const useSEO = ({ title, description, path = "", type = "website" }: SEOOptions) => {
+export const useSEO = ({
+  title,
+  description,
+  path = "",
+  type = "website",
+  structuredData,
+}: SEOOptions) => {
   useEffect(() => {
     document.title = buildDocumentTitle(title);
 
@@ -63,5 +70,22 @@ export const useSEO = ({ title, description, path = "", type = "website" }: SEOO
       document.head.appendChild(canonical);
     }
     canonical.href = `${SITE_URL}${path}`;
-  }, [title, description, path, type]);
+
+    const structuredDataId = "page-structured-data";
+    const existingStructuredData = document.getElementById(structuredDataId);
+
+    if (!structuredData || (Array.isArray(structuredData) && structuredData.length === 0)) {
+      existingStructuredData?.remove();
+      return;
+    }
+
+    const schemaScript = existingStructuredData ?? document.createElement("script");
+    schemaScript.id = structuredDataId;
+    schemaScript.setAttribute("type", "application/ld+json");
+    schemaScript.textContent = JSON.stringify(structuredData);
+
+    if (!existingStructuredData) {
+      document.head.appendChild(schemaScript);
+    }
+  }, [title, description, path, structuredData, type]);
 };

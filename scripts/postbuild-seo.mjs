@@ -174,6 +174,8 @@ const pageEntries = [
   { path: "/historia", lastmod: TODAY, changefreq: "monthly", priority: "0.6" },
   { path: "/servicios", lastmod: TODAY, changefreq: "weekly", priority: "0.8" },
   { path: "/industrias", lastmod: TODAY, changefreq: "weekly", priority: "0.8" },
+  { path: "/ciudades", lastmod: TODAY, changefreq: "weekly", priority: "0.7" },
+  { path: "/mapa-del-sitio", lastmod: TODAY, changefreq: "weekly", priority: "0.6" },
 ];
 
 const blogEntries = blogPosts.map((post) => ({

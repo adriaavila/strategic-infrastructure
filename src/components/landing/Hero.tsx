@@ -1,120 +1,220 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CalendarDays } from "lucide-react";
-import { ParticleBackground } from "@/components/particles/ParticleBackground";
+import { ArrowRight, MessageSquareText } from "lucide-react";
 import { useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
-
-
+import { getWhatsAppUrl } from "@/config/contact";
+import { Logo } from "@/components/ui/Logo";
 
 export const Hero = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-50px" });
+  const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
-  const headlineY = useTransform(scrollYProgress, [0, 1], [0, -28]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, 56]);
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1.04, 1.12]);
 
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-brand-dark bg-hero-gradient md:min-h-screen"
+      className="relative isolate min-h-[100svh] overflow-hidden"
     >
-      <div className="absolute inset-0 architectural-grid opacity-[0.16] light:opacity-[0.08]" />
-      <div className="absolute inset-0 z-[1] overflow-hidden opacity-55 light:opacity-45">
-        <ParticleBackground />
-      </div>
-      <div className="absolute inset-x-0 top-0 h-[420px] bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.10),transparent_62%)] pointer-events-none light:bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.14),transparent_58%)]" />
-      <div className="absolute top-1/2 left-1/2 h-[400px] w-[560px] -translate-x-1/2 -translate-y-1/4 rounded-full bg-brand-primary/[0.06] blur-[120px] pointer-events-none light:bg-brand-primary/[0.03] sm:h-[520px] sm:w-[760px]" />
-
-      <motion.div className="relative z-10 container mx-auto px-5 pt-24 pb-16 sm:px-6 sm:pt-28 sm:pb-24" style={{ y: headlineY, opacity }}>
-        <div className="mx-auto max-w-5xl text-center">
+      <motion.div
+        className="absolute inset-0 bg-background overflow-hidden"
+        style={{ y: imageY, scale: imageScale }}
+      >
+        {/* Deep ambient backdrop */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--brand-primary)_0%,transparent_50%)] opacity-[0.06] dark:opacity-[0.12]" />
+        
+        {/* Cinematic Animated Orbs Glow System - Optimized for mobile & large screens */}
+        <div className="absolute inset-x-0 h-[120vh] md:h-[150vh] -top-[10vh] md:-top-[25vh] will-change-transform mix-blend-normal dark:mix-blend-screen opacity-90 md:opacity-100">
           <motion.div
-            className="mb-6 inline-flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-white/10 bg-card/80 px-4 py-2.5 shadow-architectural backdrop-blur-sm sm:mb-8 sm:px-5"
-            initial={{ opacity: 0, y: 20, scale: 0.96 }}
-            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <span className="w-2 h-2 rounded-full bg-brand-secondary animate-pulse-soft" />
-            <span className="text-[0.92rem] font-medium tracking-[0.01em] text-white/72 light:text-slate-700 sm:text-sm sm:tracking-wide">
-              Webs · Automatización · Dashboards
-            </span>
-          </motion.div>
-
-          <motion.h1
-            className="mb-5 font-heading text-[clamp(2.8rem,12vw,4.5rem)] font-semibold leading-[0.95] tracking-[-0.05em] text-white light:text-slate-950 sm:mb-6 sm:text-5xl sm:leading-[1.02] sm:tracking-tight md:text-6xl lg:text-7xl"
-            initial={{ opacity: 0, y: 36, filter: "blur(8px)" }}
-            animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
-            transition={{ delay: 0.15, duration: 0.72, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <span className="block sm:inline">Una </span>
-            <span className="block bg-gradient-to-r from-brand-primary via-purple-400 to-brand-secondary bg-clip-text text-transparent animate-gradient-x bg-[length:200%_auto] sm:inline-block">
-              web que venda,
-            </span>{" "}
-            <span className="block sm:inline">procesos que </span>
-            <motion.span
-              className="relative mt-2 inline-block px-[0.08em] pb-[0.16em] text-white light:text-slate-950 sm:mt-0 sm:inline-block"
-              initial={{ opacity: 0, y: 16 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.5, duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-            >
-              no dependan de ti
-              <motion.span
-                className="absolute -bottom-1 left-0 h-[3px] rounded-full bg-gradient-to-r from-brand-secondary to-brand-primary"
-                initial={{ width: 0 }}
-                animate={isInView ? { width: "100%" } : {}}
-                transition={{ delay: 0.9, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              />
-            </motion.span>{" "}
-            <span className="mt-2 block sm:mt-0 sm:inline">
-              y{" "}
-              <span className="bg-gradient-to-r from-brand-secondary to-emerald-400 bg-clip-text text-transparent sm:inline-block">
-                datos para decidir mejor
-              </span>
-            </span>
-          </motion.h1>
-
+            className="absolute top-[10%] -right-[10%] h-[120vw] w-[120vw] md:h-[800px] md:w-[800px] md:right-[5%] md:top-[5%] rounded-full bg-brand-primary/10 blur-[100px] md:blur-[160px]"
+            animate={{
+              x: [0, 40, -20, 0],
+              y: [0, -30, 20, 0],
+              scale: [1, 1.1, 0.95, 1],
+            }}
+            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          />
           <motion.div
-            className="mx-auto flex w-full max-w-sm flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:items-center sm:gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.55, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <Button
-              variant="hero"
-              size="lg"
-              asChild
-              className="group relative w-full justify-center overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl sm:w-auto"
-            >
-              <a href="/brief?source=hero-call">
-                Solicitar diagnóstico
-                <CalendarDays className="w-4 h-4 transition-transform group-hover:translate-x-1.5" />
-              </a>
-            </Button>
-
-            <Button
-              variant="outline"
-              size="lg"
-              asChild
-              className="w-full justify-center border-white/20 bg-transparent text-white hover:bg-white/10 light:border-foreground/15 light:text-foreground light:hover:bg-foreground/5 sm:w-auto"
-            >
-              <a href="/proyectos">
-                Ver casos de éxito
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </a>
-            </Button>
-          </motion.div>
-
-          <motion.p
-            className="mt-4 max-w-[24rem] text-sm text-white/42 light:font-medium light:text-slate-700 sm:mt-5 sm:max-w-none"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.75, duration: 0.6 }}
-          >
-            Sin compromiso · Brief de 2 minutos · Respuesta en 24h
-          </motion.p>
+            className="absolute top-[30%] -left-[20%] h-[110vw] w-[110vw] md:h-[700px] md:w-[700px] md:left-auto md:right-[15%] md:top-[25%] rounded-full bg-brand-secondary/15 blur-[90px] md:blur-[140px]"
+            animate={{
+              x: [0, -30, 30, 0],
+              y: [0, 30, -30, 0],
+              scale: [1, 1.05, 0.9, 1],
+            }}
+            transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+          />
+          <motion.div
+            className="absolute bottom-[20%] right-[10%] h-[100vw] w-[100vw] md:h-[600px] md:w-[600px] md:right-[25%] md:bottom-[25%] rounded-full bg-accent-purple/15 blur-[90px] md:blur-[130px]"
+            animate={{
+              x: [0, 30, -30, 0],
+              y: [0, -20, 30, 0],
+              scale: [1, 0.95, 1.05, 1],
+            }}
+            transition={{ duration: 32, repeat: Infinity, ease: "linear" }}
+          />
         </div>
+
+        {/* Elegant Architectural Grid fading beautifully into the edges */}
+        <div className="absolute inset-0 architectural-grid opacity-[0.25] dark:opacity-[0.12] [mask-image:radial-gradient(ellipse_120%_120%_at_50%_30%,#000_20%,transparent_70%)] md:[mask-image:radial-gradient(ellipse_100%_100%_at_70%_50%,#000_30%,transparent_100%)]" />
+
+        {/* Beautiful Floating Workflow Nodes & Connections - Shifted to right on desktop */}
+        <div className="absolute inset-0 md:left-[20%] lg:left-[30%] overflow-hidden pointer-events-none opacity-60 dark:opacity-40">
+          <svg className="absolute w-[160%] h-[160%] -top-[30%] -left-[30%] md:w-[130%] md:h-[130%] md:-top-[15%] md:-left-[15%]" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="line-gradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="currentColor" className="text-brand-primary" stopOpacity="0" />
+                <stop offset="50%" stopColor="currentColor" className="text-brand-primary" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="currentColor" className="text-brand-primary" stopOpacity="0" />
+              </linearGradient>
+              <linearGradient id="line-gradient-2" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="currentColor" className="text-brand-secondary" stopOpacity="0" />
+                <stop offset="50%" stopColor="currentColor" className="text-brand-secondary" stopOpacity="0.5" />
+                <stop offset="100%" stopColor="currentColor" className="text-brand-secondary" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+            
+            {/* Elegant animated workflow curves */}
+            <motion.path 
+              d="M 15 90 Q 40 55 65 70 T 100 15" 
+              fill="none" 
+              stroke="url(#line-gradient-1)" 
+              strokeWidth="0.12" 
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={isInView ? { pathLength: 1, opacity: 1 } : {}}
+              transition={{ duration: 2.8, ease: "easeInOut", delay: 0.2 }}
+            />
+            <motion.path 
+              d="M 0 45 Q 45 45 55 65 T 115 85" 
+              fill="none" 
+              stroke="url(#line-gradient-2)" 
+              strokeWidth="0.1"
+              strokeDasharray="1 2.5"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={isInView ? { pathLength: 1, opacity: 1 } : {}}
+              transition={{ duration: 3.2, ease: "easeInOut", delay: 0.5 }}
+            />
+            <motion.path 
+              d="M 25 0 C 45 45 65 25 85 115" 
+              fill="none" 
+              stroke="currentColor" 
+              className="text-brand-primary/30 dark:text-brand-primary/10"
+              strokeWidth="0.08" 
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={isInView ? { pathLength: 1, opacity: 1 } : {}}
+              transition={{ duration: 4.5, ease: "easeInOut", delay: 0.1 }}
+            />
+
+            {/* Glowing intersection workflow nodes */}
+            <motion.circle cx="65" cy="70" r="0.6" className="fill-brand-primary" 
+              initial={{ scale: 0, opacity: 0 }}
+              animate={isInView ? { scale: [0, 1.5, 1], opacity: [0, 1, 0.9] } : {}}
+              transition={{ duration: 1.2, delay: 1.5 }}
+            />
+            <motion.circle cx="65" cy="70" r="2.5" className="fill-brand-primary/20" 
+              animate={{ scale: [1, 2.2, 1], opacity: [0.4, 0.1, 0.4] }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+            />
+            
+            <motion.circle cx="55" cy="65" r="0.5" className="fill-brand-secondary" 
+              initial={{ scale: 0, opacity: 0 }}
+              animate={isInView ? { scale: [0, 1.5, 1], opacity: [0, 1, 0.9] } : {}}
+              transition={{ duration: 1.2, delay: 2 }}
+            />
+            <motion.circle cx="55" cy="65" r="2" className="fill-brand-secondary/15" 
+              animate={{ scale: [1, 1.8, 1], opacity: [0.3, 0.1, 0.3] }}
+              transition={{ duration: 4.2, repeat: Infinity, delay: 1, ease: "easeInOut" }}
+            />
+          </svg>
+        </div>
+
+        {/* Soft Grain Texture for Authentic Premium Feel */}
+        <div 
+          className="absolute inset-0 mix-blend-overlay pointer-events-none opacity-[0.25] dark:opacity-[0.1]" 
+          style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")" }} 
+        />
+        
+        {/* Subtle Horizontal Scanner Lines */}
+        <motion.div 
+          className="absolute top-[40%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-primary/20 to-transparent mix-blend-plus-lighter md:w-[60%] md:left-[40%]"
+          animate={{ y: [0, 150, 0], opacity: [0, 0.6, 0] }}
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div 
+          className="absolute top-[60%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent-purple/10 to-transparent mix-blend-plus-lighter md:w-[50%] md:left-[30%]"
+          animate={{ y: [0, -100, 0], opacity: [0, 0.5, 0] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+        />
       </motion.div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent hidden dark:block" />
+      {/* Smooth gradient fade to background content */}
+      <div className="absolute inset-x-0 bottom-0 h-40 md:h-56 bg-gradient-to-t from-background via-background/80 md:via-background/70 to-transparent z-10" />
+
+      <div className="relative z-10 flex min-h-[100svh] items-end">
+        <div className="w-full px-6 pb-12 pt-28 md:px-10 md:pb-20 md:pt-36">
+          <div className="max-w-[36rem]">
+            <motion.div
+              className="font-mono text-[11px] uppercase tracking-[0.28em] text-primary md:text-xs"
+              initial={{ opacity: 0, y: 18 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            >
+              partner de automatizacion e IA para negocios
+            </motion.div>
+
+            <motion.div
+              className="mt-1"
+              initial={{ opacity: 0, y: 28, filter: "blur(8px)" }}
+              animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+              transition={{ delay: 0.06, duration: 0.82, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <Logo className="text-[clamp(4.5rem,12vw,8.4rem)]" symbolClassName="translate-y-[12%]" />
+            </motion.div>
+
+            <motion.h1
+              className="-mt-2 max-w-[12ch] font-heading text-[clamp(2.1rem,5vw,4.1rem)] font-semibold leading-[0.96] tracking-[-0.05em] text-balance text-foreground/90"
+              initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
+              animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+              transition={{ delay: 0.14, duration: 0.76, ease: [0.16, 1, 0.3, 1] }}
+            >
+              IA practica para vender mejor y operar sin friccion.
+            </motion.h1>
+
+            <motion.p
+              className="mt-5 max-w-[30rem] text-base leading-relaxed text-foreground/74 md:text-lg"
+              initial={{ opacity: 0, y: 18 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.24, duration: 0.64, ease: [0.16, 1, 0.3, 1] }}
+            >
+              Implemento agentes, automatizaciones de WhatsApp y workflows conectados a la operación real de tu negocio.
+            </motion.p>
+
+            <motion.div
+              className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center"
+              initial={{ opacity: 0, y: 16 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.32, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <Button variant="hero" size="lg" asChild className="justify-center">
+                <a href="/brief?source=hero-call">
+                  Solicitar diagnostico
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+              <Button variant="hero-outline" size="lg" asChild className="justify-center">
+                <a
+                  href={getWhatsAppUrl("Hola, quiero hablar sobre una automatización o sistema con IA para mi negocio.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Hablar por WhatsApp
+                  <MessageSquareText className="h-4 w-4" />
+                </a>
+              </Button>
+            </motion.div>
+          </div>
+        </div>
+      </div>
     </section>
   );
-}
+};

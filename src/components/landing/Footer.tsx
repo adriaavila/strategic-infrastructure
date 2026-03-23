@@ -1,75 +1,135 @@
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { getWhatsAppUrl } from "@/config/contact";
+import { siteConfig } from "@/data/site";
+import { Logo } from "@/components/ui/Logo";
+import {
+  footerCityLinks,
+  footerIndustryLinks,
+  footerResourceLinks,
+  footerSolutionLinks,
+} from "@/data/internal-links";
 
-const footerLinks = {
-  Navegación: [
-    { label: "Servicios", href: "/#servicios" },
-    { label: "Industrias", href: "/industrias" },
-    { label: "Proyectos", href: "/proyectos" },
-    { label: "Historia", href: "/historia" },
-    { label: "Blog", href: "/blog" },
-  ],
-  Legal: [
-    { label: "Términos", href: "/terminos" },
-    { label: "Privacidad", href: "/privacidad" },
-  ],
-};
+const footerLinks = [
+  { label: "Soluciones", href: "/#soluciones" },
+  { label: "Metodo", href: "/#metodo" },
+  { label: "Casos", href: "/#casos" },
+  { label: "Diagnostico", href: "/brief?source=footer" },
+];
 
 export const Footer = () => {
   return (
-    <footer className="relative bg-brand-dark text-white pt-14 pb-8">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+    <footer className="border-t border-border bg-[#F8F6FA] py-10">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16 items-start">
-          <div className="md:col-span-2">
-            <div className="flex flex-col gap-4 mb-4">
-              <img src="/logo.svg" alt="Servicios Creativos Logo" className="w-14 h-14 rounded-xl" />
-              <div>
-                <div className="text-lg font-semibold tracking-tight text-white">
-                  servicios<span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">creativos</span>.online
+        <div className="section-shell px-6 py-8 md:px-8 md:py-10">
+          <div className="relative z-10 grid gap-10 xl:grid-cols-[0.9fr_1.1fr] xl:items-start">
+            <div>
+              <div className="flex items-center gap-4">
+                <div>
+                  <Logo className="text-[2.2rem] mb-2" />
+                  <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                    partner de automatizacion e IA para negocios
+                  </div>
                 </div>
-                <div className="text-sm text-white/42 mt-1 tracking-wider text-[10px] font-medium uppercase">Arquitectura Digital & IA</div>
+              </div>
+
+              <p className="mt-5 max-w-[34rem] text-base leading-relaxed text-foreground/72">
+                Implementación práctica de agentes IA, automatizaciones de WhatsApp, workflows y
+                sistemas web para negocios que quieren operar con menos fricción y vender con más claridad.
+              </p>
+            </div>
+
+            <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
+              <div>
+                <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                  Navegacion
+                </div>
+                <div className="mt-4 space-y-3">
+                  {footerLinks.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className="block text-sm font-medium text-foreground/72 transition-colors hover:text-brand-secondary"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                  Soluciones
+                </div>
+                <div className="mt-4 space-y-3">
+                  {footerSolutionLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      to={link.href}
+                      className="block text-sm font-medium text-foreground/72 transition-colors hover:text-brand-secondary"
+                    >
+                      {link.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                  Industrias y ciudades
+                </div>
+                <div className="mt-4 space-y-3">
+                  {[...footerIndustryLinks, ...footerCityLinks].map((link) => (
+                    <Link
+                      key={link.href}
+                      to={link.href}
+                      className="block text-sm font-medium text-foreground/72 transition-colors hover:text-brand-secondary"
+                    >
+                      {link.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                  Recursos y contacto
+                </div>
+                <div className="mt-4 space-y-3 text-sm text-foreground/72">
+                  {footerResourceLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      to={link.href}
+                      className="block transition-colors hover:text-brand-secondary"
+                    >
+                      {link.title}
+                    </Link>
+                  ))}
+                  <a
+                    href={`mailto:${siteConfig.email}`}
+                    className="block transition-colors hover:text-brand-secondary"
+                  >
+                    {siteConfig.email}
+                  </a>
+                  <a
+                    href={getWhatsAppUrl("Hola, quiero hablar sobre una automatización o sistema con IA para mi negocio.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 transition-colors hover:text-brand-secondary"
+                  >
+                    WhatsApp
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                </div>
               </div>
             </div>
-            <p className="mt-4 text-brand-slate text-sm max-w-sm leading-relaxed">
-              Agentes autónomos, automatización de WhatsApp y ecosistemas digitales para empresas que persiguen el escalado infinito.
+          </div>
+
+          <div className="relative z-10 mt-8 flex flex-col gap-2 border-t border-border pt-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+            <p>
+              Creativv · {siteConfig.legalName}
             </p>
-          </div>
-
-          <div>
-            <h3 className="text-white font-medium mb-6">AI Agents</h3>
-            <ul className="space-y-3">
-              <li><a href="/ai-agent" className="text-sm text-brand-slate hover:text-white transition-colors">Agentes IA para negocios</a></li>
-              <li><a href="/ai-agent-real-estate" className="text-sm text-brand-slate hover:text-white transition-colors">Bienes Raíces</a></li>
-              <li><a href="/ai-agent-agencies" className="text-sm text-brand-slate hover:text-white transition-colors">Agencias y B2B</a></li>
-              <li><a href="/ai-agent-ecommerce" className="text-sm text-brand-slate hover:text-white transition-colors">Ecommerce</a></li>
-              <li><a href="/ai-agent-dental" className="text-sm text-brand-slate hover:text-white transition-colors">Odontología</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-white font-medium mb-6">WhatsApp Auto</h3>
-            <ul className="space-y-3">
-              <li><a href="/whatsapp-automation" className="text-sm text-brand-slate hover:text-white transition-colors">Automatización general</a></li>
-              <li><a href="/whatsapp-automation-clinics" className="text-sm text-brand-slate hover:text-white transition-colors">Clínicas y Salud</a></li>
-              <li><a href="/whatsapp-automation-law-firms" className="text-sm text-brand-slate hover:text-white transition-colors">Bufetes Legales</a></li>
-              <li><a href="/whatsapp-automation-restaurants" className="text-sm text-brand-slate hover:text-white transition-colors">Restaurantes</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-white font-medium mb-6">Company</h3>
-            <ul className="space-y-3">
-              <li><a href="/#servicios" className="text-sm text-brand-slate hover:text-white transition-colors">Servicios</a></li>
-              <li><a href="/industrias" className="text-sm text-brand-slate hover:text-white transition-colors font-medium text-brand-primary">Directorio Industrias</a></li>
-              <li><a href="/historia" className="text-sm text-brand-slate hover:text-white transition-colors">Nuestra historia</a></li>
-              <li><a href="/blog" className="text-sm text-brand-slate hover:text-white transition-colors">Blog</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className="pt-6 border-t border-white/10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-3">
-            <p className="text-xs text-brand-slate/80">servicioscreativos<span className="text-brand-primary">.</span>online · Allok LLC</p>
-            <p className="text-xs text-brand-slate/80">© {new Date().getFullYear()} Todos los derechos reservados.</p>
+            <p>© {new Date().getFullYear()} Todos los derechos reservados.</p>
           </div>
         </div>
       </div>

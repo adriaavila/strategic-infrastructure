@@ -18,10 +18,10 @@ export default {
       // TYPOGRAPHY
       // ============================================
       fontFamily: {
-        sans: ['Inter', 'Geist', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        heading: ['Inter', 'Geist', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        body: ['Inter', 'Geist', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'monospace'],
+        sans: ['IBM Plex Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        heading: ['Syne', 'IBM Plex Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        body: ['IBM Plex Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        mono: ['IBM Plex Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'monospace'],
       },
       fontSize: {
         xs: ['0.75rem', { lineHeight: '1.5', letterSpacing: '-0.01em' }],
@@ -60,20 +60,23 @@ export default {
       },
       
       // ============================================
-      // BRAND COLORS (servicioscreativos.online)
+      // BRAND COLORS (Creativv)
       // ============================================
       backgroundImage: {
-        'hero-gradient': 'radial-gradient(circle at top center, #1E1B4B 0%, #0A0A0B 100%)',
+        'hero-gradient':
+          'radial-gradient(circle at top center, rgba(92, 76, 208, 0.14) 0%, rgba(251, 250, 248, 0) 42%), linear-gradient(180deg, #FBFAF8 0%, #F5F3F7 100%)',
       },
       // ============================================
       // COLORS
       // ============================================
       colors: {
         brand: {
-          dark: '#0A0A0B',
-          primary: '#8B5CF6',
-          secondary: '#2DD4BF',
-          slate: '#94A3B8',
+          dark: '#11131B',
+          primary: '#5C4CD0',
+          secondary: '#4D3FB0',
+          slate: '#A7A2AF',
+          platinum: '#E3E0E8',
+          ink: '#232635',
         },
         border: {
           DEFAULT: "hsl(var(--border))",

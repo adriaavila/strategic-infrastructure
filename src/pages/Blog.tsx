@@ -1,11 +1,13 @@
 import { useMemo, useState } from "react";
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
+import { InternalLinksSection } from "@/components/seo/InternalLinksSection";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, Clock, ChevronRight, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import { blogPosts, blogTopics } from "@/data/blog";
 import { useSEO } from "@/lib/seo";
+import { blogHubLinks } from "@/data/internal-links";
 
 const Blog = () => {
   const [activeTopic, setActiveTopic] = useState("Todos");
@@ -176,6 +178,16 @@ const Blog = () => {
                 </motion.article>
               ))}
             </AnimatePresence>
+          </div>
+
+          <div className="mt-16">
+            <InternalLinksSection
+              eyebrow="Rutas relacionadas"
+              title="Soluciones conectadas con los temas del blog"
+              description="El blog ahora también empuja hacia los hubs de IA, WhatsApp, CRM, captación, ventas y soporte para que el contenido editorial refuerce el cluster comercial."
+              items={blogHubLinks}
+              variant="dark"
+            />
           </div>
         </div>
       </main>

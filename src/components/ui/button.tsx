@@ -5,27 +5,26 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/30 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground hover:bg-primary/90 border border-primary rounded-lg",
+          "rounded-full border border-primary/15 bg-primary text-primary-foreground shadow-[0_18px_40px_rgba(92,76,208,0.18)] hover:-translate-y-0.5 hover:bg-primary/95",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-lg",
+          "rounded-full bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-foreground/10 bg-transparent hover:bg-foreground/5 text-foreground rounded-lg",
+          "rounded-full border border-foreground/10 bg-white/86 text-foreground shadow-[0_12px_28px_rgba(17,19,27,0.06)] hover:-translate-y-0.5 hover:bg-white",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-foreground/5 rounded-lg",
+          "rounded-full border border-foreground/6 bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: 
-          "hover:bg-foreground/5 text-foreground rounded-lg",
+          "rounded-full text-foreground hover:bg-foreground/5",
         link: 
           "text-foreground underline-offset-4 hover:underline",
-        // Brand CTA - Electric Violet
         hero: 
-          "bg-brand-primary text-white hover:bg-brand-primary/90 px-8 py-4 text-base font-medium rounded-xl border border-brand-primary",
+          "rounded-full border border-brand-primary/15 bg-brand-primary px-8 py-4 text-base font-semibold text-white shadow-[0_22px_48px_rgba(92,76,208,0.22)] hover:-translate-y-0.5 hover:bg-[#4D3FB0]",
         "hero-outline":
-          "bg-transparent text-foreground border border-foreground/10 hover:bg-foreground/5 px-8 py-4 text-base font-medium rounded-xl",
+          "rounded-full border border-brand-platinum bg-white/90 px-8 py-4 text-base font-medium text-foreground shadow-[0_12px_28px_rgba(17,19,27,0.06)] hover:-translate-y-0.5 hover:border-brand-primary/20 hover:bg-white",
       },
       size: {
         default: "h-10 px-4 py-2",

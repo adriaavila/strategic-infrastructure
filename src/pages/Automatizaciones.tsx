@@ -1,8 +1,10 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
+import { InternalLinksSection } from "@/components/seo/InternalLinksSection";
 import { useSEO } from "@/lib/seo";
 import { ArrowRight, Bot, Workflow, MessageSquare } from "lucide-react";
+import { automationInternalLinks } from "@/data/internal-links";
 
 const Automatizaciones = () => {
   useSEO({
@@ -54,6 +56,16 @@ const Automatizaciones = () => {
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </Button>
+          </div>
+
+          <div className="mt-14">
+            <InternalLinksSection
+              eyebrow="Rutas de automatización"
+              title="Páginas puente para seguir explorando el cluster"
+              description="Estas páginas están conectadas con intención comercial parecida y ayudan a distribuir enlaces hacia los hubs más relevantes de automatización, soporte, CRM y seguimiento."
+              items={automationInternalLinks}
+              variant="dark"
+            />
           </div>
         </section>
       </main>

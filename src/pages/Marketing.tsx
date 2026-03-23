@@ -1,8 +1,10 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
+import { InternalLinksSection } from "@/components/seo/InternalLinksSection";
 import { useSEO } from "@/lib/seo";
 import { ArrowRight, Globe, ShoppingCart, LineChart } from "lucide-react";
+import { marketingInternalLinks } from "@/data/internal-links";
 
 const Marketing = () => {
   useSEO({
@@ -61,6 +63,16 @@ const Marketing = () => {
                 </a>
               </Button>
             </div>
+          </div>
+
+          <div className="mt-14">
+            <InternalLinksSection
+              eyebrow="Entradas para captación"
+              title="Páginas relacionadas para atraer y convertir mejor"
+              description="Estas rutas conectan presencia digital con generación de demanda, automatización de ventas y páginas específicas para sectores donde la captación necesita más estructura."
+              items={marketingInternalLinks}
+              variant="dark"
+            />
           </div>
         </section>
       </main>
