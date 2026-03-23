@@ -10,7 +10,8 @@ type SEOOptions = {
 
 const SITE_NAME = "Creativv";
 const SITE_URL = "https://servicioscreativos.online";
-const DEFAULT_OG_IMAGE = `${SITE_URL}/og-share.svg`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/og-share.png`;
+const DEFAULT_OG_IMAGE_ALT = "Creativv con icono VV violeta y sistemas con IA para empresas";
 const TITLE_SEPARATORS = ["|", "-", "·"];
 
 const buildDocumentTitle = (title: string) => {
@@ -58,10 +59,12 @@ export const useSEO = ({
     ensureMeta('meta[property="og:image"]', { property: 'og:image' }).setAttribute("content", DEFAULT_OG_IMAGE);
     ensureMeta('meta[property="og:image:width"]', { property: 'og:image:width' }).setAttribute("content", "1200");
     ensureMeta('meta[property="og:image:height"]', { property: 'og:image:height' }).setAttribute("content", "630");
+    ensureMeta('meta[property="og:image:alt"]', { property: 'og:image:alt' }).setAttribute("content", DEFAULT_OG_IMAGE_ALT);
     ensureMeta('meta[name="twitter:card"]', { name: 'twitter:card' }).setAttribute("content", "summary_large_image");
     ensureMeta('meta[name="twitter:title"]', { name: 'twitter:title' }).setAttribute("content", title);
     ensureMeta('meta[name="twitter:description"]', { name: 'twitter:description' }).setAttribute("content", description);
     ensureMeta('meta[name="twitter:image"]', { name: 'twitter:image' }).setAttribute("content", DEFAULT_OG_IMAGE);
+    ensureMeta('meta[name="twitter:image:alt"]', { name: 'twitter:image:alt' }).setAttribute("content", DEFAULT_OG_IMAGE_ALT);
     ensureMeta('meta[name="robots"]', { name: "robots" }).setAttribute("content", "index,follow");
     let canonical = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonical) {

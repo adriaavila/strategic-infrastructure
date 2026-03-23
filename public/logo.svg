@@ -4,6 +4,6 @@
     <rect x="-20" y="-20" width="150" height="150" fill="white" />
     <path d="M 40 20 L 60 85" stroke="black" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" />
   </mask>
-  <path d="M 15 20 L 35 85 L 55 20" stroke="#11131B" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" mask="url(#gap-mask)" />
-  <path d="M 40 20 L 60 85 L 80 20" stroke="#11131B" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M 15 20 L 35 85 L 55 20" stroke="#4D3FB0" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" mask="url(#gap-mask)" />
+  <path d="M 40 20 L 60 85 L 80 20" stroke="#6D5FDC" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
 </svg>

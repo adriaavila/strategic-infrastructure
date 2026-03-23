@@ -1,38 +1,51 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="630" fill="#FBFAF8"/>
-  <rect x="48" y="48" width="1104" height="534" rx="36" fill="url(#surface)" stroke="#D4D0DA"/>
-  <path d="M48 178H1152" stroke="#E3E0E8"/>
-  <path d="M48 308H1152" stroke="#EEEAF2"/>
-  <path d="M48 438H1152" stroke="#EEEAF2"/>
-  <path d="M300 48V582" stroke="#EEEAF2"/>
-  <path d="M720 48V582" stroke="#EEEAF2"/>
-  <circle cx="948" cy="162" r="172" fill="url(#glow)" opacity="0.72"/>
-  <circle cx="176" cy="548" r="188" fill="url(#glowSoft)" opacity="0.54"/>
-  <rect x="86" y="86" width="110" height="110" rx="26" fill="white" stroke="#E3E0E8"/>
-  <path d="M108 114L126 168L141 132L156 168L174 114" stroke="url(#mark)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="232" y="128" fill="#11131B" font-family="'Syne', sans-serif" font-size="54" font-weight="700" letter-spacing="-0.04em">Creativv</text>
-  <text x="232" y="168" fill="#6C6775" font-family="'IBM Plex Mono', monospace" font-size="18" letter-spacing="0.24em">PARTNER DE AUTOMATIZACION E IA PARA NEGOCIOS</text>
-  <text x="86" y="288" fill="#11131B" font-family="'Syne', sans-serif" font-size="74" font-weight="700" letter-spacing="-0.05em">Sistemas con IA para</text>
-  <text x="86" y="368" fill="#4D3FB0" font-family="'Syne', sans-serif" font-size="74" font-weight="700" letter-spacing="-0.05em">vender mejor y operar</text>
-  <text x="86" y="448" fill="#11131B" font-family="'Syne', sans-serif" font-size="74" font-weight="700" letter-spacing="-0.05em">con menos friccion.</text>
-  <text x="86" y="528" fill="#4C4954" font-family="'IBM Plex Sans', sans-serif" font-size="28">Agentes IA, automatizacion de WhatsApp, workflows y sistemas web conectados a la operacion real.</text>
+  <rect width="1200" height="630" fill="#FBFAF8" />
+  <rect x="40" y="40" width="1120" height="550" rx="40" fill="url(#surface)" stroke="#DDD7EB" />
+  <path d="M40 176H1160" stroke="#EEEAF4" />
+  <path d="M40 452H1160" stroke="#EEEAF4" />
+  <path d="M350 40V590" stroke="#EEEAF4" />
+  <circle cx="974" cy="122" r="180" fill="url(#glowPrimary)" opacity="0.8" />
+  <circle cx="172" cy="548" r="190" fill="url(#glowSoft)" opacity="0.72" />
+
+  <g>
+    <rect x="88" y="86" width="176" height="176" rx="46" fill="url(#tile)" />
+    <rect x="89" y="87" width="174" height="174" rx="45" stroke="#D9D2F1" />
+    <circle cx="226" cy="120" r="42" fill="url(#tileGlow)" opacity="0.82" />
+    <mask id="share-gap-mask">
+      <rect x="-20" y="-20" width="1600" height="900" fill="white" />
+      <path d="M 160 122 L 188 220" stroke="black" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" />
+    </mask>
+    <path d="M 118 122 L 151 232 L 184 122" stroke="#4D3FB0" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" mask="url(#share-gap-mask)" />
+    <path d="M 158 122 L 191 232 L 224 122" stroke="#6D5FDC" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <text x="304" y="154" fill="#11131B" font-family="'Syne', sans-serif" font-size="58" font-weight="700" letter-spacing="-0.04em">Creativv</text>
+  <text x="304" y="198" fill="#6B6477" font-family="'IBM Plex Mono', monospace" font-size="18" letter-spacing="0.24em">INSTALAMOS EMPLEADOS DIGITALES PARA EMPRESAS</text>
+
+  <text x="88" y="340" fill="#11131B" font-family="'Syne', sans-serif" font-size="76" font-weight="700" letter-spacing="-0.05em">Sistemas con IA para ventas,</text>
+  <text x="88" y="422" fill="#5C4CD0" font-family="'Syne', sans-serif" font-size="76" font-weight="700" letter-spacing="-0.05em">soporte y operaciones.</text>
+  <text x="88" y="504" fill="#4C4954" font-family="'IBM Plex Sans', sans-serif" font-size="28">Automatizaciones, agentes y workflows conectados a la operacion real.</text>
+
   <defs>
-    <linearGradient id="surface" x1="600" y1="48" x2="600" y2="582" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FFFFFF"/>
-      <stop offset="1" stop-color="#F5F3F7"/>
+    <linearGradient id="surface" x1="600" y1="40" x2="600" y2="590" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" />
+      <stop offset="1" stop-color="#F7F4FB" />
     </linearGradient>
-    <linearGradient id="mark" x1="110" y1="118" x2="176" y2="170" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#4D3FB0"/>
-      <stop offset="0.55" stop-color="#6D5FDC"/>
-      <stop offset="1" stop-color="#D4D0DA"/>
+    <linearGradient id="tile" x1="176" y1="86" x2="176" y2="262" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FCFBFF" />
+      <stop offset="1" stop-color="#F1EDFB" />
     </linearGradient>
-    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(948 162) rotate(90) scale(172)">
-      <stop stop-color="#C9C1F2"/>
-      <stop offset="1" stop-color="#C9C1F2" stop-opacity="0"/>
+    <radialGradient id="tileGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(226 120) rotate(90) scale(42)">
+      <stop stop-color="#D9D1FB" />
+      <stop offset="1" stop-color="#D9D1FB" stop-opacity="0" />
     </radialGradient>
-    <radialGradient id="glowSoft" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(176 548) rotate(90) scale(188)">
-      <stop stop-color="#D4D0DA"/>
-      <stop offset="1" stop-color="#D4D0DA" stop-opacity="0"/>
+    <radialGradient id="glowPrimary" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(974 122) rotate(90) scale(180)">
+      <stop stop-color="#CEC6F9" />
+      <stop offset="1" stop-color="#CEC6F9" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowSoft" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(172 548) rotate(90) scale(190)">
+      <stop stop-color="#E2DCF2" />
+      <stop offset="1" stop-color="#E2DCF2" stop-opacity="0" />
     </radialGradient>
   </defs>
 </svg>

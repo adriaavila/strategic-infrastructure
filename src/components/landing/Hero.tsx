@@ -15,7 +15,7 @@ export const Hero = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative isolate min-h-[100svh] overflow-hidden"
+      className="relative isolate min-h-[100svh] overflow-hidden lg:h-[100svh]"
     >
       <motion.div
         className="absolute inset-0 bg-background overflow-hidden"
@@ -150,68 +150,62 @@ export const Hero = () => {
       {/* Smooth gradient fade to background content */}
       <div className="absolute inset-x-0 bottom-0 h-40 md:h-56 bg-gradient-to-t from-background via-background/80 md:via-background/70 to-transparent z-10" />
 
-      <div className="relative z-10 flex min-h-[100svh] items-end">
-        <div className="w-full px-6 pb-12 pt-28 md:px-10 md:pb-20 md:pt-36">
-          <div className="max-w-[36rem]">
-            <motion.div
-              className="font-mono text-[11px] uppercase tracking-[0.28em] text-primary md:text-xs"
-              initial={{ opacity: 0, y: 18 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            >
-              partner de automatizacion e IA para negocios
-            </motion.div>
+      <div className="relative z-10 flex min-h-[100svh] items-center lg:h-[100svh]">
+        <div className="w-full px-6 pb-10 pt-28 md:px-10 md:pb-12 md:pt-32 lg:pt-28 xl:pt-32">
+          <div className="mx-auto max-w-6xl">
+            <div className="max-w-[42rem]">
+              <motion.div
+                className="mt-0"
+                initial={{ opacity: 0, y: 28, filter: "blur(8px)" }}
+                animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+                transition={{ delay: 0.06, duration: 0.82, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <Logo className="text-[clamp(2.8rem,7vw,5.8rem)] xl:text-[clamp(3.2rem,7.6vw,6.1rem)]" symbolClassName="translate-y-[12%]" />
+              </motion.div>
 
-            <motion.div
-              className="mt-1"
-              initial={{ opacity: 0, y: 28, filter: "blur(8px)" }}
-              animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
-              transition={{ delay: 0.06, duration: 0.82, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <Logo className="text-[clamp(4.5rem,12vw,8.4rem)]" symbolClassName="translate-y-[12%]" />
-            </motion.div>
+              <motion.h1
+                className="mt-2 max-w-[14ch] font-heading text-[clamp(2.1rem,4.8vw,4.35rem)] font-semibold leading-[0.95] tracking-[-0.055em] text-balance text-foreground/92 lg:max-w-[15ch] xl:max-w-[16ch]"
+                initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
+                animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+                transition={{ delay: 0.14, duration: 0.76, ease: [0.16, 1, 0.3, 1] }}
+              >
+                Implemento sistemas con IA para que tu negocio venda mejor y opere con menos fricción.
+              </motion.h1>
 
-            <motion.h1
-              className="-mt-2 max-w-[12ch] font-heading text-[clamp(2.1rem,5vw,4.1rem)] font-semibold leading-[0.96] tracking-[-0.05em] text-balance text-foreground/90"
-              initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
-              animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
-              transition={{ delay: 0.14, duration: 0.76, ease: [0.16, 1, 0.3, 1] }}
-            >
-              IA practica para vender mejor y operar sin friccion.
-            </motion.h1>
+              <motion.p
+                className="mt-4 max-w-[40rem] text-[0.98rem] leading-7 text-foreground/76 md:text-base md:leading-7 lg:text-[1.02rem]"
+                initial={{ opacity: 0, y: 18 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.24, duration: 0.64, ease: [0.16, 1, 0.3, 1] }}
+              >
+                Diseño e integro agentes IA, automatizaciones de WhatsApp, workflows y sistemas web conectados a la operación real de tu negocio, para reducir trabajo manual, responder más rápido y dar seguimiento sin caos.
+              </motion.p>
 
-            <motion.p
-              className="mt-5 max-w-[30rem] text-base leading-relaxed text-foreground/74 md:text-lg"
-              initial={{ opacity: 0, y: 18 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.24, duration: 0.64, ease: [0.16, 1, 0.3, 1] }}
-            >
-              Implemento agentes, automatizaciones de WhatsApp y workflows conectados a la operación real de tu negocio.
-            </motion.p>
+              <motion.div
+                className="mt-6 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center"
+                initial={{ opacity: 0, y: 16 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.32, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <Button variant="hero" size="lg" asChild className="justify-center">
+                  <a href="/brief?source=hero-call">
+                    Solicitar diagnóstico
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                </Button>
+                <Button variant="hero-outline" size="lg" asChild className="justify-center">
+                  <a
+                    href={getWhatsAppUrl("Hola, quiero hablar sobre un sistema con IA para que mi negocio venda mejor y opere con menos fricción.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Hablar por WhatsApp
+                    <MessageSquareText className="h-4 w-4" />
+                  </a>
+                </Button>
+              </motion.div>
 
-            <motion.div
-              className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center"
-              initial={{ opacity: 0, y: 16 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.32, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <Button variant="hero" size="lg" asChild className="justify-center">
-                <a href="/brief?source=hero-call">
-                  Solicitar diagnostico
-                  <ArrowRight className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button variant="hero-outline" size="lg" asChild className="justify-center">
-                <a
-                  href={getWhatsAppUrl("Hola, quiero hablar sobre una automatización o sistema con IA para mi negocio.")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Hablar por WhatsApp
-                  <MessageSquareText className="h-4 w-4" />
-                </a>
-              </Button>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

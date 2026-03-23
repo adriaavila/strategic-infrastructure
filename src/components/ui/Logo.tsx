@@ -1,3 +1,4 @@
+import { useId } from "react";
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
@@ -8,6 +9,13 @@ interface LogoProps {
 }
 
 export const Logo = ({ className, symbolClassName, variant = "principal", iconOnly = false }: LogoProps) => {
+  const symbolId = useId().replace(/:/g, "");
+  const maskId = `gap-mask-${symbolId}`;
+  const usesAccentSymbol = variant === "principal" || variant === "premium";
+  const accentSymbolStroke = variant === "premium"
+    ? { left: "#4D3FB0", right: "#8B5CF6" }
+    : { left: "#4D3FB0", right: "#6D5FDC" };
+
   const textColor = {
     principal: "text-brand-ink dark:text-white",
     inverted: "text-white",
@@ -16,19 +24,21 @@ export const Logo = ({ className, symbolClassName, variant = "principal", iconOn
   }[variant];
 
   const symbolColor = {
-    principal: "text-brand-ink dark:text-white",
     inverted: "text-white",
     monochrome: "text-black",
-    premium: "text-brand-primary",
   }[variant];
 
   const Symbol = () => (
     <svg
       viewBox="0 10 95 85"
       fill="none"
-      className={cn("h-[1.12em] w-auto inline-block -ml-[0.02em] translate-y-[4%]", symbolColor, symbolClassName)}
+      className={cn(
+        "h-[1.12em] w-auto inline-block -ml-[0.02em] translate-y-[4%]",
+        !usesAccentSymbol && symbolColor,
+        symbolClassName,
+      )}
     >
-      <mask id={`gap-mask-${variant}`}>
+      <mask id={maskId}>
         <rect x="-20" y="-20" width="150" height="150" fill="white" />
         <path
           d="M 40 20 L 60 85"
@@ -41,16 +51,16 @@ export const Logo = ({ className, symbolClassName, variant = "principal", iconOn
       {/* Left V */}
       <path
         d="M 15 20 L 35 85 L 55 20"
-        stroke="currentColor"
+        stroke={usesAccentSymbol ? accentSymbolStroke.left : "currentColor"}
         strokeWidth="14"
         strokeLinecap="round"
         strokeLinejoin="round"
-        mask={`url(#gap-mask-${variant})`}
+        mask={`url(#${maskId})`}
       />
       {/* Right V */}
       <path
         d="M 40 20 L 60 85 L 80 20"
-        stroke="currentColor"
+        stroke={usesAccentSymbol ? accentSymbolStroke.right : "currentColor"}
         strokeWidth="14"
         strokeLinecap="round"
         strokeLinejoin="round"
