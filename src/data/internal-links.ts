@@ -88,22 +88,27 @@ export const solutionHubLinks = compactLinks(
 
 export const servicesInternalLinks: InternalLinkItem[] = [
   {
+    title: "Presencia digital",
+    description: "Websites, landing pages y activos digitales diseñados para explicar mejor la oferta y convertir mejor.",
+    href: "/marketing",
+    eyebrow: "Core",
+  },
+  {
+    title: "Automatizaciones",
+    description: "Segunda fase para sumar integraciones, IA o automatización cuando la base digital ya está lista.",
+    href: "/automatizaciones",
+    eyebrow: "Fase 2",
+  },
+  {
     title: "Soluciones por industria",
-    description: "Explora el cluster completo por vertical para entender qué soluciones encajan mejor según el tipo de negocio.",
+    description: "Explora el cluster completo por vertical para entender qué soluciones podrían activarse más adelante según el tipo de negocio.",
     href: "/industrias",
     eyebrow: "Directorio",
   },
-  {
-    title: "Ciudades y mercados",
-    description: "Landing pages locales para WhatsApp Automation conectadas como subcluster geográfico.",
-    href: "/ciudades",
-    eyebrow: "Cobertura",
-  },
   ...compactLinks([
-    buildPseoLinkItem("ai-agent"),
-    buildPseoLinkItem("whatsapp-automation"),
     buildPseoLinkItem("lead-generation"),
     buildPseoLinkItem("crm-integration"),
+    buildPseoLinkItem("whatsapp-automation"),
   ]),
 ];
 

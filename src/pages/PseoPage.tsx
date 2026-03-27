@@ -304,7 +304,7 @@ export default function PseoPage() {
   const data = slug ? getPseoBySlug(slug) : undefined;
 
   const safeTitle = data?.title || "Servicios Creativos";
-  const safeDescription = data?.description || "Automatización, IA y sistemas para negocios.";
+  const safeDescription = data?.description || "Websites, web apps y sistemas digitales para negocios.";
   const safeStructuredData =
     data && slug ? buildStructuredData(slug, data.title, data.description, buildFaqs(slug, data.description)) : undefined;
 
@@ -439,10 +439,14 @@ export default function PseoPage() {
                   {industry?.summary || location?.marketNote || family?.promise}
                 </p>
 
+                <div className="mt-5 rounded-[24px] border border-slate-200/90 bg-white/70 p-4 text-sm leading-7 text-slate-700">
+                  <strong className="text-slate-950">Cómo encaja esto en la oferta actual:</strong> esta clase de solución funciona mejor como segunda fase, después de resolver bien la base digital del negocio con una web clara, una landing útil o una web app que ordene la operación.
+                </div>
+
                 <div className="mt-8 flex flex-wrap gap-4">
                   <Button asChild size="lg" variant="hero">
                     <a href={`/brief?source=${slug}`}>
-                      Solicitar diagnostico
+                      Evaluar esta segunda fase
                       <ArrowRight className="h-4 w-4" />
                     </a>
                   </Button>

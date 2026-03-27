@@ -1,31 +1,31 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Radar, Route, Rocket, RefreshCcw } from "lucide-react";
+import { ArrowRight, PencilRuler, Route, Rocket, RefreshCcw } from "lucide-react";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const steps = [
   {
     number: "01",
-    title: "Detectar el cuello de botella",
-    description: "Revisamos dónde se pierde tiempo, seguimiento o visibilidad.",
-    icon: Radar,
+    title: "Aclarar el objetivo",
+    description: "Definimos si hace falta una web, una landing o una web app según el problema real.",
+    icon: PencilRuler,
   },
   {
     number: "02",
-    title: "Diseñar el sistema",
-    description: "Definimos qué automatizar, qué conectar y cómo debe usarse.",
+    title: "Diseñar la estructura",
+    description: "Ordenamos contenido, experiencia, arquitectura y flujo para que la solución tenga sentido.",
     icon: Route,
   },
   {
     number: "03",
     title: "Implementar",
-    description: "Construyo, integro y dejo una versión lista para operar.",
+    description: "Construyo y dejo una versión lista para operar, mostrar o vender.",
     icon: Rocket,
   },
   {
     number: "04",
-    title: "Iterar con datos",
-    description: "Ajustamos según respuesta real, fricción real y uso real del equipo.",
+    title: "Iterar con uso real",
+    description: "Ajustamos según respuesta del mercado, fricción real y próximos pasos del negocio.",
     icon: RefreshCcw,
   },
 ];
@@ -38,14 +38,14 @@ export const EngagementModel = () => {
     <section id="metodo" className="relative py-24 md:py-32" ref={containerRef}>
       <div className="container mx-auto px-6">
         <div className="max-w-3xl">
-          <div className="eyebrow mb-6">metodo</div>
+          <div className="eyebrow mb-6">método</div>
           <motion.h2
             className="max-w-[12ch] font-heading text-4xl font-semibold tracking-[-0.05em] text-brand-ink md:text-5xl"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Del problema real a un sistema que sí se usa.
+            Del problema real a una presencia digital o herramienta web que sí sirve.
           </motion.h2>
           <motion.p
             className="mt-5 max-w-[40rem] text-lg leading-relaxed text-foreground/72"
@@ -53,8 +53,7 @@ export const EngagementModel = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.08, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            El proceso está pensado para avanzar rápido sin improvisar. Primero se aclara qué
-            tiene más impacto. Luego se construye y se afina con uso real.
+            El proceso está pensado para avanzar rápido sin improvisar. Primero se define qué conviene construir. Después se diseña, se implementa y se afina con uso real.
           </motion.p>
         </div>
 
@@ -104,7 +103,7 @@ export const EngagementModel = () => {
           >
             <Button variant="hero" size="lg" asChild>
               <a href="/brief?source=process-home">
-                Solicitar diagnostico
+                Solicitar diagnóstico
                 <ArrowRight className="h-4 w-4" />
               </a>
             </Button>

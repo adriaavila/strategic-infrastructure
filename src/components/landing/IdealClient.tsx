@@ -1,19 +1,19 @@
-import { CheckCircle2, Radar, Wrench } from "lucide-react";
+import { CheckCircle2, MonitorSmartphone, Wrench } from "lucide-react";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const principles = [
   {
-    title: "Implementacion antes que discurso",
+    title: "Construcción antes que discurso",
     description:
-      "La conversación arranca por el cuello de botella real: ventas, seguimiento, atención o coordinación operativa.",
+      "La conversación arranca por lo que realmente hace falta construir: una web más clara, una landing que convierta o una web app que ordene operación.",
     icon: Wrench,
   },
   {
-    title: "IA con criterio de negocio",
+    title: "Base digital antes que automatización",
     description:
-      "No todo necesita un agente. Se construye la capa justa para ahorrar tiempo, ordenar información y mejorar respuesta.",
-    icon: Radar,
+      "No todo negocio necesita IA primero. Muchas veces el mayor salto viene de resolver bien la presencia digital y los sistemas web base.",
+    icon: MonitorSmartphone,
   },
   {
     title: "Founder-led y directo",
@@ -38,14 +38,12 @@ export const IdealClient = () => {
             transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="relative z-10">
-              <div className="eyebrow mb-6">por que creativv</div>
+              <div className="eyebrow mb-6">por qué creativv</div>
               <h2 className="max-w-[12ch] font-heading text-4xl font-semibold tracking-[-0.05em] text-brand-ink md:text-5xl">
-                IA util, criterio tecnico y foco en operacion.
+                Criterio técnico, diseño útil y foco real en producto web.
               </h2>
               <p className="mt-5 max-w-[34rem] text-lg leading-relaxed text-foreground/72">
-                Creativv se posiciona más cerca de un partner de implementación que de una
-                agencia tradicional. El objetivo no es llenar la pantalla de features. Es
-                ayudarte a operar mejor con sistemas que de verdad se usan.
+                Creativv funciona más como partner de construcción digital que como agencia inflada. La prioridad es ayudarte a tener una presencia web fuerte y herramientas web que sí se usen.
               </p>
 
               <div className="mt-8 rounded-[1.6rem] border border-border bg-white/86 p-6 shadow-sm">
@@ -54,9 +52,9 @@ export const IdealClient = () => {
                 </div>
                 <div className="mt-4 space-y-4">
                   {[
-                    "Menos tareas repetitivas y menos pasos manuales.",
-                    "Seguimiento comercial más constante y menos leads perdidos.",
-                    "Una operación más clara para decidir con datos y no con intuición suelta.",
+                    "Una oferta mejor explicada desde la primera visita.",
+                    "Activos web más útiles para captar, vender o mostrar trabajo.",
+                    "Una base más ordenada para luego sumar automatización si vale la pena.",
                   ].map((item) => (
                     <div key={item} className="flex items-start gap-3 text-sm leading-relaxed text-foreground/72">
                       <span className="mt-1 h-2.5 w-2.5 rounded-full bg-brand-primary/80" />
@@ -107,11 +105,10 @@ export const IdealClient = () => {
               transition={{ delay: 0.38, duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                Founder-led
+                Enfoque
               </div>
               <p className="mt-3 max-w-[42rem] text-lg leading-relaxed text-brand-ink">
-                El valor de Creativv está en estudiar, probar y aterrizar herramientas nuevas
-                todos los días, pero siempre con una regla: si no mejora la operación, no entra.
+                La automatización y la IA no desaparecen. Solo dejan de ser la portada. Primero se construye bien lo que ya sabes vender y ejecutar: websites y web apps.
               </p>
             </motion.div>
           </div>

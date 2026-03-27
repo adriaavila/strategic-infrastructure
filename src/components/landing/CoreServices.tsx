@@ -1,57 +1,57 @@
-import { Bot, Globe2, MessageCircleMore, Sparkles, Workflow } from "lucide-react";
+import { Globe2, LayoutTemplate, MonitorSmartphone, Sparkles, Workflow } from "lucide-react";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const offers = [
   {
     number: "01",
-    title: "Agentes IA",
+    title: "Websites corporativos",
     description:
-      "Asistentes que responden, califican, organizan y ayudan a tu equipo sin quedarse en una demo bonita.",
-    outcome: "Menos carga manual y mejor continuidad comercial.",
-    icon: Bot,
-  },
-  {
-    number: "02",
-    title: "Automatizacion de WhatsApp",
-    description:
-      "Flujos conversacionales para captar, responder, filtrar y hacer seguimiento desde el canal que tu cliente ya usa.",
-    outcome: "WhatsApp como interfaz operativa real.",
-    icon: MessageCircleMore,
-  },
-  {
-    number: "03",
-    title: "AI workflows",
-    description:
-      "Conecto formularios, CRM, documentos, bases de datos y herramientas internas para que la operacion deje de depender del caos.",
-    outcome: "Procesos conectados y trazables.",
-    icon: Workflow,
-  },
-  {
-    number: "04",
-    title: "Websites y ecommerce potenciados por IA",
-    description:
-      "Sitios y tiendas que venden mejor porque se integran al flujo completo: captacion, respuesta y conversion.",
-    outcome: "Tu web deja de ser una pieza aislada.",
+      "Sitios claros, bien escritos y bien construidos para presentar tu oferta con seriedad y convertir mejor desde la primera visita.",
+    outcome: "Una presencia digital más sólida y más útil para vender.",
     icon: Globe2,
   },
   {
-    number: "05",
-    title: "Automatizacion operativa",
+    number: "02",
+    title: "Landing pages",
     description:
-      "Sistemas a medida para inventario, seguimiento, reporting o coordinacion interna cuando las hojas sueltas ya no alcanzan.",
-    outcome: "Mas claridad para operar y decidir.",
+      "Páginas enfocadas en campañas, captación y oferta puntual, pensadas para reducir ruido y mover al visitante a una acción concreta.",
+    outcome: "Más claridad, mejor conversión y menos fuga de atención.",
+    icon: LayoutTemplate,
+  },
+  {
+    number: "03",
+    title: "Web apps a medida",
+    description:
+      "Herramientas web internas o de cara al cliente para ordenar procesos, centralizar información y dejar de depender de parches sueltos.",
+    outcome: "Operación más limpia y sistemas que sí acompañan el trabajo real.",
+    icon: MonitorSmartphone,
+  },
+  {
+    number: "04",
+    title: "Integraciones y automatización ligera",
+    description:
+      "Conecto formularios, CRM, dashboards y flujos básicos cuando eso ayuda a que la web o la app no quede aislada.",
+    outcome: "Tu sistema digital empieza conectado desde el día uno.",
+    icon: Workflow,
+  },
+  {
+    number: "05",
+    title: "IA y automatización avanzada",
+    description:
+      "Cuando la base ya está bien resuelta, puedo sumar automatizaciones, asistentes o capas de IA donde realmente tengan retorno.",
+    outcome: "La IA entra como multiplicador, no como disfraz.",
     icon: Sparkles,
   },
 ];
 
 const connectiveSignals = [
-  "Captacion",
-  "Seguimiento",
-  "Operacion interna",
-  "Dashboards",
-  "WhatsApp",
-  "Integraciones",
+  "Website",
+  "Landing pages",
+  "Web app",
+  "Paneles internos",
+  "CRM",
+  "Automatización después",
 ];
 
 export const CoreServices = () => {
@@ -67,13 +67,12 @@ export const CoreServices = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="eyebrow mb-6">soluciones</div>
+            <div className="eyebrow mb-6">servicios</div>
             <h2 className="max-w-[10ch] font-heading text-4xl font-semibold tracking-[-0.05em] text-brand-ink md:text-5xl">
-              Lo que implemento para que el negocio funcione mejor.
+              Lo que construyo primero para que el negocio tenga una base digital seria.
             </h2>
             <p className="mt-5 max-w-[34rem] text-lg leading-relaxed text-foreground/72">
-              Creativv no vende “creatividad” genérica. Diseña y construye sistemas concretos
-              para captar mejor, responder más rápido y reducir trabajo manual.
+              El foco principal está en websites, landing pages y web apps. La automatización y la IA quedan disponibles, pero como segunda capa, no como humo de portada.
             </p>
 
             <div className="section-shell mt-8 p-6">

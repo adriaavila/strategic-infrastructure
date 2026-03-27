@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { InternalLinksSection } from "@/components/seo/InternalLinksSection";
 import { useSEO } from "@/lib/seo";
 import { Link } from "react-router-dom";
-import { ArrowRight, BarChart3, Code2, Sparkles, Workflow } from "lucide-react";
+import { ArrowRight, Code2, LayoutTemplate, MonitorSmartphone, Sparkles } from "lucide-react";
 import { servicesInternalLinks } from "@/data/internal-links";
 
 type ServiceDetail = {
@@ -22,70 +22,92 @@ type ServiceDetail = {
 
 const services: ServiceDetail[] = [
   {
-    title: "Presencia digital",
-    subtitle: "Webs y ecommerce diseniados para convertir",
+    title: "Websites",
+    subtitle: "Sitios claros, serios y orientados a conversión",
     description:
-      "Tu sitio no debe solo verse bien. Debe explicar tu oferta con claridad, generar confianza en minutos y mover al visitante a una accion concreta.",
+      "Tu web no debe existir solo para verse bonita. Debe explicar bien lo que haces, generar confianza rápido y empujar al visitante a una acción concreta.",
     persuasion:
-      "Si hoy tu web recibe visitas pero no genera suficientes conversaciones, cotizaciones o compras, no te falta trafico: te falta una estructura digital que guie bien la decision.",
+      "Si hoy tu web no ayuda a vender, presentar tu trabajo o abrir conversaciones de calidad, el problema no siempre es el tráfico. Muchas veces es estructura, mensaje y ejecución.",
     includes: [
-      "Webs corporativas orientadas a conversion",
-      "Landing pages para campanias y captacion",
-      "Ecommerce con recorrido de compra claro",
+      "Webs corporativas y de marca",
+      "Sitios para servicios, portafolio o negocio local",
+      "Rediseños enfocados en claridad, velocidad y percepción",
     ],
     outcomes: [
-      "Mejor percepcion de marca desde el primer contacto",
-      "Mas consultas calificadas y menos rebote",
-      "Mejor aprovechamiento del trafico que ya pagas",
+      "Mejor primera impresión y más confianza",
+      "Oferta mejor explicada desde la home y páginas clave",
+      "Una presencia digital más fuerte para vender o cotizar",
     ],
     icon: <Code2 className="h-5 w-5" />,
     accent: "violet",
-    ctaLabel: "Ver pagina de presencia digital",
+    ctaLabel: "Ver presencia digital",
     ctaHref: "/marketing",
   },
   {
-    title: "Automatizacion con IA",
-    subtitle: "Procesos que eliminan trabajo manual",
+    title: "Landing pages",
+    subtitle: "Páginas pensadas para captar y convertir mejor",
     description:
-      "La operacion se frena cuando todo depende de seguimiento manual. Automatizo respuestas, flujos e integraciones para que el sistema avance con velocidad y consistencia.",
+      "Cuando necesitas vender una oferta, validar una idea o apoyar una campaña, una landing page bien armada suele rendir más que una web genérica intentando hacer todo al mismo tiempo.",
     persuasion:
-      "Cuando ventas, atencion y operacion trabajan en silos, se pierden oportunidades y el equipo se desgasta. Una automatizacion bien planteada reduce friccion y libera horas de foco real.",
+      "La mayoría de las páginas pierden conversión por exceso de ruido, falta de jerarquía o una propuesta mal explicada. Una landing bien hecha corrige eso y mueve mejor a la acción.",
     includes: [
-      "Flujos de atencion y ventas con IA",
-      "Integraciones con CRM, formularios y canales",
-      "Automatizacion de procesos operativos repetitivos",
+      "Landing pages para campañas y captación",
+      "Páginas para productos, servicios o lanzamientos",
+      "Estructura, copy y secciones enfocadas en conversión",
     ],
     outcomes: [
-      "Respuestas mas rapidas en momentos criticos",
-      "Menos errores y menos retrabajo manual",
-      "Seguimiento comercial mas ordenado y constante",
+      "Más claridad en la oferta principal",
+      "Menos fuga entre anuncio, clic y contacto",
+      "Mejor rendimiento de campañas y tráfico existente",
     ],
-    icon: <Workflow className="h-5 w-5" />,
+    icon: <LayoutTemplate className="h-5 w-5" />,
     accent: "mint",
-    ctaLabel: "Ver pagina de automatizacion",
-    ctaHref: "/automatizaciones",
+    ctaLabel: "Solicitar landing",
+    ctaHref: "/brief?source=landing-servicios",
   },
   {
-    title: "Inteligencia del negocio",
-    subtitle: "Dashboards y analisis para decidir mejor",
+    title: "Web apps",
+    subtitle: "Herramientas web a medida para ordenar operación",
     description:
-      "No se puede mejorar lo que no se mide bien. Construyo tableros y estructuras de datos para que tengas una lectura clara de ventas, operacion y rendimiento comercial.",
+      "Cuando hojas sueltas, formularios desconectados y procesos manuales ya no alcanzan, una web app puede darte una forma más limpia de operar, coordinar y dar servicio.",
     persuasion:
-      "Sin visibilidad real, cada decision depende de intuicion. Con datos accionables en un solo lugar, puedes priorizar mejor, reaccionar antes y escalar con menor riesgo.",
+      "No todo problema se resuelve con un plugin o una automatización. A veces hace falta una herramienta propia, más simple y más útil, adaptada al flujo real del negocio.",
     includes: [
-      "Dashboards ejecutivos y operativos",
-      "Definicion de KPIs utiles para el negocio",
-      "Reporting claro para seguimiento semanal o mensual",
+      "Paneles internos y herramientas operativas",
+      "Portales para clientes, equipos o procesos específicos",
+      "Sistemas web conectados con formularios, CRM o datos base",
     ],
     outcomes: [
-      "Decisiones mas rapidas y mejor fundamentadas",
-      "Deteccion temprana de cuellos de botella",
-      "Mayor control sobre crecimiento y rentabilidad",
+      "Menos caos operativo y menos retrabajo",
+      "Mejor visibilidad del proceso y del estado de cada caso",
+      "Una base sólida para integrar automatización después",
     ],
-    icon: <BarChart3 className="h-5 w-5" />,
+    icon: <MonitorSmartphone className="h-5 w-5" />,
     accent: "violet",
-    ctaLabel: "Solicitar este servicio",
-    ctaHref: "/brief?source=inteligencia-negocio-servicios",
+    ctaLabel: "Solicitar web app",
+    ctaHref: "/brief?source=webapp-servicios",
+  },
+  {
+    title: "Automatización e IA después",
+    subtitle: "Una segunda capa, no el punto de partida",
+    description:
+      "Si más adelante hace sentido sumar automatizaciones, asistentes o integraciones más avanzadas, también puedo ayudarte. Pero entran cuando la base digital ya está bien resuelta.",
+    persuasion:
+      "Automatizar encima de una oferta confusa o una operación desordenada solo escala el desorden. Primero se construye bien la base. Después se acelera.",
+    includes: [
+      "Integraciones básicas entre herramientas",
+      "Automatización puntual donde sí haya retorno claro",
+      "Capa de IA o asistentes cuando el caso lo justifique",
+    ],
+    outcomes: [
+      "Menos humo y más criterio técnico",
+      "Automatización conectada a una base útil",
+      "Mejor retorno cuando llegue el momento de escalar",
+    ],
+    icon: <Sparkles className="h-5 w-5" />,
+    accent: "mint",
+    ctaLabel: "Explorar segunda fase",
+    ctaHref: "/automatizaciones",
   },
 ];
 
@@ -109,9 +131,9 @@ const cardClassName =
 
 const Servicios = () => {
   useSEO({
-    title: "Servicios | Automatizacion con IA y Marketing Digital",
+    title: "Servicios | Websites, landing pages y web apps",
     description:
-      "Servicios de presencia digital, automatizacion con IA e inteligencia del negocio para vender mejor, operar con menos friccion y decidir con datos claros.",
+      "Servicios de websites, landing pages y web apps para negocios que necesitan una presencia digital más clara y sistemas web más útiles.",
     path: "/servicios",
   });
 
@@ -127,15 +149,15 @@ const Servicios = () => {
           <div className="max-w-4xl">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-brand-secondary backdrop-blur-sm light:border-slate-300 light:bg-white">
               <Sparkles className="h-3.5 w-3.5" />
-              <span>Servicios que se conectan y escalan contigo</span>
+              <span>Oferta principal: websites y web apps</span>
             </div>
 
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white md:text-6xl light:text-slate-950">
-              Servicios diseniados para mejorar conversion, operacion y decisiones
+              Servicios diseñados para construir una base digital clara antes de complicar el stack
             </h1>
 
             <p className="mt-5 max-w-3xl text-lg leading-relaxed text-brand-slate light:text-slate-600">
-              En Home mostramos tres servicios clave. Aqui tienes el detalle completo de cada uno para que entiendas cuando conviene activarlo, que incluye y que impacto real puede tener en tu negocio.
+              El foco está en websites, landing pages y web apps. La automatización y la IA siguen disponibles, pero como segunda fase cuando ya existe una base digital bien resuelta.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -151,7 +173,7 @@ const Servicios = () => {
                   size="lg"
                   className="border-white/15 bg-transparent text-white hover:bg-white/10 light:border-slate-300 light:bg-white light:text-slate-900 light:hover:bg-slate-100"
                 >
-                  Cuentame tu caso
+                  Cuéntame tu caso
                 </Button>
               </Link>
             </div>
@@ -188,7 +210,7 @@ const Servicios = () => {
 
                   <div className="grid gap-4">
                     <div className="rounded-2xl border border-white/10 bg-black/10 p-5 light:border-slate-300 light:bg-white">
-                      <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/65 light:text-slate-700">Que incluye</h3>
+                      <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/65 light:text-slate-700">Qué incluye</h3>
                       <ul className="mt-4 space-y-3">
                         {service.includes.map((item) => (
                           <li key={item} className="flex items-start gap-3 text-sm text-brand-slate light:text-slate-600">
@@ -219,40 +241,12 @@ const Servicios = () => {
 
         <section className="container mx-auto mt-20 max-w-6xl px-6">
           <InternalLinksSection
-            eyebrow="Exploración interna"
-            title="Hubs y páginas que ya alimentan el cluster SEO"
-            description="Desde aquí ya puedes entrar a las rutas más importantes del sistema: hubs de solución, directorios por industria y landings locales que ayudan a distribuir mejor la autoridad interna."
+            eyebrow="Explora la estructura"
+            title="Páginas relacionadas para seguir bajando la oferta"
+            description="Estas rutas ayudan a ordenar la propuesta principal de websites y web apps, y dejan la automatización como una segunda capa cuando haga sentido."
             items={servicesInternalLinks}
             variant="dark"
           />
-        </section>
-
-        <section className="container mx-auto mt-20 max-w-6xl px-6">
-          <div className={`${cardClassName} px-8 py-10 text-center md:px-10`}>
-            <h2 className="text-3xl font-semibold text-white md:text-4xl light:text-slate-950">
-              ¿Quieres definir por donde empezar primero?
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-brand-slate light:text-slate-600">
-              Si me compartes tu contexto actual, te recomiendo la prioridad correcta entre presencia digital, automatizacion o inteligencia del negocio para lograr impacto mas rapido.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" variant="hero">
-                <a href="/brief?source=servicios-page">
-                  Solicitar proyecto
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-              <Link to="/contacto">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white/15 bg-transparent text-white hover:bg-white/10 light:border-slate-300 light:bg-white light:text-slate-900 light:hover:bg-slate-100"
-                >
-                  Hablar conmigo
-                </Button>
-              </Link>
-            </div>
-          </div>
         </section>
       </main>
 

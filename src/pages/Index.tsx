@@ -10,9 +10,9 @@ import { useSEO } from "@/lib/seo";
 
 const Index = () => {
   useSEO({
-    title: "Creativv",
+    title: "Creativv | Websites y web apps para negocios",
     description:
-      "Creativv implementa agentes de IA, automatizaciones de WhatsApp, workflows y sistemas web para negocios que quieren vender mejor y operar con más claridad.",
+      "Creativv diseña y desarrolla websites, landing pages y web apps para negocios que necesitan una presencia digital más clara y sistemas web más útiles.",
     path: "/",
   });
 

@@ -21,9 +21,9 @@ const Automatizaciones = () => {
       <main className="pt-32 pb-24">
         <section className="container mx-auto px-6 max-w-5xl">
           <div className="max-w-3xl mb-14">
-            <h1 className="text-4xl md:text-6xl font-semibold tracking-tight mb-5">Automatización con IA para operaciones más eficientes</h1>
+            <h1 className="text-4xl md:text-6xl font-semibold tracking-tight mb-5">Automatización e IA como segunda fase, no como punto de partida</h1>
             <p className="text-lg text-brand-slate leading-relaxed">
-              Diseño flujos, integraciones y asistentes que ayudan a responder más rápido, reducir tareas manuales y dar más estructura a la operación diaria.
+              Cuando la web, la oferta y los sistemas base ya están claros, diseño flujos, integraciones y asistentes que ayudan a responder más rápido, reducir tareas manuales y dar más estructura a la operación diaria.
             </p>
           </div>
 
@@ -46,9 +46,9 @@ const Automatizaciones = () => {
           </div>
 
           <div className="mt-14 rounded-3xl border border-white/10 bg-white/5 p-8 md:p-10 text-center">
-            <h2 className="text-3xl font-semibold mb-4">¿Quieres automatizar una parte crítica de tu negocio?</h2>
+            <h2 className="text-3xl font-semibold mb-4">¿Ya tienes bien resuelta la base y quieres ir al siguiente nivel?</h2>
             <p className="text-brand-slate max-w-2xl mx-auto mb-8">
-              Cuéntame qué proceso consume más tiempo hoy y te diré si conviene resolverlo con IA, automatización o una combinación de ambas.
+              Cuéntame qué proceso consume más tiempo hoy y te diré si ya conviene resolverlo con IA, automatización o una combinación de ambas.
             </p>
             <Button asChild size="lg" variant="hero">
               <a href="/brief?source=automatizaciones-page">

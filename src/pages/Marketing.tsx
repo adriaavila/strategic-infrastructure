@@ -21,9 +21,9 @@ const Marketing = () => {
       <main className="pt-32 pb-24">
         <section className="container mx-auto px-6 max-w-5xl">
           <div className="max-w-3xl mb-14">
-            <h1 className="text-4xl md:text-6xl font-semibold tracking-tight mb-5">Presencia digital construida para convertir</h1>
+            <h1 className="text-4xl md:text-6xl font-semibold tracking-tight mb-5">Presencia digital construida para vender mejor</h1>
             <p className="text-lg text-brand-slate leading-relaxed">
-              Webs, landing pages y ecommerce diseñados para presentar mejor la propuesta del negocio, captar oportunidades y acompañar el crecimiento comercial.
+              Webs, landing pages y ecommerce diseñados para explicar mejor tu oferta, generar confianza rápido y acompañar el crecimiento comercial.
             </p>
           </div>
 

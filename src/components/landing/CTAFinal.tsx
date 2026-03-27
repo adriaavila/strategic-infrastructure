@@ -22,7 +22,7 @@ export const CTAFinal = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Si hoy tu negocio depende demasiado de tareas manuales, hablemos.
+              Si necesitas una web o web app bien hecha, hablemos.
             </motion.h2>
 
             <motion.p
@@ -31,8 +31,7 @@ export const CTAFinal = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.08, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Cuéntame dónde está la fricción y te diré qué conviene construir primero. El
-              objetivo no es llenar tu stack: es dejar un sistema más claro, más útil y más rentable.
+              Cuéntame qué necesitas construir y te diré qué conviene hacer primero. Si después tiene sentido sumar automatización o IA, se suma; pero no antes de tener la base resuelta.
             </motion.p>
 
             <motion.div
@@ -43,13 +42,13 @@ export const CTAFinal = () => {
             >
               <Button variant="hero" size="lg" asChild className="justify-center">
                 <a href="/brief?source=cta-final">
-                  Solicitar diagnostico
+                  Solicitar proyecto
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
               <Button variant="hero-outline" size="lg" asChild className="justify-center">
                 <a
-                  href={getWhatsAppUrl("Hola, quiero hablar sobre una automatización o sistema con IA para mi negocio.")}
+                  href={getWhatsAppUrl("Hola, quiero hablar sobre una web o web app para mi negocio.")}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -65,7 +64,7 @@ export const CTAFinal = () => {
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: 0.26, duration: 0.6 }}
             >
-              Diagnostico breve · Respuesta clara · Sin propuesta inflada
+              Diagnóstico breve · Respuesta clara · Sin propuesta inflada
             </motion.p>
           </div>
         </div>
