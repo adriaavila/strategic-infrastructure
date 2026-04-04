@@ -40,10 +40,10 @@ export const IdealClient = () => {
             <div className="relative z-10">
               <div className="eyebrow mb-6">por qué creativv</div>
               <h2 className="max-w-[12ch] font-heading text-4xl font-semibold tracking-[-0.05em] text-brand-ink md:text-5xl">
-                Criterio técnico, diseño útil y foco real en producto web.
+                Una solucion digital pensada para ser util, no solo para verse bien.
               </h2>
               <p className="mt-5 max-w-[34rem] text-lg leading-relaxed text-foreground/72">
-                Creativv funciona más como partner de construcción digital que como agencia inflada. La prioridad es ayudarte a tener una presencia web fuerte y herramientas web que sí se usen.
+                La prioridad no es llenar tu negocio de piezas innecesarias. La prioridad es ayudarte a tener una presencia digital mas clara, una mejor explicacion de tu oferta y herramientas web que realmente sirvan.
               </p>
 
               <div className="mt-8 rounded-[1.6rem] border border-border bg-white/86 p-6 shadow-sm">
@@ -53,8 +53,8 @@ export const IdealClient = () => {
                 <div className="mt-4 space-y-4">
                   {[
                     "Una oferta mejor explicada desde la primera visita.",
-                    "Activos web más útiles para captar, vender o mostrar trabajo.",
-                    "Una base más ordenada para luego sumar automatización si vale la pena.",
+                    "Mas confianza al mostrar tu negocio online.",
+                    "Una base mas ordenada para captar, vender o luego automatizar mejor.",
                   ].map((item) => (
                     <div key={item} className="flex items-start gap-3 text-sm leading-relaxed text-foreground/72">
                       <span className="mt-1 h-2.5 w-2.5 rounded-full bg-brand-primary/80" />

@@ -22,7 +22,7 @@ export const CTAFinal = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Si necesitas una web o web app bien hecha, hablemos.
+              Si tu negocio necesita una pagina mas clara para vender mejor, podemos empezar por ahi.
             </motion.h2>
 
             <motion.p
@@ -31,7 +31,7 @@ export const CTAFinal = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.08, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              Cuéntame qué necesitas construir y te diré qué conviene hacer primero. Si después tiene sentido sumar automatización o IA, se suma; pero no antes de tener la base resuelta.
+              Una landing page bien planteada puede ayudarte a explicar mejor tu oferta, dar una mejor primera impresion y facilitar que mas personas te escriban o pidan informacion.
             </motion.p>
 
             <motion.div
@@ -41,14 +41,14 @@ export const CTAFinal = () => {
               transition={{ delay: 0.18, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
               <Button variant="hero" size="lg" asChild className="justify-center">
-                <a href="/brief?source=cta-final">
-                  Solicitar proyecto
+                <a href="/brief?source=landing-page-sprint">
+                  Solicitar landing page
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
               <Button variant="hero-outline" size="lg" asChild className="justify-center">
                 <a
-                  href={getWhatsAppUrl("Hola, quiero hablar sobre una web o web app para mi negocio.")}
+                  href={getWhatsAppUrl("Hola, quiero hablar sobre una landing page para mi negocio.")}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -64,7 +64,7 @@ export const CTAFinal = () => {
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: 0.26, duration: 0.6 }}
             >
-              Diagnóstico breve · Respuesta clara · Sin propuesta inflada
+              Pagina enfocada · 24–72h · Proceso simple
             </motion.p>
           </div>
         </div>

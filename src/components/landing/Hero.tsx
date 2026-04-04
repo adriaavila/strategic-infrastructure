@@ -176,7 +176,7 @@ export const Hero = () => {
                 animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
                 transition={{ delay: 0.14, duration: 0.76, ease: [0.16, 1, 0.3, 1] }}
               >
-                Diseño websites y web apps para negocios que necesitan verse mejor y funcionar mejor.
+                Websites, landing pages y sistemas web para negocios que necesitan vender con mas claridad.
               </motion.h1>
 
               <motion.p
@@ -185,7 +185,7 @@ export const Hero = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.24, duration: 0.64, ease: [0.16, 1, 0.3, 1] }}
               >
-                Construyo sitios web, landing pages y aplicaciones web a medida con foco en claridad, conversion y operacion. La automatizacion y la IA pueden entrar despues, cuando la base digital ya tiene sentido.
+                Diseño y construyo paginas y sistemas web que ayudan a presentar mejor tu oferta, generar confianza desde la primera visita y convertir mas interes en contactos reales.
               </motion.p>
 
               <motion.div
@@ -196,7 +196,7 @@ export const Hero = () => {
               >
                 <Button variant="hero" size="lg" asChild className="justify-center">
                   <a href="/brief?source=hero-call">
-                    Solicitar proyecto
+                    Solicitar diagnostico
                     <ArrowRight className="h-4 w-4" />
                   </a>
                 </Button>

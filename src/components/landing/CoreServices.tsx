@@ -7,40 +7,40 @@ const offers = [
     number: "01",
     title: "Websites corporativos",
     description:
-      "Sitios claros, bien escritos y bien construidos para presentar tu oferta con seriedad y convertir mejor desde la primera visita.",
-    outcome: "Una presencia digital más sólida y más útil para vender.",
+      "Sitios claros, bien estructurados y orientados a conversion para presentar tu negocio con mas seriedad y ayudar a que mas personas entiendan rapidamente lo que ofreces.",
+    outcome: "Una presencia digital mas solida para vender, cotizar o abrir mejores conversaciones.",
     icon: Globe2,
   },
   {
     number: "02",
     title: "Landing pages",
     description:
-      "Páginas enfocadas en campañas, captación y oferta puntual, pensadas para reducir ruido y mover al visitante a una acción concreta.",
-    outcome: "Más claridad, mejor conversión y menos fuga de atención.",
+      "Paginas enfocadas en una oferta concreta, diseñadas para reducir ruido, ordenar el mensaje y mover al visitante hacia una accion clara.",
+    outcome: "Mas claridad, mejor conversion y menos fuga de atencion.",
     icon: LayoutTemplate,
   },
   {
     number: "03",
     title: "Web apps a medida",
     description:
-      "Herramientas web internas o de cara al cliente para ordenar procesos, centralizar información y dejar de depender de parches sueltos.",
-    outcome: "Operación más limpia y sistemas que sí acompañan el trabajo real.",
+      "Herramientas web para ordenar procesos, centralizar informacion y darle mas estructura a la operacion diaria.",
+    outcome: "Menos caos operativo y sistemas que acompañan el trabajo real.",
     icon: MonitorSmartphone,
   },
   {
     number: "04",
-    title: "Integraciones y automatización ligera",
+    title: "Integraciones y automatizacion ligera",
     description:
-      "Conecto formularios, CRM, dashboards y flujos básicos cuando eso ayuda a que la web o la app no quede aislada.",
-    outcome: "Tu sistema digital empieza conectado desde el día uno.",
+      "Conexiones entre formularios, CRM, dashboards y herramientas clave para que la web o el sistema no queden aislados.",
+    outcome: "Una operacion mas conectada desde el dia uno.",
     icon: Workflow,
   },
   {
     number: "05",
-    title: "IA y automatización avanzada",
+    title: "IA y automatizacion avanzada",
     description:
-      "Cuando la base ya está bien resuelta, puedo sumar automatizaciones, asistentes o capas de IA donde realmente tengan retorno.",
-    outcome: "La IA entra como multiplicador, no como disfraz.",
+      "Automatizaciones, asistentes o capas de IA cuando de verdad aportan velocidad, orden o retorno.",
+    outcome: "La IA entra como multiplicador, no como adorno.",
     icon: Sparkles,
   },
 ];
@@ -69,10 +69,10 @@ export const CoreServices = () => {
           >
             <div className="eyebrow mb-6">servicios</div>
             <h2 className="max-w-[10ch] font-heading text-4xl font-semibold tracking-[-0.05em] text-brand-ink md:text-5xl">
-              Lo que construyo primero para que el negocio tenga una base digital seria.
+              Lo que puedo construir para que tu negocio tenga una base digital mas clara y mas util.
             </h2>
             <p className="mt-5 max-w-[34rem] text-lg leading-relaxed text-foreground/72">
-              El foco principal está en websites, landing pages y web apps. La automatización y la IA quedan disponibles, pero como segunda capa, no como humo de portada.
+              El foco está en websites, landing pages y sistemas web pensados para ventas, captacion y operacion. La automatizacion y la IA pueden entrar despues, cuando la base ya tiene sentido.
             </p>
 
             <div className="section-shell mt-8 p-6">

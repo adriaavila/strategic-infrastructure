@@ -7,25 +7,25 @@ const steps = [
   {
     number: "01",
     title: "Aclarar el objetivo",
-    description: "Definimos si hace falta una web, una landing o una web app según el problema real.",
+    description: "Definimos si lo que mas conviene es una landing page, una web mas completa o un sistema web segun el problema real.",
     icon: PencilRuler,
   },
   {
     number: "02",
     title: "Diseñar la estructura",
-    description: "Ordenamos contenido, experiencia, arquitectura y flujo para que la solución tenga sentido.",
+    description: "Ordenamos contenido, flujo y experiencia para que la solucion tenga sentido y sea facil de usar.",
     icon: Route,
   },
   {
     number: "03",
     title: "Implementar",
-    description: "Construyo y dejo una versión lista para operar, mostrar o vender.",
+    description: "Construyo una version lista para operar, presentar o vender.",
     icon: Rocket,
   },
   {
     number: "04",
     title: "Iterar con uso real",
-    description: "Ajustamos según respuesta del mercado, fricción real y próximos pasos del negocio.",
+    description: "Ajustamos segun respuesta del mercado, friccion real y proximos pasos del negocio.",
     icon: RefreshCcw,
   },
 ];
@@ -45,7 +45,7 @@ export const EngagementModel = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Del problema real a una presencia digital o herramienta web que sí sirve.
+            Del problema real a una solucion digital que si ayuda a vender u operar mejor.
           </motion.h2>
           <motion.p
             className="mt-5 max-w-[40rem] text-lg leading-relaxed text-foreground/72"
@@ -53,7 +53,7 @@ export const EngagementModel = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.08, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            El proceso está pensado para avanzar rápido sin improvisar. Primero se define qué conviene construir. Después se diseña, se implementa y se afina con uso real.
+            El proceso esta pensado para avanzar con claridad: entender que hace falta construir, diseñarlo bien, implementarlo y ajustarlo con uso real.
           </motion.p>
         </div>
 
@@ -103,7 +103,7 @@ export const EngagementModel = () => {
           >
             <Button variant="hero" size="lg" asChild>
               <a href="/brief?source=process-home">
-                Solicitar diagnóstico
+                Solicitar diagnostico
                 <ArrowRight className="h-4 w-4" />
               </a>
             </Button>

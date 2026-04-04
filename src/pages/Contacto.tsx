@@ -26,11 +26,10 @@ const Contacto = () => {
           <div className="max-w-3xl">
             <div className="eyebrow mb-6">contacto</div>
             <h1 className="font-heading text-4xl font-semibold tracking-[-0.05em] text-brand-ink md:text-6xl">
-              Hablemos de la primera pieza que haría tu operación más clara.
+              Hablemos de la pagina o sistema que hoy puede ayudarte a vender mejor.
             </h1>
             <p className="mt-5 max-w-[40rem] text-lg leading-relaxed text-foreground/72">
-              Si estás pensando en automatizar, mejorar seguimiento comercial o construir un sistema
-              más útil con IA, aquí tienes la forma más directa de empezar.
+              Si necesitas una landing page, una web mas clara o una herramienta digital que ayude a ordenar mejor tu operacion, aqui tienes la forma mas directa de empezar.
             </p>
           </div>
 
@@ -49,7 +48,7 @@ const Contacto = () => {
                       Solicitar diagnostico
                     </h3>
                     <p className="mt-2 max-w-[38rem] text-base leading-relaxed text-foreground/70">
-                      Compárteme el contexto y te recomiendo qué sistema conviene construir primero.
+                      Comparte el contexto de tu negocio y te diré cuál es la mejor forma de resolverlo: una landing page, una web más completa o una siguiente fase.
                     </p>
                   </div>
                 </div>
@@ -95,7 +94,7 @@ const Contacto = () => {
                   <div>
                     <h3 className="text-2xl font-semibold tracking-tight text-brand-ink">WhatsApp</h3>
                     <p className="mt-2 max-w-[38rem] text-base leading-relaxed text-foreground/70">
-                      Canal directo para conversar rápido sobre el cuello de botella y el siguiente paso.
+                      Canal directo para resolver dudas, revisar tu caso y definir el siguiente paso con rapidez.
                     </p>
                   </div>
                 </div>

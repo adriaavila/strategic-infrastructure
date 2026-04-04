@@ -4,6 +4,7 @@ import { CoreServices } from "@/components/landing/CoreServices";
 import { ProjectsShowcase } from "@/components/landing/ProjectsShowcase";
 import { EngagementModel } from "@/components/landing/EngagementModel";
 import { IdealClient } from "@/components/landing/IdealClient";
+import { Pricing } from "@/components/landing/Pricing";
 import { CTAFinal } from "@/components/landing/CTAFinal";
 import { Footer } from "@/components/landing/Footer";
 import { useSEO } from "@/lib/seo";
@@ -24,6 +25,7 @@ const Index = () => {
         <Hero />
         <CoreServices />
         <IdealClient />
+        <Pricing />
         <EngagementModel />
         <ProjectsShowcase />
         <CTAFinal />
