@@ -115,6 +115,26 @@ for (const page of pseoData) {
   const pageDir = path.join(distDir, page.slug);
   fs.mkdirSync(pageDir, { recursive: true });
 
+  const publicPath = path.join(projectRoot, "public", page.slug, "index.html");
+  if (fs.existsSync(publicPath)) {
+    // If purely static HTML exists, keep it for faster SEO indexation!
+    // We just inject Google Analytics to track visits if missing.
+    const staticHtmlPath = path.join(pageDir, "index.html");
+    if (fs.existsSync(staticHtmlPath)) {
+      let staticHtml = fs.readFileSync(staticHtmlPath, "utf-8");
+      
+      if (!staticHtml.includes("googletagmanager.com/gtag/js")) {
+         const gaMatch = baseHtml.match(/<!-- Google tag \(gtag\.js\) -->[\s\S]*?<\/script>\s*<script>[\s\S]*?<\/script>/);
+         if (gaMatch) {
+            staticHtml = staticHtml.replace("</head>", `  ${gaMatch[0]}\n</head>`);
+            fs.writeFileSync(staticHtmlPath, staticHtml);
+         }
+      }
+    }
+    continue; // Skip overwriting it with the blank SPA shell
+  }
+
+
   const canonicalUrl = toAbsoluteUrl(`/${page.slug}`);
   const replaceTag = (html, pattern, replacement) => {
     const nextHtml = html.replace(pattern, replacement);

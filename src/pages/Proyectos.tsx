@@ -36,7 +36,7 @@ const ProjectCard = ({ project, index, isInView }: { project: ProjectEntry; inde
         duration: 0.55,
         ease: [0.16, 1, 0.3, 1],
       }}
-      className="group rounded-[1.75rem] overflow-hidden border border-foreground/[0.08] bg-card hover:border-brand-secondary/25 transition-all duration-300 hover:shadow-xl hover:shadow-brand-secondary/5"
+      className="group rounded-[1.75rem] overflow-hidden border border-foreground/[0.09] bg-card hover:border-brand-secondary/30 transition-all duration-300 hover:shadow-xl hover:shadow-brand-secondary/10 shadow-sm"
     >
       <div className="flex flex-col h-full">
         <div className="relative aspect-[16/10] w-full overflow-hidden shrink-0 bg-muted">
@@ -54,8 +54,10 @@ const ProjectCard = ({ project, index, isInView }: { project: ProjectEntry; inde
             />
           </AnimatePresence>
           
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
-          <div className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-40 mix-blend-screen pointer-events-none`} />
+          {/* Bottom gradient – lighter in light mode so images aren't crushed */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/55 dark:from-black/75 via-black/5 dark:via-black/15 to-transparent pointer-events-none" />
+          {/* Accent tint – multiply in light mode, screen in dark mode */}
+          <div className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-20 dark:opacity-35 mix-blend-multiply dark:mix-blend-screen pointer-events-none`} />
 
           {/* Slider Controls */}
           {images.length > 1 && (
@@ -91,7 +93,7 @@ const ProjectCard = ({ project, index, isInView }: { project: ProjectEntry; inde
             </>
           )}
 
-          <div className="absolute left-5 right-5 bottom-8 flex flex-wrap gap-2 pointer-events-none">
+          <div className="absolute left-5 right-5 bottom-7 flex flex-wrap gap-2 pointer-events-none">
             {project.tags.slice(0, 3).map((tag) => (
               <span
                 key={tag}
@@ -120,7 +122,7 @@ const ProjectCard = ({ project, index, isInView }: { project: ProjectEntry; inde
             {project.shortDescription}
           </p>
 
-          <div className="mt-auto flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-foreground/[0.05]">
+          <div className="mt-auto flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-foreground/[0.08]">
             <Link
               to={`/proyectos/${project.slug}`}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-secondary text-brand-dark text-sm font-bold hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-brand-secondary/10"
