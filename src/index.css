@@ -2,8 +2,6 @@
    Design System - Architectural Interface
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -563,6 +561,96 @@
     animation: draw 2s ease forwards;
   }
 
+  .hero-entry {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+    animation: hero-entry 760ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    will-change: transform, opacity;
+  }
+
+  .hero-blob,
+  .hero-beam,
+  .hero-node,
+  .hero-path,
+  .hero-ring,
+  .whatsapp-entry {
+    will-change: transform, opacity;
+  }
+
+  .hero-blob-a {
+    animation: hero-float-a 24s linear infinite;
+  }
+
+  .hero-blob-b {
+    animation: hero-float-b 28s linear infinite;
+  }
+
+  .hero-blob-c {
+    animation: hero-float-c 32s linear infinite;
+  }
+
+  .hero-path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    opacity: 0;
+    animation: hero-path-draw 2.8s ease-in-out forwards;
+  }
+
+  .hero-path-a {
+    animation-delay: 0.2s;
+  }
+
+  .hero-path-b {
+    animation-delay: 0.5s;
+    animation-duration: 3.2s;
+  }
+
+  .hero-path-c {
+    animation-delay: 0.1s;
+    animation-duration: 4.5s;
+  }
+
+  .hero-node,
+  .hero-ring {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .hero-node {
+    opacity: 0;
+    animation: hero-node-pop 1.2s ease forwards;
+  }
+
+  .hero-node-a {
+    animation-delay: 1.5s;
+  }
+
+  .hero-node-b {
+    animation-delay: 2s;
+  }
+
+  .hero-ring-a {
+    animation: hero-ring-pulse 3.5s ease-in-out infinite;
+  }
+
+  .hero-ring-b {
+    animation: hero-ring-pulse 4.2s ease-in-out 1s infinite;
+  }
+
+  .hero-beam-a {
+    animation: hero-beam-down 14s ease-in-out infinite;
+  }
+
+  .hero-beam-b {
+    animation: hero-beam-up 18s ease-in-out 3s infinite;
+  }
+
+  .whatsapp-entry {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0) scale(0.96);
+    animation: whatsapp-entry 560ms cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+  }
+
   /* Transition Utilities */
   .transition-smooth {
     transition: all var(--transition-base) var(--easing-default);
@@ -603,6 +691,118 @@
   }
 }
 
+@keyframes hero-entry {
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hero-float-a {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(40px, -30px, 0) scale(1.08);
+  }
+  66% {
+    transform: translate3d(-20px, 20px, 0) scale(0.96);
+  }
+}
+
+@keyframes hero-float-b {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(-30px, 30px, 0) scale(1.05);
+  }
+  66% {
+    transform: translate3d(30px, -30px, 0) scale(0.92);
+  }
+}
+
+@keyframes hero-float-c {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(30px, -20px, 0) scale(0.96);
+  }
+  66% {
+    transform: translate3d(-30px, 30px, 0) scale(1.05);
+  }
+}
+
+@keyframes hero-path-draw {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes hero-node-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.45);
+  }
+  100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-ring-pulse {
+  0%, 100% {
+    opacity: 0.34;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.1;
+    transform: scale(1.9);
+  }
+}
+
+@keyframes hero-beam-down {
+  0%, 100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate3d(0, 150px, 0);
+  }
+}
+
+@keyframes hero-beam-up {
+  0%, 100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate3d(0, -100px, 0);
+  }
+}
+
+@keyframes whatsapp-entry {
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -638,6 +838,31 @@
 .animation-delay-300 { animation-delay: 300ms; }
 .animation-delay-400 { animation-delay: 400ms; }
 .animation-delay-500 { animation-delay: 500ms; }
+
+@media (pointer: coarse), (max-width: 768px) {
+  .hero-blob,
+  .hero-path,
+  .hero-node,
+  .hero-ring,
+  .hero-beam {
+    animation: none !important;
+  }
+
+  .hero-path {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+
+  .hero-node,
+  .hero-ring {
+    opacity: 0.28;
+    transform: none !important;
+  }
+
+  .hero-beam {
+    opacity: 0;
+  }
+}
 
 /* Respect prefers-reduced-motion for accessibility */
 @media (prefers-reduced-motion: reduce) {

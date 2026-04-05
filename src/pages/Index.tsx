@@ -1,13 +1,15 @@
+import { Suspense, lazy } from "react";
 import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
-import { CoreServices } from "@/components/landing/CoreServices";
-import { ProjectsShowcase } from "@/components/landing/ProjectsShowcase";
-import { EngagementModel } from "@/components/landing/EngagementModel";
-import { IdealClient } from "@/components/landing/IdealClient";
-import { Pricing } from "@/components/landing/Pricing";
-import { CTAFinal } from "@/components/landing/CTAFinal";
 import { Footer } from "@/components/landing/Footer";
 import { useSEO } from "@/lib/seo";
+
+const HomeSectionsPrimary = lazy(() => import("@/components/landing/HomeSectionsPrimary"));
+const HomeSectionsSecondary = lazy(() => import("@/components/landing/HomeSectionsSecondary"));
+
+const SectionFallback = ({ minHeightClass }: { minHeightClass: string }) => (
+  <div className={`py-24 md:py-32 ${minHeightClass}`} aria-hidden="true" />
+);
 
 const Index = () => {
   useSEO({
@@ -23,12 +25,12 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <CoreServices />
-        <IdealClient />
-        <Pricing />
-        <EngagementModel />
-        <ProjectsShowcase />
-        <CTAFinal />
+        <Suspense fallback={<SectionFallback minHeightClass="min-h-[1100px]" />}>
+          <HomeSectionsPrimary />
+        </Suspense>
+        <Suspense fallback={<SectionFallback minHeightClass="min-h-[900px]" />}>
+          <HomeSectionsSecondary />
+        </Suspense>
       </main>
       <Footer />
     </div>
