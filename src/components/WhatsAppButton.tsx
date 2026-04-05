@@ -1,25 +1,14 @@
-import { motion } from "framer-motion";
 import { getWhatsAppUrl } from "@/config/contact";
 
 export const WhatsAppButton = () => {
   const whatsappUrl = getWhatsAppUrl("Hola, quiero hablar sobre una automatización o sistema con IA para mi negocio.");
 
   return (
-    <motion.a
+    <a
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="group fixed bottom-5 right-5 z-[100] flex h-14 w-14 items-center justify-center rounded-full border border-brand-platinum bg-white/92 shadow-[0_18px_48px_rgba(17,19,27,0.14)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-primary/18"
-      initial={{ opacity: 0, scale: 0.88, y: 16 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      whileHover={{ scale: 1.04 }}
-      whileTap={{ scale: 0.96 }}
-      transition={{
-        type: "spring",
-        stiffness: 240,
-        damping: 20,
-        delay: 1,
-      }}
+      className="whatsapp-entry group fixed bottom-5 right-5 z-[100] flex h-14 w-14 items-center justify-center rounded-full border border-brand-platinum bg-white/92 shadow-[0_18px_48px_rgba(17,19,27,0.14)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-primary/18 hover:scale-[1.04] active:scale-[0.96]"
       aria-label="Contactar por WhatsApp"
     >
       <span className="absolute inset-0 rounded-full bg-brand-primary/8 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -31,6 +20,6 @@ export const WhatsAppButton = () => {
       <span className="pointer-events-none absolute right-full mr-4 whitespace-nowrap rounded-full border border-border bg-white/94 px-3 py-2 text-xs font-medium text-brand-ink opacity-0 shadow-sm transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
         Hablar por WhatsApp
       </span>
-    </motion.a>
+    </a>
   );
 };

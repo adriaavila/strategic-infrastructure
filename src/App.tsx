@@ -1,31 +1,27 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { Analytics } from "@vercel/analytics/react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Suspense, lazy, type ReactNode, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { ThemeProvider } from "./components/theme-provider";
 import Index from "./pages/Index";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
-import NotFound from "./pages/NotFound";
-import Historia from "./pages/Historia";
-import Contacto from "./pages/Contacto";
-import Proyectos from "./pages/Proyectos";
-import Automatizaciones from "./pages/Automatizaciones";
-import Marketing from "./pages/Marketing";
-import Servicios from "./pages/Servicios";
-import ProjectDetail from "./pages/ProjectDetail";
-import Brief from "./pages/Brief";
-import LegalTerms from "./pages/LegalTerms";
-import LegalPrivacy from "./pages/LegalPrivacy";
-import IndustriasHub from "./pages/IndustriasHub";
-import CiudadesHub from "./pages/CiudadesHub";
-import SiteMapPage from "./pages/SiteMapPage";
-import PseoPage from "./pages/PseoPage";
-import MarketingLibrary from "./pages/MarketingLibrary";
 import { WhatsAppButton } from "./components/WhatsAppButton";
-import { useEffect } from "react";
+import { DeferredAnalytics } from "./components/DeferredAnalytics";
+
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const Historia = lazy(() => import("./pages/Historia"));
+const Contacto = lazy(() => import("./pages/Contacto"));
+const Proyectos = lazy(() => import("./pages/Proyectos"));
+const Automatizaciones = lazy(() => import("./pages/Automatizaciones"));
+const Marketing = lazy(() => import("./pages/Marketing"));
+const Servicios = lazy(() => import("./pages/Servicios"));
+const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
+const Brief = lazy(() => import("./pages/Brief"));
+const LegalTerms = lazy(() => import("./pages/LegalTerms"));
+const LegalPrivacy = lazy(() => import("./pages/LegalPrivacy"));
+const IndustriasHub = lazy(() => import("./pages/IndustriasHub"));
+const CiudadesHub = lazy(() => import("./pages/CiudadesHub"));
+const SiteMapPage = lazy(() => import("./pages/SiteMapPage"));
+const PseoPage = lazy(() => import("./pages/PseoPage"));
+const MarketingLibrary = lazy(() => import("./pages/MarketingLibrary"));
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
@@ -46,44 +42,41 @@ const ScrollToTop = () => {
   return null;
 };
 
-const queryClient = new QueryClient();
+const RouteFallback = () => <div className="min-h-screen bg-background" aria-hidden="true" />;
+
+const SuspendedRoute = ({ children }: { children: ReactNode }) => (
+  <Suspense fallback={<RouteFallback />}>{children}</Suspense>
+);
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <ThemeProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <Analytics />
-        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/historia" element={<Historia />} />
-            <Route path="/contacto" element={<Contacto />} />
-            <Route path="/brief" element={<Brief />} />
-            <Route path="/automatizaciones" element={<Automatizaciones />} />
-            <Route path="/marketing" element={<Marketing />} />
-            <Route path="/marketing/contenidos" element={<MarketingLibrary />} />
-            <Route path="/terminos" element={<LegalTerms />} />
-            <Route path="/privacidad" element={<LegalPrivacy />} />
-            <Route path="/servicios" element={<Servicios />} />
-            <Route path="/industrias" element={<IndustriasHub />} />
-            <Route path="/ciudades" element={<CiudadesHub />} />
-            <Route path="/mapa-del-sitio" element={<SiteMapPage />} />
-            <Route path="/proyectos" element={<Proyectos />} />
-            <Route path="/proyectos/:slug" element={<ProjectDetail />} />
-            <Route path="/:slug" element={<PseoPage />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <WhatsAppButton />
-        </BrowserRouter>
-      </TooltipProvider>
-    </ThemeProvider>
-  </QueryClientProvider>
+  <>
+    <DeferredAnalytics />
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/blog" element={<SuspendedRoute><Blog /></SuspendedRoute>} />
+        <Route path="/blog/:slug" element={<SuspendedRoute><BlogPost /></SuspendedRoute>} />
+        <Route path="/historia" element={<SuspendedRoute><Historia /></SuspendedRoute>} />
+        <Route path="/contacto" element={<SuspendedRoute><Contacto /></SuspendedRoute>} />
+        <Route path="/brief" element={<SuspendedRoute><Brief /></SuspendedRoute>} />
+        <Route path="/automatizaciones" element={<SuspendedRoute><Automatizaciones /></SuspendedRoute>} />
+        <Route path="/marketing" element={<SuspendedRoute><Marketing /></SuspendedRoute>} />
+        <Route path="/marketing/contenidos" element={<SuspendedRoute><MarketingLibrary /></SuspendedRoute>} />
+        <Route path="/terminos" element={<SuspendedRoute><LegalTerms /></SuspendedRoute>} />
+        <Route path="/privacidad" element={<SuspendedRoute><LegalPrivacy /></SuspendedRoute>} />
+        <Route path="/servicios" element={<SuspendedRoute><Servicios /></SuspendedRoute>} />
+        <Route path="/industrias" element={<SuspendedRoute><IndustriasHub /></SuspendedRoute>} />
+        <Route path="/ciudades" element={<SuspendedRoute><CiudadesHub /></SuspendedRoute>} />
+        <Route path="/mapa-del-sitio" element={<SuspendedRoute><SiteMapPage /></SuspendedRoute>} />
+        <Route path="/proyectos" element={<SuspendedRoute><Proyectos /></SuspendedRoute>} />
+        <Route path="/proyectos/:slug" element={<SuspendedRoute><ProjectDetail /></SuspendedRoute>} />
+        <Route path="/:slug" element={<SuspendedRoute><PseoPage /></SuspendedRoute>} />
+        <Route path="*" element={<SuspendedRoute><NotFound /></SuspendedRoute>} />
+      </Routes>
+      <WhatsAppButton />
+    </BrowserRouter>
+  </>
 );
 
 export default App;
