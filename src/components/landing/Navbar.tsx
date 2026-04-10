@@ -6,9 +6,8 @@ import { getWhatsAppUrl } from "@/config/contact";
 import { Logo } from "@/components/ui/Logo";
 
 const navLinks = [
-  { label: "Soluciones", href: "/#soluciones" },
-  { label: "Metodo", href: "/#metodo" },
-  { label: "Casos", href: "/#casos" },
+  { label: "Cómo Funciona", href: "#como-funciona" },
+  { label: "Catálogo", href: "#catalogo" },
 ];
 
 export const Navbar = () => {
@@ -54,8 +53,8 @@ export const Navbar = () => {
         <div
           className={`transition-all duration-300 ${
             isScrolled
-              ? "rounded-[2rem] border border-brand-platinum/90 bg-white/88 shadow-[0_22px_60px_rgba(17,19,27,0.08)] backdrop-blur-2xl"
-              : "rounded-[2rem] border border-white/70 bg-white/76 shadow-[0_16px_40px_rgba(17,19,27,0.05)] backdrop-blur-xl"
+              ? "rounded-[2rem] border border-white/10 bg-black/50 shadow-[0_22px_60px_rgba(0,0,0,0.4)] backdrop-blur-2xl"
+              : "rounded-[2rem] border border-white/5 bg-black/30 shadow-[0_16px_40px_rgba(0,0,0,0.2)] backdrop-blur-xl"
           }`}
         >
           <div className="flex h-[76px] items-center justify-between px-4 sm:px-6">
@@ -70,7 +69,16 @@ export const Navbar = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-sm font-medium text-muted-foreground transition-colors hover:text-brand-ink"
+                  onClick={(e) => {
+                    if (location.pathname === "/") {
+                      e.preventDefault();
+                      const element = document.querySelector(link.href);
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }
+                  }}
+                  className="text-sm font-medium text-white/60 transition-colors hover:text-white"
                 >
                   {link.label}
                 </a>
@@ -79,21 +87,18 @@ export const Navbar = () => {
 
             <div className="hidden items-center gap-3 lg:flex">
               <a
-                href={getWhatsAppUrl("Hola, quiero explorar una automatización o sistema con IA para mi negocio.")}
+                href={getWhatsAppUrl("Hola, quiero hacer una consulta sobre Creativv.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-brand-primary"
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-brand-primary/40 hover:text-brand-primary hover:bg-white/5"
               >
-                WhatsApp
+                Escríbenos
                 <ArrowUpRight className="h-4 w-4" />
               </a>
-              <Button variant="hero" size="sm" asChild>
-                <a href="/brief?source=navbar">Solicitar diagnostico</a>
-              </Button>
             </div>
 
             <button
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-white text-brand-ink shadow-sm transition-colors hover:border-brand-primary/25 hover:text-brand-primary lg:hidden"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white shadow-sm transition-colors hover:border-brand-primary/40 hover:text-brand-primary lg:hidden"
               onClick={() => setIsMobileMenuOpen((value) => !value)}
               aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
             >
@@ -102,14 +107,23 @@ export const Navbar = () => {
           </div>
 
           {isMobileMenuOpen && (
-            <div className="animate-fade-in border-t border-border px-4 pb-5 pt-4 lg:hidden sm:px-6">
+            <div className="animate-fade-in border-t border-white/10 px-4 pb-5 pt-4 lg:hidden sm:px-6">
               <div className="flex flex-col gap-2">
                 {navLinks.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
-                    className="rounded-2xl px-4 py-3 text-sm font-medium text-brand-ink transition-colors hover:bg-secondary"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="rounded-2xl px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
+                    onClick={(e) => {
+                      setIsMobileMenuOpen(false);
+                      if (location.pathname === "/") {
+                        e.preventDefault();
+                        const element = document.querySelector(link.href);
+                        if (element) {
+                          element.scrollIntoView({ behavior: "smooth" });
+                        }
+                      }
+                    }}
                   >
                     {link.label}
                   </a>
@@ -117,12 +131,9 @@ export const Navbar = () => {
               </div>
 
               <div className="mt-4 grid gap-3">
-                <Button variant="hero" asChild className="w-full">
-                  <a href="/brief?source=navbar-mobile">Solicitar diagnostico</a>
-                </Button>
                 <Button variant="hero-outline" asChild className="w-full">
                   <a
-                    href={getWhatsAppUrl("Hola, quiero explorar una automatización o sistema con IA para mi negocio.")}
+                    href={getWhatsAppUrl("Hola, quiero hacer una consulta sobre Creativv.")}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

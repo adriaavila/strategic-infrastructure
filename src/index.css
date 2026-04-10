@@ -237,9 +237,8 @@
     line-height: var(--leading-relaxed);
     min-height: 100vh;
     background-image:
-      radial-gradient(circle at 12% 8%, hsl(var(--brand-primary) / 0.08), transparent 22%),
-      radial-gradient(circle at 88% 12%, rgba(212, 208, 218, 0.55), transparent 18%),
-      linear-gradient(180deg, rgba(255,255,255,0.42), transparent 26%);
+      radial-gradient(circle at 12% 8%, hsl(var(--brand-primary) / 0.15), transparent 22%),
+      radial-gradient(circle at 88% 12%, rgba(212, 208, 218, 0.05), transparent 18%);
   }
 
   ::selection {
@@ -402,7 +401,7 @@
     overflow: hidden;
     border-radius: 2rem;
     border: 1px solid hsl(var(--border));
-    background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(245,243,247,0.92));
+    background: linear-gradient(180deg, rgba(16,16,18,0.9), rgba(10,10,12,0.95));
     box-shadow: var(--shadow-architectural);
   }
 
@@ -412,8 +411,8 @@
     inset: 0;
     pointer-events: none;
     background:
-      radial-gradient(circle at top left, hsl(var(--brand-primary) / 0.08), transparent 24%),
-      linear-gradient(180deg, rgba(255,255,255,0.35), transparent 20%);
+      radial-gradient(circle at top left, hsl(var(--brand-primary) / 0.12), transparent 24%),
+      linear-gradient(180deg, rgba(255,255,255,0.03), transparent 20%);
     opacity: 0.88;
   }
 

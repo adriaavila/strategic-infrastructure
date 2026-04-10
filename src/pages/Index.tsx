@@ -1,37 +1,29 @@
-import { Suspense, lazy } from "react";
 import { Navbar } from "@/components/landing/Navbar";
-import { Hero } from "@/components/landing/Hero";
+import { HomeHero } from "@/components/landing/HomeHero";
 import { Footer } from "@/components/landing/Footer";
+import { HowItWorks } from "@/components/landing/HowItWorks";
+import { Catalog } from "@/components/landing/Catalog";
 import { useSEO } from "@/lib/seo";
-
-const HomeSectionsPrimary = lazy(() => import("@/components/landing/HomeSectionsPrimary"));
-const HomeSectionsSecondary = lazy(() => import("@/components/landing/HomeSectionsSecondary"));
-
-const SectionFallback = ({ minHeightClass }: { minHeightClass: string }) => (
-  <div className={`py-24 md:py-32 ${minHeightClass}`} aria-hidden="true" />
-);
 
 const Index = () => {
   useSEO({
-    title: "Creativv | Websites y web apps para negocios",
+    title: "Creativv | Sistemas con IA para vender mejor",
     description:
-      "Creativv diseña y desarrolla websites, landing pages y web apps para negocios que necesitan una presencia digital más clara y sistemas web más útiles.",
+      "Sistemas con Inteligencia Artificial, agentes inteligentes, y soluciones avanzadas para escalar tu negocio exponencialmente.",
     path: "/",
   });
 
   return (
-    <div className="relative min-h-screen bg-background">
+    <div className="relative min-h-screen bg-background flex flex-col">
       <div className="noise-overlay" />
       <Navbar />
-      <main>
-        <Hero />
-        <Suspense fallback={<SectionFallback minHeightClass="min-h-[1100px]" />}>
-          <HomeSectionsPrimary />
-        </Suspense>
-        <Suspense fallback={<SectionFallback minHeightClass="min-h-[900px]" />}>
-          <HomeSectionsSecondary />
-        </Suspense>
+      
+      <main className="flex-1">
+        <HomeHero />
+        <HowItWorks />
+        <Catalog />
       </main>
+
       <Footer />
     </div>
   );

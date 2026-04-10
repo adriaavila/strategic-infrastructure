@@ -11,15 +11,15 @@ import {
 } from "@/data/internal-links";
 
 const footerLinks = [
-  { label: "Soluciones", href: "/#soluciones" },
-  { label: "Metodo", href: "/#metodo" },
-  { label: "Casos", href: "/#casos" },
-  { label: "Diagnostico", href: "/brief?source=footer" },
+  { label: "Builder", href: "/#builder" },
+  { label: "Como funciona", href: "/#como-funciona" },
+  { label: "Catalogo", href: "/#catalogo" },
+  { label: "MVP", href: "/#mvp" },
 ];
 
 export const Footer = () => {
   return (
-    <footer className="border-t border-border bg-[#F8F6FA] py-10">
+    <footer className="border-t border-white/5 bg-black py-10">
       <div className="container mx-auto px-6">
         <div className="section-shell px-6 py-8 md:px-8 md:py-10">
           <div className="relative z-10 grid gap-10 xl:grid-cols-[0.9fr_1.1fr] xl:items-start">
@@ -28,14 +28,14 @@ export const Footer = () => {
                 <div>
                   <Logo className="text-[2.2rem] mb-2" />
                   <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                    partner de automatizacion e IA para negocios
+                    service builder para servicios digitales
                   </div>
                 </div>
               </div>
 
               <p className="mt-5 max-w-[34rem] text-base leading-relaxed text-foreground/72">
-                Implementación práctica de agentes IA, automatizaciones de WhatsApp, workflows y
-                sistemas web para negocios que quieren operar con menos fricción y vender con más claridad.
+                Convierte una necesidad ambigua en una propuesta estructurada para landing pages,
+                automatizaciones de WhatsApp, sistemas de captacion y MVP web apps simples.
               </p>
             </div>
 
@@ -112,7 +112,7 @@ export const Footer = () => {
                     {siteConfig.email}
                   </a>
                   <a
-                    href={getWhatsAppUrl("Hola, quiero hablar sobre una automatización o sistema con IA para mi negocio.")}
+                    href={getWhatsAppUrl("Hola, quiero hablar sobre Service Builder y una propuesta para mi negocio.")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 transition-colors hover:text-brand-secondary"
