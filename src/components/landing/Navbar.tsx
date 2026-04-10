@@ -6,8 +6,8 @@ import { getWhatsAppUrl } from "@/config/contact";
 import { Logo } from "@/components/ui/Logo";
 
 const navLinks = [
-  { label: "Cómo Funciona", href: "#como-funciona" },
-  { label: "Catálogo", href: "#catalogo" },
+  { label: "Cómo Funciona", href: "/#como-funciona" },
+  { label: "Catálogo", href: "/#catalogo" },
 ];
 
 export const Navbar = () => {
@@ -72,7 +72,8 @@ export const Navbar = () => {
                   onClick={(e) => {
                     if (location.pathname === "/") {
                       e.preventDefault();
-                      const element = document.querySelector(link.href);
+                      const targetId = link.href.replace("/", "");
+                      const element = document.querySelector(targetId);
                       if (element) {
                         element.scrollIntoView({ behavior: "smooth" });
                       }
@@ -118,7 +119,8 @@ export const Navbar = () => {
                       setIsMobileMenuOpen(false);
                       if (location.pathname === "/") {
                         e.preventDefault();
-                        const element = document.querySelector(link.href);
+                        const targetId = link.href.replace("/", "");
+                        const element = document.querySelector(targetId);
                         if (element) {
                           element.scrollIntoView({ behavior: "smooth" });
                         }
