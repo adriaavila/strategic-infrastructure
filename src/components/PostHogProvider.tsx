@@ -10,7 +10,8 @@ if (typeof window !== 'undefined') {
   if (token) {
     posthog.init(token, {
       api_host: host,
-      person_profiles: 'identified_only',
+      person_profiles: 'always',
+      defaults: '2026-01-30',
       capture_pageview: false // Handled manually below for React Router
     })
   }
