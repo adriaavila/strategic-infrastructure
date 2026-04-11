@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 import { DeferredAnalytics } from "./components/DeferredAnalytics";
-import { PostHogProvider } from "./components/PostHogProvider";
 
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
@@ -54,32 +53,30 @@ const App = () => (
   <>
     <DeferredAnalytics />
     <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-      <PostHogProvider>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/blog" element={<SuspendedRoute><Blog /></SuspendedRoute>} />
-          <Route path="/blog/:slug" element={<SuspendedRoute><BlogPost /></SuspendedRoute>} />
-          <Route path="/historia" element={<SuspendedRoute><Historia /></SuspendedRoute>} />
-          <Route path="/contacto" element={<SuspendedRoute><Contacto /></SuspendedRoute>} />
-          <Route path="/brief" element={<SuspendedRoute><Brief /></SuspendedRoute>} />
-          <Route path="/automatizaciones" element={<SuspendedRoute><Automatizaciones /></SuspendedRoute>} />
-          <Route path="/marketing" element={<SuspendedRoute><Marketing /></SuspendedRoute>} />
-          <Route path="/marketing/contenidos" element={<SuspendedRoute><MarketingLibrary /></SuspendedRoute>} />
-          <Route path="/terminos" element={<SuspendedRoute><LegalTerms /></SuspendedRoute>} />
-          <Route path="/privacidad" element={<SuspendedRoute><LegalPrivacy /></SuspendedRoute>} />
-          <Route path="/servicios" element={<SuspendedRoute><Servicios /></SuspendedRoute>} />
-          <Route path="/industrias" element={<SuspendedRoute><IndustriasHub /></SuspendedRoute>} />
-          <Route path="/ciudades" element={<SuspendedRoute><CiudadesHub /></SuspendedRoute>} />
-          <Route path="/mapa-del-sitio" element={<SuspendedRoute><SiteMapPage /></SuspendedRoute>} />
-          <Route path="/proyectos" element={<SuspendedRoute><Proyectos /></SuspendedRoute>} />
-          <Route path="/proyectos/:slug" element={<SuspendedRoute><ProjectDetail /></SuspendedRoute>} />
-          <Route path="/agente" element={<SuspendedRoute><AgentDemo /></SuspendedRoute>} />
-          <Route path="/:slug" element={<SuspendedRoute><PseoPage /></SuspendedRoute>} />
-          <Route path="*" element={<SuspendedRoute><NotFound /></SuspendedRoute>} />
-        </Routes>
-        <WhatsAppButton />
-      </PostHogProvider>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/blog" element={<SuspendedRoute><Blog /></SuspendedRoute>} />
+        <Route path="/blog/:slug" element={<SuspendedRoute><BlogPost /></SuspendedRoute>} />
+        <Route path="/historia" element={<SuspendedRoute><Historia /></SuspendedRoute>} />
+        <Route path="/contacto" element={<SuspendedRoute><Contacto /></SuspendedRoute>} />
+        <Route path="/brief" element={<SuspendedRoute><Brief /></SuspendedRoute>} />
+        <Route path="/automatizaciones" element={<SuspendedRoute><Automatizaciones /></SuspendedRoute>} />
+        <Route path="/marketing" element={<SuspendedRoute><Marketing /></SuspendedRoute>} />
+        <Route path="/marketing/contenidos" element={<SuspendedRoute><MarketingLibrary /></SuspendedRoute>} />
+        <Route path="/terminos" element={<SuspendedRoute><LegalTerms /></SuspendedRoute>} />
+        <Route path="/privacidad" element={<SuspendedRoute><LegalPrivacy /></SuspendedRoute>} />
+        <Route path="/servicios" element={<SuspendedRoute><Servicios /></SuspendedRoute>} />
+        <Route path="/industrias" element={<SuspendedRoute><IndustriasHub /></SuspendedRoute>} />
+        <Route path="/ciudades" element={<SuspendedRoute><CiudadesHub /></SuspendedRoute>} />
+        <Route path="/mapa-del-sitio" element={<SuspendedRoute><SiteMapPage /></SuspendedRoute>} />
+        <Route path="/proyectos" element={<SuspendedRoute><Proyectos /></SuspendedRoute>} />
+        <Route path="/proyectos/:slug" element={<SuspendedRoute><ProjectDetail /></SuspendedRoute>} />
+        <Route path="/agente" element={<SuspendedRoute><AgentDemo /></SuspendedRoute>} />
+        <Route path="/:slug" element={<SuspendedRoute><PseoPage /></SuspendedRoute>} />
+        <Route path="*" element={<SuspendedRoute><NotFound /></SuspendedRoute>} />
+      </Routes>
+      <WhatsAppButton />
     </BrowserRouter>
   </>
 );
