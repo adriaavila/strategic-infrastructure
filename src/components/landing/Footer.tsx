@@ -140,6 +140,9 @@ export const Footer = () => {
               <Link to="/privacidad" className="transition-colors hover:text-brand-secondary">
                 Política de privacidad
               </Link>
+              <Link to="/eliminacion-de-datos" className="transition-colors hover:text-brand-secondary">
+                Eliminación de datos
+              </Link>
             </div>
           </div>
         </div>

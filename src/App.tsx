@@ -17,6 +17,7 @@ const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
 const Brief = lazy(() => import("./pages/Brief"));
 const LegalTerms = lazy(() => import("./pages/LegalTerms"));
 const LegalPrivacy = lazy(() => import("./pages/LegalPrivacy"));
+const LegalDataDeletion = lazy(() => import("./pages/LegalDataDeletion"));
 const IndustriasHub = lazy(() => import("./pages/IndustriasHub"));
 const CiudadesHub = lazy(() => import("./pages/CiudadesHub"));
 const SiteMapPage = lazy(() => import("./pages/SiteMapPage"));
@@ -66,6 +67,7 @@ const App = () => (
         <Route path="/marketing/contenidos" element={<SuspendedRoute><MarketingLibrary /></SuspendedRoute>} />
         <Route path="/terminos" element={<SuspendedRoute><LegalTerms /></SuspendedRoute>} />
         <Route path="/privacidad" element={<SuspendedRoute><LegalPrivacy /></SuspendedRoute>} />
+        <Route path="/eliminacion-de-datos" element={<SuspendedRoute><LegalDataDeletion /></SuspendedRoute>} />
         <Route path="/servicios" element={<SuspendedRoute><Servicios /></SuspendedRoute>} />
         <Route path="/industrias" element={<SuspendedRoute><IndustriasHub /></SuspendedRoute>} />
         <Route path="/ciudades" element={<SuspendedRoute><CiudadesHub /></SuspendedRoute>} />
