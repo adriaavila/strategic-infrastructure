@@ -125,11 +125,22 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="relative z-10 mt-8 flex flex-col gap-2 border-t border-border pt-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-            <p>
-              Creativv · {siteConfig.legalName}
-            </p>
-            <p>© {new Date().getFullYear()} Todos los derechos reservados.</p>
+          <div className="relative z-10 mt-8 flex flex-col gap-4 border-t border-border pt-5 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
+            <div className="flex flex-col gap-2 md:flex-row md:items-center">
+              <p>
+                Creativv · {siteConfig.legalName}
+              </p>
+              <span className="hidden md:inline">·</span>
+              <p>© {new Date().getFullYear()} Todos los derechos reservados.</p>
+            </div>
+            <div className="flex flex-col gap-2 md:flex-row md:items-center md:gap-4">
+              <Link to="/terminos" className="transition-colors hover:text-brand-secondary">
+                Términos y condiciones
+              </Link>
+              <Link to="/privacidad" className="transition-colors hover:text-brand-secondary">
+                Política de privacidad
+              </Link>
+            </div>
           </div>
         </div>
       </div>
