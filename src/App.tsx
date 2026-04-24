@@ -24,6 +24,7 @@ const SiteMapPage = lazy(() => import("./pages/SiteMapPage"));
 const PseoPage = lazy(() => import("./pages/PseoPage"));
 const MarketingLibrary = lazy(() => import("./pages/MarketingLibrary"));
 const AgentDemo = lazy(() => import("./pages/AgentDemo"));
+const EmbeddedWhatsapp = lazy(() => import("./pages/EmbeddedWhatsapp"));
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
@@ -75,6 +76,7 @@ const App = () => (
         <Route path="/proyectos" element={<SuspendedRoute><Proyectos /></SuspendedRoute>} />
         <Route path="/proyectos/:slug" element={<SuspendedRoute><ProjectDetail /></SuspendedRoute>} />
         <Route path="/agente" element={<SuspendedRoute><AgentDemo /></SuspendedRoute>} />
+        <Route path="/embedded-whatsapp" element={<SuspendedRoute><EmbeddedWhatsapp /></SuspendedRoute>} />
         <Route path="/:slug" element={<SuspendedRoute><PseoPage /></SuspendedRoute>} />
         <Route path="*" element={<SuspendedRoute><NotFound /></SuspendedRoute>} />
       </Routes>
