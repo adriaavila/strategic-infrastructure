@@ -109,9 +109,38 @@ if (!fs.existsSync(baseHtmlPath)) {
 
 const baseHtml = fs.readFileSync(baseHtmlPath, "utf-8");
 
-console.log(`Generating ${pseoData.length} static HTML entry points...`);
+const extraRoutes = [
+  {
+    slug: "embedded-whatsapp",
+    h1: "WhatsApp Embedded Signup • Onboarding Oficial",
+    title: "Configuración de WhatsApp Business API | Creativv",
+    description: "Conecta tu número actual a la API Cloud de WhatsApp mediante el flujo oficial de Embedded Signup y Coexistence de Meta.",
+    paragraphs: [
+      "Gestiona el onboarding oficial de tu cuenta de WhatsApp Business directamente con Meta.",
+      "Habilita la capacidad de automatización sin perder la aplicación móvil original.",
+      "Configuración técnica de WABA y Cloud API para empresas de alto crecimiento."
+    ],
+    h2s: ["Requisitos de Meta", "Flujo de Coexistencia", "Activación de API"]
+  },
+  {
+    slug: "agente",
+    h1: "Agente de IA Conversacional • Demo en Vivo",
+    title: "Prueba nuestro Agente de IA | Creativv",
+    description: "Demostración en tiempo real de un agente de IA capaz de entender contexto, manejar objeciones y agendar citas.",
+    paragraphs: [
+      "Interactúa con una inteligencia artificial diseñada para la conversión.",
+      "Observa cómo el sistema procesa datos y responde con tono de marca.",
+      "Tecnología basada en modelos de lenguaje avanzados optimizados para negocios."
+    ],
+    h2s: ["Capacidades del Agente", "Integración con CRM", "Analítica de Conversación"]
+  }
+];
 
-for (const page of pseoData) {
+const allPages = [...pseoData, ...extraRoutes];
+
+console.log(`Generating ${allPages.length} static HTML entry points...`);
+
+for (const page of allPages) {
   const pageDir = path.join(distDir, page.slug);
   fs.mkdirSync(pageDir, { recursive: true });
 
@@ -248,6 +277,8 @@ const pageEntries = [
   { path: "/industrias", lastmod: TODAY, changefreq: "weekly", priority: "0.9" },
   { path: "/ciudades", lastmod: TODAY, changefreq: "weekly", priority: "0.9" },
   { path: "/mapa-del-sitio", lastmod: TODAY, changefreq: "weekly", priority: "0.9" },
+  { path: "/embedded-whatsapp", lastmod: TODAY, changefreq: "weekly", priority: "0.9" },
+  { path: "/agente", lastmod: TODAY, changefreq: "weekly", priority: "0.9" },
   { path: "/automatizaciones", lastmod: TODAY, changefreq: "weekly", priority: "0.9" },
   { path: "/marketing", lastmod: TODAY, changefreq: "weekly", priority: "0.8" },
   { path: "/historia", lastmod: TODAY, changefreq: "monthly", priority: "0.6" },
