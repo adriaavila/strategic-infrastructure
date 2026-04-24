@@ -1,5 +1,5 @@
 import type { BlogPost } from "@/data/blog";
-import { getPseoBySlug } from "@/data/pseo";
+import { getPseoBySlug, pseoData } from "@/data/pseo";
 import {
   getFeaturedFamiliesForIndustry,
   getPseoPageContext,
@@ -295,3 +295,10 @@ export const getRelatedInternalLinksForBlogPost = (post: BlogPost, limit = 4): I
 
   return Array.from(deduped.values()).slice(0, limit);
 };
+
+export const allPseoLinks: InternalLinkItem[] = pseoData.map((page) => ({
+  title: page.h1.replace(/^[^\p{L}\p{N}]+/u, ""),
+  description: page.description,
+  href: `/${page.slug}`,
+  eyebrow: getPseoPageContext(page.slug).kind !== "unknown" ? getPseoPageContext(page.slug).kind : undefined,
+}));

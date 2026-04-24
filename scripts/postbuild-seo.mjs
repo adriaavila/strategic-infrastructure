@@ -139,12 +139,64 @@ for (const page of pseoData) {
   const replaceTag = (html, pattern, replacement) => {
     const nextHtml = html.replace(pattern, replacement);
 
-    if (nextHtml === html) {
+    if (nextHtml === html && !html.includes(replacement)) {
       console.warn(`Warning: could not replace pattern ${pattern} for ${page.slug}`);
     }
 
     return nextHtml;
   };
+
+  // Build the content to inject into #root for crawlers
+  const pageIndex = pseoData.findIndex(p => p.slug === page.slug);
+  const relatedPages = pseoData
+    .filter((_, idx) => (idx >= pageIndex - 4 && idx <= pageIndex + 4) && idx !== pageIndex)
+    .slice(0, 6);
+
+  const staticContent = `
+    <div id="root">
+      <header>
+        <nav><a href="/">Inicio</a> | <a href="/mapa-del-sitio">Mapa del sitio</a></nav>
+      </header>
+      <main>
+        <article>
+          <h1>${xmlEscape(page.h1)}</h1>
+          <div class="content">
+            ${(page.paragraphs || []).map(p => `<p>${xmlEscape(p)}</p>`).join('\n            ')}
+            ${(page.h2s || []).map(h2 => `<h2>${xmlEscape(h2)}</h2>`).join('\n            ')}
+          </div>
+        </article>
+        
+        <section id="related">
+          <h3>Soluciones y Rutas Relacionadas</h3>
+          <ul>
+            ${relatedPages.map(rp => `<li><a href="/${rp.slug}">${xmlEscape(rp.h1.replace(/^[^\p{L}\p{N}]+/u, ""))}</a></li>`).join('\n            ')}
+          </ul>
+        </section>
+      </main>
+      <footer>
+        <p>© ${new Date().getFullYear()} ${SITE_NAME}</p>
+        <nav>
+          <a href="/mapa-del-sitio">Directorio Completo</a> | 
+          <a href="/industrias">Hub de Industrias</a> | 
+          <a href="/ciudades">Hub de Ciudades</a>
+        </nav>
+      </footer>
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "${xmlEscape(page.h1)}",
+          "description": "${xmlEscape(page.description)}",
+          "provider": {
+            "@type": "Organization",
+            "name": "Creativv",
+            "url": "${SITE_URL}"
+          }
+        }
+      </script>
+    </div>
+  `;
+
   let newHtml = replaceTag(baseHtml, /<title>.*?<\/title>/, `<title>${xmlEscape(buildDocumentTitle(page.title))}</title>`);
   newHtml = replaceTag(
     newHtml,
@@ -171,6 +223,10 @@ for (const page of pseoData) {
     /<link rel="canonical" href=".*?"\s*\/?>/,
     `<link rel="canonical" href="${canonicalUrl}" />`
   );
+
+  // Inject content into #root for better SEO
+  newHtml = newHtml.replace('<div id="root"></div>', staticContent);
+
   if (!/<meta name="robots" /i.test(newHtml)) {
     newHtml = newHtml.replace("</head>", '    <meta name="robots" content="index,follow" />\n  </head>');
   } else {
@@ -189,6 +245,9 @@ const pageEntries = [
   { path: "/blog", lastmod: TODAY, changefreq: "daily", priority: "0.9" },
   { path: "/contacto", lastmod: TODAY, changefreq: "monthly", priority: "0.8" },
   { path: "/proyectos", lastmod: TODAY, changefreq: "weekly", priority: "0.8" },
+  { path: "/industrias", lastmod: TODAY, changefreq: "weekly", priority: "0.9" },
+  { path: "/ciudades", lastmod: TODAY, changefreq: "weekly", priority: "0.9" },
+  { path: "/mapa-del-sitio", lastmod: TODAY, changefreq: "weekly", priority: "0.9" },
   { path: "/automatizaciones", lastmod: TODAY, changefreq: "weekly", priority: "0.9" },
   { path: "/marketing", lastmod: TODAY, changefreq: "weekly", priority: "0.8" },
   { path: "/historia", lastmod: TODAY, changefreq: "monthly", priority: "0.6" },
@@ -234,7 +293,16 @@ for (const [fileName, entries] of Object.entries(sitemapFiles)) {
 
 writeFile("sitemap.xml", renderSitemapIndex(Object.keys(sitemapFiles)));
 
+// Generate robots.txt
+const robotsTxt = `User-agent: *
+Allow: /
+
+Sitemap: ${SITE_URL}/sitemap.xml
+`;
+writeFile("robots.txt", robotsTxt);
+
 console.log(
   `Generated sitemap index with ${pageEntries.length + blogEntries.length + projectEntries.length + pseoEntries.length} URLs across ${Object.keys(sitemapFiles).length} sitemap files.`
 );
-console.log("Successfully generated all pSEO entry points for static hosting!");
+console.log("Successfully generated all pSEO entry points and robots.txt!");
+

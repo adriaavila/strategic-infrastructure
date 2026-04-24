@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { InternalLinksSection } from "@/components/seo/InternalLinksSection";
 import { blogPosts } from "@/data/blog";
 import {
+  allPseoLinks,
   sitemapCityLinks,
   sitemapIndustryLinks,
   solutionHubLinks,
@@ -113,6 +114,27 @@ export default function SiteMapPage() {
             items={recentBlogLinks}
             variant="light"
           />
+
+          <section className="rounded-[34px] border border-slate-200 bg-white/60 p-8 md:p-10">
+            <div className="max-w-3xl">
+              <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-500">Archivo completo</div>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">Directorio de todas las rutas pSEO</h2>
+              <p className="mt-4 text-base leading-relaxed text-slate-600">
+                Lista exhaustiva de todas las combinaciones de industria, solución y localización para asegurar la indexación completa del cluster.
+              </p>
+            </div>
+            <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+              {allPseoLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className="text-sm text-slate-500 transition-colors hover:text-slate-900"
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
+          </section>
         </div>
       </main>
 
